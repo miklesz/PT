@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media transmisyjne: transmisja bezprzewodowa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css">
+    <style>
+      :root { --pt-blue: #003b70; --pt-cyan: #007c91; --pt-ink: #13212e; --pt-muted: #587083; }
+      .reveal { color: var(--pt-ink); font-family: Arial, Helvetica, sans-serif; font-size: 34px; }
+      .reveal .slides { text-align: left; }
+      .reveal h1, .reveal h2, .reveal h3 { color: var(--pt-blue); font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+      .reveal h1 { font-size: 1.75em; margin-bottom: 0.35em; }
+      .reveal h2 { font-size: 1.3em; margin-bottom: 0.55em; }
+      .reveal p, .reveal li { line-height: 1.32; }
+      .reveal ul { margin-top: 0.25em; }
+      .reveal li + li { margin-top: 0.25em; }
+      .reveal a { color: var(--pt-cyan); text-decoration: underline; }
+      .reveal strong { color: var(--pt-blue); }
+      .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
+      .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal .title-slide { text-align: center; }
+      .reveal .title-slide h1 { font-size: 1.9em; }
+      .reveal .title-slide p { color: var(--pt-muted); }
+      .reveal .section-slide { display: grid !important; place-content: center; text-align: center; }
+      .reveal .section-slide h1, .reveal .section-slide h2 { font-size: 2em; }
+      .reveal .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; align-items: start; }
+      .reveal .small { font-size: 0.72em; }
+      .reveal .credits { color: var(--pt-muted); font-size: 0.52em; margin-top: 0.35em; }
+      .reveal .stack { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.22em; margin: 0.35em auto; max-width: 950px; }
+      .reveal .stack > div { border: 2px solid var(--pt-blue); padding: 0.35em 0.18em; min-height: 4.3em; display: grid; place-content: center; text-align: center; font-size: 0.55em; }
+      .reveal .stack .tcp { grid-column: span 3; background: #dceef2; }
+      .reveal .stack .net { background: #e7edf6; }
+      .reveal .stack .link { grid-column: span 2; background: #eff0df; }
+      .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
+      .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
+      .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .slide-number { color: var(--pt-muted); }
+      @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="reveal"><div class="slides">
+      <section data-markdown><textarea data-template>
+<!-- .slide: class="title-slide" -->
+
+# Media transmisyjne: transmisja bezprzewodowa
+
+---
+
+## Plan wykładu
+
+- sieci bezprzewodowe i ich infrastruktura,
+- PAN, WLAN, MAN oraz IoT,
+- Wi-Fi i rodzina IEEE 802.11,
+- WiMAX, LoRa i przyszłość standardów.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Sieci bezprzewodowe
+
+---
+
+## Definicja
+
+Bezprzewodowa sieć komputerowa przesyła dane przez fale radiowe lub inne medium bezprzewodowe, zamiast przez przewody między wszystkimi węzłami.
+
+Kluczowe elementy: urządzenia końcowe, punkty dostępowe, anteny, kontrolery i łącze do sieci szkieletowej.
+
+---
+
+## Zalety i ograniczenia
+
+<div class="columns"><div>
+
+**Zalety**
+
+- mobilność,
+- szybkie wdrożenie,
+- łatwa rozbudowa,
+- dostęp w miejscach trudnych dla kabli.
+
+</div><div>
+
+**Ograniczenia**
+
+- współdzielone widmo,
+- zakłócenia i tłumienie,
+- zasięg zależny od otoczenia,
+- konieczność właściwego zabezpieczenia.
+
+</div></div>
+
+---
+
+## Typy sieci
+
+<div class="packet"><span>PAN<br>osobista</span><span>LAN / WLAN<br>lokalna</span><span>MAN<br>miejska</span><span>WAN<br>rozległa</span></div>
+
+---
+
+## PAN i Internet rzeczy
+
+- **Bluetooth:** połączenia osobiste, urządzenia peryferyjne i audio.
+- **ZigBee / IEEE 802.15.4:** energooszczędne czujniki i automatyka.
+- **Z-Wave:** domowa automatyka.
+- **Thread:** sieć mesh dla urządzeń IoT, oparta na IPv6.
+
+---
+
+## WLAN
+
+WLAN (*Wireless Local Area Network*) zapewnia lokalny dostęp radiowy. Najczęściej kojarzymy ją z Wi-Fi, czyli implementacjami standardów IEEE 802.11.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# IEEE 802.11 i Wi-Fi
+
+---
+
+## Pasma Wi-Fi
+
+<div class="columns"><div>
+
+**2,4 GHz**
+
+Dobry zasięg, duże zatłoczenie, szeroka zgodność urządzeń.
+
+</div><div>
+
+**5 GHz i 6 GHz**
+
+Więcej kanałów i większa przepływność; zwykle krótszy zasięg.
+
+</div></div>
+
+---
+
+## Rozwój Wi-Fi
+
+| Generacja | IEEE | Najważniejsza cecha |
+| --- | --- | --- |
+| Wi-Fi 4 | 802.11n | MIMO, 2,4/5 GHz |
+| Wi-Fi 5 | 802.11ac | wysokie przepływności w 5 GHz |
+| Wi-Fi 6 / 6E | 802.11ax | OFDMA, pojemność, 6 GHz w 6E |
+| Wi-Fi 7 | 802.11be | szersze kanały i Multi-Link Operation |
+
+---
+
+## Od 802.11b do 802.11g
+
+- **802.11b:** 2,4 GHz, do 11 Mb/s.
+- **802.11a:** 5 GHz, do 54 Mb/s.
+- **802.11g:** 2,4 GHz, do 54 Mb/s i zgodność wsteczna z 802.11b.
+
+To historyczne standardy, ważne dla zrozumienia kompatybilności starszych urządzeń.
+
+---
+
+## 802.11n, ac i ax
+
+- **802.11n:** MIMO, kanały 20/40 MHz.
+- **802.11ac:** szerokie kanały w 5 GHz i wielostrumieniowość.
+- **802.11ax:** poprawa wydajności w zatłoczonych środowiskach, OFDMA i planowanie transmisji.
+
+---
+
+## 60 GHz i 802.11ad / ay
+
+- Bardzo duża przepływność na krótkim dystansie.
+- Silne tłumienie i słaba penetracja przeszkód.
+- Zastosowania: łącza punkt-punkt, dokowanie bezprzewodowe, krótkodystansowe transmisje multimedialne.
+
+---
+
+## Kompatybilność i certyfikacja
+
+- Zgodność standardu radiowego nie zawsze oznacza pełną zgodność funkcji urządzeń.
+- Certyfikat Wi-Fi Alliance ułatwia przewidywalną współpracę produktów.
+- Planowanie sieci wymaga doboru pasma, kanałów, mocy i zabezpieczeń.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Sieci miejskie i dalekiego zasięgu
+
+---
+
+## WiMAX
+
+- Rodzina IEEE 802.16 dla szerokopasmowych sieci metropolitalnych.
+- Przeznaczona do dostępu bezprzewodowego na większych obszarach niż WLAN.
+- Historycznie ważna alternatywa dla dostępu przewodowego, obecnie wyparta w wielu zastosowaniach przez sieci komórkowe.
+
+---
+
+## LoRa i LoRaWAN
+
+- Mała przepływność, daleki zasięg i niskie zużycie energii.
+- Przeznaczone dla czujników, telemetrii i IoT.
+- Nie zastępują Wi-Fi: optymalizują inny kompromis między zasięgiem, energią i ilością danych.
+
+---
+
+## Co dalej z IEEE 802?
+
+- bardziej efektywne użycie widma,
+- większa pojemność w gęstych sieciach,
+- współdziałanie Wi-Fi z sieciami komórkowymi,
+- rozwój urządzeń IoT i sieci o małej mocy.
+
+---
+
+## Podsumowanie
+
+- Bezprzewodowość daje mobilność, ale wymaga planowania radiowego i zabezpieczeń.
+- IEEE 802.11 ewoluował od podstawowego WLAN do wielopasmowej, wysokowydajnej infrastruktury.
+- PAN, WiMAX i LoRa odpowiadają na odmienne potrzeby zasięgu, energii i przepływności.
+
+      </textarea></section>
+    </div></div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({ hash: true, slideNumber: 'c/t', controlsTutorial: false, transition: 'fade', transitionSpeed: 'fast', plugins: [RevealMarkdown] });
+    </script>
+  </body>
+</html>
