@@ -163,10 +163,17 @@ Sprawdza wagę słowa, rozpoznaje kod i sygnalizuje nieprawidłową kombinację.
 
 ---
 
-## Schematy kodera i dekodera „2 z 5”
+## Schemat kodera „2 z 5”
 
-<div class="media-gallery">
+<div class="media-gallery single-visual">
   <img src="media/image10.png" alt="Schemat kodera kodu 2 z 5">
+</div>
+
+---
+
+## Schemat dekodera „2 z 5”
+
+<div class="media-gallery single-visual">
   <img src="media/image11.png" alt="Schemat dekodera kodu 2 z 5">
 </div>
 
