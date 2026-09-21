@@ -371,8 +371,16 @@ ${embeddedMarkdown}
         const input = document.querySelector('.mesh-nodes');
         const output = document.querySelector('.mesh-result');
         if (!input || !output) return;
-        const nodes = Math.max(2, Math.min(1000, Math.trunc(Number(input.value) || 2)));
-        input.value = nodes;
+        const raw = input.value.trim();
+        if (!raw) {
+          output.textContent = 'Wpisz liczbę węzłów od 2 do 1000.';
+          return;
+        }
+        const nodes = Number(raw);
+        if (!Number.isInteger(nodes) || nodes < 2 || nodes > 1000) {
+          output.textContent = 'Podaj liczbę całkowitą od 2 do 1000.';
+          return;
+        }
         const links = nodes * (nodes - 1) / 2;
         output.innerHTML = '<code>c = ' + nodes + ' × ' + (nodes - 1) + ' / 2 = ' + links + '</code><br>Dla <strong>' + nodes + ' węzłów</strong> pełna siatka potrzebuje <strong>' + links + ' łączy</strong>.';
       };
