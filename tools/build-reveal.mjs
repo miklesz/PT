@@ -98,6 +98,10 @@ const html = `<!doctype html>
       .reveal .wifi-timeline > div:nth-child(4n + 2) { background: #dceef2; }
       .reveal .wifi-timeline > div:nth-child(4n + 3) { background: #eff0df; }
       .reveal .wifi-timeline > div:nth-child(4n) { background: #f4e6d5; }
+      .reveal .wifi-standard-table { display: grid; grid-template-columns: 1.1fr 0.82fr 0.95fr 1.2fr 0.8fr; max-width: 1080px; margin: 0.4em auto 0; font-size: 0.47em; line-height: 1.15; border-top: 2px solid var(--pt-blue); border-left: 2px solid var(--pt-blue); }
+      .reveal .wifi-standard-table > div { display: grid; align-items: center; padding: 0.28em 0.36em; background: #f7fafc; border-right: 1px solid #aebbc5; border-bottom: 1px solid #aebbc5; }
+      .reveal .wifi-standard-table .head { background: var(--pt-blue); color: #fff; font-weight: 700; }
+      .reveal .wifi-standard-table .rate { justify-content: end; text-align: right; }
       .reveal .protocol-map { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.4em 0.7em; max-width: 900px; margin: 0.6em auto; }
       .reveal .protocol-map > div { padding: 0.4em 0.55em; background: #e7edf6; font-size: 0.72em; }
       .reveal .protocol-map .head { background: var(--pt-blue); color: #fff; font-weight: 700; }

@@ -223,6 +223,25 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ---
 
+## Wybrane standardy IEEE 802.11
+
+<div class="wifi-standard-table">
+  <div class="head">Standard</div><div class="head">Rok</div><div class="head">Pasmo</div><div class="head">Kanał</div><div class="head rate">Maks. PHY</div>
+  <div>802.11 (legacy)</div><div>1997</div><div>2,4 GHz</div><div>20 MHz</div><div class="rate">2 Mb/s</div>
+  <div>802.11a</div><div>1999</div><div>5 GHz</div><div>20 MHz</div><div class="rate">54 Mb/s</div>
+  <div>802.11b</div><div>1999</div><div>2,4 GHz</div><div>22 MHz</div><div class="rate">11 Mb/s</div>
+  <div>802.11g</div><div>2003</div><div>2,4 GHz</div><div>20 MHz</div><div class="rate">54 Mb/s</div>
+  <div>802.11n</div><div>2009</div><div>2,4 / 5 GHz</div><div>20 / 40 MHz</div><div class="rate">600 Mb/s</div>
+  <div>802.11ad</div><div>2012</div><div>60 GHz</div><div>2160 MHz</div><div class="rate">6,76 Gb/s</div>
+  <div>802.11ac</div><div>2013</div><div>5 GHz</div><div>20–160 MHz</div><div class="rate">6,93 Gb/s</div>
+  <div>802.11ax</div><div>2021</div><div>2,4 / 5 / 6 GHz</div><div>20–160 MHz</div><div class="rate">9,61 Gb/s</div>
+  <div>802.11be</div><div>2024</div><div>2,4 / 5 / 6 GHz</div><div>do 320 MHz</div><div class="rate">do 46 Gb/s</div>
+</div>
+
+<p class="credits">Wartości maksymalne warstwy fizycznej; rzeczywista przepływność zależy od konfiguracji, liczby strumieni i warunków radiowych.</p>
+
+---
+
 ## Starsze generacje i zgodność
 
 - **802.11b i 802.11g:** pracują w paśmie 2,4 GHz; 802.11g zachowuje zgodność wsteczną z 802.11b.
