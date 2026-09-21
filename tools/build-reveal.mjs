@@ -36,6 +36,7 @@ const html = `<!doctype html>
       .reveal strong { color: var(--pt-blue); }
       .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
       .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
       .reveal .title-slide { text-align: center; }
       .reveal .title-slide h1 { font-size: 1.9em; }
       .reveal .title-slide p { color: var(--pt-muted); }
