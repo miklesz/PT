@@ -95,7 +95,7 @@ Rosnący zasięg: od urządzeń osobistych po sieci łączące odległe lokaliza
 
 ## Materiał wideo: rodzaje sieci
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/4_zSIXb7tLQ?feature=oembed" title="Rodzaje sieci komputerowych" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/4_zSIXb7tLQ.mp4" type="video/mp4"></video>
 
 ---
 
@@ -133,25 +133,25 @@ Niewielki moduł radiowy może być częścią czujnika, sterownika lub urządze
 
 ## Materiał wideo: Internet rzeczy i PAN
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/iw9pQeFhN74?feature=oembed" title="Internet rzeczy i PAN" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/iw9pQeFhN74.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał wideo: Wi-Fi a ZigBee
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/buV11ZPJ7MQ?feature=oembed" title="Porównanie Wi-Fi i ZigBee" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/buV11ZPJ7MQ.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał wideo: Z-Wave
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/vhzLYmiwNTk?feature=oembed" title="Z-Wave" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/vhzLYmiwNTk.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał wideo: Thread
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/KElUxj12IIY?feature=oembed" title="Thread" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/KElUxj12IIY.mp4" type="video/mp4"></video>
 
 ---
 
@@ -163,7 +163,7 @@ WLAN (*Wireless Local Area Network*) zapewnia lokalny dostęp radiowy. Najczęś
 
 ## Materiał wideo: czym jest WLAN?
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/DAR52r0lEtw?feature=oembed" title="WLAN" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/DAR52r0lEtw.mp4" type="video/mp4"></video>
 
 ---
 
@@ -275,13 +275,13 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ## Materiał wideo: 802.11b, g i n
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/KysPKUBo1u4?feature=oembed" title="Różne prędkości Wi-Fi" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/KysPKUBo1u4.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał wideo: 802.11n a 802.11ac
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/DsWJ-ei5jrc?feature=oembed" title="Różnice między 802.11n i 802.11ac" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/DsWJ-ei5jrc.mp4" type="video/mp4"></video>
 
 ---
 
@@ -301,13 +301,13 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ## Materiał wideo: Wi-Fi przy 60 GHz
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/zcfuTD3z7aA?feature=oembed" title="Wi-Fi i częstotliwość 60 GHz" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/zcfuTD3z7aA.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał wideo: Wi-Fi 6 i OFDMA
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/HgIJmdzNyIQ?feature=oembed" title="Wi-Fi 6 i OFDMA" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/HgIJmdzNyIQ.mp4" type="video/mp4"></video>
 
 ---
 
@@ -349,7 +349,7 @@ WiMAX (*Worldwide Interoperability for Microwave Access*) obejmuje technologie s
 
 ## Materiał wideo: WiMAX
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/KQdc5AdJqCg?feature=oembed" title="WiMAX" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/KQdc5AdJqCg.mp4" type="video/mp4"></video>
 
 ---
 
@@ -372,7 +372,7 @@ WiMAX (*Worldwide Interoperability for Microwave Access*) obejmuje technologie s
 
 ## Materiał wideo: LoRa
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/m6IvwcjcxQc?feature=oembed" title="LoRa" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<video controls preload="metadata"><source src="media/videos/m6IvwcjcxQc.mp4" type="video/mp4"></video>
 
 ---
 
@@ -387,7 +387,7 @@ WiMAX (*Worldwide Interoperability for Microwave Access*) obejmuje technologie s
 
 ## Materiał wideo: przyszłość standardów IEEE 802
 
-<video controls preload="metadata"><source src="media/fRnGP41TE2s.mp4" type="video/mp4"></video>
+<video controls preload="metadata"><source src="media/videos/fRnGP41TE2s.mp4" type="video/mp4"></video>
 
 ---
 
