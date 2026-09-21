@@ -133,9 +133,12 @@ Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu j
 - Awaria pojedynczego kabla zwykle odcina tylko jedno urządzenie.
 - Awaria punktu centralnego wpływa na całą sieć.
 
-<div class="packet"><span>Host A</span><span>Przełącznik</span><span>Host B</span><span>Host C</span></div>
-
-![Topologia gwiazdy](media/image11.png)
+<div class="star-diagram" role="img" aria-label="Topologia gwiazdy: trzy hosty są połączone osobnymi łączami z centralnym przełącznikiem.">
+  <div class="star-link star-link-a"></div><div class="star-link star-link-b"></div><div class="star-link star-link-c"></div>
+  <div class="star-host star-host-a">Host A</div><div class="star-host star-host-b">Host B</div><div class="star-host star-host-c">Host C</div>
+  <div class="star-switch"><strong>Przełącznik</strong><small>punkt centralny</small></div>
+  <p>Osobne łącze dla każdego hosta</p>
+</div>
 
 ---
 

@@ -173,6 +173,14 @@
       .reveal .ring-node.node-a { top: 0; left: calc(50% - 0.78em); }.reveal .ring-node.node-b { top: calc(50% - 0.78em); right: 0; }.reveal .ring-node.node-c { bottom: 0; left: calc(50% - 0.78em); }.reveal .ring-node.node-d { top: calc(50% - 0.78em); left: 0; }
       .reveal .ring-direction { position: absolute; z-index: 1; inset: 2.1em 2.2em; display: grid; place-content: center; color: #b35c2e; font-size: 1.05em; font-weight: 700; text-align: center; }
       .reveal .ring-direction small { color: var(--pt-muted); font-size: 0.32em; font-weight: 400; white-space: nowrap; }
+      .reveal .star-diagram { position: relative; width: min(16em, 88%); height: 6.5em; margin: 0.45em auto 0; font-size: 0.72em; }
+      .reveal .star-host, .reveal .star-switch { position: absolute; z-index: 1; display: grid; place-items: center; box-sizing: border-box; min-width: 4.3em; min-height: 2.15em; padding: 0.38em 0.65em; border: 2px solid var(--pt-blue); border-radius: 7px; background: #fff; color: var(--pt-ink); font-weight: 700; line-height: 1.05; text-align: center; }
+      .reveal .star-switch { left: 50%; top: 42%; min-width: 5.6em; min-height: 2.45em; transform: translate(-50%, -50%); border-color: #007c91; background: #e9f8fa; }
+      .reveal .star-switch small { display: block; margin-top: 0.18em; color: #006678; font-size: 0.62em; font-weight: 600; }
+      .reveal .star-host-a { left: 1%; top: 0; }.reveal .star-host-b { right: 1%; top: 0; }.reveal .star-host-c { left: 50%; bottom: 0.75em; transform: translateX(-50%); }
+      .reveal .star-link { position: absolute; z-index: 0; height: 3px; transform-origin: left center; background: #007c91; }
+      .reveal .star-link-a { left: 25%; top: 22%; width: 30%; transform: rotate(28deg); }.reveal .star-link-b { left: 47%; top: 35%; width: 30%; transform: rotate(-28deg); }.reveal .star-link-c { left: 50%; top: 49%; width: 2.05em; transform: rotate(90deg); }
+      .reveal .star-diagram p { position: absolute; bottom: -0.2em; left: 50%; margin: 0; transform: translateX(-50%); color: var(--pt-muted); font-size: 0.54em; white-space: nowrap; }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }
@@ -348,9 +356,12 @@ Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu j
 - Awaria pojedynczego kabla zwykle odcina tylko jedno urządzenie.
 - Awaria punktu centralnego wpływa na całą sieć.
 
-<div class="packet"><span>Host A</span><span>Przełącznik</span><span>Host B</span><span>Host C</span></div>
-
-![Topologia gwiazdy](media/image11.png)
+<div class="star-diagram" role="img" aria-label="Topologia gwiazdy: trzy hosty są połączone osobnymi łączami z centralnym przełącznikiem.">
+  <div class="star-link star-link-a"></div><div class="star-link star-link-b"></div><div class="star-link star-link-c"></div>
+  <div class="star-host star-host-a">Host A</div><div class="star-host star-host-b">Host B</div><div class="star-host star-host-c">Host C</div>
+  <div class="star-switch"><strong>Przełącznik</strong><small>punkt centralny</small></div>
+  <p>Osobne łącze dla każdego hosta</p>
+</div>
 
 ---
 
