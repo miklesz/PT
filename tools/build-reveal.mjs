@@ -115,15 +115,16 @@ const html = `<!doctype html>
       .reveal .hdb3-cell.pulse-b { color: #006779; }
       .reveal .hdb3-cell.pulse-v { color: #a23d3d; }
       .reveal .hdb3-cell.pulse-v::before { border-left-color: #df8181; border-right-color: #df8181; background: #df8181; }
-      .reveal .hdb3-legend { display: flex; justify-content: center; gap: 1.4em; color: var(--pt-muted); font-size: 0.42em; }
-      .reveal .hdb3-legend strong { color: var(--pt-text); }
-      .reveal .hdb3-wave-svg { display: block; width: min(100%, 900px); max-height: 40vh; margin: 0.35em auto 0; overflow: visible; }
+      .reveal .hdb3-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em; max-width: 790px; margin: 0.1em auto 0; color: var(--pt-muted); font-size: 0.4em; }
+      .reveal .hdb3-legend > div { display: grid; grid-template-columns: auto 1fr; gap: 0.4em; align-items: center; padding: 0.35em 0.5em; border-top: 2px solid #cfd9de; text-align: left; }
+      .reveal .hdb3-legend strong { color: var(--pt-blue); font-size: 1.25em; }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 35vh; margin: 0.15em auto 0; overflow: visible; }
       .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
       .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
       .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
+      .reveal .hdb3-wave-svg .level { fill: var(--pt-muted); font-size: 23px; font-weight: 400; }
       .reveal .hdb3-wave-svg .label-b { fill: #007c91; font-size: 35px; }
       .reveal .hdb3-wave-svg .label-v { fill: #b54b4b; font-size: 35px; }
-      .reveal .hdb3-wave-svg .hint { fill: var(--pt-muted); font-size: 20px; font-weight: 400; }
       .reveal .encoding-benefit { display: grid; grid-template-columns: 1fr auto 1fr auto 1.35fr; gap: 0.35em; align-items: center; max-width: 930px; margin: 0.8em auto; }
       .reveal .encoding-benefit .benefit-step { display: grid; justify-items: center; align-content: center; gap: 0.45em; min-height: 5.2em; padding: 0.45em; border: 2px solid var(--pt-blue); background: #fff; color: var(--pt-text); font-size: 0.47em; text-align: center; }
       .reveal .encoding-benefit .benefit-step strong { color: var(--pt-blue); }

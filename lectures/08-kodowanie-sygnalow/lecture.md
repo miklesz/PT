@@ -120,16 +120,15 @@ W HDB3 ciąg czterech zer może zostać zastąpiony wzorcem:
 
 AMI (*Alternate Mark Inversion*): kolejne `1` to naprzemienne impulsy `+` i `−`, a `0` to brak impulsu.
 
-<svg class="hdb3-wave-svg" viewBox="0 0 920 230" role="img" aria-label="Przebieg B00V: dwa dodatnie impulsy oddzielone dwoma zerami">
-  <line x1="65" y1="155" x2="860" y2="155" class="axis" />
-  <line x1="65" y1="45" x2="65" y2="180" class="axis" />
-  <text x="18" y="60">+V</text><text x="28" y="162">0</text>
-  <path d="M65 155 H110 V55 H250 V155 H430 V155 H610 V55 H750 V155 H860" class="wave" />
-  <text x="175" y="35" class="label-b">B</text><text x="340" y="195">0</text><text x="520" y="195">0</text><text x="675" y="35" class="label-v">V</text>
-  <text x="135" y="215" class="hint">zwykły impuls</text><text x="625" y="215" class="hint">naruszenie</text>
+<svg class="hdb3-wave-svg" viewBox="0 0 920 260" role="img" aria-label="Przebieg B00V: dwa dodatnie impulsy oddzielone dwoma zerami">
+  <line x1="105" y1="165" x2="835" y2="165" class="axis" />
+  <line x1="105" y1="55" x2="105" y2="188" class="axis" />
+  <text x="65" y="67" class="level">+V</text><text x="73" y="174" class="level">0</text>
+  <path d="M105 165 H145 V65 H285 V165 H565 V65 H705 V165 H835" class="wave" />
+  <text x="215" y="225" class="label-b">B</text><text x="355" y="225" class="symbol">0</text><text x="495" y="225" class="symbol">0</text><text x="635" y="225" class="label-v">V</text>
 </svg>
 
-<div class="hdb3-legend"><span><strong>B</strong> zwykły impuls zgodny z AMI</span><span><strong>V</strong> celowe naruszenie polaryzacji</span></div>
+<div class="hdb3-legend"><div><strong>B</strong><span>zwykły impuls zgodny z AMI</span></div><div><strong>V</strong><span>impuls o tej samej polaryzacji, celowo naruszający AMI</span></div></div>
 
 Ponieważ `B` i `V` mają tu tę samą polaryzację dodatnią, dekoder rozpoznaje `B00V` jako zastąpione zera, a nie dane użytkownika.
 

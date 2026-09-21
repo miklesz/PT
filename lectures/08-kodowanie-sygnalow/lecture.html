@@ -99,15 +99,16 @@
       .reveal .hdb3-cell.pulse-b { color: #006779; }
       .reveal .hdb3-cell.pulse-v { color: #a23d3d; }
       .reveal .hdb3-cell.pulse-v::before { border-left-color: #df8181; border-right-color: #df8181; background: #df8181; }
-      .reveal .hdb3-legend { display: flex; justify-content: center; gap: 1.4em; color: var(--pt-muted); font-size: 0.42em; }
-      .reveal .hdb3-legend strong { color: var(--pt-text); }
-      .reveal .hdb3-wave-svg { display: block; width: min(100%, 900px); max-height: 40vh; margin: 0.35em auto 0; overflow: visible; }
+      .reveal .hdb3-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em; max-width: 790px; margin: 0.1em auto 0; color: var(--pt-muted); font-size: 0.4em; }
+      .reveal .hdb3-legend > div { display: grid; grid-template-columns: auto 1fr; gap: 0.4em; align-items: center; padding: 0.35em 0.5em; border-top: 2px solid #cfd9de; text-align: left; }
+      .reveal .hdb3-legend strong { color: var(--pt-blue); font-size: 1.25em; }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 35vh; margin: 0.15em auto 0; overflow: visible; }
       .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
       .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
       .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
+      .reveal .hdb3-wave-svg .level { fill: var(--pt-muted); font-size: 23px; font-weight: 400; }
       .reveal .hdb3-wave-svg .label-b { fill: #007c91; font-size: 35px; }
       .reveal .hdb3-wave-svg .label-v { fill: #b54b4b; font-size: 35px; }
-      .reveal .hdb3-wave-svg .hint { fill: var(--pt-muted); font-size: 20px; font-weight: 400; }
       .reveal .encoding-benefit { display: grid; grid-template-columns: 1fr auto 1fr auto 1.35fr; gap: 0.35em; align-items: center; max-width: 930px; margin: 0.8em auto; }
       .reveal .encoding-benefit .benefit-step { display: grid; justify-items: center; align-content: center; gap: 0.45em; min-height: 5.2em; padding: 0.45em; border: 2px solid var(--pt-blue); background: #fff; color: var(--pt-text); font-size: 0.47em; text-align: center; }
       .reveal .encoding-benefit .benefit-step strong { color: var(--pt-blue); }
@@ -307,16 +308,15 @@ W HDB3 ciąg czterech zer może zostać zastąpiony wzorcem:
 
 AMI (*Alternate Mark Inversion*): kolejne `1` to naprzemienne impulsy `+` i `−`, a `0` to brak impulsu.
 
-<svg class="hdb3-wave-svg" viewBox="0 0 920 230" role="img" aria-label="Przebieg B00V: dwa dodatnie impulsy oddzielone dwoma zerami">
-  <line x1="65" y1="155" x2="860" y2="155" class="axis" />
-  <line x1="65" y1="45" x2="65" y2="180" class="axis" />
-  <text x="18" y="60">+V</text><text x="28" y="162">0</text>
-  <path d="M65 155 H110 V55 H250 V155 H430 V155 H610 V55 H750 V155 H860" class="wave" />
-  <text x="175" y="35" class="label-b">B</text><text x="340" y="195">0</text><text x="520" y="195">0</text><text x="675" y="35" class="label-v">V</text>
-  <text x="135" y="215" class="hint">zwykły impuls</text><text x="625" y="215" class="hint">naruszenie</text>
+<svg class="hdb3-wave-svg" viewBox="0 0 920 260" role="img" aria-label="Przebieg B00V: dwa dodatnie impulsy oddzielone dwoma zerami">
+  <line x1="105" y1="165" x2="835" y2="165" class="axis" />
+  <line x1="105" y1="55" x2="105" y2="188" class="axis" />
+  <text x="65" y="67" class="level">+V</text><text x="73" y="174" class="level">0</text>
+  <path d="M105 165 H145 V65 H285 V165 H565 V65 H705 V165 H835" class="wave" />
+  <text x="215" y="225" class="label-b">B</text><text x="355" y="225" class="symbol">0</text><text x="495" y="225" class="symbol">0</text><text x="635" y="225" class="label-v">V</text>
 </svg>
 
-<div class="hdb3-legend"><span><strong>B</strong> zwykły impuls zgodny z AMI</span><span><strong>V</strong> celowe naruszenie polaryzacji</span></div>
+<div class="hdb3-legend"><div><strong>B</strong><span>zwykły impuls zgodny z AMI</span></div><div><strong>V</strong><span>impuls o tej samej polaryzacji, celowo naruszający AMI</span></div></div>
 
 Ponieważ `B` i `V` mają tu tę samą polaryzację dodatnią, dekoder rozpoznaje `B00V` jako zastąpione zera, a nie dane użytkownika.
 
