@@ -208,7 +208,7 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 </div>
 
 ---
-## Rozwój Wi-Fi: 1997–2024
+## Rozwój Wi-Fi
 
 <div class="wifi-speed-chart">
   <div style="--bar-height: 1.2em; --bar-color: #2b6cb0; --bar-border: #1d4f82"><span class="rate">2 Mb/s</span><span class="bar"></span><strong>802.11</strong><span class="year">1997</span></div>
@@ -221,7 +221,7 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
   <div style="--bar-height: 7.4em; --bar-color: #b8443f; --bar-border: #822f2c"><span class="rate">do 46 Gb/s</span><span class="bar"></span><strong>Wi-Fi 7</strong><span class="year">2024</span></div>
 </div>
 
-<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności PHY. Kolor: chłodny dla niższej, ciepły dla wyższej szybkości.</p>
+<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności PHY. Kolor: chłodny dla niższej, ciepły dla wyższej szybkości. Stan na 2026 r.: Wi-Fi 7 jest ostatnią ukończoną generacją; P802.11bn pozostaje projektem IEEE.</p>
 
 ---
 
