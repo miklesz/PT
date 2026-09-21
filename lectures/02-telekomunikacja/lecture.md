@@ -165,7 +165,7 @@ Zwykle jest organizowana **warstwowo**. Poszczególne architektury różnią si�
 
 - historycznie pierwsze,
 - duży wkład w rozwój komunikacji,
-- przykłady: IBM SNA, DEC DNA.
+- przykłady: IBM SNA (*Systems Network Architecture*) i DEC DNA (*Digital Network Architecture*).
 
 </div><div>
 
@@ -189,7 +189,7 @@ Zwykle jest organizowana **warstwowo**. Poszczególne architektury różnią si�
 
 <div class="columns"><div>
 
-- Model systemów otwartych: urządzeń zdolnych do wymiany informacji z innymi systemami otwartymi.
+- ISO/OSI (*International Organization for Standardization / Open Systems Interconnection*) opisuje model systemów otwartych: urządzeń zdolnych do wymiany informacji z innymi systemami.
 - Standard ISO 7498, rozwijany od końca lat 70.
 - Siedem niezależnych warstw; każda korzysta z usług warstwy niższej.
 
@@ -255,7 +255,7 @@ Komunikacja między odpowiadającymi sobie warstwami jest logiczna; faktyczna tr
 - przesyła dane między węzłami sieci,
 - wyznacza drogę danych,
 - obsługuje błędy komunikacji i podsieć transportową,
-- przykłady: IP, IPX.
+- przykłady: IP (*Internet Protocol*) i IPX (*Internetwork Packet Exchange*).
 
 ---
 
@@ -264,7 +264,7 @@ Komunikacja między odpowiadającymi sobie warstwami jest logiczna; faktyczna tr
 - usługi połączeniowe „od końca do końca”,
 - przezroczysty transfer danych między stacjami,
 - opcjonalny podział danych na mniejsze jednostki,
-- przykłady: TCP i UDP.
+- przykłady: TCP (*Transmission Control Protocol*) i UDP (*User Datagram Protocol*).
 
 ---
 
@@ -323,17 +323,17 @@ Usługi komunikacyjne dla programów użytkownika, np. przeglądarek i klientów
 
 **Aplikacyjne**
 
-FTP, Telnet, SMTP, SNMP, NetBIOS
+FTP (transfer plików), Telnet (zdalny terminal), SMTP (poczta), SNMP (zarządzanie), NetBIOS (usługi LAN)
 
 **Transportowe**
 
-TCP, SPX, NetBEUI
+TCP (niezawodny transport), SPX (transport IPX), NetBEUI (historyczny protokół LAN)
 
 </div><div>
 
 **Sieciowe**
 
-IP, IPX
+IP (*Internet Protocol*), IPX (*Internet Packet Exchange*)
 
 Zapewniają adresowanie, routing, weryfikację błędów oraz retransmisję.
 
@@ -404,7 +404,7 @@ W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują now
 
 <div class="columns"><div>
 
-Model TCP/IP łączy funkcje siedmiu warstw OSI w cztery warstwy:
+Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) łączy funkcje siedmiu warstw OSI w cztery warstwy:
 
 <div class="stack">
   <div class="tcp">Aplikacji</div><div>Transportowa</div><div class="net">Internetu</div><div class="link">Dostępu do sieci</div>

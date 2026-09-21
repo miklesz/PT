@@ -24,7 +24,7 @@ Routing to wybór drogi, którą pakiet ma dotrzeć do sieci lub hosta doceloweg
 
 - odbiera pakiet przez interfejs wejściowy,
 - analizuje adres docelowy,
-- wybiera trasę zgodnie z tablicą routingu i metryką,
+- wybiera trasę zgodnie z tablicą routingu i metryką, czyli liczbowym kosztem trasy,
 - przekazuje pakiet przez właściwy interfejs wyjściowy.
 
 <div class="routing-path" role="img" aria-label="Pakiet przechodzi z sieci A przez ruter R1, sieć tranzytową B i ruter R2 do sieci C.">
@@ -45,7 +45,7 @@ Routing to wybór drogi, którą pakiet ma dotrzeć do sieci lub hosta doceloweg
 
 Jej zadania obejmują adresowanie logiczne, wybór trasy, przekazywanie pakietów między sieciami oraz obsługę problemów z dostarczeniem danych.
 
-W Internecie kluczowym protokołem tej warstwy jest IP.
+W Internecie kluczowym protokołem tej warstwy jest IP (*Internet Protocol*).
 
 ---
 
@@ -53,11 +53,11 @@ W Internecie kluczowym protokołem tej warstwy jest IP.
 
 | Prefiks docelowy | Następny skok | Interfejs | Metryka |
 | --- | --- | --- | --- |
-| `10.0.0.0/24` | bezpośrednio | LAN 1 | 0 |
+| `10.0.0.0/24` | bezpośrednio | LAN (*Local Area Network*) 1 | 0 |
 | `192.0.2.0/24` | `10.0.0.2` | LAN 1 | 10 |
-| domyślna | `10.0.0.1` | WAN | 100 |
+| domyślna | `10.0.0.1` | WAN (*Wide Area Network*) | 100 |
 
-Najbardziej szczegółowy pasujący prefiks ma pierwszeństwo.
+Prefiks określa część adresu należącą do sieci; najbardziej szczegółowy pasujący prefiks ma pierwszeństwo.
 
 ---
 
@@ -77,7 +77,7 @@ Najbardziej szczegółowy pasujący prefiks ma pierwszeństwo.
 
 Edsger W. Dijkstra opisał algorytm najkrótszej ścieżki w 1959 roku.
 
-W routingu algorytm ten jest podstawą obliczeń SPF w protokołach stanu łącza, takich jak OSPF.
+W routingu algorytm ten jest podstawą obliczeń SPF (*Shortest Path First*) w protokołach stanu łącza, takich jak OSPF (*Open Shortest Path First*).
 
 </div></div>
 

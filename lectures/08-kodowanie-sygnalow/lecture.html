@@ -347,6 +347,8 @@ Pomiar jest poprawny, gdy rzeczywisty przebieg pozostaje w granicach wyznaczonyc
 
 ## Maska telekomunikacyjna: PDH 140 Mb/s
 
+PDH (*Plesiochronous Digital Hierarchy*) to starsza hierarchia cyfrowa stosowana w sieciach telekomunikacyjnych.
+
 <div class="media-gallery single-visual">
   <img src="media/image3.png" alt="Maska telekomunikacyjna dla PDH 140 Mb/s">
 </div>
@@ -354,6 +356,8 @@ Pomiar jest poprawny, gdy rzeczywisty przebieg pozostaje w granicach wyznaczonyc
 ---
 
 ## Maska telekomunikacyjna: PCM 2 Mb/s
+
+PCM (*Pulse Code Modulation*) oznacza cyfrowe kodowanie sygnału przez próbkowanie, kwantyzację i zapis próbek.
 
 <div class="media-gallery single-visual">
   <img src="media/image4.png" alt="Maska telekomunikacyjna dla PCM 2 Mb/s">
@@ -383,7 +387,7 @@ Pozwala to utrzymać synchronizację, nawet gdy źródło generuje długi ciąg 
 
 ## Synchronizacja w HDB3
 
-W HDB3 ciąg czterech zer może zostać zastąpiony wzorcem:
+HDB3 (*High Density Bipolar of order 3*) zastępuje ciąg czterech zer wzorcem:
 
 AMI (*Alternate Mark Inversion*): kolejne `1` to naprzemienne impulsy `+` i `−`, a `0` to brak impulsu.
 
@@ -499,7 +503,7 @@ Stan kodera jest pamięcią wcześniejszych symboli, a dekodowanie wybiera najba
   <div class="flow-arrow">→</div>
   <div class="flow-step"><strong>Rejestr</strong><code>u(k−1), u(k−2)</code><small>bity z poprzednich chwil</small></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-step"><strong>Generatory</strong><code>XOR mod 2</code><small>wybrane bity są sumowane</small></div>
+  <div class="flow-step"><strong>Generatory</strong><code>XOR mod 2</code><small>alternatywa wykluczająca: wynik 1, gdy bity są różne</small></div>
   <div class="flow-arrow">→</div>
   <div class="flow-step"><strong>Wyjście</strong><code>c₁(k), c₂(k)</code><small>bity kodowe</small></div>
 </div>

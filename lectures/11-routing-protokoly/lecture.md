@@ -26,15 +26,15 @@ Warstwa trzecia odpowiada za dostarczanie pakietów między sieciami. Jej podsta
 
 <div class="columns"><div>
 
-**IPX**
+**IPX — Internetwork Packet Exchange**
 
 Historyczny protokół sieciowy używany między innymi w środowiskach Novell NetWare.
 
 </div><div>
 
-**IP**
+**IP — Internet Protocol**
 
-Podstawowy protokół warstwy sieciowej Internetu. Współdziała z TCP, UDP oraz protokołami routingu.
+Podstawowy protokół warstwy sieciowej Internetu. Współdziała z TCP (*Transmission Control Protocol*), UDP (*User Datagram Protocol*) oraz protokołami routingu.
 
 </div></div>
 
@@ -59,10 +59,34 @@ Następnie występują adresy źródłowy i docelowy, opcje oraz dane.
 
 ---
 
+## IHL, DSCP i ECN
+
+<div class="columns"><div>
+
+**IHL — Internet Header Length**
+
+Określa długość nagłówka IP.
+
+</div><div>
+
+**DSCP — Differentiated Services Code Point**
+
+Oznacza priorytet obsługi pakietu.
+
+</div><div>
+
+**ECN — Explicit Congestion Notification**
+
+Pozwala sygnalizować przeciążenie bez odrzucenia pakietu.
+
+</div></div>
+
+---
+
 ## Ważne pola IPv4
 
-- **TTL:** ogranicza liczbę skoków; każdy ruter zmniejsza go o jeden.
-- **Protocol:** wskazuje protokół wyższej warstwy, np. TCP, UDP albo ICMP.
+- **TTL — Time To Live:** ogranicza liczbę skoków; każdy ruter zmniejsza go o jeden.
+- **Protocol:** wskazuje protokół wyższej warstwy, np. TCP, UDP albo ICMP (*Internet Control Message Protocol*).
 - **Fragmentation:** identyfikacja, flagi i przesunięcie umożliwiają składanie fragmentów.
 - **Header checksum:** kontroluje poprawność samego nagłówka.
 
@@ -70,7 +94,7 @@ Następnie występują adresy źródłowy i docelowy, opcje oraz dane.
 
 ## Fragmentacja
 
-Jeżeli pakiet IPv4 jest większy niż MTU łącza i nie ma ustawionej flagi *Don't Fragment*, może zostać podzielony na fragmenty. Fragmenty są składane przez host docelowy.
+Jeżeli pakiet IPv4 jest większy niż MTU (*Maximum Transmission Unit*, największa jednostka danych przenoszona przez łącze) i nie ma ustawionej flagi *Don't Fragment*, może zostać podzielony na fragmenty. Fragmenty są składane przez host docelowy.
 
 W praktyce preferuje się unikanie fragmentacji przez odpowiedni dobór MTU i mechanizmy *Path MTU Discovery*.
 
@@ -91,7 +115,7 @@ Host potrzebuje zwykle:
 - adresu IP i prefiksu,
 - bramy domyślnej,
 - serwerów DNS,
-- opcjonalnie informacji przekazanych automatycznie przez DHCP.
+- opcjonalnie informacji przekazanych automatycznie przez DHCP (*Dynamic Host Configuration Protocol*).
 
 ---
 
@@ -147,7 +171,7 @@ Utrzymują rekordy dla konkretnych stref DNS.
 
 System autonomiczny (AS) to zbiór sieci zarządzanych według wspólnej polityki routingu. Internet jest siecią wielu AS-ów.
 
-Każdy AS ma numer ASN.
+Każdy AS ma numer ASN (*Autonomous System Number*).
 
 ---
 
@@ -157,13 +181,13 @@ Każdy AS ma numer ASN.
 
 - wymienia osiągalne prefiksy,
 - korzysta z polityki, nie tylko najkrótszego kosztu,
-- używa atrybutów tras, np. `AS_PATH`, `LOCAL_PREF`, `MED`.
+- używa atrybutów tras: `AS_PATH` (lista przebytych AS-ów), `LOCAL_PREF` (lokalna preferencja) i `MED` (*Multi-Exit Discriminator*, sugestia preferowanego wejścia do sąsiedniego AS).
 
 ---
 
 ## Dlaczego BGP jest inne?
 
-Routing wewnątrz jednej organizacji może optymalizować metrykę techniczną. Routing między operatorami i dużymi sieciami musi uwzględniać także biznesową politykę tranzytu, peeringu i bezpieczeństwa.
+Routing wewnątrz jednej organizacji może optymalizować metrykę techniczną. Routing między operatorami i dużymi sieciami musi uwzględniać także biznesową politykę tranzytu (odpłatnego przenoszenia ruchu), peeringu (bezpośredniej wymiany ruchu) i bezpieczeństwa.
 
 ---
 

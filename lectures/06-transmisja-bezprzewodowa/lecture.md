@@ -83,7 +83,7 @@ Kluczowe elementy: urządzenia końcowe, punkty dostępowe, anteny, kontrolery i
   <div class="wan"><strong>WAN</strong><br>rozległa</div>
 </div>
 
-Rosnący zasięg: od urządzeń osobistych po sieci łączące odległe lokalizacje.
+<p class="credits">PAN to sieć osobista (*Personal Area Network*), LAN/WLAN — lokalna (przewodowa lub bezprzewodowa), MAN — miejska, a WAN — rozległa.</p>
 
 ---
 
@@ -99,12 +99,14 @@ Rosnący zasięg: od urządzeń osobistych po sieci łączące odległe lokaliza
 
 ---
 
-## PAN i Internet rzeczy
+## PAN i Internet rzeczy (IoT)
+
+IoT (*Internet of Things*) to sieć połączonych czujników i urządzeń wykonujących zadania bez stałej obsługi człowieka.
 
 - **Bluetooth:** połączenia osobiste, urządzenia peryferyjne i audio.
-- **ZigBee / IEEE 802.15.4:** energooszczędne czujniki i automatyka.
+- **ZigBee / IEEE 802.15.4:** energooszczędne czujniki i automatyka; IEEE (*Institute of Electrical and Electronics Engineers*) publikuje ten standard.
 - **Z-Wave:** domowa automatyka.
-- **Thread:** sieć mesh dla urządzeń IoT, oparta na IPv6.
+- **Thread:** sieć mesh dla urządzeń IoT, oparta na IPv6 (*Internet Protocol version 6*).
 
 ---
 
@@ -157,7 +159,7 @@ Niewielki moduł radiowy może być częścią czujnika, sterownika lub urządze
 
 ## WLAN
 
-WLAN (*Wireless Local Area Network*) zapewnia lokalny dostęp radiowy. Najczęściej kojarzymy ją z Wi-Fi, czyli implementacjami standardów IEEE 802.11.
+WLAN (*Wireless Local Area Network*) zapewnia lokalny dostęp radiowy. Najczęściej kojarzymy ją z Wi-Fi, czyli implementacjami standardów IEEE (*Institute of Electrical and Electronics Engineers*) 802.11.
 
 ---
 
@@ -223,7 +225,7 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 <div class="future-standard"><strong>P802.11bn - projekt IEEE</strong><span>Bardzo wysoka niezawodność; IEEE określa cele poprawy przepływności, opóźnienia i strat względem Wi-Fi 7, lecz nie podaje jeszcze maksymalnej szybkości PHY.</span></div>
 
-<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności PHY. Kolor: chłodny dla niższej, ciepły dla wyższej szybkości.</p>
+<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności warstwy fizycznej (PHY, *physical layer*). Kolor: chłodny dla niższej, ciepły dla wyższej szybkości.</p>
 
 ---
 
@@ -256,9 +258,9 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ## 802.11n, ac i ax
 
-- **802.11n:** MIMO, kanały 20/40 MHz.
+- **802.11n:** MIMO (*Multiple Input Multiple Output*), czyli kilka anten i strumieni, oraz kanały 20/40 MHz.
 - **802.11ac:** szerokie kanały w 5 GHz i wielostrumieniowość.
-- **802.11ax:** poprawa wydajności w zatłoczonych środowiskach, OFDMA i planowanie transmisji.
+- **802.11ax:** poprawa wydajności w zatłoczonych środowiskach, OFDMA (*Orthogonal Frequency-Division Multiple Access*) i planowanie transmisji.
 
 ---
 
@@ -266,9 +268,13 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ![Schemat konfiguracji SISO, SIMO, MISO i MIMO](media/image21.png)
 
+<p class="credits">SISO oznacza jedną antenę nadawczą i odbiorczą; SIMO — jedną nadawczą i wiele odbiorczych, a MISO — odwrotnie.</p>
+
 ---
 
 ## MU-MIMO w 802.11ac
+
+<p class="credits">MU-MIMO (*Multi-User MIMO*) rozdziela równoległe strumienie między kilku użytkowników.</p>
 
 ![Rozdzielanie strumieni do wielu użytkowników](media/image22.png)
 
@@ -328,7 +334,7 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ## WiMAX
 
-- Rodzina IEEE 802.16 dla szerokopasmowych sieci metropolitalnych.
+- WiMAX (*Worldwide Interoperability for Microwave Access*): rodzina IEEE 802.16 dla szerokopasmowych sieci metropolitalnych.
 - Przeznaczona do dostępu bezprzewodowego na większych obszarach niż WLAN.
 - Historycznie ważna alternatywa dla dostępu przewodowego, obecnie wyparta w wielu zastosowaniach przez sieci komórkowe.
 
@@ -355,6 +361,8 @@ WiMAX (*Worldwide Interoperability for Microwave Access*) obejmuje technologie s
 ---
 
 ## LoRa i LoRaWAN
+
+LoRa (*Long Range*) to technika radiowa dalekiego zasięgu, a LoRaWAN (*Long Range Wide Area Network*) określa sieciowy sposób jej użycia.
 
 - Mała przepływność, daleki zasięg i niskie zużycie energii.
 - Przeznaczone dla czujników, telemetrii i IoT.

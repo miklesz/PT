@@ -30,7 +30,7 @@ Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, wsp�
   <div class="wan"><strong>WAN</strong>rozległa<br><small>kraje, kontynenty</small></div>
 </div>
 
-Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukturą.
+<p class="credits">PAN to sieć osobista (*Personal Area Network*), LAN/WLAN — lokalna (przewodowa lub bezprzewodowa), MAN — miejska, a WAN — rozległa.</p>
 
 ---
 
@@ -117,7 +117,7 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
 
 - Dane przechodzą kolejno przez węzły.
 - W pierścieniu podwójnym drugi kierunek może zapewniać redundancję.
-- Przykładem historycznym był Token Ring.
+- Przykładem historycznym był Token Ring, w którym prawo nadawania przekazuje się jako znacznik (*token*).
 
 ---
 
@@ -186,6 +186,8 @@ Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
 ---
 
 ## Materiał: gwiazda z MSAU
+
+MSAU (*Multistation Access Unit*) to koncentrator używany historycznie w sieciach Token Ring.
 
 <video controls preload="metadata" poster="media/image13.png"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
 

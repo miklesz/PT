@@ -139,11 +139,11 @@ Wybór jest kompromisem między opóźnieniem a ryzykiem kolizji.
 
 ## Unikanie kolizji
 
-*Collision Avoidance* stosuje się w szczególności w Wi-Fi, gdzie wykrywanie kolizji podczas własnego nadawania jest trudne.
+CSMA/CA (*Carrier Sense Multiple Access with Collision Avoidance*, wielodostęp z nasłuchem nośnej i unikaniem kolizji) stosuje się w szczególności w Wi-Fi, gdzie wykrywanie kolizji podczas własnego nadawania jest trudne.
 
 - nasłuchiwanie kanału,
 - losowy czas oczekiwania (*backoff*),
-- opcjonalnie RTS/CTS,
+- opcjonalnie RTS/CTS (*Request to Send / Clear to Send*), czyli krótka wymiana rezerwująca medium,
 - potwierdzenia odbioru.
 
 ![Jednoczesna chęć nadawania w CSMA](media/image10.png)
@@ -172,7 +172,7 @@ Węzeł radiowy może nie słyszeć innego węzła, choć oba zakłócają odbio
 
 ## Wykrywanie kolizji
 
-*Collision Detection* było stosowane w klasycznym, współdzielonym Ethernecie:
+CSMA/CD (*Carrier Sense Multiple Access with Collision Detection*, wielodostęp z nasłuchem nośnej i wykrywaniem kolizji) było stosowane w klasycznym, współdzielonym Ethernecie:
 
 1. nasłuchaj medium,
 2. rozpocznij transmisję,
