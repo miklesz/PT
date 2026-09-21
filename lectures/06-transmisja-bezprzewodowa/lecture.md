@@ -210,16 +210,18 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 ---
 ## Rozwój Wi-Fi: 1997–2024
 
-<div class="wifi-timeline">
-  <div><strong>IEEE 802.11</strong><br>1997<br>2,4 GHz, do 2 Mb/s</div>
-  <div><strong>Wi-Fi 1</strong><br>802.11b, 1999<br>2,4 GHz, do 11 Mb/s</div>
-  <div><strong>Wi-Fi 2</strong><br>802.11a, 1999<br>5 GHz, do 54 Mb/s</div>
-  <div><strong>Wi-Fi 3</strong><br>802.11g, 2003<br>2,4 GHz, do 54 Mb/s</div>
-  <div><strong>Wi-Fi 4</strong><br>802.11n, 2009<br>MIMO, 2,4/5 GHz</div>
-  <div><strong>Wi-Fi 5</strong><br>802.11ac, 2013<br>większa przepływność w 5 GHz</div>
-  <div><strong>Wi-Fi 6 / 6E</strong><br>802.11ax, 2021<br>OFDMA; 6 GHz w 6E</div>
-  <div><strong>Wi-Fi 7</strong><br>802.11be, 2024<br>320 MHz, Multi-Link Operation</div>
+<div class="wifi-speed-chart">
+  <div style="--bar-height: 1.2em"><span class="rate">2 Mb/s</span><span class="bar"></span><strong>802.11</strong><span class="year">1997</span></div>
+  <div style="--bar-height: 2.3em"><span class="rate">11 Mb/s</span><span class="bar"></span><strong>Wi-Fi 1</strong><span class="year">1999</span></div>
+  <div style="--bar-height: 3.4em"><span class="rate">54 Mb/s</span><span class="bar"></span><strong>Wi-Fi 2</strong><span class="year">1999</span></div>
+  <div style="--bar-height: 3.4em"><span class="rate">54 Mb/s</span><span class="bar"></span><strong>Wi-Fi 3</strong><span class="year">2003</span></div>
+  <div style="--bar-height: 4.7em"><span class="rate">600 Mb/s</span><span class="bar"></span><strong>Wi-Fi 4</strong><span class="year">2009</span></div>
+  <div style="--bar-height: 6em"><span class="rate">6,93 Gb/s</span><span class="bar"></span><strong>Wi-Fi 5</strong><span class="year">2013</span></div>
+  <div style="--bar-height: 6.4em"><span class="rate">9,61 Gb/s</span><span class="bar"></span><strong>Wi-Fi 6 / 6E</strong><span class="year">2021</span></div>
+  <div style="--bar-height: 7.4em"><span class="rate">do 46 Gb/s</span><span class="bar"></span><strong>Wi-Fi 7</strong><span class="year">2024</span></div>
 </div>
+
+<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności PHY.</p>
 
 ---
 
