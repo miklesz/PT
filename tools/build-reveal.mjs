@@ -135,8 +135,8 @@ const html = `<!doctype html>
       .reveal .media-gallery figure { margin: 0; }
       .reveal .media-gallery figcaption { margin-top: 0.25em; color: var(--pt-text); font-size: 0.46em; font-weight: 700; text-align: center; }
       .reveal .media-gallery.four { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; margin: 0.25em auto; }
-      .reveal .media-gallery.aloha-gallery { grid-template-columns: 1fr; max-width: 860px; margin: 0.2em auto; }
-      .reveal .media-gallery.aloha-gallery img { max-height: 21vh; }
+      .reveal .media-gallery.single-visual { grid-template-columns: 1fr; max-width: 1100px; margin: 0.25em auto; }
+      .reveal .media-gallery.single-visual img { max-height: 56vh; }
       .reveal .media-gallery.csma-cd-gallery { grid-template-columns: 1fr; max-width: 920px; margin: 0.2em auto; }
       .reveal .media-gallery.csma-cd-gallery img { max-height: 30vh; }
       .reveal .slide-number { color: var(--pt-muted); left: 22px; right: auto; bottom: 18px; }

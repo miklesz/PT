@@ -79,11 +79,25 @@ To prosty protokół, ale przy większym obciążeniu często dochodzi do kolizj
 
 ---
 
-## ALOHA: potwierdzenia i kolizje
+## ALOHA: potwierdzenie odbioru
 
-<div class="media-gallery aloha-gallery">
+<div class="media-gallery single-visual">
   <img src="media/image6.png" alt="Potwierdzenie w ALOHA">
+</div>
+
+---
+
+## ALOHA: kolizje
+
+<div class="media-gallery single-visual">
   <img src="media/image7.png" alt="Kolizje w ALOHA">
+</div>
+
+---
+
+## Szczelinowy ALOHA
+
+<div class="media-gallery single-visual">
   <img src="media/image9.png" alt="Szczelinowy ALOHA">
 </div>
 
