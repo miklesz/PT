@@ -174,7 +174,7 @@ Dotyczy przede wszystkim sieci nadawczych: radia, telewizji i portali, w któryc
 
 </div><div>
 
-<img src="media/image6.jpg" alt="David Sarnoff" height="210">
+<img src="media/image6.jpg" alt="David Sarnoff" height="380">
 
 </div></div>
 
