@@ -178,9 +178,16 @@ Węzeł radiowy może nie słyszeć innego węzła, choć oba zakłócają odbio
 
 ## Kolizja w CSMA/CD: propagacja
 
-<div class="media-gallery four">
+<div class="media-gallery csma-cd-gallery">
   <img src="media/image14.png" alt="Kolizja CSMA/CD - rozpoczęcie transmisji">
   <img src="media/image15.png" alt="Kolizja CSMA/CD - druga stacja rozpoczyna transmisję">
+</div>
+
+---
+
+## Kolizja w CSMA/CD: wykrycie
+
+<div class="media-gallery csma-cd-gallery">
   <img src="media/image16.png" alt="Kolizja CSMA/CD - wykrycie zderzenia sygnałów">
   <img src="media/image17.png" alt="Kolizja CSMA/CD - obie stacje mają świadomość kolizji">
 </div>
