@@ -24,4 +24,4 @@ GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
 
 ## Oryginały
 
-Pliki `*.pptx` w tym katalogu są archiwum źródłowym prezentacji PT. Konwerter znajduje się w [tools/convert-pt.mjs](../tools/convert-pt.mjs).
+Pliki `*.pptx` w tym katalogu są archiwum źródłowym prezentacji PT. Konwerter znajduje się w [tools/convert-pt.mjs](tools/convert-pt.mjs).
