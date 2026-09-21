@@ -267,6 +267,8 @@ Kable z linką nośną prowadzi się między budynkami; dostępne są warianty U
 
 <div class="columns"><div>
 
+W dokumentacji technicznej można spotkać oznaczenie **8P8C**: osiem pozycji i osiem styków złącza.
+
 <div class="packet"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
 
 W kablu prostym kolejność żył jest taka sama na obu końcach. Kabel skrzyżowany zamienia pary transmisyjne, co historycznie pozwalało łączyć dwa podobne urządzenia bez przełącznika.
