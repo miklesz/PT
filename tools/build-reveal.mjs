@@ -56,6 +56,18 @@ const html = `<!doctype html>
       .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
       .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
       .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .shared-medium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em 1.3em; align-items: end; max-width: 1000px; margin: 0.8em auto 0; }
+      .reveal .radio-station { display: grid; justify-items: center; gap: 0.16em; font-size: 0.62em; }
+      .reveal .radio-station .node { width: 4.4em; height: 3.1em; position: relative; display: grid; place-content: center; border: 4px solid var(--station); background: #fff; color: var(--station); font-weight: 700; }
+      .reveal .radio-station .node::before { content: ''; position: absolute; top: -1.2em; left: calc(50% - 2px); width: 4px; height: 1.2em; background: var(--station); }
+      .reveal .radio-station .node::after { content: ''; position: absolute; top: -1.7em; left: calc(50% - 1.1em); width: 2.2em; height: 1.1em; border: 3px solid var(--station); border-bottom: 0; border-radius: 50% 50% 0 0; }
+      .reveal .radio-station .role { color: var(--pt-muted); font-size: 0.82em; }
+      .reveal .station-a { --station: #007c91; }
+      .reveal .station-b { --station: #b35c2e; }
+      .reveal .station-c { --station: #4f7f3d; }
+      .reveal .shared-channel { grid-column: 1 / -1; order: -1; min-height: 3.1em; display: grid; place-content: center; position: relative; overflow: hidden; color: #fff; background: #003b70; font-size: 0.68em; font-weight: 700; }
+      .reveal .shared-channel::before { content: ''; position: absolute; left: 7%; right: 7%; top: 50%; border-top: 3px solid #85c4d0; }
+      .reveal .shared-channel::after { content: 'ramka ze stacji A'; position: absolute; left: 18%; top: calc(50% - 1.45em); padding: 0.32em 0.6em; background: #007c91; font-size: 0.72em; font-weight: 700; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
