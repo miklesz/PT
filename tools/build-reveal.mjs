@@ -124,6 +124,8 @@ const html = `<!doctype html>
       .reveal .media-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; align-items: center; }
       .reveal .media-gallery img { width: 100%; max-width: 100%; max-height: 48vh; margin: 0; }
       .reveal .media-gallery.four { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; margin: 0.25em auto; }
+      .reveal .media-gallery.aloha-gallery { grid-template-columns: 1fr; max-width: 860px; margin: 0.2em auto; }
+      .reveal .media-gallery.aloha-gallery img { max-height: 21vh; }
       .reveal .slide-number { color: var(--pt-muted); left: 22px; right: auto; bottom: 18px; }
       .reveal .controls { right: 18px; bottom: 18px; }
       @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
