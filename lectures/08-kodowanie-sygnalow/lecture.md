@@ -28,9 +28,13 @@ Odległość Hamminga to liczba pozycji, na których dwa ciągi o tej samej dłu
 `d(10001, 10000) = 1`
 `d(00010, 10100) = 3`
 
-![Wzór na odległość Hamminga](media/image1.png)
-
 Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji błędów.
+
+---
+
+## Wzór na odległość Hamminga
+
+![Wzór na odległość Hamminga](media/image1.png)
 
 ---
 
