@@ -1,6 +1,6 @@
 # Transmisja sygnałów - systemy dostępu wielokrotnego
 
-Oryginał: [07 Transmisja sygnałów - systemy dostępu wielokrotnego.pptx](../07%20Transmisja%20sygna%C5%82o%CC%81w%20-%20systemy%20doste%CC%A8pu%20wielokrotnego.pptx)
+Oryginał: [07 Transmisja sygnałów - systemy dostępu wielokrotnego.pptx](../archive/original-pptx/07%20Transmisja%20sygna%C5%82o%CC%81w%20-%20systemy%20doste%CC%A8pu%20wielokrotnego.pptx)
 
 ## Slajdy
 

@@ -1,6 +1,6 @@
 # Wprowadzenie do przedmiotu
 
-Oryginał: [01 Wprowadzenie do przedmiotu.pptx](../01%20Wprowadzenie%20do%20przedmiotu.pptx)
+Oryginał: [01 Wprowadzenie do przedmiotu.pptx](../archive/original-pptx/01%20Wprowadzenie%20do%20przedmiotu.pptx)
 
 ## Slajdy
 

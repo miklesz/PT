@@ -5,9 +5,9 @@ import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statS
 import { basename, dirname, extname, join, relative } from 'node:path';
 
 const root = dirname(dirname(new URL(import.meta.url).pathname));
-const sourceDir = root;
-const outputDir = join(sourceDir, 'web');
-const notesDir = join(sourceDir, 'notes');
+const sourceDir = join(root, 'archive', 'original-pptx');
+const outputDir = join(root, 'web');
+const notesDir = join(root, 'notes');
 const buildDir = join(root, '.build', 'pt-web');
 const requestedDecks = new Set(process.argv.slice(2));
 const allPresentations = readdirSync(sourceDir)

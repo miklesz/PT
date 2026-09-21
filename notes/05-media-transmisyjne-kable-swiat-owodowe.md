@@ -1,6 +1,6 @@
 # Media transmisyjne - kable światłowodowe
 
-Oryginał: [05 Media transmisyjne - kable światłowodowe.pptx](../05%20Media%20transmisyjne%20-%20kable%20s%CC%81wiat%C5%82owodowe.pptx)
+Oryginał: [05 Media transmisyjne - kable światłowodowe.pptx](../archive/original-pptx/05%20Media%20transmisyjne%20-%20kable%20s%CC%81wiat%C5%82owodowe.pptx)
 
 ## Slajdy
 

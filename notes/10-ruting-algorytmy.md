@@ -1,6 +1,6 @@
 # Ruting - algorytmy
 
-Oryginał: [10 Ruting - algorytmy.pptx](../10%20Ruting%20-%20algorytmy.pptx)
+Oryginał: [10 Ruting - algorytmy.pptx](../archive/original-pptx/10%20Ruting%20-%20algorytmy.pptx)
 
 ## Slajdy
 

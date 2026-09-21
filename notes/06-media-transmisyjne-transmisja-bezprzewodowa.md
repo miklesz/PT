@@ -1,6 +1,6 @@
 # Media transmisyjne - transmisja bezprzewodowa
 
-Oryginał: [06 Media transmisyjne - transmisja bezprzewodowa.pptx](../06%20Media%20transmisyjne%20-%20transmisja%20bezprzewodowa.pptx)
+Oryginał: [06 Media transmisyjne - transmisja bezprzewodowa.pptx](../archive/original-pptx/06%20Media%20transmisyjne%20-%20transmisja%20bezprzewodowa.pptx)
 
 ## Slajdy
 

@@ -1,6 +1,6 @@
 # Ruting - protokoły
 
-Oryginał: [11 Ruting - protokoły.pptx](../11%20Ruting%20-%20protoko%C5%82y.pptx)
+Oryginał: [11 Ruting - protokoły.pptx](../archive/original-pptx/11%20Ruting%20-%20protoko%C5%82y.pptx)
 
 ## Slajdy
 

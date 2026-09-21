@@ -1,6 +1,6 @@
 # Co to jest telekomunikacja
 
-Oryginał: [02 Co to jest telekomunikacja.pptx](../02%20Co%20to%20jest%20telekomunikacja.pptx)
+Oryginał: [02 Co to jest telekomunikacja.pptx](../archive/original-pptx/02%20Co%20to%20jest%20telekomunikacja.pptx)
 
 ## Slajdy
 

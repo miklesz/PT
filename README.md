@@ -35,6 +35,6 @@ GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
 - [10. Ruting: algorytmy](notes/10-ruting-algorytmy.md)
 - [11. Ruting: protokoły](notes/11-ruting-protoko-y.md)
 
-## Oryginały
+## Archiwum źródłowe
 
-Pliki `*.pptx` w tym katalogu są archiwum źródłowym prezentacji PT. Konwerter znajduje się w [tools/convert-pt.mjs](tools/convert-pt.mjs).
+Oryginalne pliki PowerPoint są przechowywane w [`archive/original-pptx/`](archive/original-pptx/). Konwerter starszych podglądów znajduje się w [tools/convert-pt.mjs](tools/convert-pt.mjs).

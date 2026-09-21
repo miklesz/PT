@@ -1,6 +1,6 @@
 # Kodowanie sygnałów
 
-Oryginał: [08 Kodowanie sygnałów.pptx](../08%20Kodowanie%20sygna%C5%82o%CC%81w.pptx)
+Oryginał: [08 Kodowanie sygnałów.pptx](../archive/original-pptx/08%20Kodowanie%20sygna%C5%82o%CC%81w.pptx)
 
 ## Slajdy
 

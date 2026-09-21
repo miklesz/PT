@@ -1,6 +1,6 @@
 # Podstawowe pojęcia, jednostki, ograniczenia
 
-Oryginał: [03 Podstawowe pojęcia, jednostki, ograniczenia.pptx](../03%20Podstawowe%20poje%CC%A8cia%2C%20jednostki%2C%20ograniczenia.pptx)
+Oryginał: [03 Podstawowe pojęcia, jednostki, ograniczenia.pptx](../archive/original-pptx/03%20Podstawowe%20poje%CC%A8cia%2C%20jednostki%2C%20ograniczenia.pptx)
 
 ## Slajdy
 

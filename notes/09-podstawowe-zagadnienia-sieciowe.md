@@ -1,6 +1,6 @@
 # Podstawowe zagadnienia sieciowe
 
-Oryginał: [09 Podstawowe zagadnienia sieciowe.pptx](../09%20Podstawowe%20zagadnienia%20sieciowe.pptx)
+Oryginał: [09 Podstawowe zagadnienia sieciowe.pptx](../archive/original-pptx/09%20Podstawowe%20zagadnienia%20sieciowe.pptx)
 
 ## Slajdy
 

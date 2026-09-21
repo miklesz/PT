@@ -1,6 +1,6 @@
 # Media transmisyjne - kable miedziane w telekomunikacji i teleinformatyce
 
-Oryginał: [04 Media transmisyjne - kable miedziane w telekomunikacji i teleinformatyce.pptx](../04%20Media%20transmisyjne%20-%20kable%20miedziane%20w%20telekomunikacji%20i%20teleinformatyce.pptx)
+Oryginał: [04 Media transmisyjne - kable miedziane w telekomunikacji i teleinformatyce.pptx](../archive/original-pptx/04%20Media%20transmisyjne%20-%20kable%20miedziane%20w%20telekomunikacji%20i%20teleinformatyce.pptx)
 
 ## Slajdy
 
