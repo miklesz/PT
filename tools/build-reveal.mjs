@@ -64,6 +64,16 @@ const html = `<!doctype html>
       .reveal .coax-legend .shield::before { background: #8c979d; }
       .reveal .coax-legend .insulation::before { background: #e8e4c7; }
       .reveal .coax-legend .core::before { background: #bd6b2d; }
+      .reveal .fiber-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
+      .reveal .fiber-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #293b46; }
+      .reveal .fiber-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
+      .reveal .fiber-cladding { inset: 13%; background: #c6e4e7; }
+      .reveal .fiber-core { inset: 37%; background: #f2be58; }
+      .reveal .fiber-legend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.3em; font-size: 0.55em; text-align: center; }
+      .reveal .fiber-legend span::before { content: ''; display: inline-block; width: 0.8em; height: 0.8em; margin-right: 0.3em; vertical-align: -0.05em; border-radius: 50%; }
+      .reveal .fiber-legend .coating::before { background: #293b46; }
+      .reveal .fiber-legend .cladding::before { background: #c6e4e7; }
+      .reveal .fiber-legend .core::before { background: #f2be58; }
       .reveal .media-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; align-items: center; }
       .reveal .media-gallery img { width: 100%; max-width: 100%; max-height: 48vh; margin: 0; }
       .reveal .slide-number { color: var(--pt-muted); left: 22px; right: auto; bottom: 18px; }

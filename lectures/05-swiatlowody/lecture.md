@@ -21,11 +21,20 @@
 
 ## Co to jest światłowód?
 
+<div class="fiber-layout"><div>
+
+<div class="fiber-cross-section"><div class="fiber-cladding"><div class="fiber-core"></div></div></div>
+<div class="fiber-legend">
+  <span class="coating">Powłoka ochronna</span><span class="cladding">Płaszcz</span><span class="core">Rdzeń</span>
+</div>
+
+</div><div>
+
 Światłowód prowadzi światło wewnątrz włókna o odpowiednio dobranych właściwościach optycznych.
 
-<div class="packet"><span>Rdzeń</span><span>Płaszcz</span><span>Powłoka ochronna</span></div>
-
 Informacja jest kodowana jako modulowana wiązka światła, zwykle pochodząca z lasera albo diody LED.
+
+</div></div>
 
 ---
 
