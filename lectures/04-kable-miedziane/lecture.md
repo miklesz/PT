@@ -283,14 +283,25 @@ W dokumentacji technicznej można spotkać oznaczenie **8P8C**: osiem pozycji i 
 
 <div class="packet"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
 
-W kablu prostym kolejność żył jest taka sama na obu końcach. Kabel skrzyżowany zamienia pary transmisyjne, co historycznie pozwalało łączyć dwa podobne urządzenia bez przełącznika.
+Numerację ogląda się od strony styków wtyku, przy zatrzasku skierowanym w dół.
 
 </div><div>
 
-![Kolory żył we wtyku RJ-45](media/image25.png)
-![Schemat zakończenia przewodów](media/image27.png)
-![Schemat kabla skrzyżowanego](media/image28.png)
-![Budowa ekranowanego przewodu](media/image29.png)
+<img src="media/image25.png" alt="Kolory żył we wtyku RJ-45" height="360">
+
+</div></div>
+
+---
+
+## Kabel prosty i skrzyżowany
+
+<div class="columns"><div>
+
+W kablu prostym kolejność żył jest taka sama na obu końcach. Kabel skrzyżowany zamienia pary transmisyjne; historycznie pozwalało to łączyć dwa podobne urządzenia bez przełącznika.
+
+</div><div>
+
+<img src="media/image28.png" alt="Schemat kabla skrzyżowanego" height="360">
 
 </div></div>
 
