@@ -27,7 +27,17 @@ Routing to wybór drogi, którą pakiet ma dotrzeć do sieci lub hosta doceloweg
 - wybiera trasę zgodnie z tablicą routingu i metryką,
 - przekazuje pakiet przez właściwy interfejs wyjściowy.
 
-<div class="packet"><span>Sieć A</span><span>Ruter</span><span>Sieć B</span><span>Ruter</span><span>Sieć C</span></div>
+<div class="routing-path" role="img" aria-label="Pakiet przechodzi z sieci A przez ruter R1, sieć tranzytową B i ruter R2 do sieci C.">
+  <div class="routing-network source"><strong>Sieć A</strong><small>źródłowa</small></div>
+  <div class="routing-arrow">→<small>pakiet</small></div>
+  <div class="routing-router"><strong>R1</strong><small>ruter</small></div>
+  <div class="routing-arrow">→</div>
+  <div class="routing-network transit"><strong>Sieć B</strong><small>tranzytowa</small></div>
+  <div class="routing-arrow">→</div>
+  <div class="routing-router"><strong>R2</strong><small>ruter</small></div>
+  <div class="routing-arrow">→</div>
+  <div class="routing-network destination"><strong>Sieć C</strong><small>docelowa</small></div>
+</div>
 
 ---
 

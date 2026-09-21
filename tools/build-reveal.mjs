@@ -211,6 +211,11 @@ const html = `<!doctype html>
       .reveal .mesh-formula .formula-legend { display: flex; justify-content: center; gap: 1.3em; margin-top: 0.55em; color: var(--pt-muted); font-family: Arial, Helvetica, sans-serif; font-size: 0.43em; font-style: normal; }
       .reveal .mesh-formula .formula-legend strong { margin-right: 0.22em; color: #007c91; }
       .reveal .mesh-lab { grid-template-columns: minmax(230px, 1fr); max-width: 620px; margin: 0.5em auto 0; }.reveal .mesh-lab .lab-result { min-height: 0; text-align: center; }
+      .reveal .routing-path { display: grid; grid-template-columns: 1.25fr 0.45fr 0.9fr 0.45fr 1.25fr 0.45fr 0.9fr 0.45fr 1.25fr; gap: 0.12em; align-items: center; max-width: 1080px; margin: 0.9em auto 0.2em; }
+      .reveal .routing-network, .reveal .routing-router { display: grid; place-content: center; min-height: 3.3em; padding: 0.35em 0.25em; border: 3px solid var(--pt-blue); background: #fff; color: var(--pt-ink); font-size: 0.52em; line-height: 1.1; text-align: center; }
+      .reveal .routing-network { border-top-width: 7px; }.reveal .routing-network.source { border-top-color: #007c91; }.reveal .routing-network.transit { border-top-color: #b35c2e; }.reveal .routing-network.destination { border-top-color: #4f7f3d; }
+      .reveal .routing-router { border-color: #007c91; background: #e9f8fa; }.reveal .routing-network small, .reveal .routing-router small { margin-top: 0.22em; color: var(--pt-muted); font-size: 0.76em; font-weight: 600; }
+      .reveal .routing-arrow { display: grid; justify-items: center; color: #007c91; font-size: 1.05em; font-weight: 700; line-height: 0.8; }.reveal .routing-arrow small { margin-top: 0.2em; color: var(--pt-muted); font-size: 0.36em; font-weight: 600; }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }
