@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Routing: algorytmy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css">
+    <style>
+      :root { --pt-blue: #003b70; --pt-cyan: #007c91; --pt-ink: #13212e; --pt-muted: #587083; }
+      .reveal { color: var(--pt-ink); font-family: Arial, Helvetica, sans-serif; font-size: 34px; }
+      .reveal .slides { text-align: left; }
+      .reveal h1, .reveal h2, .reveal h3 { color: var(--pt-blue); font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+      .reveal h1 { font-size: 1.75em; margin-bottom: 0.35em; }
+      .reveal h2 { font-size: 1.3em; margin-bottom: 0.55em; }
+      .reveal p, .reveal li { line-height: 1.32; }
+      .reveal ul { margin-top: 0.25em; }
+      .reveal li + li { margin-top: 0.25em; }
+      .reveal a { color: var(--pt-cyan); text-decoration: underline; }
+      .reveal strong { color: var(--pt-blue); }
+      .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
+      .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal .title-slide { text-align: center; }
+      .reveal .title-slide h1 { font-size: 1.9em; }
+      .reveal .title-slide p { color: var(--pt-muted); }
+      .reveal .section-slide { display: grid !important; place-content: center; text-align: center; }
+      .reveal .section-slide h1, .reveal .section-slide h2 { font-size: 2em; }
+      .reveal .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; align-items: start; }
+      .reveal .small { font-size: 0.72em; }
+      .reveal .credits { color: var(--pt-muted); font-size: 0.52em; margin-top: 0.35em; }
+      .reveal .stack { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.22em; margin: 0.35em auto; max-width: 950px; }
+      .reveal .stack > div { border: 2px solid var(--pt-blue); padding: 0.35em 0.18em; min-height: 4.3em; display: grid; place-content: center; text-align: center; font-size: 0.55em; }
+      .reveal .stack .tcp { grid-column: span 3; background: #dceef2; }
+      .reveal .stack .net { background: #e7edf6; }
+      .reveal .stack .link { grid-column: span 2; background: #eff0df; }
+      .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
+      .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
+      .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .slide-number { color: var(--pt-muted); }
+      @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="reveal"><div class="slides">
+      <section data-markdown><textarea data-template>
+<!-- .slide: class="title-slide" -->
+
+# Routing: algorytmy
+
+---
+
+## Plan wykładu
+
+- routing i rola rutera,
+- warstwa sieciowa,
+- algorytm Dijkstry,
+- Ford-Fulkerson i Dinic,
+- związek algorytmów z protokołami warstwy sieciowej.
+
+---
+
+## Routing
+
+Routing to wybór drogi, którą pakiet ma dotrzeć do sieci lub hosta docelowego. Ruter przekazuje pakiety między różnymi sieciami na podstawie tablicy routingu.
+
+---
+
+## Ruter
+
+- odbiera pakiet przez interfejs wejściowy,
+- analizuje adres docelowy,
+- wybiera trasę zgodnie z tablicą routingu i metryką,
+- przekazuje pakiet przez właściwy interfejs wyjściowy.
+
+<div class="packet"><span>Sieć A</span><span>Ruter</span><span>Sieć B</span><span>Ruter</span><span>Sieć C</span></div>
+
+---
+
+## Warstwa sieciowa
+
+Jej zadania obejmują adresowanie logiczne, wybór trasy, przekazywanie pakietów między sieciami oraz obsługę problemów z dostarczeniem danych.
+
+W Internecie kluczowym protokołem tej warstwy jest IP.
+
+---
+
+## Tablica routingu
+
+| Prefiks docelowy | Następny skok | Interfejs | Metryka |
+| --- | --- | --- | --- |
+| `10.0.0.0/24` | bezpośrednio | LAN 1 | 0 |
+| `192.0.2.0/24` | `10.0.0.2` | LAN 1 | 10 |
+| domyślna | `10.0.0.1` | WAN | 100 |
+
+Najbardziej szczegółowy pasujący prefiks ma pierwszeństwo.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Algorytm Dijkstry
+
+---
+
+## Problem najkrótszej ścieżki
+
+Mamy graf z nieujemnymi wagami krawędzi. Celem jest znalezienie najkrótszej drogi z węzła źródłowego do pozostałych węzłów.
+
+Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
+
+---
+
+## Dijkstra: kroki
+
+1. Nadaj źródłu odległość `0`, pozostałym nieskończoność.
+2. Wybierz nieodwiedzony węzeł o najmniejszej znanej odległości.
+3. Zaktualizuj odległości jego sąsiadów przez relaksację krawędzi.
+4. Oznacz węzeł jako odwiedzony.
+5. Powtarzaj, aż nie ma osiągalnych węzłów.
+
+---
+
+## Przykład relaksacji
+
+Jeśli bieżący koszt do `A` wynosi `4`, a krawędź `A → B` ma wagę `3`, kandydat dla `B` wynosi `7`.
+
+`dist(B) = min(dist(B), dist(A) + w(A,B))`
+
+---
+
+## Właściwości Dijkstry
+
+- Działa dla wag nieujemnych.
+- Po wyborze węzła o najmniejszym koszcie jego wynik jest ostateczny.
+- Stanowi podstawę algorytmów stanu łącza, takich jak SPF w OSPF.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Przepływ w sieci
+
+---
+
+## Ford-Fulkerson
+
+Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótszej ścieżki.
+
+- Każda krawędź ma pojemność.
+- Szukamy ścieżek powiększających od źródła do ujścia.
+- Zwiększamy przepływ o minimalną wolną pojemność na znalezionej ścieżce.
+
+---
+
+## Sieć rezydualna
+
+Po przesłaniu części przepływu pozostaje sieć rezydualna:
+
+- pokazuje, ile przepływu można jeszcze wysłać,
+- zawiera też krawędzie wsteczne, pozwalające skorygować wcześniejszą decyzję.
+
+---
+
+## Dinic
+
+Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
+
+1. buduje graf poziomów algorytmem BFS,
+2. wyszukuje przepływ blokujący w tym grafie,
+3. powtarza do braku ścieżki z źródła do ujścia.
+
+---
+
+## Dijkstra, Ford-Fulkerson, Dinic
+
+| Algorytm | Problem | Wynik |
+| --- | --- | --- |
+| Dijkstra | najkrótsza ścieżka | minimalny koszt dojścia |
+| Ford-Fulkerson | maksymalny przepływ | największy możliwy przepływ |
+| Dinic | maksymalny przepływ | wydajniejsze przetwarzanie przepływu |
+
+---
+
+## Od algorytmów do protokołów
+
+Algorytmy są modelem decyzji trasowania. Protokoły routingu określają, jak rutery wymieniają informacje, budują widok sieci i aktualizują tablice.
+
+---
+
+## Podsumowanie
+
+- Ruter kieruje pakiety według tablicy routingu.
+- Dijkstra znajduje najkrótsze ścieżki przy nieujemnych wagach.
+- Ford-Fulkerson i Dinic dotyczą maksymalnego przepływu.
+- Następny krok to protokoły routingu używane w rzeczywistych sieciach.
+
+      </textarea></section>
+    </div></div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({ hash: true, slideNumber: 'c/t', controlsTutorial: false, transition: 'fade', transitionSpeed: 'fast', plugins: [RevealMarkdown] });
+    </script>
+  </body>
+</html>
