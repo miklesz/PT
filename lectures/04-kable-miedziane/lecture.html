@@ -36,6 +36,18 @@
       .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
       .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
       .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
+      .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
+      .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
+      .reveal .coax-insulation { inset: 12%; background: #e8e4c7; }
+      .reveal .coax-shield { inset: 25%; background: repeating-radial-gradient(circle, #7b8790 0 3px, #c6ccd0 4px 6px); }
+      .reveal .coax-core { inset: 40%; background: #bd6b2d; }
+      .reveal .coax-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.28em 0.6em; font-size: 0.55em; }
+      .reveal .coax-legend span::before { content: ''; display: inline-block; width: 0.8em; height: 0.8em; margin-right: 0.35em; vertical-align: -0.05em; border-radius: 50%; }
+      .reveal .coax-legend .outer::before { background: #27333b; }
+      .reveal .coax-legend .shield::before { background: #8c979d; }
+      .reveal .coax-legend .insulation::before { background: #e8e4c7; }
+      .reveal .coax-legend .core::before { background: #bd6b2d; }
       .reveal .slide-number { color: var(--pt-muted); left: 22px; right: auto; bottom: 18px; }
       .reveal .controls { right: 18px; bottom: 18px; }
       @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
@@ -69,17 +81,21 @@
 
 ## Budowa kabla koncentrycznego
 
-<div class="columns"><div>
+<div class="coax-layout"><div>
 
-<div class="packet"><span>Przewód miedziany</span><span>Izolacja wewnętrzna</span><span>Oplot / ekran</span><span>Powłoka zewnętrzna</span></div>
+<div class="coax-cross-section">
+  <div class="coax-insulation"><div class="coax-shield"><div class="coax-core"></div></div></div>
+</div>
+<div class="coax-legend">
+  <span class="outer">Powłoka zewnętrzna</span><span class="shield">Oplot / ekran</span>
+  <span class="insulation">Izolacja wewnętrzna</span><span class="core">Przewód miedziany</span>
+</div>
+
+</div><div>
 
 - Angielska nazwa: *coaxial cable*.
 - Ekran ogranicza wpływ zakłóceń elektromagnetycznych.
 - W sieciach komputerowych został w większości wyparty przez skrętkę.
-
-</div><div>
-
-![Budowa kabla koncentrycznego](media/image2.png)
 
 </div></div>
 

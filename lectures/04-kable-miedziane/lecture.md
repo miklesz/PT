@@ -23,17 +23,21 @@
 
 ## Budowa kabla koncentrycznego
 
-<div class="columns"><div>
+<div class="coax-layout"><div>
 
-<div class="packet"><span>Przewód miedziany</span><span>Izolacja wewnętrzna</span><span>Oplot / ekran</span><span>Powłoka zewnętrzna</span></div>
+<div class="coax-cross-section">
+  <div class="coax-insulation"><div class="coax-shield"><div class="coax-core"></div></div></div>
+</div>
+<div class="coax-legend">
+  <span class="outer">Powłoka zewnętrzna</span><span class="shield">Oplot / ekran</span>
+  <span class="insulation">Izolacja wewnętrzna</span><span class="core">Przewód miedziany</span>
+</div>
+
+</div><div>
 
 - Angielska nazwa: *coaxial cable*.
 - Ekran ogranicza wpływ zakłóceń elektromagnetycznych.
 - W sieciach komputerowych został w większości wyparty przez skrętkę.
-
-</div><div>
-
-![Budowa kabla koncentrycznego](media/image2.png)
 
 </div></div>
 
