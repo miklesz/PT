@@ -138,6 +138,16 @@ Ekran z oplotu wokół kabla oraz folia wokół każdej pary. Stosowany w środo
 
 ---
 
+## Przykłady skrętek
+
+<div class="media-gallery">
+  <img src="media/image9.png" alt="Skrętka UTP">
+  <img src="media/image13.png" alt="Skrętka ekranowana">
+  <img src="media/image16.png" alt="Kabel ekranowany">
+</div>
+
+---
+
 ## UTP
 
 <div class="columns"><div>
