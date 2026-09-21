@@ -26,6 +26,17 @@ W medium dzielonym wiele stacji korzysta z jednego kanału transmisyjnego. Gdy d
 
 ---
 
+## Praca w medium dzielonym
+
+<div class="media-gallery four">
+  <img src="media/image1.gif" alt="Nadawanie w medium dzielonym - etap 1">
+  <img src="media/image2.gif" alt="Nadawanie w medium dzielonym - etap 2">
+  <img src="media/image3.gif" alt="Nadawanie w medium dzielonym - etap 3">
+  <img src="media/image4.gif" alt="Nadawanie w medium dzielonym - etap 4">
+</div>
+
+---
+
 ## Metody dostępu
 
 <div class="columns"><div>
@@ -65,6 +76,16 @@ To prosty protokół, ale przy większym obciążeniu często dochodzi do kolizj
 - Czas dzieli się na szczeliny.
 - Stacja może rozpocząć nadawanie tylko na początku szczeliny.
 - Zmniejsza to obszar, w którym transmisje mogą się nakładać, i poprawia wykorzystanie kanału.
+
+---
+
+## ALOHA: potwierdzenia i kolizje
+
+<div class="media-gallery">
+  <img src="media/image6.png" alt="Potwierdzenie w ALOHA">
+  <img src="media/image7.png" alt="Kolizje w ALOHA">
+  <img src="media/image9.png" alt="Szczelinowy ALOHA">
+</div>
 
 ---
 
@@ -111,6 +132,8 @@ Wybór jest kompromisem między opóźnieniem a ryzykiem kolizji.
 - opcjonalnie RTS/CTS,
 - potwierdzenia odbioru.
 
+![Jednoczesna chęć nadawania w CSMA](media/image10.png)
+
 ---
 
 ## Dlaczego Wi-Fi unika kolizji?
@@ -135,6 +158,26 @@ Węzeł radiowy może nie słyszeć innego węzła, choć oba zakłócają odbio
 2. rozpocznij transmisję,
 3. monitoruj medium podczas nadawania,
 4. po wykryciu kolizji przerwij transmisję, wyślij sekwencję zagłuszającą i wykonaj losowy backoff.
+
+---
+
+## CSMA/CD: decyzja po kolizji
+
+<div class="media-gallery">
+  <img src="media/image12.png" alt="Uproszczony algorytm CSMA/CD">
+  <img src="media/image13.png" alt="Przepływ decyzji CSMA/CD">
+</div>
+
+---
+
+## Kolizja w CSMA/CD: propagacja
+
+<div class="media-gallery four">
+  <img src="media/image14.png" alt="Kolizja CSMA/CD - rozpoczęcie transmisji">
+  <img src="media/image15.png" alt="Kolizja CSMA/CD - druga stacja rozpoczyna transmisję">
+  <img src="media/image16.png" alt="Kolizja CSMA/CD - wykrycie zderzenia sygnałów">
+  <img src="media/image17.png" alt="Kolizja CSMA/CD - obie stacje mają świadomość kolizji">
+</div>
 
 ---
 

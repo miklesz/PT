@@ -20,6 +20,10 @@
       .reveal strong { color: var(--pt-blue); }
       .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
       .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
+      .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
+      .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }
+      .reveal .video-link span { position: absolute; bottom: 1em; padding: 0.42em 0.8em; color: #fff; background: var(--pt-blue); font-size: 0.62em; font-weight: 700; }
       .reveal .title-slide { text-align: center; }
       .reveal .title-slide h1 { font-size: 1.9em; }
       .reveal .title-slide p { color: var(--pt-muted); }
@@ -36,6 +40,18 @@
       .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
       .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
       .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .shared-medium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em 1.3em; align-items: end; max-width: 1000px; margin: 0.8em auto 0; }
+      .reveal .radio-station { display: grid; justify-items: center; gap: 0.16em; font-size: 0.62em; }
+      .reveal .radio-station .node { width: 4.4em; height: 3.1em; position: relative; display: grid; place-content: center; border: 4px solid var(--station); background: #fff; color: var(--station); font-weight: 700; }
+      .reveal .radio-station .node::before { content: ''; position: absolute; top: -1.2em; left: calc(50% - 2px); width: 4px; height: 1.2em; background: var(--station); }
+      .reveal .radio-station .node::after { content: ''; position: absolute; top: -1.7em; left: calc(50% - 1.1em); width: 2.2em; height: 1.1em; border: 3px solid var(--station); border-bottom: 0; border-radius: 50% 50% 0 0; }
+      .reveal .radio-station .role { color: var(--pt-muted); font-size: 0.82em; }
+      .reveal .station-a { --station: #007c91; }
+      .reveal .station-b { --station: #b35c2e; }
+      .reveal .station-c { --station: #4f7f3d; }
+      .reveal .shared-channel { grid-column: 1 / -1; order: -1; min-height: 3.1em; display: grid; place-content: center; position: relative; overflow: hidden; color: #fff; background: #003b70; font-size: 0.68em; font-weight: 700; }
+      .reveal .shared-channel::before { content: ''; position: absolute; left: 7%; right: 7%; top: 50%; border-top: 3px solid #85c4d0; }
+      .reveal .shared-channel::after { content: 'ramka ze stacji A'; position: absolute; left: 18%; top: calc(50% - 1.45em); padding: 0.32em 0.6em; background: #007c91; font-size: 0.72em; font-weight: 700; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
@@ -73,11 +89,24 @@
       .reveal .timeline > div:nth-child(2) { min-height: 9.2em; background: #dceef2; }
       .reveal .timeline > div:nth-child(3) { min-height: 10.4em; background: #eff0df; }
       .reveal .timeline > div:nth-child(4) { min-height: 11.6em; background: #f4e6d5; }
+      .reveal .wifi-speed-chart { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.45em; align-items: end; max-width: 1080px; height: 10em; margin: 0.3em auto 0; padding: 0 0.1em; border-bottom: 3px solid var(--pt-blue); }
+      .reveal .wifi-speed-chart > div { display: flex; flex-direction: column; justify-content: end; align-items: stretch; height: 100%; text-align: center; }
+      .reveal .wifi-speed-chart .rate { min-height: 1.45em; display: grid; place-content: end center; color: var(--pt-blue); font-size: 0.46em; font-weight: 700; }
+      .reveal .wifi-speed-chart .bar { height: var(--bar-height); min-height: 0.35em; background: var(--bar-color); border-top: 5px solid var(--bar-border); }
+      .reveal .wifi-speed-chart strong { margin-top: 0.35em; font-size: 0.45em; }
+      .reveal .wifi-speed-chart .year { color: var(--pt-muted); font-size: 0.4em; }
+      .reveal .future-standard { display: grid; grid-template-columns: auto 1fr; gap: 0.45em 0.7em; align-items: center; max-width: 1080px; margin: 0.48em auto 0; padding: 0.35em 0.55em; border-left: 5px dashed #587083; background: #eef3f7; font-size: 0.48em; }
+      .reveal .future-standard strong { white-space: nowrap; }
+      .reveal .wifi-standard-table { display: grid; grid-template-columns: 1.1fr 0.82fr 0.95fr 1.2fr 0.8fr; max-width: 1080px; margin: 0.4em auto 0; font-size: 0.47em; line-height: 1.15; border-top: 2px solid var(--pt-blue); border-left: 2px solid var(--pt-blue); }
+      .reveal .wifi-standard-table > div { display: grid; align-items: center; padding: 0.28em 0.36em; background: #f7fafc; border-right: 1px solid #aebbc5; border-bottom: 1px solid #aebbc5; }
+      .reveal .wifi-standard-table .head { background: var(--pt-blue); color: #fff; font-weight: 700; }
+      .reveal .wifi-standard-table .rate { justify-content: end; text-align: right; }
       .reveal .protocol-map { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.4em 0.7em; max-width: 900px; margin: 0.6em auto; }
       .reveal .protocol-map > div { padding: 0.4em 0.55em; background: #e7edf6; font-size: 0.72em; }
       .reveal .protocol-map .head { background: var(--pt-blue); color: #fff; font-weight: 700; }
       .reveal .media-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; align-items: center; }
       .reveal .media-gallery img { width: 100%; max-width: 100%; max-height: 48vh; margin: 0; }
+      .reveal .media-gallery.four { grid-template-columns: repeat(4, 1fr); }
       .reveal .slide-number { color: var(--pt-muted); left: 22px; right: auto; bottom: 18px; }
       .reveal .controls { right: 18px; bottom: 18px; }
       @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
@@ -123,12 +152,32 @@ Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukt
 
 ---
 
+## Jak czytać topologie?
+
+Topologia opisuje układ połączeń między urządzeniami, a nie tylko ich położenie na rysunku.
+
+![Przykładowe topologie sieci](media/image3.png)
+
+---
+
 ## Topologia punkt-punkt
 
 <div class="packet"><span>Węzeł A</span><span>dedykowane łącze</span><span>Węzeł B</span></div>
 
+![Topologia punkt-punkt](media/image4.png)
+
 - **Permanent/dedicated:** łącze stale zestawione.
 - **Switched:** połączenie zestawiane na żądanie przez sieć pośrednią.
+
+---
+
+## Topologia liniowa
+
+Węzły są połączone kolejno; urządzenia pośrednie przekazują ruch dalej.
+
+![Topologia liniowa](media/image5.png)
+
+Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część łańcucha.
 
 ---
 
@@ -140,11 +189,13 @@ Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukt
 - Prosta i historycznie tania, ale podatna na kolizje oraz awarię wspólnego segmentu.
 - Klasyczny Ethernet koncentryczny był przykładem takiej topologii.
 
+![Topologia magistrali](media/image6.png)
+
 ---
 
 ## Materiał: magistrala
 
-<video controls preload="metadata"><source src="media/slide-021-media1.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image7.png"><source src="media/slide-021-media1.mp4" type="video/mp4"></video>
 
 ---
 
@@ -156,11 +207,21 @@ Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukt
 - W pierścieniu podwójnym drugi kierunek może zapewniać redundancję.
 - Przykładem historycznym był Token Ring.
 
+![Topologia pierścienia](media/image8.png)
+
 ---
 
 ## Materiał: pierścień
 
-<video controls preload="metadata"><source src="media/slide-024-media2.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image9.png"><source src="media/slide-024-media2.mp4" type="video/mp4"></video>
+
+---
+
+## Pierścień podwójny
+
+Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu jednego z odcinków.
+
+![Topologia pierścienia podwójnego](media/image10.png)
 
 ---
 
@@ -171,6 +232,8 @@ Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukt
 - Awaria punktu centralnego wpływa na całą sieć.
 
 <div class="packet"><span>Host A</span><span>Przełącznik</span><span>Host B</span><span>Host C</span></div>
+
+![Topologia gwiazdy](media/image11.png)
 
 ---
 
@@ -194,19 +257,19 @@ Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
 
 ## Materiał: gwiazda z koncentratorem
 
-<video controls preload="metadata"><source src="media/slide-030-media3.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image12.png"><source src="media/slide-030-media3.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał: gwiazda z przełącznikiem
 
-<video controls preload="metadata"><source src="media/slide-031-media4.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image12.png"><source src="media/slide-031-media4.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał: gwiazda z MSAU
 
-<video controls preload="metadata"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image13.png"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
 
 ---
 
@@ -215,6 +278,13 @@ Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
 - Łączą mniejsze topologie w większą strukturę.
 - Przykłady: pierścień-gwiazda, gwiazda-magistrala, magistrala-drzewo.
 - Ułatwiają skalowanie, segmentację i zarządzanie dużą siecią.
+
+<div class="media-gallery">
+  <img src="media/image14.png" alt="Topologia hierarchiczna">
+  <img src="media/image15.png" alt="Topologia pierścień-gwiazda">
+  <img src="media/image16.png" alt="Topologia gwiazda-magistrala">
+  <img src="media/image17.png" alt="Topologia magistrala-drzewo">
+</div>
 
 ---
 
@@ -233,6 +303,12 @@ Tylko najważniejsze węzły mają wiele połączeń. To kompromis między koszt
 Każdy węzeł łączy się z każdym. Zapewnia wysoką odporność, ale liczba łączy rośnie bardzo szybko.
 
 </div></div>
+
+<div class="media-gallery">
+  <img src="media/image18.png" alt="Częściowa topologia siatki">
+  <img src="media/image19.png" alt="Pełna topologia siatki">
+  <img src="media/image26.png" alt="Liczba połączeń w pełnej siatce">
+</div>
 
 ---
 

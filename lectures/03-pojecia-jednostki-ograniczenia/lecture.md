@@ -176,13 +176,23 @@ Dotyczy przede wszystkim sieci nadawczych: radia, telewizji i portali, w któryc
 
 <img src="media/image6.jpg" alt="David Sarnoff" height="380">
 
+![Ilustracja prawa Sarnoffa](media/image7.jpeg)
+
 </div></div>
 
 ---
 
 ## Prawo Metcalfe'a
 
+<div class="columns"><div>
+
 > Użyteczność sieci telekomunikacyjnej rośnie proporcjonalnie do kwadratu liczby podłączonych urządzeń lub użytkowników.
+
+</div><div>
+
+![Ilustracja prawa Metcalfe'a](media/image9.jpeg)
+
+</div></div>
 
 ---
 

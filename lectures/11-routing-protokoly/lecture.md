@@ -18,6 +18,8 @@
 
 Warstwa trzecia odpowiada za dostarczanie pakietów między sieciami. Jej podstawowe zadania to adresowanie logiczne, wybór trasy i przekazywanie pakietów.
 
+![Budowa pakietu warstwy sieciowej](media/image1.png)
+
 ---
 
 ## IPX i IP
@@ -98,6 +100,8 @@ Host potrzebuje zwykle:
 Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. Ruter podejmuje dalszą decyzję trasowania.
 
 <div class="packet"><span>Host</span><span>Brama domyślna</span><span>Internet</span><span>Sieć docelowa</span></div>
+
+![Sieć lokalna, ruter i Internet](media/image11.png)
 
 ---
 

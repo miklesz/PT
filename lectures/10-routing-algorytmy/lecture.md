@@ -57,6 +57,22 @@ Najbardziej szczegółowy pasujący prefiks ma pierwszeństwo.
 
 ---
 
+## Edsger Dijkstra
+
+<div class="columns"><div>
+
+![Edsger W. Dijkstra](media/image1.png)
+
+</div><div>
+
+Edsger W. Dijkstra opisał algorytm najkrótszej ścieżki w 1959 roku.
+
+W routingu algorytm ten jest podstawą obliczeń SPF w protokołach stanu łącza, takich jak OSPF.
+
+</div></div>
+
+---
+
 ## Problem najkrótszej ścieżki
 
 Mamy graf z nieujemnymi wagami krawędzi. Celem jest znalezienie najkrótszej drogi z węzła źródłowego do pozostałych węzłów.

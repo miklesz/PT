@@ -28,6 +28,8 @@ Odległość Hamminga to liczba pozycji, na których dwa ciągi o tej samej dłu
 `d(10001, 10000) = 1`
 `d(00010, 10100) = 3`
 
+![Wzór na odległość Hamminga](media/image1.png)
+
 Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji błędów.
 
 ---
@@ -66,6 +68,15 @@ Pomiar jest poprawny, gdy rzeczywisty przebieg pozostaje w granicach wyznaczonyc
 
 ---
 
+## Przykłady masek telekomunikacyjnych
+
+<div class="media-gallery">
+  <img src="media/image3.png" alt="Maska telekomunikacyjna dla PDH 140 Mb/s">
+  <img src="media/image4.png" alt="Maska telekomunikacyjna dla PCM 2 Mb/s">
+</div>
+
+---
+
 ## Pożądane właściwości kodu transmisyjnego
 
 - ograniczone składowe stałe,
@@ -81,6 +92,8 @@ Pomiar jest poprawny, gdy rzeczywisty przebieg pozostaje w granicach wyznaczonyc
 Kody HDB (*High Density Bipolar*) zastępują długie serie zer wzorcami zawierającymi impulsy naruszające regułę bipolarności.
 
 Pozwala to utrzymać synchronizację, nawet gdy źródło generuje długi ciąg zer.
+
+![Przykładowy przebieg kodu HDB](media/image5.png)
 
 ---
 
@@ -124,6 +137,15 @@ Sprawdza wagę słowa, rozpoznaje kod i sygnalizuje nieprawidłową kombinację.
 
 ---
 
+## Schematy kodera i dekodera „2 z 5”
+
+<div class="media-gallery">
+  <img src="media/image9.png" alt="Schemat kodera kodu 2 z 5">
+  <img src="media/image10.png" alt="Schemat dekodera kodu 2 z 5">
+</div>
+
+---
+
 ## Kod splotowy
 
 Kodowanie splotowe (*convolutional coding*) tworzy ciąg wyjściowy zależny od bieżących i wcześniejszych bitów wejściowych.
@@ -137,6 +159,16 @@ Stan kodera jest pamięcią wcześniejszych symboli, a dekodowanie wybiera najba
 <div class="packet"><span>bit wejściowy</span><span>rejestr pamięci</span><span>funkcje generujące</span><span>bity kodowe</span></div>
 
 Nadmiarowe bity zwiększają szansę poprawnego odtworzenia informacji po błędach transmisji.
+
+---
+
+## Koder splotowy: realizacja logiczna
+
+<div class="media-gallery">
+  <img src="media/image12.png" alt="Schemat kodowania splotowego">
+  <img src="media/image13.png" alt="Schemat dekodowania splotowego">
+  <img src="media/image16.png" alt="Porównanie realizacji kodowania splotowego">
+</div>
 
 ---
 

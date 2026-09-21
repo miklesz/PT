@@ -35,12 +35,32 @@ Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukt
 
 ---
 
+## Jak czytać topologie?
+
+Topologia opisuje układ połączeń między urządzeniami, a nie tylko ich położenie na rysunku.
+
+![Przykładowe topologie sieci](media/image3.png)
+
+---
+
 ## Topologia punkt-punkt
 
 <div class="packet"><span>Węzeł A</span><span>dedykowane łącze</span><span>Węzeł B</span></div>
 
+![Topologia punkt-punkt](media/image4.png)
+
 - **Permanent/dedicated:** łącze stale zestawione.
 - **Switched:** połączenie zestawiane na żądanie przez sieć pośrednią.
+
+---
+
+## Topologia liniowa
+
+Węzły są połączone kolejno; urządzenia pośrednie przekazują ruch dalej.
+
+![Topologia liniowa](media/image5.png)
+
+Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część łańcucha.
 
 ---
 
@@ -52,11 +72,13 @@ Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukt
 - Prosta i historycznie tania, ale podatna na kolizje oraz awarię wspólnego segmentu.
 - Klasyczny Ethernet koncentryczny był przykładem takiej topologii.
 
+![Topologia magistrali](media/image6.png)
+
 ---
 
 ## Materiał: magistrala
 
-<video controls preload="metadata"><source src="media/slide-021-media1.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image7.png"><source src="media/slide-021-media1.mp4" type="video/mp4"></video>
 
 ---
 
@@ -68,11 +90,21 @@ Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukt
 - W pierścieniu podwójnym drugi kierunek może zapewniać redundancję.
 - Przykładem historycznym był Token Ring.
 
+![Topologia pierścienia](media/image8.png)
+
 ---
 
 ## Materiał: pierścień
 
-<video controls preload="metadata"><source src="media/slide-024-media2.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image9.png"><source src="media/slide-024-media2.mp4" type="video/mp4"></video>
+
+---
+
+## Pierścień podwójny
+
+Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu jednego z odcinków.
+
+![Topologia pierścienia podwójnego](media/image10.png)
 
 ---
 
@@ -83,6 +115,8 @@ Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukt
 - Awaria punktu centralnego wpływa na całą sieć.
 
 <div class="packet"><span>Host A</span><span>Przełącznik</span><span>Host B</span><span>Host C</span></div>
+
+![Topologia gwiazdy](media/image11.png)
 
 ---
 
@@ -106,19 +140,19 @@ Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
 
 ## Materiał: gwiazda z koncentratorem
 
-<video controls preload="metadata"><source src="media/slide-030-media3.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image12.png"><source src="media/slide-030-media3.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał: gwiazda z przełącznikiem
 
-<video controls preload="metadata"><source src="media/slide-031-media4.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image12.png"><source src="media/slide-031-media4.mp4" type="video/mp4"></video>
 
 ---
 
 ## Materiał: gwiazda z MSAU
 
-<video controls preload="metadata"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image13.png"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
 
 ---
 
@@ -127,6 +161,13 @@ Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
 - Łączą mniejsze topologie w większą strukturę.
 - Przykłady: pierścień-gwiazda, gwiazda-magistrala, magistrala-drzewo.
 - Ułatwiają skalowanie, segmentację i zarządzanie dużą siecią.
+
+<div class="media-gallery">
+  <img src="media/image14.png" alt="Topologia hierarchiczna">
+  <img src="media/image15.png" alt="Topologia pierścień-gwiazda">
+  <img src="media/image16.png" alt="Topologia gwiazda-magistrala">
+  <img src="media/image17.png" alt="Topologia magistrala-drzewo">
+</div>
 
 ---
 
@@ -145,6 +186,12 @@ Tylko najważniejsze węzły mają wiele połączeń. To kompromis między koszt
 Każdy węzeł łączy się z każdym. Zapewnia wysoką odporność, ale liczba łączy rośnie bardzo szybko.
 
 </div></div>
+
+<div class="media-gallery">
+  <img src="media/image18.png" alt="Częściowa topologia siatki">
+  <img src="media/image19.png" alt="Pełna topologia siatki">
+  <img src="media/image26.png" alt="Liczba połączeń w pełnej siatce">
+</div>
 
 ---
 
