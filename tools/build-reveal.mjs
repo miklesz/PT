@@ -223,7 +223,11 @@ const html = `<!doctype html>
       .reveal .algorithm-hint { margin: 0.2em 0 0; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
       .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
       .reveal .flow-edge line { stroke: #7c8d99; stroke-width: 4; }.reveal .flow-edge text { fill: #53636f; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .flow-edge.active line { stroke: #b35c2e; stroke-width: 7; }.reveal .flow-edge.active text { fill: #b35c2e; }.reveal #flow-arrow path { fill: #7c8d99; }.reveal .flow-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .flow-node text { fill: var(--pt-blue); font-size: 25px; font-weight: 700; text-anchor: middle; }.reveal .flow-node.source circle { fill: #e9f8fa; stroke: #007c91; }.reveal .flow-node.sink circle { fill: #f4e6d5; stroke: #b35c2e; }
+      .reveal .flow-lab { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(250px, 0.7fr); gap: 0.8em; align-items: center; }.reveal .flow-lab svg { max-height: 36vh; }
+      .reveal .flow-matrix-panel { padding: 0.5em; border-top: 6px solid #007c91; background: #edf5fa; color: var(--pt-ink); text-align: center; }.reveal .flow-matrix-panel > strong { display: block; color: var(--pt-blue); font-size: 0.52em; }.reveal .flow-matrix-panel > small { display: block; margin: 0.2em 0 0.45em; color: var(--pt-muted); font-size: 0.38em; }
+      .reveal .flow-matrix { width: 100%; border-collapse: collapse; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.42em; }.reveal .flow-matrix th, .reveal .flow-matrix td { width: 14%; padding: 0.28em 0.18em; border: 1px solid #b8cbd5; text-align: center; }.reveal .flow-matrix th { background: #d9e8ee; color: #006779; font-weight: 700; }.reveal .flow-matrix td.active { background: #f4e6d5; color: #8a421e; font-weight: 800; box-shadow: inset 0 0 0 2px #b35c2e; }
       .reveal .level-band rect { fill: #edf5fa; stroke: #c8d8df; stroke-width: 2; }.reveal .level-band text { fill: #5b6b78; font-size: 15px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge line { stroke: #92a4af; stroke-width: 4; }.reveal .dinic-edge text { fill: #53636f; font-size: 18px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge.highlighted line { stroke: #007c91; stroke-width: 6; }.reveal .dinic-edge.highlighted text { fill: #007c91; }.reveal .dinic-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .dinic-node text { fill: var(--pt-blue); font-size: 23px; font-weight: 700; text-anchor: middle; }
+      @media (max-width: 800px) { .reveal .flow-lab { grid-template-columns: 1fr; }.reveal .flow-lab svg { max-height: 28vh; }.reveal .flow-matrix-panel { max-width: 420px; margin: 0 auto; } }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }
@@ -423,6 +427,24 @@ ${embeddedMarkdown}
         demo.querySelector('.dijkstra-explanation').innerHTML = step.explanation;
       };
 
+      const flowSteps = [
+        { caption: 'Stan początkowy', active: [], explanation: 'Liczby przy łukach i w macierzy oznaczają ich <strong>pojemności</strong>: maksymalną ilość przepływu, którą może przenieść dana krawędź.' },
+        { caption: 'Krok 1: wybór s → a', active: ['sa'], explanation: 'Z węzła źródłowego <strong>s</strong> wybieramy krawędź do <strong>a</strong>. W macierzy jest to komórka w wierszu s i kolumnie a.' },
+        { caption: 'Krok 2: wybór a → d', active: ['sa', 'ad'], explanation: 'Z <strong>a</strong> kontynuujemy do <strong>d</strong>. Wybrana ścieżka ma postać <code>s → a → d</code>.' },
+        { caption: 'Krok 3: dojście do t', active: ['sa', 'ad', 'dt'], explanation: 'Krawędź <strong>d → t</strong> doprowadza ścieżkę do ujścia: <code>s → a → d → t</code>.' },
+        { caption: 'Wąskie gardło: 3', active: ['sa', 'ad', 'dt'], explanation: 'Najmniejsza pojemność na tej ścieżce to <strong>3</strong> dla s → a. Tyle jednostek można teraz przesłać; potem jej pojemność rezydualna maleje.' }
+      ];
+      let flowStep = 0;
+      const setFlowStep = (index) => {
+        const demo = document.querySelector('.flow-demo');
+        if (!demo) return;
+        flowStep = Math.max(0, Math.min(flowSteps.length - 1, index));
+        const step = flowSteps[flowStep];
+        demo.querySelectorAll('.flow-edge, .flow-matrix td[data-edge]').forEach((element) => element.classList.toggle('active', step.active.includes(element.dataset.edge)));
+        demo.querySelector('.flow-caption').textContent = step.caption;
+        demo.querySelector('.flow-explanation').innerHTML = step.explanation;
+      };
+
       const initializeLabs = () => {
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
@@ -432,6 +454,8 @@ ${embeddedMarkdown}
         document.querySelector('.mesh-nodes')?.addEventListener('input', setMeshResult);
         document.querySelector('.dijkstra-prev')?.addEventListener('click', () => setDijkstraStep(dijkstraStep - 1));
         document.querySelector('.dijkstra-next')?.addEventListener('click', () => setDijkstraStep(dijkstraStep + 1));
+        document.querySelector('.flow-prev')?.addEventListener('click', () => setFlowStep(flowStep - 1));
+        document.querySelector('.flow-next')?.addEventListener('click', () => setFlowStep(flowStep + 1));
         setHammingResult();
         setTwoOfFiveResult();
         setTwoOfFiveCheckResult();
@@ -439,6 +463,7 @@ ${embeddedMarkdown}
         setConvolutionalResult();
         setMeshResult();
         setDijkstraStep(0);
+        setFlowStep(0);
       };
       Reveal.on('ready', initializeLabs);
     </script>

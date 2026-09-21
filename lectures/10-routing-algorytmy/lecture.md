@@ -164,18 +164,37 @@ Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótsz
 ## Ford-Fulkerson: ścieżka powiększająca
 
 <div class="algorithm-demo flow-demo">
-  <svg viewBox="0 0 700 270" role="img" aria-label="Sieć przepływowa ze ścieżką powiększającą s, a, d, t.">
+  <div class="flow-lab">
+  <svg viewBox="0 0 700 270" role="img" aria-label="Sieć przepływowa z węzłami s, a, b, c, d i t.">
     <defs><marker id="flow-arrow" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 Z"/></marker></defs>
-    <g class="flow-edge active"><line x1="88" y1="150" x2="234" y2="82" marker-end="url(#flow-arrow)"/><text x="158" y="103">3</text></g>
-    <g class="flow-edge"><line x1="88" y1="155" x2="234" y2="218" marker-end="url(#flow-arrow)"/><text x="158" y="207">2</text></g>
-    <g class="flow-edge"><line x1="275" y1="92" x2="405" y2="92" marker-end="url(#flow-arrow)"/><text x="340" y="80">3</text></g>
-    <g class="flow-edge active"><line x1="270" y1="105" x2="410" y2="210" marker-end="url(#flow-arrow)"/><text x="338" y="172">5</text></g>
-    <g class="flow-edge"><line x1="270" y1="220" x2="410" y2="220" marker-end="url(#flow-arrow)"/><text x="340" y="209">1</text></g>
-    <g class="flow-edge"><line x1="445" y1="96" x2="594" y2="145" marker-end="url(#flow-arrow)"/><text x="520" y="108">4</text></g>
-    <g class="flow-edge active"><line x1="445" y1="208" x2="594" y2="158" marker-end="url(#flow-arrow)"/><text x="520" y="191">7</text></g>
+    <g class="flow-edge" data-edge="sa"><line x1="88" y1="150" x2="234" y2="82" marker-end="url(#flow-arrow)"/><text x="158" y="103">3</text></g>
+    <g class="flow-edge" data-edge="sc"><line x1="88" y1="155" x2="234" y2="218" marker-end="url(#flow-arrow)"/><text x="158" y="207">2</text></g>
+    <g class="flow-edge" data-edge="ab"><line x1="275" y1="92" x2="405" y2="92" marker-end="url(#flow-arrow)"/><text x="340" y="80">3</text></g>
+    <g class="flow-edge" data-edge="ad"><line x1="270" y1="105" x2="410" y2="210" marker-end="url(#flow-arrow)"/><text x="338" y="172">5</text></g>
+    <g class="flow-edge" data-edge="cd"><line x1="270" y1="220" x2="410" y2="220" marker-end="url(#flow-arrow)"/><text x="340" y="209">1</text></g>
+    <g class="flow-edge" data-edge="bt"><line x1="445" y1="96" x2="594" y2="145" marker-end="url(#flow-arrow)"/><text x="520" y="108">4</text></g>
+    <g class="flow-edge" data-edge="dt"><line x1="445" y1="208" x2="594" y2="158" marker-end="url(#flow-arrow)"/><text x="520" y="191">7</text></g>
     <g class="flow-node source"><circle cx="65" cy="155" r="26"/><text x="65" y="162">s</text></g><g class="flow-node"><circle cx="250" cy="80" r="26"/><text x="250" y="87">a</text></g><g class="flow-node"><circle cx="250" cy="220" r="26"/><text x="250" y="227">c</text></g><g class="flow-node"><circle cx="430" cy="80" r="26"/><text x="430" y="87">b</text></g><g class="flow-node"><circle cx="430" cy="220" r="26"/><text x="430" y="227">d</text></g><g class="flow-node sink"><circle cx="620" cy="155" r="26"/><text x="620" y="162">t</text></g>
   </svg>
-  <p><strong>Ścieżka powiększająca:</strong> <code>s → a → d → t</code>. Wąskie gardło ma pojemność <strong>3</strong>, więc tą drogą można przesłać 3 jednostki przepływu.</p>
+  <div class="flow-matrix-panel">
+    <strong>Macierz pojemności</strong>
+    <small>wiersz: skąd, kolumna: dokąd</small>
+    <table class="flow-matrix" aria-label="Macierz pojemności krawędzi">
+      <thead><tr><th></th><th>s</th><th>a</th><th>b</th><th>c</th><th>d</th><th>t</th></tr></thead>
+      <tbody>
+        <tr><th>s</th><td>–</td><td data-edge="sa">3</td><td>0</td><td data-edge="sc">2</td><td>0</td><td>0</td></tr>
+        <tr><th>a</th><td>0</td><td>–</td><td data-edge="ab">3</td><td>0</td><td data-edge="ad">5</td><td>0</td></tr>
+        <tr><th>b</th><td>0</td><td>0</td><td>–</td><td>0</td><td>0</td><td data-edge="bt">4</td></tr>
+        <tr><th>c</th><td>0</td><td>0</td><td>0</td><td>–</td><td data-edge="cd">1</td><td>0</td></tr>
+        <tr><th>d</th><td>0</td><td>0</td><td>0</td><td>0</td><td>–</td><td data-edge="dt">7</td></tr>
+        <tr><th>t</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>–</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <div class="algorithm-controls"><button class="flow-prev" type="button" title="Poprzedni krok" aria-label="Poprzedni krok">←</button><strong class="flow-caption"></strong><button class="flow-next" type="button" title="Następny krok" aria-label="Następny krok">→</button></div>
+  <p class="algorithm-hint">Klikaj strzałki, aby śledzić wybór ścieżki i odpowiadające mu pola macierzy.</p>
+  <p class="flow-explanation"></p>
 </div>
 
 ---
