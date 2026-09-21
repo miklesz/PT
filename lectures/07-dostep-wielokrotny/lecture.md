@@ -29,10 +29,10 @@ W medium dzielonym wiele stacji korzysta z jednego kanału transmisyjnego. Gdy d
 ## Praca w medium dzielonym
 
 <div class="media-gallery four">
-  <img src="media/image1.gif" alt="Nadawanie w medium dzielonym - etap 1">
-  <img src="media/image2.gif" alt="Nadawanie w medium dzielonym - etap 2">
-  <img src="media/image3.gif" alt="Nadawanie w medium dzielonym - etap 3">
-  <img src="media/image4.gif" alt="Nadawanie w medium dzielonym - etap 4">
+  <figure><img src="media/image1.gif" alt="Nadawanie w medium dzielonym - etap 1"><figcaption>1. Gotowość stacji</figcaption></figure>
+  <figure><img src="media/image2.gif" alt="Nadawanie w medium dzielonym - etap 2"><figcaption>2. Stacja A nadaje</figcaption></figure>
+  <figure><img src="media/image3.gif" alt="Nadawanie w medium dzielonym - etap 3"><figcaption>3. Sygnał dociera do wszystkich</figcaption></figure>
+  <figure><img src="media/image4.gif" alt="Nadawanie w medium dzielonym - etap 4"><figcaption>4. Adresat przyjmuje ramkę</figcaption></figure>
 </div>
 
 ---

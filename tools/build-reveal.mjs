@@ -132,6 +132,8 @@ const html = `<!doctype html>
       .reveal .protocol-map .head { background: var(--pt-blue); color: #fff; font-weight: 700; }
       .reveal .media-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; align-items: center; }
       .reveal .media-gallery img { width: 100%; max-width: 100%; max-height: 48vh; margin: 0; }
+      .reveal .media-gallery figure { margin: 0; }
+      .reveal .media-gallery figcaption { margin-top: 0.25em; color: var(--pt-text); font-size: 0.46em; font-weight: 700; text-align: center; }
       .reveal .media-gallery.four { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; margin: 0.25em auto; }
       .reveal .media-gallery.aloha-gallery { grid-template-columns: 1fr; max-width: 860px; margin: 0.2em auto; }
       .reveal .media-gallery.aloha-gallery img { max-height: 21vh; }
