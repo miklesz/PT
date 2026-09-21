@@ -37,6 +37,9 @@ const html = `<!doctype html>
       .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
       .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
       .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
+      .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
+      .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }
+      .reveal .video-link span { position: absolute; bottom: 1em; padding: 0.42em 0.8em; color: #fff; background: var(--pt-blue); font-size: 0.62em; font-weight: 700; }
       .reveal .title-slide { text-align: center; }
       .reveal .title-slide h1 { font-size: 1.9em; }
       .reveal .title-slide p { color: var(--pt-muted); }

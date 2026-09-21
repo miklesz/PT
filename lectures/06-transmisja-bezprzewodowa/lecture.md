@@ -95,7 +95,7 @@ Rosnący zasięg: od urządzeń osobistych po sieci łączące odległe lokaliza
 
 ## Materiał wideo: rodzaje sieci
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/4_zSIXb7tLQ?feature=oembed" title="Rodzaje sieci komputerowych" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=4_zSIXb7tLQ" target="_blank" rel="noopener"><img src="media/image4.jpeg" alt="Miniatura filmu o rodzajach sieci"><span>Otwórz film w YouTube</span></a>
 
 ---
 
@@ -133,25 +133,25 @@ Niewielki moduł radiowy może być częścią czujnika, sterownika lub urządze
 
 ## Materiał wideo: Internet rzeczy i PAN
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/iw9pQeFhN74?feature=oembed" title="Internet rzeczy i PAN" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=iw9pQeFhN74" target="_blank" rel="noopener"><img src="media/image6.jpeg" alt="Miniatura filmu o Internecie rzeczy"><span>Otwórz film w YouTube</span></a>
 
 ---
 
 ## Materiał wideo: Wi-Fi a ZigBee
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/buV11ZPJ7MQ?feature=oembed" title="Porównanie Wi-Fi i ZigBee" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=buV11ZPJ7MQ" target="_blank" rel="noopener"><img src="media/image7.jpeg" alt="Miniatura filmu porównującego Wi-Fi i ZigBee"><span>Otwórz film w YouTube</span></a>
 
 ---
 
 ## Materiał wideo: Z-Wave
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/vhzLYmiwNTk?feature=oembed" title="Z-Wave" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=vhzLYmiwNTk" target="_blank" rel="noopener"><img src="media/image9.jpeg" alt="Miniatura filmu o Z-Wave"><span>Otwórz film w YouTube</span></a>
 
 ---
 
 ## Materiał wideo: Thread
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/KElUxj12IIY?feature=oembed" title="Thread" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=KElUxj12IIY" target="_blank" rel="noopener"><img src="media/image12.jpeg" alt="Miniatura filmu o Thread"><span>Otwórz film w YouTube</span></a>
 
 ---
 
@@ -163,7 +163,7 @@ WLAN (*Wireless Local Area Network*) zapewnia lokalny dostęp radiowy. Najczęś
 
 ## Materiał wideo: czym jest WLAN?
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/DAR52r0lEtw?feature=oembed" title="WLAN" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=DAR52r0lEtw" target="_blank" rel="noopener"><img src="media/image13.jpeg" alt="Miniatura filmu o WLAN"><span>Otwórz film w YouTube</span></a>
 
 ---
 
@@ -253,13 +253,13 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ## Materiał wideo: 802.11b, g i n
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/KysPKUBo1u4?feature=oembed" title="Różne prędkości Wi-Fi" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=KysPKUBo1u4" target="_blank" rel="noopener"><img src="media/image18.jpeg" alt="Miniatura filmu o prędkościach Wi-Fi"><span>Otwórz film w YouTube</span></a>
 
 ---
 
 ## Materiał wideo: 802.11n a 802.11ac
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/DsWJ-ei5jrc?feature=oembed" title="Różnice między 802.11n i 802.11ac" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=DsWJ-ei5jrc" target="_blank" rel="noopener"><img src="media/image23.jpeg" alt="Miniatura filmu o 802.11n i 802.11ac"><span>Otwórz film w YouTube</span></a>
 
 ---
 
@@ -279,13 +279,13 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ## Materiał wideo: Wi-Fi przy 60 GHz
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/zcfuTD3z7aA?feature=oembed" title="Wi-Fi i częstotliwość 60 GHz" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=zcfuTD3z7aA" target="_blank" rel="noopener"><img src="media/image24.jpeg" alt="Miniatura filmu o Wi-Fi 60 GHz"><span>Otwórz film w YouTube</span></a>
 
 ---
 
 ## Materiał wideo: Wi-Fi 6 i OFDMA
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/HgIJmdzNyIQ?feature=oembed" title="Wi-Fi 6 i OFDMA" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=HgIJmdzNyIQ" target="_blank" rel="noopener"><img src="media/image27.jpeg" alt="Miniatura filmu o Wi-Fi 6 i OFDMA"><span>Otwórz film w YouTube</span></a>
 
 ---
 
@@ -327,7 +327,7 @@ WiMAX (*Worldwide Interoperability for Microwave Access*) obejmuje technologie s
 
 ## Materiał wideo: WiMAX
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/KQdc5AdJqCg?feature=oembed" title="WiMAX" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=KQdc5AdJqCg" target="_blank" rel="noopener"><img src="media/image29.jpeg" alt="Miniatura filmu o WiMAX"><span>Otwórz film w YouTube</span></a>
 
 ---
 
@@ -350,7 +350,7 @@ WiMAX (*Worldwide Interoperability for Microwave Access*) obejmuje technologie s
 
 ## Materiał wideo: LoRa
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/m6IvwcjcxQc?feature=oembed" title="LoRa" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=m6IvwcjcxQc" target="_blank" rel="noopener"><img src="media/image32.jpeg" alt="Miniatura filmu o LoRa"><span>Otwórz film w YouTube</span></a>
 
 ---
 
@@ -365,7 +365,7 @@ WiMAX (*Worldwide Interoperability for Microwave Access*) obejmuje technologie s
 
 ## Materiał wideo: przyszłość standardów IEEE 802
 
-<iframe class="video-embed" src="https://www.youtube.com/embed/fRnGP41TE2s?feature=oembed" title="Przyszłość standardów IEEE 802" allowfullscreen></iframe>
+<a class="video-link" href="https://www.youtube.com/watch?v=fRnGP41TE2s" target="_blank" rel="noopener"><img src="media/image34.jpeg" alt="Miniatura filmu o przyszłości IEEE 802"><span>Otwórz film w YouTube</span></a>
 
 ---
 
