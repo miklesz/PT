@@ -159,9 +159,13 @@ Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótsz
 - Szukamy ścieżek powiększających od źródła do ujścia.
 - Zwiększamy przepływ o minimalną wolną pojemność na znalezionej ścieżce.
 
+---
+
+## Ford-Fulkerson: ścieżka powiększająca
+
 <div class="algorithm-demo flow-demo">
   <svg viewBox="0 0 700 270" role="img" aria-label="Sieć przepływowa ze ścieżką powiększającą s, a, d, t.">
-    <defs><marker id="flow-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 Z"/></marker></defs>
+    <defs><marker id="flow-arrow" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 Z"/></marker></defs>
     <g class="flow-edge active"><line x1="88" y1="150" x2="234" y2="82" marker-end="url(#flow-arrow)"/><text x="158" y="103">3</text></g>
     <g class="flow-edge"><line x1="88" y1="155" x2="234" y2="218" marker-end="url(#flow-arrow)"/><text x="158" y="207">2</text></g>
     <g class="flow-edge"><line x1="275" y1="92" x2="405" y2="92" marker-end="url(#flow-arrow)"/><text x="340" y="80">3</text></g>
