@@ -4,12 +4,15 @@ Ten katalog zawiera oryginalne prezentacje PowerPoint oraz wersje do użycia w p
 
 ## Prowadzenie zajęć
 
-Otwórz lokalnie [web/index.html](web/index.html) w Chrome. Strzałki klawiatury przechodzą między slajdami. Link „Materiał” na slajdzie otwiera lokalny plik wideo z dźwiękiem, gotowy do udostępnienia z karty Chrome w Google Meet.
+Właściwe, edytowalne prezentacje są tworzone wykład po wykładzie w katalogu [`lectures/`](lectures/). Pierwsza z nich: [Wprowadzenie do przedmiotu](lectures/01-wprowadzenie/lecture.html).
+
+Katalog [`web/`](web/) zawiera wcześniejsze renderowane podglądy slajdów i lokalne media jako archiwum wizualne. Nie jest źródłem nowych prezentacji.
 
 ## Materiały dla studentów
 
 GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
 
+- [01. Wprowadzenie do przedmiotu — źródło prezentacji](lectures/01-wprowadzenie/lecture.md)
 - [01. Wprowadzenie do przedmiotu](notes/01-wprowadzenie-do-przedmiotu.md)
 - [02. Co to jest telekomunikacja](notes/02-co-to-jest-telekomunikacja.md)
 - [03. Podstawowe pojęcia, jednostki, ograniczenia](notes/03-podstawowe-pojecia-jednostki-ograniczenia.md)
