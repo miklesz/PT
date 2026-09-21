@@ -53,7 +53,14 @@ Kluczowe elementy: urządzenia końcowe, punkty dostępowe, anteny, kontrolery i
 
 ## Typy sieci
 
-<div class="packet"><span>PAN<br>osobista</span><span>LAN / WLAN<br>lokalna</span><span>MAN<br>miejska</span><span>WAN<br>rozległa</span></div>
+<div class="network-scale">
+  <div class="pan"><strong>PAN</strong><br>osobista</div>
+  <div class="lan"><strong>LAN / WLAN</strong><br>lokalna</div>
+  <div class="man"><strong>MAN</strong><br>miejska</div>
+  <div class="wan"><strong>WAN</strong><br>rozległa</div>
+</div>
+
+Rosnący zasięg: od urządzeń osobistych po sieci łączące odległe lokalizacje.
 
 ---
 
