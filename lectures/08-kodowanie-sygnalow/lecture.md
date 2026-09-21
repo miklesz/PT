@@ -44,6 +44,16 @@ Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji b�
 
 ---
 
+## Sprawdź: odległość Hamminga
+
+<div class="code-lab hamming-lab">
+  <label>Pierwszy ciąg<input class="hamming-x" value="10001" inputmode="numeric" maxlength="16"></label>
+  <label>Drugi ciąg<input class="hamming-y" value="10000" inputmode="numeric" maxlength="16"></label>
+  <div class="lab-result hamming-result" aria-live="polite"></div>
+</div>
+
+---
+
 ## Waga kodu
 
 Waga słowa kodowego jest liczbą jego niezerowych symboli. Dla kodów binarnych oznacza po prostu liczbę jedynek.
@@ -190,6 +200,15 @@ Jednym z historycznych zastosowań jest kod kreskowy *Interleaved 2 of 5*, używ
 
 ---
 
+## Generator kodu „2 z 5”
+
+<div class="code-lab two-of-five-lab">
+  <label>Cyfra wejściowa<select class="two-of-five-digit"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></label>
+  <div class="lab-result two-of-five-result" aria-live="polite"></div>
+</div>
+
+---
+
 ## Kod splotowy
 
 Kodowanie splotowe (*convolutional coding*) tworzy ciąg wyjściowy zależny od bieżących i wcześniejszych bitów wejściowych.
@@ -270,6 +289,15 @@ Z jednego bitu `u(k)` powstaje para `c₁(k), c₂(k)`. Jeżeli zakłócenie zmi
 </div>
 
 Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwiększa odporność, ale zajmuje więcej pasma.
+
+---
+
+## Koder splotowy: spróbuj sam
+
+<div class="code-lab convolutional-lab">
+  <label>Ciąg wejściowy<input class="convolutional-input" value="10110" inputmode="numeric" maxlength="12"></label>
+  <div class="lab-result convolutional-result" aria-live="polite"></div>
+</div>
 
 ---
 

@@ -117,6 +117,14 @@
       .reveal .encoding-benefit .benefit-mark { border-radius: 50%; background: #e4f0e7; color: #3d672e; font-family: Arial, sans-serif; }
       .reveal .encoding-benefit .bit-pair { display: flex; gap: 0.28em; }
       .reveal .encoding-benefit .bit-pair span { padding: 0.28em 0.38em; background: #e5f1f4; color: #006779; font-family: monospace; font-size: 0.95em; font-weight: 700; }
+      .reveal .code-lab { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7em; align-items: end; max-width: 900px; margin: 0.8em auto; }
+      .reveal .code-lab label { display: grid; gap: 0.28em; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; }
+      .reveal .code-lab input, .reveal .code-lab select { width: 100%; box-sizing: border-box; padding: 0.38em 0.5em; border: 2px solid var(--pt-blue); border-radius: 0; background: #fff; color: var(--pt-ink); font: 700 1.1em ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .reveal .code-lab select { font-family: Arial, sans-serif; }
+      .reveal .code-lab .lab-result { grid-column: 1 / -1; min-height: 3.2em; padding: 0.55em 0.7em; border-left: 6px solid var(--pt-cyan); background: #edf5fa; color: var(--pt-ink); font-size: 0.58em; line-height: 1.35; }
+      .reveal .code-lab .lab-result code { padding: 0.12em 0.28em; background: #fff; color: #8a421e; font-size: 1.06em; }
+      .reveal .two-of-five-lab { grid-template-columns: minmax(230px, 0.8fr) 1.4fr; }
+      .reveal .convolutional-lab { grid-template-columns: 1fr; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
@@ -229,6 +237,16 @@ Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji b�
 ## Materiał: odległość Hamminga
 
 <video controls preload="metadata"><source src="media/videos/P02mJhS9qQ4.mp4" type="video/mp4"></video>
+
+---
+
+## Sprawdź: odległość Hamminga
+
+<div class="code-lab hamming-lab">
+  <label>Pierwszy ciąg<input class="hamming-x" value="10001" inputmode="numeric" maxlength="16"></label>
+  <label>Drugi ciąg<input class="hamming-y" value="10000" inputmode="numeric" maxlength="16"></label>
+  <div class="lab-result hamming-result" aria-live="polite"></div>
+</div>
 
 ---
 
@@ -378,6 +396,15 @@ Jednym z historycznych zastosowań jest kod kreskowy *Interleaved 2 of 5*, używ
 
 ---
 
+## Generator kodu „2 z 5”
+
+<div class="code-lab two-of-five-lab">
+  <label>Cyfra wejściowa<select class="two-of-five-digit"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></label>
+  <div class="lab-result two-of-five-result" aria-live="polite"></div>
+</div>
+
+---
+
 ## Kod splotowy
 
 Kodowanie splotowe (*convolutional coding*) tworzy ciąg wyjściowy zależny od bieżących i wcześniejszych bitów wejściowych.
@@ -461,6 +488,15 @@ Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwię
 
 ---
 
+## Koder splotowy: spróbuj sam
+
+<div class="code-lab convolutional-lab">
+  <label>Ciąg wejściowy<input class="convolutional-input" value="10110" inputmode="numeric" maxlength="12"></label>
+  <div class="lab-result convolutional-result" aria-live="polite"></div>
+</div>
+
+---
+
 ## Systematyczne a niesystematyczne kodowanie splotowe
 
 - W wersji systematycznej jeden z bitów wyjściowych jest kopią bitu wejściowego.
@@ -481,6 +517,65 @@ Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwię
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
     <script>
       Reveal.initialize({ hash: true, slideNumber: 'c/t', controlsTutorial: false, transition: 'fade', transitionSpeed: 'fast', plugins: [RevealMarkdown] });
+
+      const binary = (value) => value.replace(/[^01]/g, '');
+      const setHammingResult = () => {
+        const x = document.querySelector('.hamming-x');
+        const y = document.querySelector('.hamming-y');
+        const output = document.querySelector('.hamming-result');
+        if (!x || !y || !output) return;
+        x.value = binary(x.value); y.value = binary(y.value);
+        if (!x.value || !y.value || x.value.length !== y.value.length) {
+          output.textContent = 'Wpisz dwa niepuste ciągi binarne o tej samej długości.';
+          return;
+        }
+        const differences = [...x.value].map((bit, index) => bit === y.value[index] ? null : index + 1).filter(Boolean);
+        output.innerHTML = 'Odległość Hamminga: <code>' + differences.length + '</code>. Różne pozycje: <code>' + (differences.join(', ') || 'brak') + '</code>.';
+      };
+
+      const twoOfFive = ['00110', '10001', '01001', '11000', '00101', '10100', '01100', '00011', '10010', '01010'];
+      const setTwoOfFiveResult = () => {
+        const input = document.querySelector('.two-of-five-digit');
+        const output = document.querySelector('.two-of-five-result');
+        if (!input || !output) return;
+        const word = twoOfFive[Number(input.value)];
+        output.innerHTML = 'Cyfra <code>' + input.value + '</code> → słowo <code>' + word + '</code>. Liczba jedynek: <code>2</code>.';
+      };
+
+      const setConvolutionalResult = () => {
+        const input = document.querySelector('.convolutional-input');
+        const output = document.querySelector('.convolutional-result');
+        if (!input || !output) return;
+        input.value = binary(input.value);
+        if (!input.value) {
+          output.textContent = 'Wpisz co najmniej jeden bit wejściowy.';
+          return;
+        }
+        let memory1 = 0;
+        let memory2 = 0;
+        const pairs = [];
+        const states = [];
+        for (const character of input.value) {
+          const bit = Number(character);
+          const c1 = bit ^ memory1 ^ memory2;
+          const c2 = bit ^ memory2;
+          pairs.push('' + c1 + c2);
+          states.push('[' + bit + ',' + memory1 + ',' + memory2 + ']');
+          memory2 = memory1;
+          memory1 = bit;
+        }
+        output.innerHTML = 'Pary wyjściowe: <code>' + pairs.join(' ') + '</code><br>Stany [bieżący, pamięć 1, pamięć 2]: <code>' + states.join(' ') + '</code>.';
+      };
+
+      const initializeLabs = () => {
+        document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
+        document.querySelector('.two-of-five-digit')?.addEventListener('change', setTwoOfFiveResult);
+        document.querySelector('.convolutional-input')?.addEventListener('input', setConvolutionalResult);
+        setHammingResult();
+        setTwoOfFiveResult();
+        setConvolutionalResult();
+      };
+      Reveal.on('ready', initializeLabs);
     </script>
   </body>
 </html>
