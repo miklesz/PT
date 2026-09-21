@@ -183,6 +183,12 @@ const html = `<!doctype html>
       .reveal .bus-station { position: absolute; top: calc(53% + 0.48em); display: grid; place-content: center; width: 2.25em; height: 2.25em; border: 3px solid var(--pt-blue); background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; transform: translateX(-50%); }
       .reveal .bus-station::before { content: ''; position: absolute; left: 50%; bottom: 100%; height: 0.55em; border-left: 4px solid var(--pt-blue); }
       .reveal .bus-station.station-one { left: 24%; }.reveal .bus-station.station-two { left: 50%; }.reveal .bus-station.station-three { left: 76%; }
+      .reveal .ring-diagram { position: relative; width: 8.4em; height: 6.5em; margin: 0.2em auto 0.5em; }
+      .reveal .ring-track { position: absolute; inset: 0.65em 1.25em; border: 6px solid #007c91; border-radius: 50%; }
+      .reveal .ring-node { position: absolute; z-index: 2; display: grid; place-content: center; width: 1.55em; height: 1.55em; border: 3px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; }
+      .reveal .ring-node.node-a { top: 0; left: calc(50% - 0.78em); }.reveal .ring-node.node-b { top: calc(50% - 0.78em); right: 0; }.reveal .ring-node.node-c { bottom: 0; left: calc(50% - 0.78em); }.reveal .ring-node.node-d { top: calc(50% - 0.78em); left: 0; }
+      .reveal .ring-direction { position: absolute; z-index: 1; inset: 2.1em 2.2em; display: grid; place-content: center; color: #b35c2e; font-size: 1.05em; font-weight: 700; text-align: center; }
+      .reveal .ring-direction small { color: var(--pt-muted); font-size: 0.32em; font-weight: 400; white-space: nowrap; }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }

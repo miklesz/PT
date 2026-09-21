@@ -102,13 +102,14 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
 
 ## Topologia pierścienia
 
-<div class="packet"><span>A → B</span><span>B → C</span><span>C → D</span><span>D → A</span></div>
+<div class="ring-diagram">
+  <div class="ring-track"></div><div class="ring-direction">↻<small>kierunek obiegu danych</small></div>
+  <div class="ring-node node-a">A</div><div class="ring-node node-b">B</div><div class="ring-node node-c">C</div><div class="ring-node node-d">D</div>
+</div>
 
 - Dane przechodzą kolejno przez węzły.
 - W pierścieniu podwójnym drugi kierunek może zapewniać redundancję.
 - Przykładem historycznym był Token Ring.
-
-![Topologia pierścienia](media/image8.png)
 
 ---
 
