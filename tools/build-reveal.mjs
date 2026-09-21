@@ -92,6 +92,19 @@ const html = `<!doctype html>
       .reveal .convolutional-circuit .generator-output { grid-column: span 2; display: grid; gap: 0.25em; min-height: 3.8em; padding: 0.48em 0.65em; border: 3px solid var(--pt-blue); background: #edf5fa; color: var(--pt-text); font-size: 0.48em; text-align: left; }
       .reveal .convolutional-circuit .generator-output strong { color: var(--pt-blue); }
       .reveal .convolutional-circuit .generator-output code { color: #8a421e; }
+      .reveal .convolutional-example { max-width: 1020px; margin: 0.55em auto; }
+      .reveal .convolutional-example .register-label { margin-bottom: 0.45em; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
+      .reveal .convolutional-example .register-row { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.28em; align-items: center; max-width: 740px; margin: 0 auto 0.55em; }
+      .reveal .convolutional-example .register-row > span { color: #007c91; font-weight: 700; }
+      .reveal .convolutional-example .register-cell { display: grid; gap: 0.18em; min-height: 3.35em; padding: 0.38em; border: 3px solid #007c91; background: #fff; color: #006779; font-size: 0.48em; text-align: center; }
+      .reveal .convolutional-example .register-cell.input { border-color: #b35c2e; color: #8a421e; }
+      .reveal .convolutional-example .register-cell small { color: var(--pt-muted); font-size: 0.85em; }
+      .reveal .convolutional-example .generator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; }
+      .reveal .convolutional-example .generator-card { display: grid; gap: 0.32em; min-height: 4.1em; padding: 0.48em 0.65em; border: 3px solid var(--pt-blue); background: #edf5fa; color: var(--pt-text); font-size: 0.45em; text-align: center; }
+      .reveal .convolutional-example .generator-card strong { color: var(--pt-blue); }
+      .reveal .convolutional-example .generator-card div { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.3em; }
+      .reveal .convolutional-example .generator-card code { padding: 0.12em 0.26em; background: #fff; color: #8a421e; }
+      .reveal .convolutional-example .generator-card b { color: #007c91; }
       .reveal .hdb3-wave { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.16em; align-items: end; max-width: 760px; height: 5.1em; margin: 0.65em auto 0.38em; }
       .reveal .hdb3-cell { position: relative; display: grid; grid-template-rows: 1fr auto; align-items: end; min-height: 5.1em; padding: 0 0.25em 0.38em; border-bottom: 3px solid #627789; color: var(--pt-text); font-size: 0.64em; text-align: center; }
       .reveal .hdb3-cell strong, .reveal .hdb3-cell span { position: relative; z-index: 1; }

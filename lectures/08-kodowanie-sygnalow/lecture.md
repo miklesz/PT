@@ -215,17 +215,20 @@ Rejestr pamięta wcześniejsze bity, dlatego wynik zależy od bieżącego bitu i
 
 ## Przykład kodera splotowego `1/2`
 
-<div class="convolutional-circuit">
-  <div class="tap input-tap"><code>u(k)</code><small>bieżący bit</small></div>
-  <div class="circuit-arrow">→</div>
-  <div class="tap"><code>u(k−1)</code><small>opóźnienie 1</small></div>
-  <div class="circuit-arrow">→</div>
-  <div class="tap"><code>u(k−2)</code><small>opóźnienie 2</small></div>
-  <div class="generator-output"><strong>Generator 1</strong><code>c₁(k) = u(k) ⊕ u(k−1) ⊕ u(k−2)</code></div>
-  <div class="generator-output"><strong>Generator 2</strong><code>c₂(k) = u(k) ⊕ u(k−2)</code></div>
+<div class="convolutional-example">
+  <div class="register-label">Rejestr przesuwny: po każdej chwili bit przesuwa się o jedno miejsce w prawo</div>
+  <div class="register-row">
+    <div class="register-cell input"><code>u(k)</code><small>bieżący bit</small></div><span>→</span>
+    <div class="register-cell"><code>u(k−1)</code><small>pamięć 1</small></div><span>→</span>
+    <div class="register-cell"><code>u(k−2)</code><small>pamięć 2</small></div>
+  </div>
+  <div class="generator-grid">
+    <div class="generator-card"><strong>Generator 1</strong><div><code>u(k)</code><b>⊕</b><code>u(k−1)</code><b>⊕</b><code>u(k−2)</code><b>→</b><code>c₁(k)</code></div></div>
+    <div class="generator-card"><strong>Generator 2</strong><div><code>u(k)</code><b>⊕</b><code>u(k−2)</code><b>→</b><code>c₂(k)</code></div></div>
+  </div>
 </div>
 
-W każdej chwili jeden bit wejściowy tworzy dwa bity wyjściowe; stosunek szybkości kodu wynosi więc `1/2`.
+Każdy generator wybiera inne odczepy rejestru. Jeden bit wejściowy tworzy więc dwa bity wyjściowe; stosunek szybkości kodu wynosi `1/2`.
 
 ---
 
