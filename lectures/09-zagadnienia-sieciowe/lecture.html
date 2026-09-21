@@ -194,8 +194,7 @@
       .reveal .mesh-formula .mesh-fraction small { display: block; padding-top: 0.08em; font-size: 0.56em; }
       .reveal .mesh-formula .formula-legend { display: flex; justify-content: center; gap: 1.3em; margin-top: 0.55em; color: var(--pt-muted); font-family: Arial, Helvetica, sans-serif; font-size: 0.43em; font-style: normal; }
       .reveal .mesh-formula .formula-legend strong { margin-right: 0.22em; color: #007c91; }
-      .reveal .mesh-example { display: flex; justify-content: center; gap: 0.6em; margin: 0.55em auto 0; color: var(--pt-ink); font-size: 0.58em; }
-      .reveal .mesh-example strong { padding: 0.26em 0.55em; background: #f4e6d5; color: #8a421e; }.reveal .mesh-example span { padding: 0.26em 0.55em; background: #e7edf6; }.reveal .mesh-example b { color: #006779; }
+      .reveal .mesh-lab { grid-template-columns: minmax(230px, 1fr); max-width: 620px; margin: 0.5em auto 0; }.reveal .mesh-lab .lab-result { min-height: 0; text-align: center; }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }
@@ -476,7 +475,10 @@ Każdy węzeł łączy się z każdym. Zapewnia wysoką odporność, ale liczba 
 
 Każde łącze łączy parę różnych węzłów, a tę samą parę liczymy tylko raz.
 
-<div class="mesh-example"><strong>Przykład: 5 węzłów</strong><span>c = 5 × 4 / 2 = <b>10 łączy</b></span></div>
+<div class="code-lab mesh-lab">
+  <label>Liczba węzłów <i>n</i><input class="mesh-nodes" type="number" min="2" max="1000" step="1" value="5" inputmode="numeric"></label>
+  <div class="lab-result mesh-result"></div>
+</div>
 
 ---
 
@@ -613,17 +615,29 @@ Zależy od:
         output.innerHTML = 'Pary wyjściowe: <code>' + pairs.join(' ') + '</code><br>Stany [bieżący, pamięć 1, pamięć 2]: <code>' + states.join(' ') + '</code>.';
       };
 
+      const setMeshResult = () => {
+        const input = document.querySelector('.mesh-nodes');
+        const output = document.querySelector('.mesh-result');
+        if (!input || !output) return;
+        const nodes = Math.max(2, Math.min(1000, Math.trunc(Number(input.value) || 2)));
+        input.value = nodes;
+        const links = nodes * (nodes - 1) / 2;
+        output.innerHTML = '<code>c = ' + nodes + ' × ' + (nodes - 1) + ' / 2 = ' + links + '</code><br>Dla <strong>' + nodes + ' węzłów</strong> pełna siatka potrzebuje <strong>' + links + ' łączy</strong>.';
+      };
+
       const initializeLabs = () => {
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
         document.querySelector('.two-of-five-word')?.addEventListener('input', setTwoOfFiveCheckResult);
         document.querySelector('.hdb3-input')?.addEventListener('input', setHdb3Result);
         document.querySelector('.convolutional-input')?.addEventListener('input', setConvolutionalResult);
+        document.querySelector('.mesh-nodes')?.addEventListener('input', setMeshResult);
         setHammingResult();
         setTwoOfFiveResult();
         setTwoOfFiveCheckResult();
         setHdb3Result();
         setConvolutionalResult();
+        setMeshResult();
       };
       Reveal.on('ready', initializeLabs);
     </script>

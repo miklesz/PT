@@ -238,7 +238,10 @@ Każdy węzeł łączy się z każdym. Zapewnia wysoką odporność, ale liczba 
 
 Każde łącze łączy parę różnych węzłów, a tę samą parę liczymy tylko raz.
 
-<div class="mesh-example"><strong>Przykład: 5 węzłów</strong><span>c = 5 × 4 / 2 = <b>10 łączy</b></span></div>
+<div class="code-lab mesh-lab">
+  <label>Liczba węzłów <i>n</i><input class="mesh-nodes" type="number" min="2" max="1000" step="1" value="5" inputmode="numeric"></label>
+  <div class="lab-result mesh-result"></div>
+</div>
 
 ---
 
