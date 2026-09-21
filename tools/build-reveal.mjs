@@ -170,6 +170,11 @@ const html = `<!doctype html>
       .reveal .network-scale .lan { min-height: 5.1em; background: #0071a8; }
       .reveal .network-scale .man { min-height: 6.8em; background: #4f7f3d; }
       .reveal .network-scale .wan { min-height: 8.6em; background: #b35c2e; }
+      .reveal .p2p-diagram { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 0.45em; align-items: center; max-width: 860px; margin: 0.65em auto 0.85em; }
+      .reveal .p2p-node { display: grid; place-content: center; min-height: 3.2em; padding: 0.35em; border: 3px solid var(--pt-blue); background: #fff; color: var(--pt-blue); font-size: 0.6em; font-weight: 700; text-align: center; }
+      .reveal .p2p-link { position: relative; display: grid; place-content: center; min-height: 3.2em; color: #006779; font-size: 0.52em; font-weight: 700; text-align: center; }
+      .reveal .p2p-link::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; border-top: 5px solid #007c91; }
+      .reveal .p2p-link span { position: relative; padding: 0.22em 0.45em; background: #fff; }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }

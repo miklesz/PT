@@ -50,12 +50,23 @@ Topologia opisuje układ połączeń między urządzeniami, a nie tylko ich poł
 
 ## Topologia punkt-punkt
 
-<div class="packet"><span>Węzeł A</span><span>dedykowane łącze</span><span>Węzeł B</span></div>
+<div class="p2p-diagram">
+  <div class="p2p-node">Węzeł A</div><div class="p2p-link"><span>dedykowane łącze</span></div><div class="p2p-node">Węzeł B</div>
+</div>
 
-![Topologia punkt-punkt](media/image4.png)
+<div class="columns"><div>
 
-- **Permanent/dedicated:** łącze stale zestawione.
-- **Switched:** połączenie zestawiane na żądanie przez sieć pośrednią.
+**Łącze stałe**
+
+Zestawione na stałe między tymi samymi dwoma punktami.
+
+</div><div>
+
+**Łącze komutowane**
+
+Tworzone na żądanie przez sieć pośrednią, a po zakończeniu zwalniane.
+
+</div></div>
 
 ---
 
