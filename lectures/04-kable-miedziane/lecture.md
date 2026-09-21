@@ -232,16 +232,15 @@ Kable z linką nośną prowadzi się między budynkami; dostępne są warianty U
 
 <!-- .slide: class="section-slide" -->
 
-# 8P8C (potocznie RJ-45) i Ethernet
+# RJ-45 i Ethernet
 
 ---
 
-## Złącze 8P8C (potocznie „RJ-45”)
+## Złącze RJ-45
 
 <div class="columns"><div>
 
 - Ośmioprzewodowe złącze systemów okablowania strukturalnego.
-- W praktyce Ethernetu określenie „RJ-45” jest powszechne, choć technicznie chodzi zwykle o złącze 8P8C.
 - Standardy: ISO 8877, ISO/IEC 11801, EN 50173.
 - Występuje w panelach krosowych, gniazdach stanowiskowych, kartach sieciowych i kablach połączeniowych.
 - Dostępne są wersje ekranowane i nieekranowane.
