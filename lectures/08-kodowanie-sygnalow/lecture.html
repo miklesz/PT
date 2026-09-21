@@ -402,25 +402,39 @@ Rejestr pamięta wcześniejsze bity, dlatego wynik zależy od bieżącego bitu i
 
 Każdy generator wybiera inne odczepy rejestru. Jeden bit wejściowy tworzy więc dwa bity wyjściowe; stosunek szybkości kodu wynosi `1/2`.
 
+Na następnym slajdzie: dlaczego właśnie dwa różne generatory są użyteczne?
+
 ---
 
 ## Po co dwa generatory?
 
+Oba generatory obserwują ten sam bieżący bit, ale korzystają z innych odczepów rejestru:
+
 <div class="columns"><div>
 
-**Dwa różne sprawdzenia tego samego bitu**
+**Generator 1**
 
-Generator 1 i generator 2 korzystają z tego samego bieżącego bitu oraz pamięci, ale sumują inne zestawy bitów modulo 2.
+Łączy `u(k)`, `u(k−1)` oraz `u(k−2)`.
 
 </div><div>
 
-**Nadmiarowość potrzebna dekoderowi**
+**Generator 2**
 
-Z jednego bitu `u(k)` powstaje para `c₁(k), c₂(k)`. Gdy transmisja zniekształci jeden z nich, drugi oraz pamięć kolejnych chwil pomagają odtworzyć najbardziej prawdopodobny ciąg wejściowy.
+Łączy tylko `u(k)` oraz `u(k−2)`.
 
 </div></div>
 
-Liczba generatorów nie zawsze musi wynosić dwa: wybiera się ją jako kompromis między odpornością na błędy a zajętym pasmem.
+Powstają więc dwa różne sprawdzenia tej samej historii wejścia, a nie dwie kopie tego samego bitu.
+
+---
+
+## Co daje nadmiarowość?
+
+Z jednego bitu `u(k)` powstaje para `c₁(k), c₂(k)`. Jeżeli zakłócenie zmieni jeden symbol, drugi symbol oraz zależność od poprzednich chwil pomagają dekoderowi wybrać najbardziej prawdopodobny ciąg wejściowy.
+
+<div class="packet"><span>1 bit wejściowy</span><span>2 bity kodowe</span><span>większa odporność na błędy</span></div>
+
+Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwiększa odporność, ale zajmuje więcej pasma.
 
 ---
 
