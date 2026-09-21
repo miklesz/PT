@@ -54,7 +54,7 @@
 - podstawowe pojęcia kodowe,
 - odległość Hamminga i waga kodu,
 - maski telekomunikacyjne i właściwości sygnału,
-- HDB, kod „2 z 5” oraz kody ilorazowe.
+- HDB, kod „2 z 5” oraz kody splotowe.
 
 ---
 
@@ -107,11 +107,11 @@ Bity informacji nie są w słowie kodowym bezpośrednio rozpoznawalne; całość
 
 Maska określa dopuszczalne granice parametrów sygnału w czasie, np. amplitudy i narastania zboczy.
 
-Pomiar jest poprawny, gdy rzeczywisty przebieg nie wykracza poza obszar niedozwolony przez maskę.
+Pomiar jest poprawny, gdy rzeczywisty przebieg pozostaje w granicach wyznaczonych przez maskę.
 
 ---
 
-## Pożądane właściwości kodu liniowego
+## Pożądane właściwości kodu transmisyjnego
 
 - ograniczone składowe stałe,
 - możliwość odzyskania zegara,
@@ -169,15 +169,15 @@ Sprawdza wagę słowa, rozpoznaje kod i sygnalizuje nieprawidłową kombinację.
 
 ---
 
-## Kod ilorazowy
+## Kod splotowy
 
-Kodowanie ilorazowe (*convolutional coding*) tworzy ciąg wyjściowy zależny od bieżących i wcześniejszych bitów wejściowych.
+Kodowanie splotowe (*convolutional coding*) tworzy ciąg wyjściowy zależny od bieżących i wcześniejszych bitów wejściowych.
 
 Stan kodera jest pamięcią wcześniejszych symboli, a dekodowanie wybiera najbardziej prawdopodobną sekwencję wejściową.
 
 ---
 
-## Kodowanie ilorazowe: intuicja
+## Kodowanie splotowe: intuicja
 
 <div class="packet"><span>bit wejściowy</span><span>rejestr pamięci</span><span>funkcje generujące</span><span>bity kodowe</span></div>
 
@@ -185,7 +185,7 @@ Nadmiarowe bity zwiększają szansę poprawnego odtworzenia informacji po błęd
 
 ---
 
-## Systematyczne a niesystematyczne kodowanie ilorazowe
+## Systematyczne a niesystematyczne kodowanie splotowe
 
 - W wersji systematycznej jeden z bitów wyjściowych jest kopią bitu wejściowego.
 - W wersji niesystematycznej wszystkie bity wyjściowe są kombinacjami bieżącego i zapamiętanych bitów.
@@ -196,8 +196,8 @@ Nadmiarowe bity zwiększają szansę poprawnego odtworzenia informacji po błęd
 ## Podsumowanie
 
 - Odległość Hamminga i waga pomagają opisać właściwości kodu.
-- Kody liniowe wspierają synchronizację i odporność na błędy.
-- HDB, „2 z 5” i kody ilorazowe rozwiązują różne problemy transmisyjne.
+- Kody transmisyjne mogą wspierać synchronizację i odporność na błędy.
+- HDB, „2 z 5” i kody splotowe rozwiązują różne problemy transmisyjne.
 
       </textarea></section>
     </div></div>

@@ -51,7 +51,7 @@
 
 ## Plan wykładu
 
-- protokoły warstwy sieciowej,
+- protokoły i usługi związane z warstwą sieciową,
 - IP i jego nagłówek,
 - adresacja i konfiguracja hosta,
 - DNS,
@@ -113,7 +113,7 @@ Następnie występują adresy źródłowy i docelowy, opcje oraz dane.
 
 ## Fragmentacja
 
-Jeżeli pakiet jest większy niż MTU łącza, IPv4 może go podzielić na fragmenty. Fragmenty są składane przez host docelowy.
+Jeżeli pakiet IPv4 jest większy niż MTU łącza i nie ma ustawionej flagi *Don't Fragment*, może zostać podzielony na fragmenty. Fragmenty są składane przez host docelowy.
 
 W praktyce preferuje się unikanie fragmentacji przez odpowiedni dobór MTU i mechanizmy *Path MTU Discovery*.
 
@@ -194,7 +194,7 @@ Każdy AS ma numer ASN.
 
 ## BGP-4
 
-*Border Gateway Protocol* jest protokołem routingu między systemami autonomicznymi.
+*Border Gateway Protocol* jest protokołem routingu między systemami autonomicznymi. Działa nad TCP, ale steruje wyborem tras między AS-ami.
 
 - wymienia osiągalne prefiksy,
 - korzysta z polityki, nie tylko najkrótszego kosztu,
