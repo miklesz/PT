@@ -68,6 +68,7 @@ const html = `<!doctype html>
       .reveal .ipv4-row.control { background: #dceef2; }
       .reveal .ipv4-row.fragment { background: #eff0df; }
       .reveal .ipv4-row.forwarding { background: #f7e8d1; }
+      .reveal .ipv4-header-svg { display: block; width: min(100%, 1120px); max-height: 600px; margin: 0.1em auto 0; }
       .reveal .shared-medium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em 1.3em; align-items: end; max-width: 1000px; margin: 0.8em auto 0; }
       .reveal .radio-station { display: grid; justify-items: center; gap: 0.16em; font-size: 0.62em; }
       .reveal .radio-station .node { width: 4.4em; height: 3.1em; position: relative; display: grid; place-content: center; border: 4px solid var(--station); background: #fff; color: var(--station); font-weight: 700; }

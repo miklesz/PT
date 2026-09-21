@@ -52,6 +52,7 @@
       .reveal .ipv4-row.control { background: #dceef2; }
       .reveal .ipv4-row.fragment { background: #eff0df; }
       .reveal .ipv4-row.forwarding { background: #f7e8d1; }
+      .reveal .ipv4-header-svg { display: block; width: min(100%, 1120px); max-height: 600px; margin: 0.1em auto 0; }
       .reveal .shared-medium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em 1.3em; align-items: end; max-width: 1000px; margin: 0.8em auto 0; }
       .reveal .radio-station { display: grid; justify-items: center; gap: 0.16em; font-size: 0.62em; }
       .reveal .radio-station .node { width: 4.4em; height: 3.1em; position: relative; display: grid; place-content: center; border: 4px solid var(--station); background: #fff; color: var(--station); font-weight: 700; }
@@ -322,14 +323,36 @@ IP jest protokołem bezpołączeniowym i nie gwarantuje dostarczenia, kolejnośc
 
 ## Nagłówek IPv4
 
-<div class="ipv4-header" role="img" aria-label="Uproszczona mapa pól nagłówka IPv4, pogrupowanych według funkcji.">
-  <div class="ipv4-row control"><span><strong>Wersja / IHL</strong><small>format i długość nagłówka</small></span><span><strong>DSCP / ECN</strong><small>priorytet i przeciążenie</small></span><span><strong>Długość całkowita</strong><small>rozmiar pakietu</small></span></div>
-  <div class="ipv4-row fragment"><span><strong>Identyfikacja</strong><small>łączy fragmenty tego samego pakietu</small></span><span><strong>Flagi / przesunięcie</strong><small>informacja o fragmentacji</small></span></div>
-  <div class="ipv4-row forwarding"><span><strong>TTL</strong><small>maksymalna liczba skoków</small></span><span><strong>Protokół</strong><small>np. TCP, UDP, ICMP</small></span><span><strong>Suma kontrolna</strong><small>sprawdza nagłówek</small></span></div>
-  <div class="ipv4-addresses"><span>Adres źródłowy</span><span>Adres docelowy</span></div>
-</div>
+<svg class="ipv4-header-svg" viewBox="0 0 1120 520" role="img" aria-label="Schemat nagłówka IPv4 z polami ułożonymi w wierszach po 32 bity.">
+  <style>
+    .ipv4-header-svg .bit { font: 15px sans-serif; fill: #4f5f68; }
+    .ipv4-header-svg .label { font: 700 20px sans-serif; fill: #172f3d; }
+    .ipv4-header-svg .detail { font: 14px sans-serif; fill: #4f5f68; }
+    .ipv4-header-svg .field { stroke: #176b80; stroke-width: 2; }
+  </style>
+  <text class="bit" x="100" y="28">0</text><text class="bit" x="1095" y="28" text-anchor="end">31 bit</text>
+  <g transform="translate(100,42)">
+    <rect class="field" x="0" y="0" width="125" height="66" fill="#dceef2"/><text class="label" x="62" y="29" text-anchor="middle">Wersja</text><text class="detail" x="62" y="51" text-anchor="middle">4 bity</text>
+    <rect class="field" x="125" y="0" width="125" height="66" fill="#dceef2"/><text class="label" x="187" y="29" text-anchor="middle">IHL</text><text class="detail" x="187" y="51" text-anchor="middle">4 bity</text>
+    <rect class="field" x="250" y="0" width="188" height="66" fill="#e7edf6"/><text class="label" x="344" y="29" text-anchor="middle">DSCP</text><text class="detail" x="344" y="51" text-anchor="middle">6 bitów</text>
+    <rect class="field" x="438" y="0" width="63" height="66" fill="#e7edf6"/><text class="label" x="469" y="29" text-anchor="middle">ECN</text><text class="detail" x="469" y="51" text-anchor="middle">2</text>
+    <rect class="field" x="501" y="0" width="499" height="66" fill="#f7e8d1"/><text class="label" x="750" y="29" text-anchor="middle">Długość całkowita</text><text class="detail" x="750" y="51" text-anchor="middle">16 bitów: rozmiar całego pakietu</text>
 
-<p class="credits">Uproszczona mapa pól: rzeczywisty nagłówek ma stały układ bitów, a po adresach mogą wystąpić opcje i dane.</p>
+    <rect class="field" x="0" y="66" width="500" height="66" fill="#eff0df"/><text class="label" x="250" y="95" text-anchor="middle">Identyfikacja</text><text class="detail" x="250" y="117" text-anchor="middle">16 bitów: łączy fragmenty jednego pakietu</text>
+    <rect class="field" x="500" y="66" width="94" height="66" fill="#eff0df"/><text class="label" x="547" y="95" text-anchor="middle">Flagi</text><text class="detail" x="547" y="117" text-anchor="middle">3</text>
+    <rect class="field" x="594" y="66" width="406" height="66" fill="#eff0df"/><text class="label" x="797" y="95" text-anchor="middle">Przesunięcie fragmentu</text><text class="detail" x="797" y="117" text-anchor="middle">13 bitów</text>
+
+    <rect class="field" x="0" y="132" width="250" height="66" fill="#f7e8d1"/><text class="label" x="125" y="161" text-anchor="middle">TTL</text><text class="detail" x="125" y="183" text-anchor="middle">8 bitów: liczba skoków</text>
+    <rect class="field" x="250" y="132" width="250" height="66" fill="#f7e8d1"/><text class="label" x="375" y="161" text-anchor="middle">Protokół</text><text class="detail" x="375" y="183" text-anchor="middle">8 bitów: TCP, UDP, ICMP</text>
+    <rect class="field" x="500" y="132" width="500" height="66" fill="#f7e8d1"/><text class="label" x="750" y="161" text-anchor="middle">Suma kontrolna nagłówka</text><text class="detail" x="750" y="183" text-anchor="middle">16 bitów</text>
+
+    <rect class="field" x="0" y="198" width="1000" height="60" fill="#dceef2"/><text class="label" x="500" y="234" text-anchor="middle">Adres źródłowy · 32 bity</text>
+    <rect class="field" x="0" y="258" width="1000" height="60" fill="#e7edf6"/><text class="label" x="500" y="294" text-anchor="middle">Adres docelowy · 32 bity</text>
+    <rect class="field" x="0" y="318" width="1000" height="54" fill="#f1f4f5" stroke-dasharray="7 5"/><text class="label" x="500" y="351" text-anchor="middle">Opcje i dopełnienie · występują tylko, gdy IHL &gt; 5</text>
+  </g>
+</svg>
+
+<p class="credits">Każdy z trzech pierwszych wierszy ma 32 bity. Za nagłówkiem występują dane pakietu.</p>
 
 ---
 
