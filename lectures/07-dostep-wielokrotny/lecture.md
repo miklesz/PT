@@ -18,7 +18,7 @@
 W medium dzielonym wiele stacji korzysta z jednego kanału transmisyjnego. Gdy dwie stacje nadają jednocześnie, ich sygnały mogą utworzyć **kolizję**.
 
 <div class="shared-medium">
-  <div class="shared-channel">Wspólny kanał radiowy</div>
+  <div class="shared-channel"><span class="channel-title">Wspólny kanał radiowy</span></div>
   <div class="radio-station station-a"><div class="node">A</div><strong>Stacja A</strong><span class="role">nadaje</span></div>
   <div class="radio-station station-b"><div class="node">B</div><strong>Stacja B</strong><span class="role">odbiera kanał</span></div>
   <div class="radio-station station-c"><div class="node">C</div><strong>Stacja C</strong><span class="role">odbiera kanał</span></div>

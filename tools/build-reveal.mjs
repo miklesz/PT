@@ -66,7 +66,8 @@ const html = `<!doctype html>
       .reveal .station-b { --station: #b35c2e; }
       .reveal .station-c { --station: #4f7f3d; }
       .reveal .shared-channel { grid-column: 1 / -1; order: -1; min-height: 3.1em; display: grid; place-content: center; position: relative; overflow: hidden; color: #fff; background: #003b70; font-size: 0.68em; font-weight: 700; }
-      .reveal .shared-channel::before { content: ''; position: absolute; left: 7%; right: 7%; top: 50%; border-top: 3px solid #85c4d0; }
+      .reveal .shared-channel .channel-title { position: relative; z-index: 1; padding: 0.18em 0.55em; background: #003b70; }
+      .reveal .shared-channel::before { content: ''; position: absolute; z-index: 0; left: 7%; right: 7%; top: 50%; border-top: 3px solid #85c4d0; }
       .reveal .shared-channel::after { content: 'ramka ze stacji A'; position: absolute; left: 18%; top: calc(50% - 1.45em); padding: 0.32em 0.6em; background: #007c91; font-size: 0.72em; font-weight: 700; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
