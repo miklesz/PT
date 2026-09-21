@@ -156,9 +156,17 @@ Sprawdza wagę słowa, rozpoznaje kod i sygnalizuje nieprawidłową kombinację.
 ## Schematy kodera i dekodera „2 z 5”
 
 <div class="media-gallery">
-  <img src="media/image9.png" alt="Schemat kodera kodu 2 z 5">
-  <img src="media/image10.png" alt="Schemat dekodera kodu 2 z 5">
+  <img src="media/image10.png" alt="Schemat kodera kodu 2 z 5">
+  <img src="media/image11.png" alt="Schemat dekodera kodu 2 z 5">
 </div>
+
+---
+
+## Zastosowanie kodu „2 z 5”
+
+Jednym z historycznych zastosowań jest kod kreskowy *Interleaved 2 of 5*, używany między innymi do oznaczania przesyłek i produktów.
+
+![Przykład kodu kreskowego Interleaved 2 of 5](media/image9.png)
 
 ---
 
