@@ -244,6 +244,63 @@ ${embeddedMarkdown}
         output.innerHTML = 'Cyfra <code>' + digit + '</code> → słowo <code>' + word + '</code>. Liczba jedynek: <code>2</code>.';
       };
 
+      const setTwoOfFiveCheckResult = () => {
+        const input = document.querySelector('.two-of-five-word');
+        const output = document.querySelector('.two-of-five-check-result');
+        if (!input || !output) return;
+        input.value = binary(input.value).slice(0, 5);
+        if (input.value.length !== 5) {
+          output.textContent = 'Wpisz dokładnie pięć bitów.';
+          return;
+        }
+        const weight = [...input.value].filter((bit) => bit === '1').length;
+        const digit = twoOfFive.indexOf(input.value);
+        if (digit >= 0) {
+          output.innerHTML = 'Waga słowa: <code>' + weight + '</code>. Poprawne słowo kodowe cyfry <code>' + digit + '</code>.';
+        } else {
+          output.innerHTML = 'Waga słowa: <code>' + weight + '</code>. To nie jest słowo kodowe cyfr w użytej tablicy „2 z 5”.';
+        }
+      };
+
+      const setHdb3Result = () => {
+        const input = document.querySelector('.hdb3-input');
+        const output = document.querySelector('.hdb3-result');
+        if (!input || !output) return;
+        input.value = binary(input.value);
+        if (!input.value) {
+          output.textContent = 'Wpisz co najmniej jeden bit.';
+          return;
+        }
+        let lastPolarity = -1;
+        let pulsesSinceViolation = 0;
+        let zeroRun = 0;
+        const encoded = [];
+        for (const character of input.value) {
+          if (character === '1') {
+            lastPolarity *= -1;
+            encoded.push((lastPolarity > 0 ? '+' : '−') + '1');
+            pulsesSinceViolation += 1;
+            zeroRun = 0;
+            continue;
+          }
+          encoded.push('0');
+          zeroRun += 1;
+          if (zeroRun !== 4) continue;
+          if (pulsesSinceViolation % 2 === 0) {
+            const polarity = -lastPolarity;
+            lastPolarity = polarity;
+            const mark = polarity > 0 ? '+' : '−';
+            encoded.splice(-4, 4, mark + 'B', '0', '0', mark + 'V');
+          } else {
+            const mark = lastPolarity > 0 ? '+' : '−';
+            encoded.splice(-4, 4, '0', '0', '0', mark + 'V');
+          }
+          pulsesSinceViolation = 0;
+          zeroRun = 0;
+        }
+        output.innerHTML = 'Zakodowany przebieg: <code>' + encoded.join(' ') + '</code><br><span><code>B00V</code> lub <code>000V</code> zastępuje serię czterech zer.</span>';
+      };
+
       const setConvolutionalResult = () => {
         const input = document.querySelector('.convolutional-input');
         const output = document.querySelector('.convolutional-result');
@@ -272,9 +329,13 @@ ${embeddedMarkdown}
       const initializeLabs = () => {
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
+        document.querySelector('.two-of-five-word')?.addEventListener('input', setTwoOfFiveCheckResult);
+        document.querySelector('.hdb3-input')?.addEventListener('input', setHdb3Result);
         document.querySelector('.convolutional-input')?.addEventListener('input', setConvolutionalResult);
         setHammingResult();
         setTwoOfFiveResult();
+        setTwoOfFiveCheckResult();
+        setHdb3Result();
         setConvolutionalResult();
       };
       Reveal.on('ready', initializeLabs);

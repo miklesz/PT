@@ -144,7 +144,16 @@ Ponieważ `B` i `V` mają tu tę samą polaryzację dodatnią, dekoder rozpoznaj
 
 ---
 
-## Kod stałowagowy „2 z 5”
+## HDB3: spróbuj sam
+
+<div class="code-lab hdb3-lab">
+  <label>Ciąg binarny<input class="hdb3-input" value="100000001" inputmode="numeric" maxlength="20"></label>
+  <div class="lab-result hdb3-result" aria-live="polite"></div>
+</div>
+
+---
+
+## Kod stałowagowy „2 z 5"
 
 - Każde słowo ma pięć bitów, z których dokładnie dwa mają wartość `1`.
 - Jest to kod nieliniowy i stałowagowy.
@@ -205,6 +214,15 @@ Jednym z historycznych zastosowań jest kod kreskowy *Interleaved 2 of 5*, używ
 <div class="code-lab two-of-five-lab">
   <label>Cyfra wejściowa<input class="two-of-five-digit" type="number" value="6" min="0" max="9" step="1" inputmode="numeric"></label>
   <div class="lab-result two-of-five-result" aria-live="polite"></div>
+</div>
+
+---
+
+## Sprawdź słowo „2 z 5”
+
+<div class="code-lab two-of-five-checker">
+  <label>Słowo pięciobitowe<input class="two-of-five-word" value="01100" inputmode="numeric" maxlength="5"></label>
+  <div class="lab-result two-of-five-check-result" aria-live="polite"></div>
 </div>
 
 ---
