@@ -180,9 +180,17 @@ Stan kodera jest pamięcią wcześniejszych symboli, a dekodowanie wybiera najba
 
 ## Kodowanie splotowe: intuicja
 
-<div class="packet"><span>bit wejściowy</span><span>rejestr pamięci</span><span>funkcje generujące</span><span>bity kodowe</span></div>
+<div class="convolutional-flow">
+  <div class="flow-step"><strong>Wejście</strong><code>u(k)</code><small>bieżący bit</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><strong>Rejestr</strong><code>u(k−1), u(k−2)</code><small>bity z poprzednich chwil</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><strong>Generatory</strong><code>XOR mod 2</code><small>wybrane bity są sumowane</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><strong>Wyjście</strong><code>c₁(k), c₂(k)</code><small>bity kodowe</small></div>
+</div>
 
-Nadmiarowe bity zwiększają szansę poprawnego odtworzenia informacji po błędach transmisji.
+Rejestr pamięta wcześniejsze bity, dlatego wynik zależy od bieżącego bitu i historii wejścia. Nadmiarowe bity zwiększają szansę poprawnego odtworzenia informacji po błędach transmisji.
 
 ---
 
