@@ -121,6 +121,7 @@ Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
     <g class="algo-node" data-node="t"><circle cx="690" cy="160" r="25"/><text class="node-name" x="690" y="166">t</text><text class="node-distance" x="690" y="205">∞</text></g>
   </svg>
   <div class="algorithm-controls"><button class="dijkstra-prev" type="button" title="Poprzednia iteracja" aria-label="Poprzednia iteracja">←</button><strong class="dijkstra-caption"></strong><button class="dijkstra-next" type="button" title="Następna iteracja" aria-label="Następna iteracja">→</button></div>
+  <p class="algorithm-hint">Klikaj strzałki, aby przejść przez kolejne iteracje.</p>
   <p class="dijkstra-explanation"></p>
 </div>
 
