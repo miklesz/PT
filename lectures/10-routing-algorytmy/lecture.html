@@ -65,6 +65,17 @@
       .reveal .network-scale .lan { min-height: 5.1em; background: #0071a8; }
       .reveal .network-scale .man { min-height: 6.8em; background: #4f7f3d; }
       .reveal .network-scale .wan { min-height: 8.6em; background: #b35c2e; }
+      .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
+      .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
+      .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }
+      .reveal .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5em; align-items: end; margin: 1em auto 0; max-width: 1050px; border-bottom: 3px solid var(--pt-blue); }
+      .reveal .timeline > div { min-height: 8em; padding: 0.55em 0.35em; display: grid; align-content: center; background: #e7edf6; text-align: center; font-size: 0.65em; border-top: 6px solid var(--pt-cyan); }
+      .reveal .timeline > div:nth-child(2) { min-height: 9.2em; background: #dceef2; }
+      .reveal .timeline > div:nth-child(3) { min-height: 10.4em; background: #eff0df; }
+      .reveal .timeline > div:nth-child(4) { min-height: 11.6em; background: #f4e6d5; }
+      .reveal .protocol-map { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.4em 0.7em; max-width: 900px; margin: 0.6em auto; }
+      .reveal .protocol-map > div { padding: 0.4em 0.55em; background: #e7edf6; font-size: 0.72em; }
+      .reveal .protocol-map .head { background: var(--pt-blue); color: #fff; font-weight: 700; }
       .reveal .media-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; align-items: center; }
       .reveal .media-gallery img { width: 100%; max-width: 100%; max-height: 48vh; margin: 0; }
       .reveal .slide-number { color: var(--pt-muted); left: 22px; right: auto; bottom: 18px; }
@@ -205,11 +216,11 @@ Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
 
 ## Dijkstra, Ford-Fulkerson, Dinic
 
-| Algorytm | Problem | Wynik |
-| --- | --- | --- |
-| Dijkstra | najkrótsza ścieżka | minimalny koszt dojścia |
-| Ford-Fulkerson | maksymalny przepływ | największy możliwy przepływ |
-| Dinic | maksymalny przepływ | wydajniejsze przetwarzanie przepływu |
+<div class="comparison-grid">
+  <div><strong>Dijkstra</strong>najkrótsza ścieżka<br>minimalny koszt dojścia</div>
+  <div><strong>Ford-Fulkerson</strong>maksymalny przepływ<br>największy możliwy przepływ</div>
+  <div><strong>Dinic</strong>maksymalny przepływ<br>wydajniejsze przetwarzanie przepływu</div>
+</div>
 
 ---
 

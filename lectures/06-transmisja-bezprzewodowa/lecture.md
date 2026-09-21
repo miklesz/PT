@@ -105,12 +105,12 @@ Więcej kanałów i większa przepływność; zwykle krótszy zasięg.
 
 ## Rozwój Wi-Fi
 
-| Generacja | IEEE | Najważniejsza cecha |
-| --- | --- | --- |
-| Wi-Fi 4 | 802.11n | MIMO, 2,4/5 GHz |
-| Wi-Fi 5 | 802.11ac | wysokie przepływności w 5 GHz |
-| Wi-Fi 6 / 6E | 802.11ax | OFDMA, pojemność, 6 GHz w 6E |
-| Wi-Fi 7 | 802.11be | szersze kanały i Multi-Link Operation |
+<div class="timeline">
+  <div><strong>Wi-Fi 4</strong><br>802.11n<br><br>MIMO, 2,4/5 GHz</div>
+  <div><strong>Wi-Fi 5</strong><br>802.11ac<br><br>większa przepływność w 5 GHz</div>
+  <div><strong>Wi-Fi 6 / 6E</strong><br>802.11ax<br><br>OFDMA, pojemność, 6 GHz w 6E</div>
+  <div><strong>Wi-Fi 7</strong><br>802.11be<br><br>szersze kanały, Multi-Link Operation</div>
+</div>
 
 ---
 

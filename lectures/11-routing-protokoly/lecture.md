@@ -123,13 +123,13 @@ Utrzymują rekordy dla konkretnych stref DNS.
 
 ## Rekordy DNS
 
-| Typ | Znaczenie |
-| --- | --- |
-| A / AAAA | adres IPv4 / IPv6 hosta |
-| CNAME | alias nazwy |
-| MX | serwer pocztowy domeny |
-| NS | serwer autorytatywny strefy |
-| TXT | dane tekstowe, m.in. polityki domeny |
+<div class="comparison-grid">
+  <div><strong>A / AAAA</strong>adres IPv4 / IPv6 hosta</div>
+  <div><strong>CNAME</strong>alias nazwy</div>
+  <div><strong>MX</strong>serwer pocztowy domeny</div>
+  <div><strong>NS</strong>serwer autorytatywny strefy</div>
+  <div><strong>TXT</strong>dane tekstowe, m.in. polityki domeny</div>
+</div>
 
 ---
 

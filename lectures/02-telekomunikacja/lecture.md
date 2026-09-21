@@ -420,12 +420,13 @@ Model TCP/IP łączy funkcje siedmiu warstw OSI w cztery warstwy:
 
 ## OSI a TCP/IP
 
-| ISO/OSI | TCP/IP |
-| --- | --- |
-| Aplikacji, prezentacji, sesji | Aplikacji |
-| Transportowa | Transportowa |
-| Sieciowa | Internetu |
-| Łącza danych, fizyczna | Dostępu do sieci |
+<div class="protocol-map">
+  <div class="head">ISO/OSI</div><div class="head">TCP/IP</div>
+  <div>Aplikacji, prezentacji, sesji</div><div>Aplikacji</div>
+  <div>Transportowa</div><div>Transportowa</div>
+  <div>Sieciowa</div><div>Internetu</div>
+  <div>Łącza danych, fizyczna</div><div>Dostępu do sieci</div>
+</div>
 
 ---
 

@@ -149,12 +149,12 @@ Nadawca musi jeszcze transmitować, kiedy ewentualny sygnał kolizji zdąży do 
 
 ## Porównanie
 
-| Protokół | Zasada | Typowe środowisko |
-| --- | --- | --- |
-| ALOHA | nadaj, potem reaguj | proste systemy radiowe |
-| CSMA | nasłuchaj przed nadaniem | współdzielone LAN |
-| CSMA/CA | staraj się uniknąć kolizji | Wi-Fi |
-| CSMA/CD | wykryj kolizję podczas nadawania | historyczny Ethernet współdzielony |
+<div class="comparison-grid">
+  <div><strong>ALOHA</strong>nadaj, potem reaguj<br>proste systemy radiowe</div>
+  <div><strong>CSMA</strong>nasłuchaj przed nadaniem<br>współdzielone LAN</div>
+  <div><strong>CSMA/CA</strong>staraj się uniknąć kolizji<br>Wi-Fi</div>
+  <div><strong>CSMA/CD</strong>wykryj kolizję podczas nadawania<br>historyczny Ethernet współdzielony</div>
+</div>
 
 ---
 

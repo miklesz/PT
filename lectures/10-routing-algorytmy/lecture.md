@@ -128,11 +128,11 @@ Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
 
 ## Dijkstra, Ford-Fulkerson, Dinic
 
-| Algorytm | Problem | Wynik |
-| --- | --- | --- |
-| Dijkstra | najkrótsza ścieżka | minimalny koszt dojścia |
-| Ford-Fulkerson | maksymalny przepływ | największy możliwy przepływ |
-| Dinic | maksymalny przepływ | wydajniejsze przetwarzanie przepływu |
+<div class="comparison-grid">
+  <div><strong>Dijkstra</strong>najkrótsza ścieżka<br>minimalny koszt dojścia</div>
+  <div><strong>Ford-Fulkerson</strong>maksymalny przepływ<br>największy możliwy przepływ</div>
+  <div><strong>Dinic</strong>maksymalny przepływ<br>wydajniejsze przetwarzanie przepływu</div>
+</div>
 
 ---
 
