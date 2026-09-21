@@ -182,15 +182,7 @@ Dotyczy przede wszystkim sieci nadawczych: radia, telewizji i portali, w któryc
 
 ## Prawo Metcalfe'a
 
-<div class="columns"><div>
-
 > Użyteczność sieci telekomunikacyjnej rośnie proporcjonalnie do kwadratu liczby podłączonych urządzeń lub użytkowników.
-
-</div><div>
-
-![Prawo Metcalfe'a](media/image9.jpeg)
-
-</div></div>
 
 ---
 
