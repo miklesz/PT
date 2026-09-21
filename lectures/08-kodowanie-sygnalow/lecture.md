@@ -227,6 +227,26 @@ W każdej chwili jeden bit wejściowy tworzy dwa bity wyjściowe; stosunek szybk
 
 ---
 
+## Po co dwa generatory?
+
+<div class="columns"><div>
+
+**Dwa różne sprawdzenia tego samego bitu**
+
+Generator 1 i generator 2 korzystają z tego samego bieżącego bitu oraz pamięci, ale sumują inne zestawy bitów modulo 2.
+
+</div><div>
+
+**Nadmiarowość potrzebna dekoderowi**
+
+Z jednego bitu `u(k)` powstaje para `c₁(k), c₂(k)`. Gdy transmisja zniekształci jeden z nich, drugi oraz pamięć kolejnych chwil pomagają odtworzyć najbardziej prawdopodobny ciąg wejściowy.
+
+</div></div>
+
+Liczba generatorów nie zawsze musi wynosić dwa: wybiera się ją jako kompromis między odpornością na błędy a zajętym pasmem.
+
+---
+
 ## Systematyczne a niesystematyczne kodowanie splotowe
 
 - W wersji systematycznej jeden z bitów wyjściowych jest kopią bitu wejściowego.
