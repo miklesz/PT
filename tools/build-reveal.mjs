@@ -69,6 +69,15 @@ const html = `<!doctype html>
       .reveal .shared-channel .channel-title { position: relative; z-index: 1; padding: 0.18em 0.55em; background: #003b70; }
       .reveal .shared-channel::before { content: ''; position: absolute; z-index: 0; left: 7%; right: 7%; top: 50%; border-top: 3px solid #85c4d0; }
       .reveal .shared-channel::after { content: 'ramka ze stacji A'; position: absolute; left: 18%; top: calc(50% - 1.45em); padding: 0.32em 0.6em; background: #007c91; font-size: 0.72em; font-weight: 700; }
+      .reveal .hidden-terminal { position: relative; display: grid; grid-template-columns: 1fr 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 1.7em 1.1em; align-items: center; max-width: 880px; min-height: 8.3em; margin: 0.8em auto 0; }
+      .reveal .hidden-node { position: relative; z-index: 2; padding: 0.65em 0.55em; border: 3px solid var(--pt-blue); background: #fff; color: var(--pt-blue); font-size: 0.68em; font-weight: 700; text-align: center; }
+      .reveal .hidden-node.access-point { grid-area: 1 / 2; border-color: #b35c2e; color: #8a421e; }
+      .reveal .hidden-node.station-left { grid-area: 2 / 1; border-color: #007c91; color: #006779; }
+      .reveal .hidden-node.station-right { grid-area: 2 / 3; border-color: #4f7f3d; color: #3d672e; }
+      .reveal .hidden-terminal .radio-link { position: absolute; z-index: 0; top: 54%; width: 33%; border-top: 5px solid #85c4d0; transform-origin: center; }
+      .reveal .hidden-terminal .link-a { left: 18%; transform: rotate(-29deg); }
+      .reveal .hidden-terminal .link-b { right: 18%; transform: rotate(29deg); }
+      .reveal .hidden-link { grid-area: 2 / 1 / 3 / 4; align-self: end; z-index: 1; margin: 0 15%; padding-top: 0.55em; border-top: 3px dashed #b54b4b; color: #9a3030; background: #fff; font-size: 0.48em; font-weight: 700; text-align: center; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }

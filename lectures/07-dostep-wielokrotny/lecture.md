@@ -140,7 +140,13 @@ Wybór jest kompromisem między opóźnieniem a ryzykiem kolizji.
 
 Węzeł radiowy może nie słyszeć innego węzła, choć oba zakłócają odbiornik docelowy. To klasyczny problem **ukrytego terminala**.
 
-<div class="packet"><span>Stacja A</span><span>nie słyszy B</span><span>Stacja B</span><span>punkt dostępowy</span></div>
+<div class="hidden-terminal">
+  <div class="radio-link link-a"></div><div class="radio-link link-b"></div>
+  <div class="hidden-link">A i B nie słyszą się wzajemnie</div>
+  <div class="hidden-node access-point">Punkt dostępowy</div>
+  <div class="hidden-node station-left">Stacja A</div>
+  <div class="hidden-node station-right">Stacja B</div>
+</div>
 
 ---
 
