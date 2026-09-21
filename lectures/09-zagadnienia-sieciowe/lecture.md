@@ -50,9 +50,13 @@ Topologia opisuje układ połączeń między urządzeniami, a nie tylko ich poł
 
 ## Topologia punkt-punkt
 
-<div class="p2p-diagram">
-  <div class="p2p-node">Węzeł A</div><div class="p2p-link"><span>dedykowane łącze</span></div><div class="p2p-node">Węzeł B</div>
-</div>
+Najprostsza topologia: jedno bezpośrednie łącze między dwoma punktami.
+
+<img src="media/image4.png" alt="Schemat topologii punkt-punkt: dwa telefony połączone bezpośrednio przewodem" height="330">
+
+---
+
+## Łącze stałe a komutowane
 
 <div class="columns"><div>
 
