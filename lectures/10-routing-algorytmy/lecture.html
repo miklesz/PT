@@ -200,6 +200,13 @@
       .reveal .routing-network { border-top-width: 7px; }.reveal .routing-network.source { border-top-color: #007c91; }.reveal .routing-network.transit { border-top-color: #b35c2e; }.reveal .routing-network.destination { border-top-color: #4f7f3d; }
       .reveal .routing-router { border-color: #007c91; background: #e9f8fa; }.reveal .routing-network small, .reveal .routing-router small { margin-top: 0.22em; color: var(--pt-muted); font-size: 0.76em; font-weight: 600; }
       .reveal .routing-arrow { display: grid; justify-items: center; color: #007c91; font-size: 1.05em; font-weight: 700; line-height: 0.8; }.reveal .routing-arrow small { margin-top: 0.2em; color: var(--pt-muted); font-size: 0.36em; font-weight: 600; }
+      .reveal .algorithm-demo { max-width: 1040px; margin: 0.35em auto 0; }.reveal .algorithm-demo svg { display: block; width: 100%; max-height: 42vh; margin: 0 auto; overflow: visible; }
+      .reveal .algo-edge line { stroke: #9aa9b5; stroke-width: 4; }.reveal .algo-edge text { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-edge.active line { stroke: #007c91; stroke-width: 7; }.reveal .algo-edge.active text { fill: #007c91; }
+      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
+      .reveal .algorithm-controls { display: flex; justify-content: center; align-items: center; gap: 0.8em; margin: 0.18em auto 0; }.reveal .algorithm-controls button { width: 2em; height: 2em; border: 2px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; cursor: pointer; }.reveal .algorithm-controls button:hover { background: #e9f8fa; }.reveal .algorithm-controls strong { min-width: 14em; color: #006779; font-size: 0.54em; text-align: center; }
+      .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
+      .reveal .flow-edge line { stroke: #7c8d99; stroke-width: 4; }.reveal .flow-edge text { fill: #53636f; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .flow-edge.active line { stroke: #b35c2e; stroke-width: 7; }.reveal .flow-edge.active text { fill: #b35c2e; }.reveal #flow-arrow path { fill: #7c8d99; }.reveal .flow-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .flow-node text { fill: var(--pt-blue); font-size: 25px; font-weight: 700; text-anchor: middle; }.reveal .flow-node.source circle { fill: #e9f8fa; stroke: #007c91; }.reveal .flow-node.sink circle { fill: #f4e6d5; stroke: #b35c2e; }
+      .reveal .level-band rect { fill: #edf5fa; stroke: #c8d8df; stroke-width: 2; }.reveal .level-band text { fill: #5b6b78; font-size: 15px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge line { stroke: #92a4af; stroke-width: 4; }.reveal .dinic-edge text { fill: #53636f; font-size: 18px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge.highlighted line { stroke: #007c91; stroke-width: 6; }.reveal .dinic-edge.highlighted text { fill: #007c91; }.reveal .dinic-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .dinic-node text { fill: var(--pt-blue); font-size: 23px; font-weight: 700; text-anchor: middle; }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }
@@ -343,6 +350,31 @@ Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
 
 ---
 
+## Dijkstra: kolejne iteracje
+
+<div class="algorithm-demo dijkstra-demo">
+  <svg viewBox="0 0 760 300" role="img" aria-label="Graf do demonstracji kolejnych iteracji algorytmu Dijkstry.">
+    <g class="algo-edge" data-edge="sa"><line x1="95" y1="160" x2="220" y2="80"/><text x="154" y="108">15</text></g>
+    <g class="algo-edge" data-edge="sd"><line x1="95" y1="160" x2="220" y2="240"/><text x="154" y="222">9</text></g>
+    <g class="algo-edge" data-edge="da"><line x1="250" y1="218" x2="250" y2="102"/><text x="264" y="164">4</text></g>
+    <g class="algo-edge" data-edge="dc"><line x1="278" y1="230" x2="380" y2="173"/><text x="328" y="191">2</text></g>
+    <g class="algo-edge" data-edge="ac"><line x1="278" y1="91" x2="380" y2="147"/><text x="328" y="108">7</text></g>
+    <g class="algo-edge" data-edge="cb"><line x1="430" y1="147" x2="532" y2="91"/><text x="480" y="108">6</text></g>
+    <g class="algo-edge" data-edge="ab"><line x1="280" y1="80" x2="530" y2="80"/><text x="405" y="69">6</text></g>
+    <g class="algo-edge" data-edge="bt"><line x1="580" y1="91" x2="665" y2="147"/><text x="624" y="108">5</text></g>
+    <g class="algo-node" data-node="s"><circle cx="70" cy="160" r="25"/><text class="node-name" x="70" y="166">s</text><text class="node-distance" x="70" y="205">0</text></g>
+    <g class="algo-node" data-node="a"><circle cx="250" cy="80" r="25"/><text class="node-name" x="250" y="86">a</text><text class="node-distance" x="250" y="125">∞</text></g>
+    <g class="algo-node" data-node="d"><circle cx="250" cy="240" r="25"/><text class="node-name" x="250" y="246">d</text><text class="node-distance" x="250" y="285">∞</text></g>
+    <g class="algo-node" data-node="c"><circle cx="405" cy="160" r="25"/><text class="node-name" x="405" y="166">c</text><text class="node-distance" x="405" y="205">∞</text></g>
+    <g class="algo-node" data-node="b"><circle cx="555" cy="80" r="25"/><text class="node-name" x="555" y="86">b</text><text class="node-distance" x="555" y="125">∞</text></g>
+    <g class="algo-node" data-node="t"><circle cx="690" cy="160" r="25"/><text class="node-name" x="690" y="166">t</text><text class="node-distance" x="690" y="205">∞</text></g>
+  </svg>
+  <div class="algorithm-controls"><button class="dijkstra-prev" type="button" title="Poprzednia iteracja" aria-label="Poprzednia iteracja">←</button><strong class="dijkstra-caption"></strong><button class="dijkstra-next" type="button" title="Następna iteracja" aria-label="Następna iteracja">→</button></div>
+  <p class="dijkstra-explanation"></p>
+</div>
+
+---
+
 ## Przykład relaksacji
 
 Jeśli bieżący koszt do `A` wynosi `4`, a krawędź `A → B` ma wagę `3`, kandydat dla `B` wynosi `7`.
@@ -375,6 +407,21 @@ Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótsz
 - Szukamy ścieżek powiększających od źródła do ujścia.
 - Zwiększamy przepływ o minimalną wolną pojemność na znalezionej ścieżce.
 
+<div class="algorithm-demo flow-demo">
+  <svg viewBox="0 0 700 270" role="img" aria-label="Sieć przepływowa ze ścieżką powiększającą s, a, d, t.">
+    <defs><marker id="flow-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 Z"/></marker></defs>
+    <g class="flow-edge active"><line x1="88" y1="150" x2="234" y2="82" marker-end="url(#flow-arrow)"/><text x="158" y="103">3</text></g>
+    <g class="flow-edge"><line x1="88" y1="155" x2="234" y2="218" marker-end="url(#flow-arrow)"/><text x="158" y="207">2</text></g>
+    <g class="flow-edge"><line x1="275" y1="92" x2="405" y2="92" marker-end="url(#flow-arrow)"/><text x="340" y="80">3</text></g>
+    <g class="flow-edge active"><line x1="270" y1="105" x2="410" y2="210" marker-end="url(#flow-arrow)"/><text x="338" y="172">5</text></g>
+    <g class="flow-edge"><line x1="270" y1="220" x2="410" y2="220" marker-end="url(#flow-arrow)"/><text x="340" y="209">1</text></g>
+    <g class="flow-edge"><line x1="445" y1="96" x2="594" y2="145" marker-end="url(#flow-arrow)"/><text x="520" y="108">4</text></g>
+    <g class="flow-edge active"><line x1="445" y1="208" x2="594" y2="158" marker-end="url(#flow-arrow)"/><text x="520" y="191">7</text></g>
+    <g class="flow-node source"><circle cx="65" cy="155" r="26"/><text x="65" y="162">s</text></g><g class="flow-node"><circle cx="250" cy="80" r="26"/><text x="250" y="87">a</text></g><g class="flow-node"><circle cx="250" cy="220" r="26"/><text x="250" y="227">c</text></g><g class="flow-node"><circle cx="430" cy="80" r="26"/><text x="430" y="87">b</text></g><g class="flow-node"><circle cx="430" cy="220" r="26"/><text x="430" y="227">d</text></g><g class="flow-node sink"><circle cx="620" cy="155" r="26"/><text x="620" y="162">t</text></g>
+  </svg>
+  <p><strong>Ścieżka powiększająca:</strong> <code>s → a → d → t</code>. Wąskie gardło ma pojemność <strong>3</strong>, więc tą drogą można przesłać 3 jednostki przepływu.</p>
+</div>
+
 ---
 
 ## Sieć rezydualna
@@ -393,6 +440,15 @@ Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
 1. buduje graf poziomów algorytmem BFS,
 2. wyszukuje przepływ blokujący w tym grafie,
 3. powtarza do braku ścieżki z źródła do ujścia.
+
+<div class="algorithm-demo dinic-demo">
+  <svg viewBox="0 0 760 250" role="img" aria-label="Graf poziomów algorytmu Dinica: źródło, dwa poziomy pośrednie i ujście.">
+    <g class="level-band"><rect x="15" y="25" width="105" height="190"/><text x="67" y="48">poziom 0</text></g><g class="level-band"><rect x="175" y="25" width="145" height="190"/><text x="247" y="48">poziom 1</text></g><g class="level-band"><rect x="390" y="25" width="145" height="190"/><text x="462" y="48">poziom 2</text></g><g class="level-band"><rect x="635" y="25" width="105" height="190"/><text x="687" y="48">poziom 3</text></g>
+    <g class="dinic-edge highlighted"><line x1="102" y1="125" x2="210" y2="83"/><text x="154" y="91">5</text></g><g class="dinic-edge highlighted"><line x1="102" y1="125" x2="210" y2="167"/><text x="154" y="169">5</text></g><g class="dinic-edge highlighted"><line x1="280" y1="83" x2="425" y2="83"/><text x="350" y="71">5</text></g><g class="dinic-edge"><line x1="280" y1="167" x2="425" y2="83"/><text x="350" y="116">5</text></g><g class="dinic-edge highlighted"><line x1="280" y1="167" x2="425" y2="167"/><text x="350" y="155">5</text></g><g class="dinic-edge highlighted"><line x1="495" y1="83" x2="652" y2="125"/><text x="572" y="91">5</text></g><g class="dinic-edge highlighted"><line x1="495" y1="167" x2="652" y2="125"/><text x="572" y="169">5</text></g>
+    <g class="dinic-node"><circle cx="80" cy="125" r="22"/><text x="80" y="132">s</text></g><g class="dinic-node"><circle cx="250" cy="80" r="22"/><text x="250" y="87">x</text></g><g class="dinic-node"><circle cx="250" cy="170" r="22"/><text x="250" y="177">y</text></g><g class="dinic-node"><circle cx="465" cy="80" r="22"/><text x="465" y="87">u</text></g><g class="dinic-node"><circle cx="465" cy="170" r="22"/><text x="465" y="177">w</text></g><g class="dinic-node"><circle cx="680" cy="125" r="22"/><text x="680" y="132">t</text></g>
+  </svg>
+  <p><strong>BFS</strong> wyznacza poziomy. Następnie szukany jest przepływ blokujący wyłącznie po krawędziach prowadzących do kolejnego poziomu.</p>
+</div>
 
 ---
 
@@ -552,6 +608,31 @@ Algorytmy są modelem decyzji trasowania. Protokoły routingu określają, jak r
         output.innerHTML = '<code>c = ' + nodes + ' × ' + (nodes - 1) + ' / 2 = ' + links + '</code><br>Dla <strong>' + nodes + ' węzłów</strong> pełna siatka potrzebuje <strong>' + links + ' łączy</strong>.';
       };
 
+      const dijkstraSteps = [
+        { caption: 'Inicjalizacja', current: 's', settled: ['s'], active: [], distances: { s: '0', a: '∞', d: '∞', c: '∞', b: '∞', t: '∞' }, explanation: 'Startujemy w <strong>s</strong>: jego odległość jest równa 0, pozostałe wierzchołki mają odległość nieskończoną.' },
+        { caption: 'Iteracja 1: relaksacja z s', current: 'd', settled: ['s'], active: ['sa', 'sd'], distances: { s: '0', a: '15', d: '9', c: '∞', b: '∞', t: '∞' }, explanation: 'Z <strong>s</strong> docieramy do <strong>a</strong> kosztem 15 i do <strong>d</strong> kosztem 9. Najmniejszą etykietę tymczasową ma <strong>d</strong>.' },
+        { caption: 'Iteracja 2: wybór d', current: 'c', settled: ['s', 'd'], active: ['da', 'dc'], distances: { s: '0', a: '13', d: '9', c: '11', b: '∞', t: '∞' }, explanation: 'Ustalamy <strong>d = 9</strong>. Przejście przez d poprawia koszt do <strong>a</strong> z 15 na 13 oraz wyznacza <strong>c = 11</strong>.' },
+        { caption: 'Iteracja 3: wybór c', current: 'a', settled: ['s', 'd', 'c'], active: ['cb'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '∞' }, explanation: 'Ustalamy <strong>c = 11</strong> i odkrywamy dojście do <strong>b</strong> o koszcie 17.' },
+        { caption: 'Iteracja 4: wybór a', current: 'b', settled: ['s', 'd', 'c', 'a'], active: ['ab'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '∞' }, explanation: 'Ustalamy <strong>a = 13</strong>. Krawędź a → b nie poprawia istniejącego kosztu 17.' },
+        { caption: 'Iteracja 5: dojście do t', current: 't', settled: ['s', 'd', 'c', 'a', 'b', 't'], active: ['bt'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '22' }, explanation: 'Ustalamy <strong>b = 17</strong>, a następnie <strong>t = 22</strong>. Najkrótsza droga ma długość 22.' }
+      ];
+      let dijkstraStep = 0;
+      const setDijkstraStep = (index) => {
+        const demo = document.querySelector('.dijkstra-demo');
+        if (!demo) return;
+        dijkstraStep = Math.max(0, Math.min(dijkstraSteps.length - 1, index));
+        const step = dijkstraSteps[dijkstraStep];
+        demo.querySelectorAll('.algo-node').forEach((node) => {
+          const id = node.dataset.node;
+          node.classList.toggle('settled', step.settled.includes(id));
+          node.classList.toggle('current', step.current === id);
+          node.querySelector('.node-distance').textContent = step.distances[id];
+        });
+        demo.querySelectorAll('.algo-edge').forEach((edge) => edge.classList.toggle('active', step.active.includes(edge.dataset.edge)));
+        demo.querySelector('.dijkstra-caption').textContent = step.caption;
+        demo.querySelector('.dijkstra-explanation').innerHTML = step.explanation;
+      };
+
       const initializeLabs = () => {
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
@@ -559,12 +640,15 @@ Algorytmy są modelem decyzji trasowania. Protokoły routingu określają, jak r
         document.querySelector('.hdb3-input')?.addEventListener('input', setHdb3Result);
         document.querySelector('.convolutional-input')?.addEventListener('input', setConvolutionalResult);
         document.querySelector('.mesh-nodes')?.addEventListener('input', setMeshResult);
+        document.querySelector('.dijkstra-prev')?.addEventListener('click', () => setDijkstraStep(dijkstraStep - 1));
+        document.querySelector('.dijkstra-next')?.addEventListener('click', () => setDijkstraStep(dijkstraStep + 1));
         setHammingResult();
         setTwoOfFiveResult();
         setTwoOfFiveCheckResult();
         setHdb3Result();
         setConvolutionalResult();
         setMeshResult();
+        setDijkstraStep(0);
       };
       Reveal.on('ready', initializeLabs);
     </script>

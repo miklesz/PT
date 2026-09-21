@@ -216,6 +216,13 @@ const html = `<!doctype html>
       .reveal .routing-network { border-top-width: 7px; }.reveal .routing-network.source { border-top-color: #007c91; }.reveal .routing-network.transit { border-top-color: #b35c2e; }.reveal .routing-network.destination { border-top-color: #4f7f3d; }
       .reveal .routing-router { border-color: #007c91; background: #e9f8fa; }.reveal .routing-network small, .reveal .routing-router small { margin-top: 0.22em; color: var(--pt-muted); font-size: 0.76em; font-weight: 600; }
       .reveal .routing-arrow { display: grid; justify-items: center; color: #007c91; font-size: 1.05em; font-weight: 700; line-height: 0.8; }.reveal .routing-arrow small { margin-top: 0.2em; color: var(--pt-muted); font-size: 0.36em; font-weight: 600; }
+      .reveal .algorithm-demo { max-width: 1040px; margin: 0.35em auto 0; }.reveal .algorithm-demo svg { display: block; width: 100%; max-height: 42vh; margin: 0 auto; overflow: visible; }
+      .reveal .algo-edge line { stroke: #9aa9b5; stroke-width: 4; }.reveal .algo-edge text { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-edge.active line { stroke: #007c91; stroke-width: 7; }.reveal .algo-edge.active text { fill: #007c91; }
+      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
+      .reveal .algorithm-controls { display: flex; justify-content: center; align-items: center; gap: 0.8em; margin: 0.18em auto 0; }.reveal .algorithm-controls button { width: 2em; height: 2em; border: 2px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; cursor: pointer; }.reveal .algorithm-controls button:hover { background: #e9f8fa; }.reveal .algorithm-controls strong { min-width: 14em; color: #006779; font-size: 0.54em; text-align: center; }
+      .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
+      .reveal .flow-edge line { stroke: #7c8d99; stroke-width: 4; }.reveal .flow-edge text { fill: #53636f; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .flow-edge.active line { stroke: #b35c2e; stroke-width: 7; }.reveal .flow-edge.active text { fill: #b35c2e; }.reveal #flow-arrow path { fill: #7c8d99; }.reveal .flow-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .flow-node text { fill: var(--pt-blue); font-size: 25px; font-weight: 700; text-anchor: middle; }.reveal .flow-node.source circle { fill: #e9f8fa; stroke: #007c91; }.reveal .flow-node.sink circle { fill: #f4e6d5; stroke: #b35c2e; }
+      .reveal .level-band rect { fill: #edf5fa; stroke: #c8d8df; stroke-width: 2; }.reveal .level-band text { fill: #5b6b78; font-size: 15px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge line { stroke: #92a4af; stroke-width: 4; }.reveal .dinic-edge text { fill: #53636f; font-size: 18px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge.highlighted line { stroke: #007c91; stroke-width: 6; }.reveal .dinic-edge.highlighted text { fill: #007c91; }.reveal .dinic-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .dinic-node text { fill: var(--pt-blue); font-size: 23px; font-weight: 700; text-anchor: middle; }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }
@@ -390,6 +397,31 @@ ${embeddedMarkdown}
         output.innerHTML = '<code>c = ' + nodes + ' × ' + (nodes - 1) + ' / 2 = ' + links + '</code><br>Dla <strong>' + nodes + ' węzłów</strong> pełna siatka potrzebuje <strong>' + links + ' łączy</strong>.';
       };
 
+      const dijkstraSteps = [
+        { caption: 'Inicjalizacja', current: 's', settled: ['s'], active: [], distances: { s: '0', a: '∞', d: '∞', c: '∞', b: '∞', t: '∞' }, explanation: 'Startujemy w <strong>s</strong>: jego odległość jest równa 0, pozostałe wierzchołki mają odległość nieskończoną.' },
+        { caption: 'Iteracja 1: relaksacja z s', current: 'd', settled: ['s'], active: ['sa', 'sd'], distances: { s: '0', a: '15', d: '9', c: '∞', b: '∞', t: '∞' }, explanation: 'Z <strong>s</strong> docieramy do <strong>a</strong> kosztem 15 i do <strong>d</strong> kosztem 9. Najmniejszą etykietę tymczasową ma <strong>d</strong>.' },
+        { caption: 'Iteracja 2: wybór d', current: 'c', settled: ['s', 'd'], active: ['da', 'dc'], distances: { s: '0', a: '13', d: '9', c: '11', b: '∞', t: '∞' }, explanation: 'Ustalamy <strong>d = 9</strong>. Przejście przez d poprawia koszt do <strong>a</strong> z 15 na 13 oraz wyznacza <strong>c = 11</strong>.' },
+        { caption: 'Iteracja 3: wybór c', current: 'a', settled: ['s', 'd', 'c'], active: ['cb'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '∞' }, explanation: 'Ustalamy <strong>c = 11</strong> i odkrywamy dojście do <strong>b</strong> o koszcie 17.' },
+        { caption: 'Iteracja 4: wybór a', current: 'b', settled: ['s', 'd', 'c', 'a'], active: ['ab'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '∞' }, explanation: 'Ustalamy <strong>a = 13</strong>. Krawędź a → b nie poprawia istniejącego kosztu 17.' },
+        { caption: 'Iteracja 5: dojście do t', current: 't', settled: ['s', 'd', 'c', 'a', 'b', 't'], active: ['bt'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '22' }, explanation: 'Ustalamy <strong>b = 17</strong>, a następnie <strong>t = 22</strong>. Najkrótsza droga ma długość 22.' }
+      ];
+      let dijkstraStep = 0;
+      const setDijkstraStep = (index) => {
+        const demo = document.querySelector('.dijkstra-demo');
+        if (!demo) return;
+        dijkstraStep = Math.max(0, Math.min(dijkstraSteps.length - 1, index));
+        const step = dijkstraSteps[dijkstraStep];
+        demo.querySelectorAll('.algo-node').forEach((node) => {
+          const id = node.dataset.node;
+          node.classList.toggle('settled', step.settled.includes(id));
+          node.classList.toggle('current', step.current === id);
+          node.querySelector('.node-distance').textContent = step.distances[id];
+        });
+        demo.querySelectorAll('.algo-edge').forEach((edge) => edge.classList.toggle('active', step.active.includes(edge.dataset.edge)));
+        demo.querySelector('.dijkstra-caption').textContent = step.caption;
+        demo.querySelector('.dijkstra-explanation').innerHTML = step.explanation;
+      };
+
       const initializeLabs = () => {
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
@@ -397,12 +429,15 @@ ${embeddedMarkdown}
         document.querySelector('.hdb3-input')?.addEventListener('input', setHdb3Result);
         document.querySelector('.convolutional-input')?.addEventListener('input', setConvolutionalResult);
         document.querySelector('.mesh-nodes')?.addEventListener('input', setMeshResult);
+        document.querySelector('.dijkstra-prev')?.addEventListener('click', () => setDijkstraStep(dijkstraStep - 1));
+        document.querySelector('.dijkstra-next')?.addEventListener('click', () => setDijkstraStep(dijkstraStep + 1));
         setHammingResult();
         setTwoOfFiveResult();
         setTwoOfFiveCheckResult();
         setHdb3Result();
         setConvolutionalResult();
         setMeshResult();
+        setDijkstraStep(0);
       };
       Reveal.on('ready', initializeLabs);
     </script>
