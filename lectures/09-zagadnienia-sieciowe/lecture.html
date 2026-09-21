@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Podstawowe zagadnienia sieciowe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css">
+    <style>
+      :root { --pt-blue: #003b70; --pt-cyan: #007c91; --pt-ink: #13212e; --pt-muted: #587083; }
+      .reveal { color: var(--pt-ink); font-family: Arial, Helvetica, sans-serif; font-size: 34px; }
+      .reveal .slides { text-align: left; }
+      .reveal h1, .reveal h2, .reveal h3 { color: var(--pt-blue); font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+      .reveal h1 { font-size: 1.75em; margin-bottom: 0.35em; }
+      .reveal h2 { font-size: 1.3em; margin-bottom: 0.55em; }
+      .reveal p, .reveal li { line-height: 1.32; }
+      .reveal ul { margin-top: 0.25em; }
+      .reveal li + li { margin-top: 0.25em; }
+      .reveal a { color: var(--pt-cyan); text-decoration: underline; }
+      .reveal strong { color: var(--pt-blue); }
+      .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
+      .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal .title-slide { text-align: center; }
+      .reveal .title-slide h1 { font-size: 1.9em; }
+      .reveal .title-slide p { color: var(--pt-muted); }
+      .reveal .section-slide { display: grid !important; place-content: center; text-align: center; }
+      .reveal .section-slide h1, .reveal .section-slide h2 { font-size: 2em; }
+      .reveal .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; align-items: start; }
+      .reveal .small { font-size: 0.72em; }
+      .reveal .credits { color: var(--pt-muted); font-size: 0.52em; margin-top: 0.35em; }
+      .reveal .stack { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.22em; margin: 0.35em auto; max-width: 950px; }
+      .reveal .stack > div { border: 2px solid var(--pt-blue); padding: 0.35em 0.18em; min-height: 4.3em; display: grid; place-content: center; text-align: center; font-size: 0.55em; }
+      .reveal .stack .tcp { grid-column: span 3; background: #dceef2; }
+      .reveal .stack .net { background: #e7edf6; }
+      .reveal .stack .link { grid-column: span 2; background: #eff0df; }
+      .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
+      .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
+      .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .slide-number { color: var(--pt-muted); }
+      @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="reveal"><div class="slides">
+      <section data-markdown><textarea data-template>
+<!-- .slide: class="title-slide" -->
+
+# Podstawowe zagadnienia sieciowe
+
+---
+
+## Plan wykładu
+
+- definicja i funkcje sieci komputerowej,
+- rodzaje sieci,
+- topologie fizyczne i logiczne,
+- topologie: punkt-punkt, magistrala, pierścień, gwiazda, hierarchia i siatka.
+
+---
+
+## Sieć komputerowa
+
+Sieć komputerowa to zbiór połączonych urządzeń, które wymieniają dane i współdzielą zasoby według ustalonych protokołów.
+
+Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, współdzielenie plików, urządzeń i połączenia z Internetem.
+
+---
+
+## Rodzaje sieci
+
+<div class="packet"><span>PAN<br>osobista</span><span>LAN<br>lokalna</span><span>MAN<br>miejska</span><span>WAN<br>rozległa</span></div>
+
+Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukturą.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Topologie
+
+---
+
+## Topologia punkt-punkt
+
+<div class="packet"><span>Węzeł A</span><span>dedykowane łącze</span><span>Węzeł B</span></div>
+
+- **Permanent/dedicated:** łącze stale zestawione.
+- **Switched:** połączenie zestawiane na żądanie przez sieć pośrednią.
+
+---
+
+## Topologia magistrali
+
+<div class="packet"><span>A</span><span>Wspólny kabel</span><span>B</span><span>Wspólny kabel</span><span>C</span></div>
+
+- Wszystkie stacje współdzielą medium.
+- Prosta i historycznie tania, ale podatna na kolizje oraz awarię wspólnego segmentu.
+- Klasyczny Ethernet koncentryczny był przykładem takiej topologii.
+
+---
+
+## Materiał: magistrala
+
+<video controls preload="metadata"><source src="media/slide-021-media1.mp4" type="video/mp4"></video>
+
+---
+
+## Topologia pierścienia
+
+<div class="packet"><span>A → B</span><span>B → C</span><span>C → D</span><span>D → A</span></div>
+
+- Dane przechodzą kolejno przez węzły.
+- W pierścieniu podwójnym drugi kierunek może zapewniać redundancję.
+- Przykładem historycznym był Token Ring.
+
+---
+
+## Materiał: pierścień
+
+<video controls preload="metadata"><source src="media/slide-024-media2.mp4" type="video/mp4"></video>
+
+---
+
+## Topologia gwiazdy
+
+- Wszystkie urządzenia łączą się z centralnym punktem.
+- Awaria pojedynczego kabla zwykle odcina tylko jedno urządzenie.
+- Awaria punktu centralnego wpływa na całą sieć.
+
+<div class="packet"><span>Host A</span><span>Przełącznik</span><span>Host B</span><span>Host C</span></div>
+
+---
+
+## Koncentrator a przełącznik
+
+<div class="columns"><div>
+
+**Koncentrator (hub)**
+
+Powiela sygnał do wszystkich portów; medium pozostaje współdzielone.
+
+</div><div>
+
+**Przełącznik (switch)**
+
+Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
+
+</div></div>
+
+---
+
+## Materiał: gwiazda z koncentratorem
+
+<video controls preload="metadata"><source src="media/slide-030-media3.mp4" type="video/mp4"></video>
+
+---
+
+## Materiał: gwiazda z przełącznikiem
+
+<video controls preload="metadata"><source src="media/slide-031-media4.mp4" type="video/mp4"></video>
+
+---
+
+## Materiał: gwiazda z MSAU
+
+<video controls preload="metadata"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
+
+---
+
+## Topologie hierarchiczne
+
+- Łączą mniejsze topologie w większą strukturę.
+- Przykłady: pierścień-gwiazda, gwiazda-magistrala, magistrala-drzewo.
+- Ułatwiają skalowanie, segmentację i zarządzanie dużą siecią.
+
+---
+
+## Topologia siatki
+
+<div class="columns"><div>
+
+**Częściowa siatka**
+
+Tylko najważniejsze węzły mają wiele połączeń. To kompromis między kosztem i redundancją.
+
+</div><div>
+
+**Pełna siatka**
+
+Każdy węzeł łączy się z każdym. Zapewnia wysoką odporność, ale liczba łączy rośnie bardzo szybko.
+
+</div></div>
+
+---
+
+## Wybór topologii
+
+Zależy od:
+
+- wymaganej niezawodności,
+- liczby urządzeń,
+- kosztu okablowania i sprzętu,
+- łatwości rozbudowy,
+- charakteru ruchu oraz wymagań bezpieczeństwa.
+
+---
+
+## Podsumowanie
+
+- Topologia opisuje organizację połączeń w sieci.
+- Gwiazda ze switchem dominuje we współczesnych LAN.
+- Hierarchie i siatki zapewniają skalowalność lub redundancję, zależnie od potrzeb.
+
+      </textarea></section>
+    </div></div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({ hash: true, slideNumber: 'c/t', controlsTutorial: false, transition: 'fade', transitionSpeed: 'fast', plugins: [RevealMarkdown] });
+    </script>
+  </body>
+</html>
