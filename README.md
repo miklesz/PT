@@ -13,6 +13,7 @@ Katalog [`web/`](web/) zawiera wcześniejsze renderowane podglądy slajdów i lo
 GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
 
 - [01. Wprowadzenie do przedmiotu — źródło prezentacji](lectures/01-wprowadzenie/lecture.md)
+- [02. Co to jest telekomunikacja — źródło prezentacji](lectures/02-telekomunikacja/lecture.md)
 - [01. Wprowadzenie do przedmiotu](notes/01-wprowadzenie-do-przedmiotu.md)
 - [02. Co to jest telekomunikacja](notes/02-co-to-jest-telekomunikacja.md)
 - [03. Podstawowe pojęcia, jednostki, ograniczenia](notes/03-podstawowe-pojecia-jednostki-ograniczenia.md)
