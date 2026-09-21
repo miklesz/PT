@@ -82,13 +82,15 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
 
 ## Topologia magistrali
 
-<div class="packet"><span>A</span><span>Wspólny kabel</span><span>B</span><span>Wspólny kabel</span><span>C</span></div>
+<div class="bus-diagram">
+  <div class="bus-title">Wspólny kabel</div><div class="bus-line"></div>
+  <div class="bus-end left-end">T</div><div class="bus-end right-end">T</div>
+  <div class="bus-station station-one">A</div><div class="bus-station station-two">B</div><div class="bus-station station-three">C</div>
+</div>
 
 - Wszystkie stacje współdzielą medium.
 - Prosta i historycznie tania, ale podatna na kolizje oraz awarię wspólnego segmentu.
 - Klasyczny Ethernet koncentryczny był przykładem takiej topologii.
-
-![Topologia magistrali](media/image6.png)
 
 ---
 
