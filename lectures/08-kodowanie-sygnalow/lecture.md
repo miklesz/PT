@@ -262,7 +262,13 @@ Powstają więc dwa różne sprawdzenia tej samej historii wejścia, a nie dwie 
 
 Z jednego bitu `u(k)` powstaje para `c₁(k), c₂(k)`. Jeżeli zakłócenie zmieni jeden symbol, drugi symbol oraz zależność od poprzednich chwil pomagają dekoderowi wybrać najbardziej prawdopodobny ciąg wejściowy.
 
-<div class="packet"><span>1 bit wejściowy</span><span>2 bity kodowe</span><span>większa odporność na błędy</span></div>
+<div class="encoding-benefit">
+  <div class="benefit-step"><div class="bit-token">u(k)</div><strong>1 bit wejściowy</strong></div>
+  <div class="benefit-arrow">→</div>
+  <div class="benefit-step"><div class="bit-pair"><span>c₁(k)</span><span>c₂(k)</span></div><strong>2 bity kodowe</strong></div>
+  <div class="benefit-arrow">→</div>
+  <div class="benefit-step"><div class="benefit-mark">?</div><strong>więcej wskazówek dla dekodera</strong></div>
+</div>
 
 Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwiększa odporność, ale zajmuje więcej pasma.
 

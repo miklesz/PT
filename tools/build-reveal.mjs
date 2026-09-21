@@ -124,6 +124,14 @@ const html = `<!doctype html>
       .reveal .hdb3-wave-svg .label-b { fill: #007c91; font-size: 35px; }
       .reveal .hdb3-wave-svg .label-v { fill: #b54b4b; font-size: 35px; }
       .reveal .hdb3-wave-svg .hint { fill: var(--pt-muted); font-size: 20px; font-weight: 400; }
+      .reveal .encoding-benefit { display: grid; grid-template-columns: 1fr auto 1fr auto 1.35fr; gap: 0.35em; align-items: center; max-width: 930px; margin: 0.8em auto; }
+      .reveal .encoding-benefit .benefit-step { display: grid; justify-items: center; align-content: center; gap: 0.45em; min-height: 5.2em; padding: 0.45em; border: 2px solid var(--pt-blue); background: #fff; color: var(--pt-text); font-size: 0.47em; text-align: center; }
+      .reveal .encoding-benefit .benefit-step strong { color: var(--pt-blue); }
+      .reveal .encoding-benefit .benefit-arrow { color: #007c91; font-size: 1.15em; font-weight: 700; }
+      .reveal .encoding-benefit .bit-token, .reveal .encoding-benefit .benefit-mark { display: grid; place-content: center; min-width: 2.1em; min-height: 1.65em; padding: 0.1em 0.3em; background: #f8eadf; color: #8a421e; font-family: monospace; font-size: 1.15em; font-weight: 700; }
+      .reveal .encoding-benefit .benefit-mark { border-radius: 50%; background: #e4f0e7; color: #3d672e; font-family: Arial, sans-serif; }
+      .reveal .encoding-benefit .bit-pair { display: flex; gap: 0.28em; }
+      .reveal .encoding-benefit .bit-pair span { padding: 0.28em 0.38em; background: #e5f1f4; color: #006779; font-family: monospace; font-size: 0.95em; font-weight: 700; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
