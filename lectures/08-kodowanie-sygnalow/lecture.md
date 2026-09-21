@@ -118,12 +118,16 @@ Pozwala to utrzymać synchronizację, nawet gdy źródło generuje długi ciąg 
 
 W HDB3 ciąg czterech zer może zostać zastąpiony wzorcem:
 
-<div class="packet"><span><strong>B</strong></span><span>0</span><span>0</span><span><strong>V</strong></span></div>
+<div class="hdb3-wave" aria-label="Wzorzec B00V: dwa impulsy o tej samej dodatniej polaryzacji oddzielone zerami">
+  <div class="hdb3-cell pulse-b"><strong>B</strong><span>+V</span></div>
+  <div class="hdb3-cell"><strong>0</strong><span>0 V</span></div>
+  <div class="hdb3-cell"><strong>0</strong><span>0 V</span></div>
+  <div class="hdb3-cell pulse-v"><strong>V</strong><span>+V</span></div>
+</div>
 
-- **B** (*balancing*): zwykły impuls bipolarny, zgodny z naprzemiennością AMI.
-- **V** (*violation*): impuls celowo naruszający tę naprzemienność.
+<div class="hdb3-legend"><span><strong>B</strong> zwykły impuls zgodny z AMI</span><span><strong>V</strong> celowe naruszenie polaryzacji</span></div>
 
-Dekoder rozpoznaje `B00V` jako zastąpione zera, a nie dane użytkownika.
+Ponieważ `B` i `V` mają tu tę samą polaryzację dodatnią, dekoder rozpoznaje `B00V` jako zastąpione zera, a nie dane użytkownika.
 
 ---
 

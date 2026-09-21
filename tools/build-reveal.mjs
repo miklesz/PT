@@ -92,6 +92,16 @@ const html = `<!doctype html>
       .reveal .convolutional-circuit .generator-output { grid-column: span 2; display: grid; gap: 0.25em; min-height: 3.8em; padding: 0.48em 0.65em; border: 3px solid var(--pt-blue); background: #edf5fa; color: var(--pt-text); font-size: 0.48em; text-align: left; }
       .reveal .convolutional-circuit .generator-output strong { color: var(--pt-blue); }
       .reveal .convolutional-circuit .generator-output code { color: #8a421e; }
+      .reveal .hdb3-wave { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.16em; align-items: end; max-width: 760px; height: 5.1em; margin: 0.65em auto 0.38em; }
+      .reveal .hdb3-cell { position: relative; display: grid; grid-template-rows: 1fr auto; align-items: end; min-height: 5.1em; padding: 0 0.25em 0.38em; border-bottom: 3px solid #627789; color: var(--pt-text); font-size: 0.64em; text-align: center; }
+      .reveal .hdb3-cell span { color: var(--pt-muted); font-size: 0.7em; }
+      .reveal .hdb3-cell::before { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 0; border-left: 0.34em solid transparent; border-right: 0.34em solid transparent; transform: translateX(-50%); }
+      .reveal .hdb3-cell.pulse-b::before, .reveal .hdb3-cell.pulse-v::before { height: 3.5em; border-left: 0.34em solid #007c91; border-right: 0.34em solid #007c91; background: #007c91; }
+      .reveal .hdb3-cell.pulse-b { color: #006779; }
+      .reveal .hdb3-cell.pulse-v { color: #a23d3d; }
+      .reveal .hdb3-cell.pulse-v::before { border-left-color: #b54b4b; border-right-color: #b54b4b; background: #b54b4b; }
+      .reveal .hdb3-legend { display: flex; justify-content: center; gap: 1.4em; color: var(--pt-muted); font-size: 0.42em; }
+      .reveal .hdb3-legend strong { color: var(--pt-text); }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
