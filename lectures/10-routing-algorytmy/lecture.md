@@ -67,7 +67,7 @@ Najbardziej szczegółowy pasujący prefiks ma pierwszeństwo.
 
 ---
 
-## Edsger Dijkstra
+## Edsger W. Dijkstra (1930–2002)
 
 <div class="columns"><div>
 
