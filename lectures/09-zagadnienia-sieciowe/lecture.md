@@ -23,7 +23,12 @@ Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, wsp�
 
 ## Rodzaje sieci
 
-<div class="packet"><span>PAN<br>osobista</span><span>LAN<br>lokalna</span><span>MAN<br>miejska</span><span>WAN<br>rozległa</span></div>
+<div class="network-scale">
+  <div class="pan"><strong>PAN</strong>osobista<br><small>telefon, zegarek</small></div>
+  <div class="lan"><strong>LAN / WLAN</strong>lokalna<br><small>dom, biuro, budynek</small></div>
+  <div class="man"><strong>MAN</strong>miejska<br><small>kampus, miasto</small></div>
+  <div class="wan"><strong>WAN</strong>rozległa<br><small>kraje, kontynenty</small></div>
+</div>
 
 Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukturą.
 

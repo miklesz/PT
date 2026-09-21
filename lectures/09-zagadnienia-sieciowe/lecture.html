@@ -50,8 +50,81 @@
       .reveal .station-b { --station: #b35c2e; }
       .reveal .station-c { --station: #4f7f3d; }
       .reveal .shared-channel { grid-column: 1 / -1; order: -1; min-height: 3.1em; display: grid; place-content: center; position: relative; overflow: hidden; color: #fff; background: #003b70; font-size: 0.68em; font-weight: 700; }
-      .reveal .shared-channel::before { content: ''; position: absolute; left: 7%; right: 7%; top: 50%; border-top: 3px solid #85c4d0; }
+      .reveal .shared-channel .channel-title { position: relative; z-index: 1; padding: 0.18em 0.55em; background: #003b70; }
+      .reveal .shared-channel::before { content: ''; position: absolute; z-index: 0; left: 7%; right: 7%; top: 50%; border-top: 3px solid #85c4d0; }
       .reveal .shared-channel::after { content: 'ramka ze stacji A'; position: absolute; left: 18%; top: calc(50% - 1.45em); padding: 0.32em 0.6em; background: #007c91; font-size: 0.72em; font-weight: 700; }
+      .reveal .hidden-terminal { position: relative; display: grid; grid-template-columns: 1fr 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 1.7em 1.1em; align-items: center; max-width: 880px; min-height: 8.3em; margin: 0.8em auto 0; }
+      .reveal .hidden-node { position: relative; z-index: 2; padding: 0.65em 0.55em; border: 3px solid var(--pt-blue); background: #fff; color: var(--pt-blue); font-size: 0.68em; font-weight: 700; text-align: center; }
+      .reveal .hidden-node.access-point { grid-area: 1 / 2; border-color: #b35c2e; color: #8a421e; }
+      .reveal .hidden-node.station-left { grid-area: 2 / 1; border-color: #007c91; color: #006779; }
+      .reveal .hidden-node.station-right { grid-area: 2 / 3; border-color: #4f7f3d; color: #3d672e; }
+      .reveal .hidden-terminal .radio-link { position: absolute; z-index: 0; top: 54%; width: 33%; border-top: 5px solid #85c4d0; transform-origin: center; }
+      .reveal .hidden-terminal .link-a { left: 18%; transform: rotate(-29deg); }
+      .reveal .hidden-terminal .link-b { right: 18%; transform: rotate(29deg); }
+      .reveal .hidden-link { grid-area: 2 / 1 / 3 / 4; align-self: end; z-index: 1; margin: 0 15%; padding-top: 0.55em; border-top: 3px dashed #b54b4b; color: #9a3030; background: #fff; font-size: 0.48em; font-weight: 700; text-align: center; }
+      .reveal .convolutional-flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.25fr) auto minmax(0, 1.1fr) auto minmax(0, 1fr); align-items: stretch; gap: 0.18em; max-width: 1080px; margin: 0.85em auto; }
+      .reveal .convolutional-flow .flow-step { display: grid; align-content: center; gap: 0.22em; min-height: 5.3em; padding: 0.45em; border: 2px solid var(--pt-blue); background: #fff; color: var(--pt-text); font-size: 0.46em; text-align: center; }
+      .reveal .convolutional-flow .flow-step strong { color: var(--pt-blue); }
+      .reveal .convolutional-flow .flow-step code { color: #8a421e; font-size: 1.08em; }
+      .reveal .convolutional-flow .flow-step small { color: var(--pt-muted); font-size: 0.92em; }
+      .reveal .convolutional-flow .flow-arrow { display: grid; place-content: center; color: #007c91; font-size: 1em; font-weight: 700; }
+      .reveal .convolutional-circuit { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 0.35em; align-items: center; max-width: 980px; margin: 0.65em auto; }
+      .reveal .convolutional-circuit .tap { display: grid; gap: 0.22em; min-height: 3.65em; padding: 0.45em; border: 3px solid #007c91; background: #fff; color: #006779; font-size: 0.5em; text-align: center; }
+      .reveal .convolutional-circuit .input-tap { border-color: #b35c2e; color: #8a421e; }
+      .reveal .convolutional-circuit .tap small { color: var(--pt-muted); font-size: 0.88em; }
+      .reveal .convolutional-circuit .circuit-arrow { color: #007c91; font-size: 1em; font-weight: 700; }
+      .reveal .convolutional-circuit .generator-output { grid-column: span 2; display: grid; gap: 0.25em; min-height: 3.8em; padding: 0.48em 0.65em; border: 3px solid var(--pt-blue); background: #edf5fa; color: var(--pt-text); font-size: 0.48em; text-align: left; }
+      .reveal .convolutional-circuit .generator-output strong { color: var(--pt-blue); }
+      .reveal .convolutional-circuit .generator-output code { color: #8a421e; }
+      .reveal .convolutional-example { max-width: 1020px; margin: 0.55em auto; }
+      .reveal .convolutional-example .register-label { margin-bottom: 0.45em; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
+      .reveal .convolutional-example .register-row { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.28em; align-items: center; max-width: 740px; margin: 0 auto 0.55em; }
+      .reveal .convolutional-example .register-row > span { color: #007c91; font-weight: 700; }
+      .reveal .convolutional-example .register-cell { display: grid; gap: 0.18em; min-height: 3.35em; padding: 0.38em; border: 3px solid #007c91; background: #fff; color: #006779; font-size: 0.48em; text-align: center; }
+      .reveal .convolutional-example .register-cell.input { border-color: #b35c2e; color: #8a421e; }
+      .reveal .convolutional-example .register-cell small { color: var(--pt-muted); font-size: 0.85em; }
+      .reveal .convolutional-example .generator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; }
+      .reveal .convolutional-example .generator-card { display: grid; gap: 0.32em; min-height: 4.1em; padding: 0.48em 0.65em; border: 3px solid var(--pt-blue); background: #edf5fa; color: var(--pt-text); font-size: 0.45em; text-align: center; }
+      .reveal .convolutional-example .generator-card strong { color: var(--pt-blue); }
+      .reveal .convolutional-example .generator-card div { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.3em; }
+      .reveal .convolutional-example .generator-card code { padding: 0.12em 0.26em; background: #fff; color: #8a421e; }
+      .reveal .convolutional-example .generator-card b { color: #007c91; }
+      .reveal .hdb3-wave { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.16em; align-items: end; max-width: 760px; height: 5.1em; margin: 0.65em auto 0.38em; }
+      .reveal .hdb3-cell { position: relative; display: grid; grid-template-rows: 1fr auto; min-height: 5.1em; padding: 0 0.25em 0.38em; border-bottom: 3px solid #627789; color: var(--pt-text); font-size: 0.64em; text-align: center; }
+      .reveal .hdb3-cell strong, .reveal .hdb3-cell span { position: relative; z-index: 1; justify-self: center; background: #fff; }
+      .reveal .hdb3-cell strong { align-self: start; padding: 0.08em 0.32em; }
+      .reveal .hdb3-cell span { padding: 0.1em 0.25em 0; color: var(--pt-muted); font-size: 0.7em; }
+      .reveal .hdb3-cell::before { content: ''; position: absolute; z-index: 0; bottom: 0; left: 50%; width: 0; height: 0; border-left: 0.34em solid transparent; border-right: 0.34em solid transparent; transform: translateX(-50%); }
+      .reveal .hdb3-cell.pulse-b::before, .reveal .hdb3-cell.pulse-v::before { height: 3.5em; border-left: 0.34em solid #43a9b4; border-right: 0.34em solid #43a9b4; background: #43a9b4; }
+      .reveal .hdb3-cell.pulse-b { color: #006779; }
+      .reveal .hdb3-cell.pulse-v { color: #a23d3d; }
+      .reveal .hdb3-cell.pulse-v::before { border-left-color: #df8181; border-right-color: #df8181; background: #df8181; }
+      .reveal .hdb3-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em; max-width: 790px; margin: 0.1em auto 0; color: var(--pt-muted); font-size: 0.4em; }
+      .reveal .hdb3-legend > div { display: grid; grid-template-columns: auto 1fr; gap: 0.4em; align-items: center; padding: 0.35em 0.5em; border-top: 2px solid #cfd9de; text-align: left; }
+      .reveal .hdb3-legend strong { color: var(--pt-blue); font-size: 1.25em; }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 35vh; margin: 0.15em auto 0; overflow: visible; }
+      .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
+      .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
+      .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
+      .reveal .hdb3-wave-svg .level { fill: var(--pt-muted); font-size: 23px; font-weight: 400; }
+      .reveal .hdb3-wave-svg .label-b { fill: #007c91; font-size: 35px; }
+      .reveal .hdb3-wave-svg .label-v { fill: #b54b4b; font-size: 35px; }
+      .reveal .encoding-benefit { display: grid; grid-template-columns: 1fr auto 1fr auto 1.35fr; gap: 0.35em; align-items: center; max-width: 930px; margin: 0.8em auto; }
+      .reveal .encoding-benefit .benefit-step { display: grid; justify-items: center; align-content: center; gap: 0.45em; min-height: 5.2em; padding: 0.45em; border: 2px solid var(--pt-blue); background: #fff; color: var(--pt-text); font-size: 0.47em; text-align: center; }
+      .reveal .encoding-benefit .benefit-step strong { color: var(--pt-blue); }
+      .reveal .encoding-benefit .benefit-arrow { color: #007c91; font-size: 1.15em; font-weight: 700; }
+      .reveal .encoding-benefit .bit-token, .reveal .encoding-benefit .benefit-mark { display: grid; place-content: center; min-width: 2.1em; min-height: 1.65em; padding: 0.1em 0.3em; background: #f8eadf; color: #8a421e; font-family: monospace; font-size: 1.15em; font-weight: 700; }
+      .reveal .encoding-benefit .benefit-mark { border-radius: 50%; background: #e4f0e7; color: #3d672e; font-family: Arial, sans-serif; }
+      .reveal .encoding-benefit .bit-pair { display: flex; gap: 0.28em; }
+      .reveal .encoding-benefit .bit-pair span { padding: 0.28em 0.38em; background: #e5f1f4; color: #006779; font-family: monospace; font-size: 0.95em; font-weight: 700; }
+      .reveal .code-lab { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7em; align-items: end; max-width: 900px; margin: 0.8em auto; }
+      .reveal .code-lab label { display: grid; gap: 0.28em; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; }
+      .reveal .code-lab input, .reveal .code-lab select { width: 100%; box-sizing: border-box; padding: 0.38em 0.5em; border: 2px solid var(--pt-blue); border-radius: 0; background: #fff; color: var(--pt-ink); font: 700 1.1em ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .reveal .code-lab select { font-family: Arial, sans-serif; }
+      .reveal .code-lab .lab-result { grid-column: 1 / -1; min-height: 3.2em; padding: 0.55em 0.7em; border-left: 6px solid var(--pt-cyan); background: #edf5fa; color: var(--pt-ink); font-size: 0.58em; line-height: 1.35; }
+      .reveal .code-lab .lab-result code { padding: 0.12em 0.28em; background: #fff; color: #8a421e; font-size: 1.06em; }
+      .reveal .two-of-five-lab { grid-template-columns: minmax(230px, 0.8fr) 1.4fr; }
+      .reveal .convolutional-lab { grid-template-columns: 1fr; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
@@ -106,7 +179,13 @@
       .reveal .protocol-map .head { background: var(--pt-blue); color: #fff; font-weight: 700; }
       .reveal .media-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; align-items: center; }
       .reveal .media-gallery img { width: 100%; max-width: 100%; max-height: 48vh; margin: 0; }
-      .reveal .media-gallery.four { grid-template-columns: repeat(4, 1fr); }
+      .reveal .media-gallery figure { margin: 0; }
+      .reveal .media-gallery figcaption { margin-top: 0.25em; color: var(--pt-text); font-size: 0.46em; font-weight: 700; text-align: center; }
+      .reveal .media-gallery.four { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; margin: 0.25em auto; }
+      .reveal .media-gallery.single-visual { grid-template-columns: 1fr; max-width: 1100px; margin: 0.25em auto; }
+      .reveal .media-gallery.single-visual img { max-height: 56vh; }
+      .reveal .media-gallery.csma-cd-gallery { grid-template-columns: 1fr; max-width: 920px; margin: 0.2em auto; }
+      .reveal .media-gallery.csma-cd-gallery img { max-height: 30vh; }
       .reveal .slide-number { color: var(--pt-muted); left: 22px; right: auto; bottom: 18px; }
       .reveal .controls { right: 18px; bottom: 18px; }
       @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
@@ -140,7 +219,12 @@ Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, wsp�
 
 ## Rodzaje sieci
 
-<div class="packet"><span>PAN<br>osobista</span><span>LAN<br>lokalna</span><span>MAN<br>miejska</span><span>WAN<br>rozległa</span></div>
+<div class="network-scale">
+  <div class="pan"><strong>PAN</strong>osobista<br><small>telefon, zegarek</small></div>
+  <div class="lan"><strong>LAN / WLAN</strong>lokalna<br><small>dom, biuro, budynek</small></div>
+  <div class="man"><strong>MAN</strong>miejska<br><small>kampus, miasto</small></div>
+  <div class="wan"><strong>WAN</strong>rozległa<br><small>kraje, kontynenty</small></div>
+</div>
 
 Podział zależy przede wszystkim od zasięgu i sposobu zarządzania infrastrukturą.
 
@@ -336,6 +420,128 @@ Zależy od:
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
     <script>
       Reveal.initialize({ hash: true, slideNumber: 'c/t', controlsTutorial: false, transition: 'fade', transitionSpeed: 'fast', plugins: [RevealMarkdown] });
+
+      const binary = (value) => value.replace(/[^01]/g, '');
+      const setHammingResult = () => {
+        const x = document.querySelector('.hamming-x');
+        const y = document.querySelector('.hamming-y');
+        const output = document.querySelector('.hamming-result');
+        if (!x || !y || !output) return;
+        x.value = binary(x.value); y.value = binary(y.value);
+        if (!x.value || !y.value || x.value.length !== y.value.length) {
+          output.textContent = 'Wpisz dwa niepuste ciągi binarne o tej samej długości.';
+          return;
+        }
+        const differences = [...x.value].map((bit, index) => bit === y.value[index] ? null : index + 1).filter(Boolean);
+        output.innerHTML = 'Odległość Hamminga: <code>' + differences.length + '</code>. Różne pozycje: <code>' + (differences.join(', ') || 'brak') + '</code>.';
+      };
+
+      const twoOfFive = ['00110', '10001', '01001', '11000', '00101', '10100', '01100', '00011', '10010', '01010'];
+      const setTwoOfFiveResult = () => {
+        const input = document.querySelector('.two-of-five-digit');
+        const output = document.querySelector('.two-of-five-result');
+        if (!input || !output) return;
+        const digit = Math.max(0, Math.min(9, Math.trunc(Number(input.value) || 0)));
+        input.value = digit;
+        const word = twoOfFive[digit];
+        output.innerHTML = 'Cyfra <code>' + digit + '</code> → słowo <code>' + word + '</code>. Liczba jedynek: <code>2</code>.';
+      };
+
+      const setTwoOfFiveCheckResult = () => {
+        const input = document.querySelector('.two-of-five-word');
+        const output = document.querySelector('.two-of-five-check-result');
+        if (!input || !output) return;
+        input.value = binary(input.value).slice(0, 5);
+        if (input.value.length !== 5) {
+          output.textContent = 'Wpisz dokładnie pięć bitów.';
+          return;
+        }
+        const weight = [...input.value].filter((bit) => bit === '1').length;
+        const digit = twoOfFive.indexOf(input.value);
+        if (digit >= 0) {
+          output.innerHTML = 'Waga słowa: <code>' + weight + '</code>. Poprawne słowo kodowe cyfry <code>' + digit + '</code>.';
+        } else {
+          output.innerHTML = 'Waga słowa: <code>' + weight + '</code>. To nie jest słowo kodowe cyfr w użytej tablicy „2 z 5”.';
+        }
+      };
+
+      const setHdb3Result = () => {
+        const input = document.querySelector('.hdb3-input');
+        const output = document.querySelector('.hdb3-result');
+        if (!input || !output) return;
+        input.value = binary(input.value);
+        if (!input.value) {
+          output.textContent = 'Wpisz co najmniej jeden bit.';
+          return;
+        }
+        let lastPolarity = -1;
+        let pulsesSinceViolation = 0;
+        let zeroRun = 0;
+        const encoded = [];
+        for (const character of input.value) {
+          if (character === '1') {
+            lastPolarity *= -1;
+            encoded.push((lastPolarity > 0 ? '+' : '−') + '1');
+            pulsesSinceViolation += 1;
+            zeroRun = 0;
+            continue;
+          }
+          encoded.push('0');
+          zeroRun += 1;
+          if (zeroRun !== 4) continue;
+          if (pulsesSinceViolation % 2 === 0) {
+            const polarity = -lastPolarity;
+            lastPolarity = polarity;
+            const mark = polarity > 0 ? '+' : '−';
+            encoded.splice(-4, 4, mark + 'B', '0', '0', mark + 'V');
+          } else {
+            const mark = lastPolarity > 0 ? '+' : '−';
+            encoded.splice(-4, 4, '0', '0', '0', mark + 'V');
+          }
+          pulsesSinceViolation = 0;
+          zeroRun = 0;
+        }
+        output.innerHTML = 'Zakodowany przebieg: <code>' + encoded.join(' ') + '</code><br><span><code>B00V</code> lub <code>000V</code> zastępuje serię czterech zer.</span>';
+      };
+
+      const setConvolutionalResult = () => {
+        const input = document.querySelector('.convolutional-input');
+        const output = document.querySelector('.convolutional-result');
+        if (!input || !output) return;
+        input.value = binary(input.value);
+        if (!input.value) {
+          output.textContent = 'Wpisz co najmniej jeden bit wejściowy.';
+          return;
+        }
+        let memory1 = 0;
+        let memory2 = 0;
+        const pairs = [];
+        const states = [];
+        for (const character of input.value) {
+          const bit = Number(character);
+          const c1 = bit ^ memory1 ^ memory2;
+          const c2 = bit ^ memory2;
+          pairs.push('' + c1 + c2);
+          states.push('[' + bit + ',' + memory1 + ',' + memory2 + ']');
+          memory2 = memory1;
+          memory1 = bit;
+        }
+        output.innerHTML = 'Pary wyjściowe: <code>' + pairs.join(' ') + '</code><br>Stany [bieżący, pamięć 1, pamięć 2]: <code>' + states.join(' ') + '</code>.';
+      };
+
+      const initializeLabs = () => {
+        document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
+        document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
+        document.querySelector('.two-of-five-word')?.addEventListener('input', setTwoOfFiveCheckResult);
+        document.querySelector('.hdb3-input')?.addEventListener('input', setHdb3Result);
+        document.querySelector('.convolutional-input')?.addEventListener('input', setConvolutionalResult);
+        setHammingResult();
+        setTwoOfFiveResult();
+        setTwoOfFiveCheckResult();
+        setHdb3Result();
+        setConvolutionalResult();
+      };
+      Reveal.on('ready', initializeLabs);
     </script>
   </body>
 </html>
