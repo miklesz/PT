@@ -103,24 +103,33 @@ Więcej kanałów i większa przepływność; zwykle krótszy zasięg.
 
 ---
 
-## Rozwój Wi-Fi
+## Rozwój Wi-Fi: 1997–2003
 
 <div class="timeline">
-  <div><strong>Wi-Fi 4</strong><br>802.11n<br><br>MIMO, 2,4/5 GHz</div>
-  <div><strong>Wi-Fi 5</strong><br>802.11ac<br><br>większa przepływność w 5 GHz</div>
-  <div><strong>Wi-Fi 6 / 6E</strong><br>802.11ax<br><br>OFDMA, pojemność, 6 GHz w 6E</div>
-  <div><strong>Wi-Fi 7</strong><br>802.11be<br><br>szersze kanały, Multi-Link Operation</div>
+  <div><strong>IEEE 802.11</strong><br>1997<br><br>2,4 GHz, do 2 Mb/s</div>
+  <div><strong>Wi-Fi 1</strong><br>802.11b, 1999<br><br>2,4 GHz, do 11 Mb/s</div>
+  <div><strong>Wi-Fi 2</strong><br>802.11a, 1999<br><br>5 GHz, do 54 Mb/s</div>
+  <div><strong>Wi-Fi 3</strong><br>802.11g, 2003<br><br>2,4 GHz, do 54 Mb/s</div>
 </div>
 
 ---
 
-## Od 802.11b do 802.11g
+## Rozwój Wi-Fi: 2009–2024
 
-- **802.11b:** 2,4 GHz, do 11 Mb/s.
-- **802.11a:** 5 GHz, do 54 Mb/s.
-- **802.11g:** 2,4 GHz, do 54 Mb/s i zgodność wsteczna z 802.11b.
+<div class="timeline">
+  <div><strong>Wi-Fi 4</strong><br>802.11n, 2009<br><br>MIMO, 2,4/5 GHz</div>
+  <div><strong>Wi-Fi 5</strong><br>802.11ac, 2013<br><br>większa przepływność w 5 GHz</div>
+  <div><strong>Wi-Fi 6 / 6E</strong><br>802.11ax, 2021<br><br>OFDMA; 6 GHz w 6E</div>
+  <div><strong>Wi-Fi 7</strong><br>802.11be, 2024<br><br>kanały 320 MHz, Multi-Link Operation</div>
+</div>
 
-To historyczne standardy, ważne dla zrozumienia kompatybilności starszych urządzeń.
+---
+
+## Starsze generacje i zgodność
+
+- **802.11b i 802.11g:** pracują w paśmie 2,4 GHz; 802.11g zachowuje zgodność wsteczną z 802.11b.
+- **802.11a:** wykorzystuje 5 GHz, więc nie współpracuje radiowo z urządzeniami wyłącznie 2,4 GHz.
+- Historyczne standardy są istotne przy obsłudze starszych urządzeń i planowaniu kompatybilności.
 
 ---
 
