@@ -127,7 +127,13 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
 
 Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu jednego z odcinków.
 
-![Topologia pierścienia podwójnego](media/image10.png)
+<div class="double-ring-diagram" role="img" aria-label="Podwójna topologia pierścienia z węzłami A, B, C i D oraz dwoma przeciwnymi kierunkami obiegu danych.">
+  <div class="double-ring-track outer"></div><div class="double-ring-track inner"></div>
+  <div class="double-ring-direction clockwise">↻<small>pierścień 1</small></div><div class="double-ring-direction counterclockwise">↺<small>pierścień 2</small></div>
+  <div class="double-ring-node node-a">A</div><div class="double-ring-node node-b">B</div><div class="double-ring-node node-c">C</div><div class="double-ring-node node-d">D</div>
+</div>
+
+<p class="double-ring-note">Drugi pierścień zapewnia alternatywną drogę transmisji.</p>
 
 ---
 
