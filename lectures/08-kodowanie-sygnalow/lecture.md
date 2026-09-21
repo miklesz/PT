@@ -120,12 +120,14 @@ W HDB3 ciąg czterech zer może zostać zastąpiony wzorcem:
 
 AMI (*Alternate Mark Inversion*): kolejne `1` to naprzemienne impulsy `+` i `−`, a `0` to brak impulsu.
 
-<div class="hdb3-wave" aria-label="Wzorzec B00V: dwa impulsy o tej samej dodatniej polaryzacji oddzielone zerami">
-  <div class="hdb3-cell pulse-b"><strong>B</strong><span>+V</span></div>
-  <div class="hdb3-cell"><strong>0</strong><span>0 V</span></div>
-  <div class="hdb3-cell"><strong>0</strong><span>0 V</span></div>
-  <div class="hdb3-cell pulse-v"><strong>V</strong><span>+V</span></div>
-</div>
+<svg class="hdb3-wave-svg" viewBox="0 0 920 230" role="img" aria-label="Przebieg B00V: dwa dodatnie impulsy oddzielone dwoma zerami">
+  <line x1="65" y1="155" x2="860" y2="155" class="axis" />
+  <line x1="65" y1="45" x2="65" y2="180" class="axis" />
+  <text x="18" y="60">+V</text><text x="28" y="162">0</text>
+  <path d="M65 155 H110 V55 H250 V155 H430 V155 H610 V55 H750 V155 H860" class="wave" />
+  <text x="175" y="35" class="label-b">B</text><text x="340" y="195">0</text><text x="520" y="195">0</text><text x="675" y="35" class="label-v">V</text>
+  <text x="135" y="215" class="hint">zwykły impuls</text><text x="625" y="215" class="hint">naruszenie</text>
+</svg>
 
 <div class="hdb3-legend"><span><strong>B</strong> zwykły impuls zgodny z AMI</span><span><strong>V</strong> celowe naruszenie polaryzacji</span></div>
 

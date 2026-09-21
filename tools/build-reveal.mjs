@@ -117,6 +117,13 @@ const html = `<!doctype html>
       .reveal .hdb3-cell.pulse-v::before { border-left-color: #df8181; border-right-color: #df8181; background: #df8181; }
       .reveal .hdb3-legend { display: flex; justify-content: center; gap: 1.4em; color: var(--pt-muted); font-size: 0.42em; }
       .reveal .hdb3-legend strong { color: var(--pt-text); }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 900px); max-height: 40vh; margin: 0.35em auto 0; overflow: visible; }
+      .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
+      .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
+      .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
+      .reveal .hdb3-wave-svg .label-b { fill: #007c91; font-size: 35px; }
+      .reveal .hdb3-wave-svg .label-v { fill: #b54b4b; font-size: 35px; }
+      .reveal .hdb3-wave-svg .hint { fill: var(--pt-muted); font-size: 20px; font-weight: 400; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
