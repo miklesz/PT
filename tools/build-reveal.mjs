@@ -93,13 +93,14 @@ const html = `<!doctype html>
       .reveal .timeline > div:nth-child(2) { min-height: 9.2em; background: #dceef2; }
       .reveal .timeline > div:nth-child(3) { min-height: 10.4em; background: #eff0df; }
       .reveal .timeline > div:nth-child(4) { min-height: 11.6em; background: #f4e6d5; }
-      .reveal .wifi-speed-chart { display: grid; grid-template-columns: repeat(9, 1fr); gap: 0.45em; align-items: end; max-width: 1080px; height: 10em; margin: 0.3em auto 0; padding: 0 0.1em; border-bottom: 3px solid var(--pt-blue); }
+      .reveal .wifi-speed-chart { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.45em; align-items: end; max-width: 1080px; height: 10em; margin: 0.3em auto 0; padding: 0 0.1em; border-bottom: 3px solid var(--pt-blue); }
       .reveal .wifi-speed-chart > div { display: flex; flex-direction: column; justify-content: end; align-items: stretch; height: 100%; text-align: center; }
       .reveal .wifi-speed-chart .rate { min-height: 1.45em; display: grid; place-content: end center; color: var(--pt-blue); font-size: 0.46em; font-weight: 700; }
       .reveal .wifi-speed-chart .bar { height: var(--bar-height); min-height: 0.35em; background: var(--bar-color); border-top: 5px solid var(--bar-border); }
-      .reveal .wifi-speed-chart .planned .bar { background: repeating-linear-gradient(135deg, #c7d2dc 0 0.32em, #f7fafc 0.32em 0.64em); border: 3px dashed #587083; }
       .reveal .wifi-speed-chart strong { margin-top: 0.35em; font-size: 0.45em; }
       .reveal .wifi-speed-chart .year { color: var(--pt-muted); font-size: 0.4em; }
+      .reveal .future-standard { display: grid; grid-template-columns: auto 1fr; gap: 0.45em 0.7em; align-items: center; max-width: 1080px; margin: 0.48em auto 0; padding: 0.35em 0.55em; border-left: 5px dashed #587083; background: #eef3f7; font-size: 0.48em; }
+      .reveal .future-standard strong { white-space: nowrap; }
       .reveal .wifi-standard-table { display: grid; grid-template-columns: 1.1fr 0.82fr 0.95fr 1.2fr 0.8fr; max-width: 1080px; margin: 0.4em auto 0; font-size: 0.47em; line-height: 1.15; border-top: 2px solid var(--pt-blue); border-left: 2px solid var(--pt-blue); }
       .reveal .wifi-standard-table > div { display: grid; align-items: center; padding: 0.28em 0.36em; background: #f7fafc; border-right: 1px solid #aebbc5; border-bottom: 1px solid #aebbc5; }
       .reveal .wifi-standard-table .head { background: var(--pt-blue); color: #fff; font-weight: 700; }

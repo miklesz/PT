@@ -219,10 +219,11 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
   <div style="--bar-height: 6em; --bar-color: #bf8a2e; --bar-border: #87611f"><span class="rate">6,93 Gb/s</span><span class="bar"></span><strong>Wi-Fi 5</strong><span class="year">2013</span></div>
   <div style="--bar-height: 6.4em; --bar-color: #c66f2b; --bar-border: #8c4f1f"><span class="rate">9,61 Gb/s</span><span class="bar"></span><strong>Wi-Fi 6 / 6E</strong><span class="year">2021</span></div>
   <div style="--bar-height: 7.4em; --bar-color: #b8443f; --bar-border: #822f2c"><span class="rate">do 46 Gb/s</span><span class="bar"></span><strong>Wi-Fi 7</strong><span class="year">2024</span></div>
-  <div class="planned" style="--bar-height: 4.2em"><span class="rate">projekt</span><span class="bar"></span><strong>P802.11bn</strong><span class="year">w opracowaniu</span></div>
 </div>
 
-<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności PHY. Kolor: chłodny dla niższej, ciepły dla wyższej szybkości. Kreskowany słupek: P802.11bn, aktywny projekt IEEE dla bardzo wysokiej niezawodności.</p>
+<div class="future-standard"><strong>P802.11bn - projekt IEEE</strong><span>Bardzo wysoka niezawodność; IEEE określa cele poprawy przepływności, opóźnienia i strat względem Wi-Fi 7, lecz nie podaje jeszcze maksymalnej szybkości PHY.</span></div>
+
+<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności PHY. Kolor: chłodny dla niższej, ciepły dla wyższej szybkości.</p>
 
 ---
 
