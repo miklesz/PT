@@ -194,13 +194,19 @@ Rejestr pamięta wcześniejsze bity, dlatego wynik zależy od bieżącego bitu i
 
 ---
 
-## Koder splotowy: realizacja logiczna
+## Przykład kodera splotowego `1/2`
 
-<div class="media-gallery">
-  <img src="media/image12.png" alt="Schemat kodowania splotowego">
-  <img src="media/image13.png" alt="Schemat dekodowania splotowego">
-  <img src="media/image16.png" alt="Porównanie realizacji kodowania splotowego">
+<div class="convolutional-circuit">
+  <div class="tap input-tap"><code>u(k)</code><small>bieżący bit</small></div>
+  <div class="circuit-arrow">→</div>
+  <div class="tap"><code>u(k−1)</code><small>opóźnienie 1</small></div>
+  <div class="circuit-arrow">→</div>
+  <div class="tap"><code>u(k−2)</code><small>opóźnienie 2</small></div>
+  <div class="generator-output"><strong>Generator 1</strong><code>c₁(k) = u(k) ⊕ u(k−1) ⊕ u(k−2)</code></div>
+  <div class="generator-output"><strong>Generator 2</strong><code>c₂(k) = u(k) ⊕ u(k−2)</code></div>
 </div>
+
+W każdej chwili jeden bit wejściowy tworzy dwa bity wyjściowe; stosunek szybkości kodu wynosi więc `1/2`.
 
 ---
 

@@ -84,6 +84,14 @@ const html = `<!doctype html>
       .reveal .convolutional-flow .flow-step code { color: #8a421e; font-size: 1.08em; }
       .reveal .convolutional-flow .flow-step small { color: var(--pt-muted); font-size: 0.92em; }
       .reveal .convolutional-flow .flow-arrow { display: grid; place-content: center; color: #007c91; font-size: 1em; font-weight: 700; }
+      .reveal .convolutional-circuit { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 0.35em; align-items: center; max-width: 980px; margin: 0.65em auto; }
+      .reveal .convolutional-circuit .tap { display: grid; gap: 0.22em; min-height: 3.65em; padding: 0.45em; border: 3px solid #007c91; background: #fff; color: #006779; font-size: 0.5em; text-align: center; }
+      .reveal .convolutional-circuit .input-tap { border-color: #b35c2e; color: #8a421e; }
+      .reveal .convolutional-circuit .tap small { color: var(--pt-muted); font-size: 0.88em; }
+      .reveal .convolutional-circuit .circuit-arrow { color: #007c91; font-size: 1em; font-weight: 700; }
+      .reveal .convolutional-circuit .generator-output { grid-column: span 2; display: grid; gap: 0.25em; min-height: 3.8em; padding: 0.48em 0.65em; border: 3px solid var(--pt-blue); background: #edf5fa; color: var(--pt-text); font-size: 0.48em; text-align: left; }
+      .reveal .convolutional-circuit .generator-output strong { color: var(--pt-blue); }
+      .reveal .convolutional-circuit .generator-output code { color: #8a421e; }
       .reveal .coax-layout { display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: 1.1em; align-items: center; }
       .reveal .coax-cross-section { position: relative; width: 250px; aspect-ratio: 1; margin: 0 auto 0.35em; border-radius: 50%; background: #27333b; }
       .reveal .coax-cross-section div { position: absolute; border-radius: 50%; display: grid; place-content: center; }
