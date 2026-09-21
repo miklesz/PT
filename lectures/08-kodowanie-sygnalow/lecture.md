@@ -108,11 +108,16 @@ Pozwala to utrzymać synchronizację, nawet gdy źródło generuje długi ciąg 
 
 ---
 
-## Synchronizacja w HDB
+## Synchronizacja w HDB3
 
-<div class="packet"><span>0</span><span>0</span><span>0</span><span>V</span><span>B</span><span>0</span><span>0</span><span>0</span></div>
+W HDB3 ciąg czterech zer może zostać zastąpiony wzorcem:
 
-Wstawione impulsy są rozpoznawalne przez dekoder i nie są traktowane jak zwykłe dane. Dokładny wzorzec zależy od wariantu HDB.
+<div class="packet"><span><strong>B</strong></span><span>0</span><span>0</span><span><strong>V</strong></span></div>
+
+- **B** (*balancing*): zwykły impuls bipolarny, zgodny z naprzemiennością AMI.
+- **V** (*violation*): impuls celowo naruszający tę naprzemienność.
+
+Dekoder rozpoznaje `B00V` jako zastąpione zera, a nie dane użytkownika.
 
 ---
 
