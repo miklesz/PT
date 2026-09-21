@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media transmisyjne: światłowody</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css">
+    <style>
+      :root { --pt-blue: #003b70; --pt-cyan: #007c91; --pt-ink: #13212e; --pt-muted: #587083; }
+      .reveal { color: var(--pt-ink); font-family: Arial, Helvetica, sans-serif; font-size: 34px; }
+      .reveal .slides { text-align: left; }
+      .reveal h1, .reveal h2, .reveal h3 { color: var(--pt-blue); font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+      .reveal h1 { font-size: 1.75em; margin-bottom: 0.35em; }
+      .reveal h2 { font-size: 1.3em; margin-bottom: 0.55em; }
+      .reveal p, .reveal li { line-height: 1.32; }
+      .reveal ul { margin-top: 0.25em; }
+      .reveal li + li { margin-top: 0.25em; }
+      .reveal a { color: var(--pt-cyan); text-decoration: underline; }
+      .reveal strong { color: var(--pt-blue); }
+      .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
+      .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal .title-slide { text-align: center; }
+      .reveal .title-slide h1 { font-size: 1.9em; }
+      .reveal .title-slide p { color: var(--pt-muted); }
+      .reveal .section-slide { display: grid !important; place-content: center; text-align: center; }
+      .reveal .section-slide h1, .reveal .section-slide h2 { font-size: 2em; }
+      .reveal .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; align-items: start; }
+      .reveal .small { font-size: 0.72em; }
+      .reveal .credits { color: var(--pt-muted); font-size: 0.52em; margin-top: 0.35em; }
+      .reveal .stack { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.22em; margin: 0.35em auto; max-width: 950px; }
+      .reveal .stack > div { border: 2px solid var(--pt-blue); padding: 0.35em 0.18em; min-height: 4.3em; display: grid; place-content: center; text-align: center; font-size: 0.55em; }
+      .reveal .stack .tcp { grid-column: span 3; background: #dceef2; }
+      .reveal .stack .net { background: #e7edf6; }
+      .reveal .stack .link { grid-column: span 2; background: #eff0df; }
+      .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
+      .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
+      .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .slide-number { color: var(--pt-muted); }
+      @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="reveal"><div class="slides">
+      <section data-markdown><textarea data-template>
+<!-- .slide: class="title-slide" -->
+
+# Media transmisyjne: światłowody
+
+---
+
+## Plan wykładu
+
+- czym jest światłowód,
+- zalety transmisji optycznej,
+- światłowody jedno- i wielomodowe,
+- tłumienie, zgięcia i dyspersja.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Światłowód
+
+---
+
+## Co to jest światłowód?
+
+Światłowód prowadzi światło wewnątrz włókna o odpowiednio dobranych właściwościach optycznych.
+
+<div class="packet"><span>Rdzeń</span><span>Płaszcz</span><span>Powłoka ochronna</span></div>
+
+Informacja jest kodowana jako modulowana wiązka światła, zwykle pochodząca z lasera albo diody LED.
+
+---
+
+## Dlaczego transmisja optyczna?
+
+- bardzo duża przepustowość,
+- małe tłumienie na dużych odległościach,
+- odporność na zakłócenia elektromagnetyczne,
+- brak emisji elektromagnetycznej,
+- małe rozmiary i masa kabla.
+
+---
+
+## Materiał: ewolucja światłowodów
+
+<video controls preload="metadata"><source src="media/slide-007-media1.mp4" type="video/mp4"></video>
+
+---
+
+## Laser jako źródło światła
+
+<video controls preload="metadata"><source src="media/slide-009-media2.mp4" type="video/mp4"></video>
+
+---
+
+## Odporność na błędy
+
+<video controls preload="metadata"><source src="media/slide-012-media3.mp4" type="video/mp4"></video>
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Mody propagacji
+
+---
+
+## Podział światłowodów
+
+<div class="columns"><div>
+
+**Wielomodowe**
+
+Wiele dróg propagacji światła w rdzeniu. Typowe dla krótszych odcinków i sieci lokalnych.
+
+</div><div>
+
+**Jednomodowe**
+
+Jedna dominująca droga propagacji. Mała dyspersja i zastosowanie w długich łączach.
+
+</div></div>
+
+---
+
+## Wielomodowe: gradientowe i skokowe
+
+<div class="columns"><div>
+
+**Gradientowe**
+
+Współczynnik załamania zmienia się stopniowo, co ogranicza różnice czasu przejścia modów.
+
+</div><div>
+
+**Skokowe**
+
+Współczynnik zmienia się skokowo na granicy rdzenia i płaszcza; różne drogi mają wyraźnie różną długość.
+
+</div></div>
+
+---
+
+## Materiał: wielomodowość
+
+<video controls preload="metadata"><source src="media/slide-021-media4.mp4" type="video/mp4"></video>
+
+---
+
+## Światłowód jednomodowy
+
+- Ma mały rdzeń i prowadzi zasadniczo jeden mod.
+- Ogranicza dyspersję międzymodową.
+- Jest podstawą łączy dalekiego zasięgu i sieci szkieletowych.
+
+---
+
+## Materiał: światłowód jednomodowy
+
+<video controls preload="metadata"><source src="media/slide-025-media5.mp4" type="video/mp4"></video>
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Straty i tłumienie
+
+---
+
+## Tłumienie sygnału
+
+Tłumienie określa, o ile maleje moc optyczna sygnału podczas propagacji. W praktyce liczą się między innymi:
+
+- absorpcja w materiale,
+- rozpraszanie,
+- niedoskonałości włókna,
+- zgięcia i połączenia.
+
+---
+
+## Straty falowodowe
+
+<video controls preload="metadata"><source src="media/slide-031-media6.mp4" type="video/mp4"></video>
+
+---
+
+## Mikro-zgięcia
+
+- Niewielkie, miejscowe odkształcenia włókna.
+- Mogą wynikać z nacisku, naprężeń i niedoskonałości konstrukcji kabla.
+- Powodują dodatkową utratę mocy.
+
+<video controls preload="metadata"><source src="media/slide-033-media7.mp4" type="video/mp4"></video>
+
+---
+
+## Makro-zgięcia
+
+- Widoczne zgięcia kabla o zbyt małym promieniu.
+- Część światła przestaje spełniać warunek całkowitego wewnętrznego odbicia i ucieka z rdzenia.
+
+<video controls preload="metadata"><source src="media/slide-035-media8.mp4" type="video/mp4"></video>
+
+---
+
+## Inne przyczyny strat
+
+- koncentracja zanieczyszczeń w szkle,
+- straty na złączach i spawach,
+- niewłaściwy montaż,
+- starzenie materiału i wpływ środowiska.
+
+---
+
+## Materiał: tłumienie
+
+<video controls preload="metadata"><source src="media/slide-039-media9.mp4" type="video/mp4"></video>
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Dyspersja
+
+---
+
+## Czym jest dyspersja?
+
+Dyspersja rozszerza impuls w czasie. Gdy sąsiednie impulsy zaczynają się nakładać, rośnie ryzyko błędnej interpretacji danych.
+
+---
+
+## Typy dyspersji
+
+<div class="columns"><div>
+
+**Międzymodowa**
+
+Różne mody w światłowodzie wielomodowym przemierzają różne drogi i docierają w różnym czasie.
+
+</div><div>
+
+**Chromatyczna**
+
+Różne długości fali poruszają się z różną prędkością; obejmuje dyspersję materiałową i falowodową.
+
+</div></div>
+
+---
+
+## Dyspersja chromatyczna
+
+- **Materiałowa:** współczynnik załamania zależy od długości fali.
+- **Falowodowa:** właściwości propagacji wynikają także z geometrii rdzenia i płaszcza.
+- Obie ograniczają maksymalną odległość i przepływność łącza.
+
+---
+
+## Materiały: dyspersja
+
+<video controls preload="metadata"><source src="media/slide-051-media10.mp4" type="video/mp4"></video>
+
+---
+
+## Materiał: dyspersja chromatyczna
+
+<video controls preload="metadata"><source src="media/slide-052-media11.mp4" type="video/mp4"></video>
+
+---
+
+## Podsumowanie
+
+- Światłowód daje dużą przepustowość i odporność na zakłócenia.
+- Wybór włókna jedno- albo wielomodowego jest związany z odległością i wymaganiami łącza.
+- Tłumienie i dyspersja są podstawowymi ograniczeniami transmisji optycznej.
+
+      </textarea></section>
+    </div></div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({ hash: true, slideNumber: 'c/t', controlsTutorial: false, transition: 'fade', transitionSpeed: 'fast', plugins: [RevealMarkdown] });
+    </script>
+  </body>
+</html>
