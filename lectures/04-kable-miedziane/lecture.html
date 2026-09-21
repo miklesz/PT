@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Warstwa fizyczna: przekaz elektryczny</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css">
+    <style>
+      :root { --pt-blue: #003b70; --pt-cyan: #007c91; --pt-ink: #13212e; --pt-muted: #587083; }
+      .reveal { color: var(--pt-ink); font-family: Arial, Helvetica, sans-serif; font-size: 34px; }
+      .reveal .slides { text-align: left; }
+      .reveal h1, .reveal h2, .reveal h3 { color: var(--pt-blue); font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+      .reveal h1 { font-size: 1.75em; margin-bottom: 0.35em; }
+      .reveal h2 { font-size: 1.3em; margin-bottom: 0.55em; }
+      .reveal p, .reveal li { line-height: 1.32; }
+      .reveal ul { margin-top: 0.25em; }
+      .reveal li + li { margin-top: 0.25em; }
+      .reveal a { color: var(--pt-cyan); text-decoration: underline; }
+      .reveal strong { color: var(--pt-blue); }
+      .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
+      .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal .title-slide { text-align: center; }
+      .reveal .title-slide h1 { font-size: 1.9em; }
+      .reveal .title-slide p { color: var(--pt-muted); }
+      .reveal .section-slide { display: grid !important; place-content: center; text-align: center; }
+      .reveal .section-slide h1, .reveal .section-slide h2 { font-size: 2em; }
+      .reveal .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; align-items: start; }
+      .reveal .small { font-size: 0.72em; }
+      .reveal .credits { color: var(--pt-muted); font-size: 0.52em; margin-top: 0.35em; }
+      .reveal .stack { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.22em; margin: 0.35em auto; max-width: 950px; }
+      .reveal .stack > div { border: 2px solid var(--pt-blue); padding: 0.35em 0.18em; min-height: 4.3em; display: grid; place-content: center; text-align: center; font-size: 0.55em; }
+      .reveal .stack .tcp { grid-column: span 3; background: #dceef2; }
+      .reveal .stack .net { background: #e7edf6; }
+      .reveal .stack .link { grid-column: span 2; background: #eff0df; }
+      .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
+      .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
+      .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .slide-number { color: var(--pt-muted); }
+      @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="reveal"><div class="slides">
+      <section data-markdown><textarea data-template>
+<!-- .slide: class="title-slide" -->
+
+# Warstwa fizyczna: przekaz elektryczny
+
+## Kable miedziane w telekomunikacji i teleinformatyce
+
+---
+
+## Plan wykładu
+
+- kabel koncentryczny i jego złącza,
+- para skręcona: budowa, rodzaje i zastosowania,
+- kable specjalne,
+- RJ-45 oraz Token Ring.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Kabel koncentryczny
+
+---
+
+## Budowa kabla koncentrycznego
+
+<div class="packet"><span>Przewód miedziany</span><span>Izolacja wewnętrzna</span><span>Oplot / ekran</span><span>Powłoka zewnętrzna</span></div>
+
+- Angielska nazwa: *coaxial cable*.
+- Ekran ogranicza wpływ zakłóceń elektromagnetycznych.
+- W sieciach komputerowych został w większości wyparty przez skrętkę.
+
+---
+
+## Złącza koncentryczne
+
+<div class="columns"><div>
+
+**BNC**
+
+*Bayonet Neill-Concelman*; dawniej sieci koncentryczne, dziś nadal aparatura pomiarowa.
+
+</div><div>
+
+**N**
+
+Złącze stosowane dla sygnałów wysokiej częstotliwości, do około 18 GHz.
+
+</div></div>
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Para skręcona
+
+---
+
+## Skrętka: podstawy
+
+- Angielska nazwa: *twisted pair*.
+- Osiem miedzianych żył tworzy cztery pary.
+- Każda para jest skręcona w odmienny sposób, co ogranicza przesłuchy i zakłócenia.
+- Izolacja żył jest zwykle polietylenowa, a wspólna powłoka z PVC.
+
+---
+
+## Gdzie stosujemy skrętkę?
+
+- sieci telefoniczne,
+- sieci komputerowe,
+- okablowanie strukturalne w budynkach.
+
+Jej popularność wynika z dobrego stosunku możliwości do ceny oraz łatwości instalacji.
+
+---
+
+## Rodzaje skrętek
+
+| Typ | Ekranowanie | Typowe zastosowanie |
+| --- | --- | --- |
+| UTP | brak | standardowe sieci LAN |
+| FTP | folia i przewód uziemiający | większe zakłócenia, dłuższe odcinki |
+| STP | ekran, często ekranowanie par | wymagające środowiska EMC |
+| S/FTP | folia oraz dodatkowy ekran | wysoka odporność na zakłócenia |
+
+---
+
+## UTP
+
+- *Unshielded Twisted Pair*.
+- Brak ekranowania żył.
+- Najczęściej stosowany kabel w lokalnych sieciach komputerowych.
+
+---
+
+## Materiał: skrętka UTP
+
+<video controls preload="metadata"><source src="media/slide-017-media1.mp4" type="video/mp4"></video>
+
+---
+
+## FTP
+
+- *Foiled Twisted Pair*.
+- Ekranowanie folią oraz przewód uziemiający.
+- Większa odporność na zewnętrzne zakłócenia elektromagnetyczne.
+
+---
+
+## STP i S/FTP
+
+- **STP:** ekran w postaci oplotu oraz powłoki; możliwe indywidualne ekranowanie par.
+- **S/FTP:** dodatkowy ekran z siatki miedzianej lub folii aluminiowej.
+- Stosowane, gdy ważna jest zgodność EMC oraz ograniczenie emisji EMI.
+
+---
+
+## Kable specjalne
+
+<div class="columns"><div>
+
+**W ziemi**
+
+Kable z wypełnieniem żelowym zwiększają odporność na warunki atmosferyczne i zakłócenia.
+
+</div><div>
+
+**Przewieszki**
+
+Kable z linką nośną prowadzi się między budynkami; dostępne są warianty UTP i FTP.
+
+</div></div>
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# RJ-45 i Ethernet
+
+---
+
+## RJ-45
+
+- Ośmioprzewodowe złącze systemów okablowania strukturalnego.
+- Standardy: ISO 8877, ISO/IEC 11801, EN 50173.
+- Występuje w panelach krosowych, gniazdach stanowiskowych, kartach sieciowych i kablach połączeniowych.
+- Dostępne są wersje ekranowane i nieekranowane.
+
+---
+
+## Materiał: podłączanie RJ-45
+
+<video controls preload="metadata"><source src="media/slide-029-media2.mp4" type="video/mp4"></video>
+
+---
+
+## Piny RJ-45
+
+<div class="packet"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+
+W kablu prostym kolejność żył jest taka sama na obu końcach. Kabel skrzyżowany zamienia pary transmisyjne, co historycznie pozwalało łączyć dwa podobne urządzenia bez przełącznika.
+
+---
+
+## Okablowanie Ethernet UTP
+
+<video controls preload="metadata"><source src="media/slide-032-media3.mp4" type="video/mp4"></video>
+
+---
+
+## Materiał: zaciskanie RJ-45
+
+<video controls preload="metadata"><source src="media/slide-036-media4.mp4" type="video/mp4"></video>
+
+---
+
+## Materiał: okablowanie Ethernet
+
+<video controls preload="metadata"><source src="media/slide-037-media5.mp4" type="video/mp4"></video>
+
+---
+
+## Token Ring
+
+- IEEE 802.5, *Token Ring Access Method*.
+- Historyczne rozwiązanie ze złączem hermafrodytycznym.
+- Złącza były duże, złożone i mniej wygodne niż współczesne rozwiązania Ethernet.
+
+---
+
+## Podsumowanie
+
+- Koncentryk jest odpornym, ale historycznym medium sieciowym.
+- Skrętka dominuje w sieciach LAN dzięki cenie, łatwości instalacji i różnym wariantom ekranowania.
+- RJ-45 pozostaje podstawowym złączem Ethernetu w okablowaniu miedzianym.
+
+      </textarea></section>
+    </div></div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({ hash: true, slideNumber: 'c/t', controlsTutorial: false, transition: 'fade', transitionSpeed: 'fast', plugins: [RevealMarkdown] });
+    </script>
+  </body>
+</html>
