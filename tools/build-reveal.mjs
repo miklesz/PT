@@ -263,6 +263,7 @@ const html = `<!doctype html>
       .reveal .media-gallery.csma-cd-gallery { grid-template-columns: 1fr; max-width: 920px; margin: 0.2em auto; }
       .reveal .media-gallery.csma-cd-gallery img { max-height: 30vh; }
       .reveal .slide-number { box-sizing: border-box; min-width: 4.8em; padding: 0.32em 0.58em; border: 2px solid var(--pt-blue); border-radius: 4px; background: rgba(255, 255, 255, 0.94); color: var(--pt-blue); font-family: Arial, Helvetica, sans-serif; font-size: 0.46em; font-weight: 700; letter-spacing: 0; line-height: 1.1; text-align: center; left: 18px; right: auto; bottom: 16px; }
+      .reveal .slide-number a { color: inherit; text-decoration: none; }
       .reveal .controls { right: 18px; bottom: 18px; }
       @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
     </style>
