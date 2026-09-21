@@ -90,6 +90,11 @@ const html = `<!doctype html>
       .reveal .timeline > div:nth-child(2) { min-height: 9.2em; background: #dceef2; }
       .reveal .timeline > div:nth-child(3) { min-height: 10.4em; background: #eff0df; }
       .reveal .timeline > div:nth-child(4) { min-height: 11.6em; background: #f4e6d5; }
+      .reveal .wifi-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.45em; max-width: 1050px; margin: 0.55em auto 0; }
+      .reveal .wifi-timeline > div { min-height: 4.6em; padding: 0.35em 0.25em; display: grid; align-content: center; text-align: center; font-size: 0.52em; line-height: 1.18; background: #e7edf6; border-top: 5px solid var(--pt-cyan); }
+      .reveal .wifi-timeline > div:nth-child(4n + 2) { background: #dceef2; }
+      .reveal .wifi-timeline > div:nth-child(4n + 3) { background: #eff0df; }
+      .reveal .wifi-timeline > div:nth-child(4n) { background: #f4e6d5; }
       .reveal .protocol-map { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.4em 0.7em; max-width: 900px; margin: 0.6em auto; }
       .reveal .protocol-map > div { padding: 0.4em 0.55em; background: #e7edf6; font-size: 0.72em; }
       .reveal .protocol-map .head { background: var(--pt-blue); color: #fff; font-weight: 700; }

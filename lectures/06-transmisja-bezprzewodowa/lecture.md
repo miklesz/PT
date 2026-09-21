@@ -208,24 +208,17 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 </div>
 
 ---
-## Rozwój Wi-Fi: 1997–2003
+## Rozwój Wi-Fi: 1997–2024
 
-<div class="timeline">
-  <div><strong>IEEE 802.11</strong><br>1997<br><br>2,4 GHz, do 2 Mb/s</div>
-  <div><strong>Wi-Fi 1</strong><br>802.11b, 1999<br><br>2,4 GHz, do 11 Mb/s</div>
-  <div><strong>Wi-Fi 2</strong><br>802.11a, 1999<br><br>5 GHz, do 54 Mb/s</div>
-  <div><strong>Wi-Fi 3</strong><br>802.11g, 2003<br><br>2,4 GHz, do 54 Mb/s</div>
-</div>
-
----
-
-## Rozwój Wi-Fi: 2009–2024
-
-<div class="timeline">
-  <div><strong>Wi-Fi 4</strong><br>802.11n, 2009<br><br>MIMO, 2,4/5 GHz</div>
-  <div><strong>Wi-Fi 5</strong><br>802.11ac, 2013<br><br>większa przepływność w 5 GHz</div>
-  <div><strong>Wi-Fi 6 / 6E</strong><br>802.11ax, 2021<br><br>OFDMA; 6 GHz w 6E</div>
-  <div><strong>Wi-Fi 7</strong><br>802.11be, 2024<br><br>kanały 320 MHz, Multi-Link Operation</div>
+<div class="wifi-timeline">
+  <div><strong>IEEE 802.11</strong><br>1997<br>2,4 GHz, do 2 Mb/s</div>
+  <div><strong>Wi-Fi 1</strong><br>802.11b, 1999<br>2,4 GHz, do 11 Mb/s</div>
+  <div><strong>Wi-Fi 2</strong><br>802.11a, 1999<br>5 GHz, do 54 Mb/s</div>
+  <div><strong>Wi-Fi 3</strong><br>802.11g, 2003<br>2,4 GHz, do 54 Mb/s</div>
+  <div><strong>Wi-Fi 4</strong><br>802.11n, 2009<br>MIMO, 2,4/5 GHz</div>
+  <div><strong>Wi-Fi 5</strong><br>802.11ac, 2013<br>większa przepływność w 5 GHz</div>
+  <div><strong>Wi-Fi 6 / 6E</strong><br>802.11ax, 2021<br>OFDMA; 6 GHz w 6E</div>
+  <div><strong>Wi-Fi 7</strong><br>802.11be, 2024<br>320 MHz, Multi-Link Operation</div>
 </div>
 
 ---

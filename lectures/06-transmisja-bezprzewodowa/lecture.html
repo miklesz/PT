@@ -74,6 +74,11 @@
       .reveal .timeline > div:nth-child(2) { min-height: 9.2em; background: #dceef2; }
       .reveal .timeline > div:nth-child(3) { min-height: 10.4em; background: #eff0df; }
       .reveal .timeline > div:nth-child(4) { min-height: 11.6em; background: #f4e6d5; }
+      .reveal .wifi-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.45em; max-width: 1050px; margin: 0.55em auto 0; }
+      .reveal .wifi-timeline > div { min-height: 4.6em; padding: 0.35em 0.25em; display: grid; align-content: center; text-align: center; font-size: 0.52em; line-height: 1.18; background: #e7edf6; border-top: 5px solid var(--pt-cyan); }
+      .reveal .wifi-timeline > div:nth-child(4n + 2) { background: #dceef2; }
+      .reveal .wifi-timeline > div:nth-child(4n + 3) { background: #eff0df; }
+      .reveal .wifi-timeline > div:nth-child(4n) { background: #f4e6d5; }
       .reveal .protocol-map { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.4em 0.7em; max-width: 900px; margin: 0.6em auto; }
       .reveal .protocol-map > div { padding: 0.4em 0.55em; background: #e7edf6; font-size: 0.72em; }
       .reveal .protocol-map .head { background: var(--pt-blue); color: #fff; font-weight: 700; }
@@ -297,24 +302,17 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 </div>
 
 ---
-## Rozwój Wi-Fi: 1997–2003
+## Rozwój Wi-Fi: 1997–2024
 
-<div class="timeline">
-  <div><strong>IEEE 802.11</strong><br>1997<br><br>2,4 GHz, do 2 Mb/s</div>
-  <div><strong>Wi-Fi 1</strong><br>802.11b, 1999<br><br>2,4 GHz, do 11 Mb/s</div>
-  <div><strong>Wi-Fi 2</strong><br>802.11a, 1999<br><br>5 GHz, do 54 Mb/s</div>
-  <div><strong>Wi-Fi 3</strong><br>802.11g, 2003<br><br>2,4 GHz, do 54 Mb/s</div>
-</div>
-
----
-
-## Rozwój Wi-Fi: 2009–2024
-
-<div class="timeline">
-  <div><strong>Wi-Fi 4</strong><br>802.11n, 2009<br><br>MIMO, 2,4/5 GHz</div>
-  <div><strong>Wi-Fi 5</strong><br>802.11ac, 2013<br><br>większa przepływność w 5 GHz</div>
-  <div><strong>Wi-Fi 6 / 6E</strong><br>802.11ax, 2021<br><br>OFDMA; 6 GHz w 6E</div>
-  <div><strong>Wi-Fi 7</strong><br>802.11be, 2024<br><br>kanały 320 MHz, Multi-Link Operation</div>
+<div class="wifi-timeline">
+  <div><strong>IEEE 802.11</strong><br>1997<br>2,4 GHz, do 2 Mb/s</div>
+  <div><strong>Wi-Fi 1</strong><br>802.11b, 1999<br>2,4 GHz, do 11 Mb/s</div>
+  <div><strong>Wi-Fi 2</strong><br>802.11a, 1999<br>5 GHz, do 54 Mb/s</div>
+  <div><strong>Wi-Fi 3</strong><br>802.11g, 2003<br>2,4 GHz, do 54 Mb/s</div>
+  <div><strong>Wi-Fi 4</strong><br>802.11n, 2009<br>MIMO, 2,4/5 GHz</div>
+  <div><strong>Wi-Fi 5</strong><br>802.11ac, 2013<br>większa przepływność w 5 GHz</div>
+  <div><strong>Wi-Fi 6 / 6E</strong><br>802.11ax, 2021<br>OFDMA; 6 GHz w 6E</div>
+  <div><strong>Wi-Fi 7</strong><br>802.11be, 2024<br>320 MHz, Multi-Link Operation</div>
 </div>
 
 ---
