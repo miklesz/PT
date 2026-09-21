@@ -56,6 +56,18 @@ const html = `<!doctype html>
       .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
       .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
       .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .ipv4-header { max-width: 1000px; margin: 0.45em auto 0; border: 2px solid var(--pt-blue); font-size: 0.58em; text-align: center; }
+      .reveal .ipv4-row, .reveal .ipv4-addresses { display: grid; border-bottom: 2px solid var(--pt-blue); }
+      .reveal .ipv4-row.control { grid-template-columns: 1fr 1fr 1.2fr; }
+      .reveal .ipv4-row.fragment { grid-template-columns: 1fr 1.45fr; }
+      .reveal .ipv4-row.forwarding { grid-template-columns: 0.7fr 1fr 1.15fr; }
+      .reveal .ipv4-addresses { grid-template-columns: 1fr 1fr; border-bottom: 0; background: #e7edf6; font-weight: 700; }
+      .reveal .ipv4-header span { display: grid; gap: 0.12em; min-height: 3.8em; padding: 0.38em 0.55em; place-content: center; border-right: 2px solid var(--pt-blue); }
+      .reveal .ipv4-header span:last-child { border-right: 0; }
+      .reveal .ipv4-header small { color: var(--pt-muted); font-size: 0.83em; line-height: 1.12; }
+      .reveal .ipv4-row.control { background: #dceef2; }
+      .reveal .ipv4-row.fragment { background: #eff0df; }
+      .reveal .ipv4-row.forwarding { background: #f7e8d1; }
       .reveal .shared-medium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em 1.3em; align-items: end; max-width: 1000px; margin: 0.8em auto 0; }
       .reveal .radio-station { display: grid; justify-items: center; gap: 0.16em; font-size: 0.62em; }
       .reveal .radio-station .node { width: 4.4em; height: 3.1em; position: relative; display: grid; place-content: center; border: 4px solid var(--station); background: #fff; color: var(--station); font-weight: 700; }

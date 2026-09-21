@@ -53,9 +53,14 @@ IP jest protokołem bezpołączeniowym i nie gwarantuje dostarczenia, kolejnośc
 
 ## Nagłówek IPv4
 
-<div class="packet"><span>Wersja / IHL</span><span>DSCP / ECN</span><span>Długość całkowita</span><span>Identyfikacja</span><span>Flagi / przesunięcie fragmentu</span><span>TTL</span><span>Protokół</span><span>Suma kontrolna</span></div>
+<div class="ipv4-header" role="img" aria-label="Uproszczona mapa pól nagłówka IPv4, pogrupowanych według funkcji.">
+  <div class="ipv4-row control"><span><strong>Wersja / IHL</strong><small>format i długość nagłówka</small></span><span><strong>DSCP / ECN</strong><small>priorytet i przeciążenie</small></span><span><strong>Długość całkowita</strong><small>rozmiar pakietu</small></span></div>
+  <div class="ipv4-row fragment"><span><strong>Identyfikacja</strong><small>łączy fragmenty tego samego pakietu</small></span><span><strong>Flagi / przesunięcie</strong><small>informacja o fragmentacji</small></span></div>
+  <div class="ipv4-row forwarding"><span><strong>TTL</strong><small>maksymalna liczba skoków</small></span><span><strong>Protokół</strong><small>np. TCP, UDP, ICMP</small></span><span><strong>Suma kontrolna</strong><small>sprawdza nagłówek</small></span></div>
+  <div class="ipv4-addresses"><span>Adres źródłowy</span><span>Adres docelowy</span></div>
+</div>
 
-Następnie występują adresy źródłowy i docelowy, opcje oraz dane.
+<p class="credits">Uproszczona mapa pól: rzeczywisty nagłówek ma stały układ bitów, a po adresach mogą wystąpić opcje i dane.</p>
 
 ---
 
