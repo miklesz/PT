@@ -1,0 +1,171 @@
+<!-- .slide: class="title-slide" -->
+
+# Routing: protokoły
+
+---
+
+## Plan wykładu
+
+- protokoły warstwy sieciowej,
+- IP i jego nagłówek,
+- adresacja i konfiguracja hosta,
+- DNS,
+- BGP oraz routing między systemami autonomicznymi.
+
+---
+
+## Warstwa sieciowa
+
+Warstwa trzecia odpowiada za dostarczanie pakietów między sieciami. Jej podstawowe zadania to adresowanie logiczne, wybór trasy i przekazywanie pakietów.
+
+---
+
+## IPX i IP
+
+<div class="columns"><div>
+
+**IPX**
+
+Historyczny protokół sieciowy używany między innymi w środowiskach Novell NetWare.
+
+</div><div>
+
+**IP**
+
+Podstawowy protokół warstwy sieciowej Internetu. Współdziała z TCP, UDP oraz protokołami routingu.
+
+</div></div>
+
+---
+
+## Zadania IP
+
+- adresowanie źródła i celu,
+- przesyłanie datagramów między sieciami,
+- przekazywanie pakietów przez rutery,
+- fragmentacja w IPv4, gdy jest konieczna.
+
+IP jest protokołem bezpołączeniowym i nie gwarantuje dostarczenia, kolejności ani braku duplikatów.
+
+---
+
+## Nagłówek IPv4
+
+<div class="packet"><span>Wersja / IHL</span><span>DSCP / ECN</span><span>Długość całkowita</span><span>Identyfikacja</span><span>Flagi / przesunięcie fragmentu</span><span>TTL</span><span>Protokół</span><span>Suma kontrolna</span></div>
+
+Następnie występują adresy źródłowy i docelowy, opcje oraz dane.
+
+---
+
+## Ważne pola IPv4
+
+- **TTL:** ogranicza liczbę skoków; każdy ruter zmniejsza go o jeden.
+- **Protocol:** wskazuje protokół wyższej warstwy, np. TCP, UDP albo ICMP.
+- **Fragmentation:** identyfikacja, flagi i przesunięcie umożliwiają składanie fragmentów.
+- **Header checksum:** kontroluje poprawność samego nagłówka.
+
+---
+
+## Fragmentacja
+
+Jeżeli pakiet jest większy niż MTU łącza, IPv4 może go podzielić na fragmenty. Fragmenty są składane przez host docelowy.
+
+W praktyce preferuje się unikanie fragmentacji przez odpowiedni dobór MTU i mechanizmy *Path MTU Discovery*.
+
+---
+
+## Adres IPv4
+
+Adres IPv4 ma 32 bity, zwykle zapisane jako cztery oktety, np. `192.0.2.25`.
+
+Maska albo długość prefiksu rozdziela część sieciową i hosta, np. `192.0.2.0/24`.
+
+---
+
+## Konfiguracja hosta
+
+Host potrzebuje zwykle:
+
+- adresu IP i prefiksu,
+- bramy domyślnej,
+- serwerów DNS,
+- opcjonalnie informacji przekazanych automatycznie przez DHCP.
+
+---
+
+## Brama domyślna
+
+Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. Ruter podejmuje dalszą decyzję trasowania.
+
+<div class="packet"><span>Host</span><span>Brama domyślna</span><span>Internet</span><span>Sieć docelowa</span></div>
+
+---
+
+## DNS
+
+DNS (*Domain Name System*) tłumaczy nazwy, np. `example.org`, na adresy IP i przechowuje inne rekordy związane z domeną.
+
+<div class="columns"><div>
+
+**Resolver**
+
+Przyjmuje zapytanie od hosta i szuka odpowiedzi.
+
+</div><div>
+
+**Serwery autorytatywne**
+
+Utrzymują rekordy dla konkretnych stref DNS.
+
+</div></div>
+
+---
+
+## Rekordy DNS
+
+| Typ | Znaczenie |
+| --- | --- |
+| A / AAAA | adres IPv4 / IPv6 hosta |
+| CNAME | alias nazwy |
+| MX | serwer pocztowy domeny |
+| NS | serwer autorytatywny strefy |
+| TXT | dane tekstowe, m.in. polityki domeny |
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# BGP
+
+---
+
+## System autonomiczny
+
+System autonomiczny (AS) to zbiór sieci zarządzanych według wspólnej polityki routingu. Internet jest siecią wielu AS-ów.
+
+Każdy AS ma numer ASN.
+
+---
+
+## BGP-4
+
+*Border Gateway Protocol* jest protokołem routingu między systemami autonomicznymi.
+
+- wymienia osiągalne prefiksy,
+- korzysta z polityki, nie tylko najkrótszego kosztu,
+- używa atrybutów tras, np. `AS_PATH`, `LOCAL_PREF`, `MED`.
+
+---
+
+## Dlaczego BGP jest inne?
+
+Routing wewnątrz jednej organizacji może optymalizować metrykę techniczną. Routing między operatorami i dużymi sieciami musi uwzględniać także biznesową politykę tranzytu, peeringu i bezpieczeństwa.
+
+---
+
+## Podsumowanie
+
+- IP dostarcza datagramy między sieciami, ale nie gwarantuje ich dostarczenia.
+- Prawidłowa konfiguracja hosta obejmuje adres, prefiks, bramę i DNS.
+- DNS mapuje nazwy na dane potrzebne aplikacjom.
+- BGP kieruje ruchem między systemami autonomicznymi Internetu.

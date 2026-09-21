@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Routing: protokoły</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css">
+    <style>
+      :root { --pt-blue: #003b70; --pt-cyan: #007c91; --pt-ink: #13212e; --pt-muted: #587083; }
+      .reveal { color: var(--pt-ink); font-family: Arial, Helvetica, sans-serif; font-size: 34px; }
+      .reveal .slides { text-align: left; }
+      .reveal h1, .reveal h2, .reveal h3 { color: var(--pt-blue); font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+      .reveal h1 { font-size: 1.75em; margin-bottom: 0.35em; }
+      .reveal h2 { font-size: 1.3em; margin-bottom: 0.55em; }
+      .reveal p, .reveal li { line-height: 1.32; }
+      .reveal ul { margin-top: 0.25em; }
+      .reveal li + li { margin-top: 0.25em; }
+      .reveal a { color: var(--pt-cyan); text-decoration: underline; }
+      .reveal strong { color: var(--pt-blue); }
+      .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
+      .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal .title-slide { text-align: center; }
+      .reveal .title-slide h1 { font-size: 1.9em; }
+      .reveal .title-slide p { color: var(--pt-muted); }
+      .reveal .section-slide { display: grid !important; place-content: center; text-align: center; }
+      .reveal .section-slide h1, .reveal .section-slide h2 { font-size: 2em; }
+      .reveal .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; align-items: start; }
+      .reveal .small { font-size: 0.72em; }
+      .reveal .credits { color: var(--pt-muted); font-size: 0.52em; margin-top: 0.35em; }
+      .reveal .stack { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.22em; margin: 0.35em auto; max-width: 950px; }
+      .reveal .stack > div { border: 2px solid var(--pt-blue); padding: 0.35em 0.18em; min-height: 4.3em; display: grid; place-content: center; text-align: center; font-size: 0.55em; }
+      .reveal .stack .tcp { grid-column: span 3; background: #dceef2; }
+      .reveal .stack .net { background: #e7edf6; }
+      .reveal .stack .link { grid-column: span 2; background: #eff0df; }
+      .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
+      .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
+      .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .slide-number { color: var(--pt-muted); }
+      @media (max-width: 800px) { .reveal { font-size: 25px; } .reveal img { max-width: 94%; } .reveal .columns { grid-template-columns: 1fr; gap: 0; } }
+    </style>
+  </head>
+  <body>
+    <div class="reveal"><div class="slides">
+      <section data-markdown><textarea data-template>
+<!-- .slide: class="title-slide" -->
+
+# Routing: protokoły
+
+---
+
+## Plan wykładu
+
+- protokoły warstwy sieciowej,
+- IP i jego nagłówek,
+- adresacja i konfiguracja hosta,
+- DNS,
+- BGP oraz routing między systemami autonomicznymi.
+
+---
+
+## Warstwa sieciowa
+
+Warstwa trzecia odpowiada za dostarczanie pakietów między sieciami. Jej podstawowe zadania to adresowanie logiczne, wybór trasy i przekazywanie pakietów.
+
+---
+
+## IPX i IP
+
+<div class="columns"><div>
+
+**IPX**
+
+Historyczny protokół sieciowy używany między innymi w środowiskach Novell NetWare.
+
+</div><div>
+
+**IP**
+
+Podstawowy protokół warstwy sieciowej Internetu. Współdziała z TCP, UDP oraz protokołami routingu.
+
+</div></div>
+
+---
+
+## Zadania IP
+
+- adresowanie źródła i celu,
+- przesyłanie datagramów między sieciami,
+- przekazywanie pakietów przez rutery,
+- fragmentacja w IPv4, gdy jest konieczna.
+
+IP jest protokołem bezpołączeniowym i nie gwarantuje dostarczenia, kolejności ani braku duplikatów.
+
+---
+
+## Nagłówek IPv4
+
+<div class="packet"><span>Wersja / IHL</span><span>DSCP / ECN</span><span>Długość całkowita</span><span>Identyfikacja</span><span>Flagi / przesunięcie fragmentu</span><span>TTL</span><span>Protokół</span><span>Suma kontrolna</span></div>
+
+Następnie występują adresy źródłowy i docelowy, opcje oraz dane.
+
+---
+
+## Ważne pola IPv4
+
+- **TTL:** ogranicza liczbę skoków; każdy ruter zmniejsza go o jeden.
+- **Protocol:** wskazuje protokół wyższej warstwy, np. TCP, UDP albo ICMP.
+- **Fragmentation:** identyfikacja, flagi i przesunięcie umożliwiają składanie fragmentów.
+- **Header checksum:** kontroluje poprawność samego nagłówka.
+
+---
+
+## Fragmentacja
+
+Jeżeli pakiet jest większy niż MTU łącza, IPv4 może go podzielić na fragmenty. Fragmenty są składane przez host docelowy.
+
+W praktyce preferuje się unikanie fragmentacji przez odpowiedni dobór MTU i mechanizmy *Path MTU Discovery*.
+
+---
+
+## Adres IPv4
+
+Adres IPv4 ma 32 bity, zwykle zapisane jako cztery oktety, np. `192.0.2.25`.
+
+Maska albo długość prefiksu rozdziela część sieciową i hosta, np. `192.0.2.0/24`.
+
+---
+
+## Konfiguracja hosta
+
+Host potrzebuje zwykle:
+
+- adresu IP i prefiksu,
+- bramy domyślnej,
+- serwerów DNS,
+- opcjonalnie informacji przekazanych automatycznie przez DHCP.
+
+---
+
+## Brama domyślna
+
+Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. Ruter podejmuje dalszą decyzję trasowania.
+
+<div class="packet"><span>Host</span><span>Brama domyślna</span><span>Internet</span><span>Sieć docelowa</span></div>
+
+---
+
+## DNS
+
+DNS (*Domain Name System*) tłumaczy nazwy, np. `example.org`, na adresy IP i przechowuje inne rekordy związane z domeną.
+
+<div class="columns"><div>
+
+**Resolver**
+
+Przyjmuje zapytanie od hosta i szuka odpowiedzi.
+
+</div><div>
+
+**Serwery autorytatywne**
+
+Utrzymują rekordy dla konkretnych stref DNS.
+
+</div></div>
+
+---
+
+## Rekordy DNS
+
+| Typ | Znaczenie |
+| --- | --- |
+| A / AAAA | adres IPv4 / IPv6 hosta |
+| CNAME | alias nazwy |
+| MX | serwer pocztowy domeny |
+| NS | serwer autorytatywny strefy |
+| TXT | dane tekstowe, m.in. polityki domeny |
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# BGP
+
+---
+
+## System autonomiczny
+
+System autonomiczny (AS) to zbiór sieci zarządzanych według wspólnej polityki routingu. Internet jest siecią wielu AS-ów.
+
+Każdy AS ma numer ASN.
+
+---
+
+## BGP-4
+
+*Border Gateway Protocol* jest protokołem routingu między systemami autonomicznymi.
+
+- wymienia osiągalne prefiksy,
+- korzysta z polityki, nie tylko najkrótszego kosztu,
+- używa atrybutów tras, np. `AS_PATH`, `LOCAL_PREF`, `MED`.
+
+---
+
+## Dlaczego BGP jest inne?
+
+Routing wewnątrz jednej organizacji może optymalizować metrykę techniczną. Routing między operatorami i dużymi sieciami musi uwzględniać także biznesową politykę tranzytu, peeringu i bezpieczeństwa.
+
+---
+
+## Podsumowanie
+
+- IP dostarcza datagramy między sieciami, ale nie gwarantuje ich dostarczenia.
+- Prawidłowa konfiguracja hosta obejmuje adres, prefiks, bramę i DNS.
+- DNS mapuje nazwy na dane potrzebne aplikacjom.
+- BGP kieruje ruchem między systemami autonomicznymi Internetu.
+
+      </textarea></section>
+    </div></div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({ hash: true, slideNumber: 'c/t', controlsTutorial: false, transition: 'fade', transitionSpeed: 'fast', plugins: [RevealMarkdown] });
+    </script>
+  </body>
+</html>

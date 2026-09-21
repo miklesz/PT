@@ -22,6 +22,7 @@ GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
 - [08. Kodowanie sygnałów — źródło prezentacji](lectures/08-kodowanie-sygnalow/lecture.md)
 - [09. Podstawowe zagadnienia sieciowe — źródło prezentacji](lectures/09-zagadnienia-sieciowe/lecture.md)
 - [10. Routing: algorytmy — źródło prezentacji](lectures/10-routing-algorytmy/lecture.md)
+- [11. Routing: protokoły — źródło prezentacji](lectures/11-routing-protokoly/lecture.md)
 - [01. Wprowadzenie do przedmiotu](notes/01-wprowadzenie-do-przedmiotu.md)
 - [02. Co to jest telekomunikacja](notes/02-co-to-jest-telekomunikacja.md)
 - [03. Podstawowe pojęcia, jednostki, ograniczenia](notes/03-podstawowe-pojecia-jednostki-ograniczenia.md)
