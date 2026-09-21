@@ -203,7 +203,7 @@ Jednym z historycznych zastosowań jest kod kreskowy *Interleaved 2 of 5*, używ
 ## Generator kodu „2 z 5”
 
 <div class="code-lab two-of-five-lab">
-  <label>Cyfra wejściowa<select class="two-of-five-digit"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></label>
+  <label>Cyfra wejściowa<input class="two-of-five-digit" type="number" value="6" min="0" max="9" step="1" inputmode="numeric"></label>
   <div class="lab-result two-of-five-result" aria-live="polite"></div>
 </div>
 

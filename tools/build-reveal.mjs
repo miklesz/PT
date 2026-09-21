@@ -238,8 +238,10 @@ ${embeddedMarkdown}
         const input = document.querySelector('.two-of-five-digit');
         const output = document.querySelector('.two-of-five-result');
         if (!input || !output) return;
-        const word = twoOfFive[Number(input.value)];
-        output.innerHTML = 'Cyfra <code>' + input.value + '</code> → słowo <code>' + word + '</code>. Liczba jedynek: <code>2</code>.';
+        const digit = Math.max(0, Math.min(9, Math.trunc(Number(input.value) || 0)));
+        input.value = digit;
+        const word = twoOfFive[digit];
+        output.innerHTML = 'Cyfra <code>' + digit + '</code> → słowo <code>' + word + '</code>. Liczba jedynek: <code>2</code>.';
       };
 
       const setConvolutionalResult = () => {
@@ -269,7 +271,7 @@ ${embeddedMarkdown}
 
       const initializeLabs = () => {
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
-        document.querySelector('.two-of-five-digit')?.addEventListener('change', setTwoOfFiveResult);
+        document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
         document.querySelector('.convolutional-input')?.addEventListener('input', setConvolutionalResult);
         setHammingResult();
         setTwoOfFiveResult();
