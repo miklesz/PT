@@ -222,10 +222,11 @@ const html = `<!doctype html>
       .reveal .algorithm-controls { display: flex; justify-content: center; align-items: center; gap: 0.8em; margin: 0.18em auto 0; }.reveal .algorithm-controls button { width: 2em; height: 2em; border: 2px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; cursor: pointer; }.reveal .algorithm-controls button:hover { background: #e9f8fa; }.reveal .algorithm-controls strong { min-width: 14em; color: #006779; font-size: 0.54em; text-align: center; }
       .reveal .algorithm-hint { margin: 0.2em 0 0; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
       .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
-      .reveal .flow-edge line { stroke: #7c8d99; stroke-width: 4; }.reveal .flow-edge text { fill: #53636f; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .flow-edge.active line { stroke: #b35c2e; stroke-width: 7; }.reveal .flow-edge.active text { fill: #b35c2e; }.reveal #flow-arrow path { fill: #7c8d99; }.reveal .flow-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .flow-node text { fill: var(--pt-blue); font-size: 25px; font-weight: 700; text-anchor: middle; }.reveal .flow-node.source circle { fill: #e9f8fa; stroke: #007c91; }.reveal .flow-node.sink circle { fill: #f4e6d5; stroke: #b35c2e; }
+      .reveal .flow-edge line { stroke: #7c8d99; stroke-width: 4; }.reveal .flow-edge text { fill: #53636f; font-size: 19px; font-weight: 700; paint-order: stroke; stroke: #fff; stroke-linejoin: round; stroke-width: 8px; text-anchor: middle; }.reveal .flow-edge.active line { stroke: #b35c2e; stroke-width: 7; }.reveal .flow-edge.active text { fill: #b35c2e; }.reveal #flow-arrow path { fill: #7c8d99; }.reveal .flow-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .flow-node text { fill: var(--pt-blue); font-size: 25px; font-weight: 700; text-anchor: middle; }.reveal .flow-node.source circle { fill: #e9f8fa; stroke: #007c91; }.reveal .flow-node.sink circle { fill: #f4e6d5; stroke: #b35c2e; }
       .reveal .flow-lab { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(250px, 0.7fr); gap: 0.8em; align-items: center; }.reveal .flow-lab svg { max-height: 36vh; }
       .reveal .flow-matrix-panel { padding: 0.5em; border-top: 6px solid #007c91; background: #edf5fa; color: var(--pt-ink); text-align: center; }.reveal .flow-matrix-panel > strong { display: block; color: var(--pt-blue); font-size: 0.52em; }.reveal .flow-matrix-panel > small { display: block; margin: 0.2em 0 0.45em; color: var(--pt-muted); font-size: 0.38em; }
       .reveal .flow-matrix { width: 100%; border-collapse: collapse; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.42em; }.reveal .flow-matrix th, .reveal .flow-matrix td { width: 14%; padding: 0.28em 0.18em; border: 1px solid #b8cbd5; text-align: center; }.reveal .flow-matrix th { background: #d9e8ee; color: #006779; font-weight: 700; }.reveal .flow-matrix td.active { background: #f4e6d5; color: #8a421e; font-weight: 800; box-shadow: inset 0 0 0 2px #b35c2e; }
+      .reveal .flow-total { min-height: 1.6em; margin: 0.22em auto 0; color: #8a421e; font-size: 0.54em; font-weight: 700; text-align: center; }.reveal .flow-total code { padding: 0.14em 0.35em; background: #f4e6d5; color: #8a421e; }
       .reveal .level-band rect { fill: #edf5fa; stroke: #c8d8df; stroke-width: 2; }.reveal .level-band text { fill: #5b6b78; font-size: 15px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge line { stroke: #92a4af; stroke-width: 4; }.reveal .dinic-edge text { fill: #53636f; font-size: 18px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge.highlighted line { stroke: #007c91; stroke-width: 6; }.reveal .dinic-edge.highlighted text { fill: #007c91; }.reveal .dinic-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .dinic-node text { fill: var(--pt-blue); font-size: 23px; font-weight: 700; text-anchor: middle; }
       @media (max-width: 800px) { .reveal .flow-lab { grid-template-columns: 1fr; }.reveal .flow-lab svg { max-height: 28vh; }.reveal .flow-matrix-panel { max-width: 420px; margin: 0 auto; } }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
@@ -428,11 +429,12 @@ ${embeddedMarkdown}
       };
 
       const flowSteps = [
-        { caption: 'Stan początkowy', active: [], explanation: 'Liczby przy łukach i w macierzy oznaczają ich <strong>pojemności</strong>: maksymalną ilość przepływu, którą może przenieść dana krawędź.' },
-        { caption: 'Krok 1: wybór s → a', active: ['sa'], explanation: 'Z węzła źródłowego <strong>s</strong> wybieramy krawędź do <strong>a</strong>. W macierzy jest to komórka w wierszu s i kolumnie a.' },
-        { caption: 'Krok 2: wybór a → d', active: ['sa', 'ad'], explanation: 'Z <strong>a</strong> kontynuujemy do <strong>d</strong>. Wybrana ścieżka ma postać <code>s → a → d</code>.' },
-        { caption: 'Krok 3: dojście do t', active: ['sa', 'ad', 'dt'], explanation: 'Krawędź <strong>d → t</strong> doprowadza ścieżkę do ujścia: <code>s → a → d → t</code>.' },
-        { caption: 'Wąskie gardło: 3', active: ['sa', 'ad', 'dt'], explanation: 'Najmniejsza pojemność na tej ścieżce to <strong>3</strong> dla s → a. Tyle jednostek można teraz przesłać; potem jej pojemność rezydualna maleje.' }
+        { caption: 'Stan początkowy', active: [], total: '', explanation: 'Liczby przy łukach i w macierzy oznaczają ich <strong>pojemności</strong>: maksymalną ilość przepływu, którą może przenieść dana krawędź.' },
+        { caption: 'Krok 1: wybór s → a', active: ['sa'], total: '', explanation: 'Z węzła źródłowego <strong>s</strong> wybieramy krawędź do <strong>a</strong>. W macierzy jest to komórka w wierszu s i kolumnie a.' },
+        { caption: 'Krok 2: wybór a → d', active: ['sa', 'ad'], total: '', explanation: 'Z <strong>a</strong> kontynuujemy do <strong>d</strong>. Wybrana ścieżka ma postać <code>s → a → d</code>.' },
+        { caption: 'Krok 3: dojście do t', active: ['sa', 'ad', 'dt'], total: '<code>Przepływ ścieżki 1 = 3</code>', explanation: 'Krawędź <strong>d → t</strong> doprowadza ścieżkę do ujścia: <code>s → a → d → t</code>. Jej wąskie gardło ma pojemność 3.' },
+        { caption: 'Krok 4: druga ścieżka', active: ['sc', 'cd', 'dt'], total: '<code>Przepływ ścieżki 2 = 1</code>', explanation: 'Po pierwszym przesłaniu nadal dostępna jest niezależna ścieżka <code>s → c → d → t</code>. Jej wąskie gardło to krawędź c → d o pojemności 1.' },
+        { caption: 'Suma przepływów', active: ['sa', 'ad', 'sc', 'cd', 'dt'], total: '<code>3 + 1 = 4 jednostki przepływu</code>', explanation: 'Łączny przepływ jest sumą obu ścieżek: <strong>3 + 1 = 4</strong>. Ford–Fulkerson powtarza ten proces, dopóki istnieje ścieżka powiększająca.' }
       ];
       let flowStep = 0;
       const setFlowStep = (index) => {
@@ -442,6 +444,7 @@ ${embeddedMarkdown}
         const step = flowSteps[flowStep];
         demo.querySelectorAll('.flow-edge, .flow-matrix td[data-edge]').forEach((element) => element.classList.toggle('active', step.active.includes(element.dataset.edge)));
         demo.querySelector('.flow-caption').textContent = step.caption;
+        demo.querySelector('.flow-total').innerHTML = step.total;
         demo.querySelector('.flow-explanation').innerHTML = step.explanation;
       };
 
