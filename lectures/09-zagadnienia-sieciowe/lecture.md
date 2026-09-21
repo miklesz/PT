@@ -212,8 +212,20 @@ Każdy węzeł łączy się z każdym. Zapewnia wysoką odporność, ale liczba 
 <div class="media-gallery">
   <img src="media/image18.png" alt="Częściowa topologia siatki">
   <img src="media/image19.png" alt="Pełna topologia siatki">
-  <img src="media/image26.png" alt="Liczba połączeń w pełnej siatce">
 </div>
+
+---
+
+## Ile łączy ma pełna siatka?
+
+<div class="mesh-formula">
+  <div class="formula">c = <span class="mesh-fraction"><i>n² − n</i><small>2</small></span></div>
+  <div class="formula-legend"><strong>n</strong> liczba węzłów <strong>c</strong> liczba łączy</div>
+</div>
+
+Każde łącze łączy parę różnych węzłów, a tę samą parę liczymy tylko raz.
+
+<div class="mesh-example"><strong>Przykład: 5 węzłów</strong><span>c = 5 × 4 / 2 = <b>10 łączy</b></span></div>
 
 ---
 

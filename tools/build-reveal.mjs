@@ -197,6 +197,15 @@ const html = `<!doctype html>
       .reveal .star-link { position: absolute; z-index: 0; height: 3px; transform-origin: left center; background: #007c91; }
       .reveal .star-link-a { left: 25%; top: 22%; width: 30%; transform: rotate(28deg); }.reveal .star-link-b { left: 47%; top: 35%; width: 30%; transform: rotate(-28deg); }.reveal .star-link-c { left: 50%; top: 49%; width: 2.05em; transform: rotate(90deg); }
       .reveal .star-diagram p { position: absolute; bottom: -0.2em; left: 50%; margin: 0; transform: translateX(-50%); color: var(--pt-muted); font-size: 0.54em; white-space: nowrap; }
+      .reveal .mesh-formula { max-width: 770px; margin: 0.8em auto 0.45em; padding: 0.55em 0.8em; border-top: 5px solid #007c91; background: #e9f8fa; text-align: center; }
+      .reveal .mesh-formula .formula { color: var(--pt-blue); font-family: Georgia, 'Times New Roman', serif; font-size: 1.8em; font-style: italic; font-weight: 700; line-height: 1; }
+      .reveal .mesh-formula .mesh-fraction { display: inline-flex; flex-direction: column; margin-left: 0.08em; vertical-align: middle; text-align: center; }
+      .reveal .mesh-formula .mesh-fraction i { display: block; border-bottom: 3px solid var(--pt-blue); padding: 0 0.12em 0.08em; }
+      .reveal .mesh-formula .mesh-fraction small { display: block; padding-top: 0.08em; font-size: 0.56em; }
+      .reveal .mesh-formula .formula-legend { display: flex; justify-content: center; gap: 1.3em; margin-top: 0.55em; color: var(--pt-muted); font-family: Arial, Helvetica, sans-serif; font-size: 0.43em; font-style: normal; }
+      .reveal .mesh-formula .formula-legend strong { margin-right: 0.22em; color: #007c91; }
+      .reveal .mesh-example { display: flex; justify-content: center; gap: 0.6em; margin: 0.55em auto 0; color: var(--pt-ink); font-size: 0.58em; }
+      .reveal .mesh-example strong { padding: 0.26em 0.55em; background: #f4e6d5; color: #8a421e; }.reveal .mesh-example span { padding: 0.26em 0.55em; background: #e7edf6; }.reveal .mesh-example b { color: #006779; }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
       .reveal .comparison-grid strong { display: block; margin-bottom: 0.12em; }
