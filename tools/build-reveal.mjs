@@ -227,7 +227,8 @@ const html = `<!doctype html>
       .reveal .flow-matrix-panel { padding: 0.5em; border-top: 6px solid #007c91; background: #edf5fa; color: var(--pt-ink); text-align: center; }.reveal .flow-matrix-panel > strong { display: block; color: var(--pt-blue); font-size: 0.52em; }.reveal .flow-matrix-panel > small { display: block; margin: 0.2em 0 0.45em; color: var(--pt-muted); font-size: 0.38em; }
       .reveal .flow-matrix { width: 100%; border-collapse: collapse; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.42em; }.reveal .flow-matrix th, .reveal .flow-matrix td { width: 14%; padding: 0.28em 0.18em; border: 1px solid #b8cbd5; text-align: center; }.reveal .flow-matrix th { background: #d9e8ee; color: #006779; font-weight: 700; }.reveal .flow-matrix td.active { background: #f4e6d5; color: #8a421e; font-weight: 800; box-shadow: inset 0 0 0 2px #b35c2e; }.reveal .flow-matrix td.saturated { background: #f8e2e2; color: #a13e3e; font-weight: 800; text-decoration: line-through; }
       .reveal .flow-total { min-height: 1.6em; margin: 0.22em auto 0; color: #8a421e; font-size: 0.54em; font-weight: 700; text-align: center; }.reveal .flow-total code { padding: 0.14em 0.35em; background: #f4e6d5; color: #8a421e; }
-      .reveal .level-band rect { fill: #edf5fa; stroke: #c8d8df; stroke-width: 2; }.reveal .level-band text { fill: #5b6b78; font-size: 15px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge line { stroke: #92a4af; stroke-width: 4; }.reveal .dinic-edge text { fill: #53636f; font-size: 18px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge.highlighted line { stroke: #007c91; stroke-width: 6; }.reveal .dinic-edge.highlighted text { fill: #007c91; }.reveal .dinic-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .dinic-node text { fill: var(--pt-blue); font-size: 23px; font-weight: 700; text-anchor: middle; }
+      .reveal .level-band rect { fill: #edf5fa; stroke: #c8d8df; stroke-width: 2; }.reveal .level-band text { fill: #5b6b78; font-size: 15px; font-weight: 700; text-anchor: middle; }.reveal .dinic-edge line { stroke: #92a4af; stroke-width: 4; }.reveal .dinic-edge text { fill: #53636f; font-size: 18px; font-weight: 700; paint-order: stroke; stroke: #fff; stroke-linejoin: round; stroke-width: 8px; text-anchor: middle; }.reveal .dinic-edge.active line { stroke: #007c91; stroke-width: 6; }.reveal .dinic-edge.active text { fill: #007c91; }.reveal .dinic-edge.saturated line { stroke: #b54b4b; stroke-dasharray: 8 6; }.reveal .dinic-edge.saturated text { fill: #b54b4b; }.reveal #dinic-arrow path { fill: #7c8d99; }.reveal .dinic-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .dinic-node text { fill: var(--pt-blue); font-size: 23px; font-weight: 700; text-anchor: middle; }
+      .reveal .dinic-demo svg { max-height: 32vh; }
       @media (max-width: 800px) { .reveal .flow-lab { grid-template-columns: 1fr; }.reveal .flow-lab svg { max-height: 28vh; }.reveal .flow-matrix-panel { max-width: 420px; margin: 0 auto; } }
       .reveal .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em 1em; margin: 0.55em auto; max-width: 1050px; }
       .reveal .comparison-grid > div { border-left: 6px solid var(--pt-cyan); padding: 0.25em 0.55em; font-size: 0.72em; }
@@ -455,6 +456,32 @@ ${embeddedMarkdown}
         demo.querySelector('.flow-explanation').innerHTML = step.explanation;
       };
 
+      const dinicCapacities = { sx: 5, sy: 5, xu: 5, yu: 5, yw: 5, ut: 5, wt: 5 };
+      const dinicSteps = [
+        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje odległość od źródła i tworzy poziomy 0–3. W dalszej fazie używane są tylko łuki prowadzące do następnego poziomu.' },
+        { caption: 'Ścieżka 1: s → x → u → t', active: ['sx', 'xu', 'ut'], total: '', capacities: dinicCapacities, explanation: 'Pierwsza ścieżka w grafie poziomów ma przepustowość 5, więc można nią przesłać 5 jednostek.' },
+        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
+        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
+        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
+        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
+      ];
+      let dinicStep = 0;
+      const setDinicStep = (index) => {
+        const demo = document.querySelector('.dinic-demo');
+        if (!demo) return;
+        dinicStep = Math.max(0, Math.min(dinicSteps.length - 1, index));
+        const step = dinicSteps[dinicStep];
+        demo.querySelectorAll('.dinic-edge').forEach((edge) => {
+          const capacity = step.capacities[edge.dataset.edge];
+          edge.classList.toggle('active', step.active.includes(edge.dataset.edge));
+          edge.classList.toggle('saturated', capacity === 0);
+        });
+        demo.querySelectorAll('.dinic-capacity').forEach((label) => label.textContent = step.capacities[label.dataset.edge]);
+        demo.querySelector('.dinic-caption').textContent = step.caption;
+        demo.querySelector('.dinic-total').innerHTML = step.total;
+        demo.querySelector('.dinic-explanation').innerHTML = step.explanation;
+      };
+
       const initializeLabs = () => {
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
@@ -466,6 +493,8 @@ ${embeddedMarkdown}
         document.querySelector('.dijkstra-next')?.addEventListener('click', () => setDijkstraStep(dijkstraStep + 1));
         document.querySelector('.flow-prev')?.addEventListener('click', () => setFlowStep(flowStep - 1));
         document.querySelector('.flow-next')?.addEventListener('click', () => setFlowStep(flowStep + 1));
+        document.querySelector('.dinic-prev')?.addEventListener('click', () => setDinicStep(dinicStep - 1));
+        document.querySelector('.dinic-next')?.addEventListener('click', () => setDinicStep(dinicStep + 1));
         setHammingResult();
         setTwoOfFiveResult();
         setTwoOfFiveCheckResult();
@@ -474,6 +503,7 @@ ${embeddedMarkdown}
         setMeshResult();
         setDijkstraStep(0);
         setFlowStep(0);
+        setDinicStep(0);
       };
       Reveal.on('ready', initializeLabs);
     </script>
