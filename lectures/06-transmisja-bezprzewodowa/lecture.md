@@ -211,17 +211,17 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 ## Rozwój Wi-Fi: 1997–2024
 
 <div class="wifi-speed-chart">
-  <div style="--bar-height: 1.2em"><span class="rate">2 Mb/s</span><span class="bar"></span><strong>802.11</strong><span class="year">1997</span></div>
-  <div style="--bar-height: 2.3em"><span class="rate">11 Mb/s</span><span class="bar"></span><strong>Wi-Fi 1</strong><span class="year">1999</span></div>
-  <div style="--bar-height: 3.4em"><span class="rate">54 Mb/s</span><span class="bar"></span><strong>Wi-Fi 2</strong><span class="year">1999</span></div>
-  <div style="--bar-height: 3.4em"><span class="rate">54 Mb/s</span><span class="bar"></span><strong>Wi-Fi 3</strong><span class="year">2003</span></div>
-  <div style="--bar-height: 4.7em"><span class="rate">600 Mb/s</span><span class="bar"></span><strong>Wi-Fi 4</strong><span class="year">2009</span></div>
-  <div style="--bar-height: 6em"><span class="rate">6,93 Gb/s</span><span class="bar"></span><strong>Wi-Fi 5</strong><span class="year">2013</span></div>
-  <div style="--bar-height: 6.4em"><span class="rate">9,61 Gb/s</span><span class="bar"></span><strong>Wi-Fi 6 / 6E</strong><span class="year">2021</span></div>
-  <div style="--bar-height: 7.4em"><span class="rate">do 46 Gb/s</span><span class="bar"></span><strong>Wi-Fi 7</strong><span class="year">2024</span></div>
+  <div style="--bar-height: 1.2em; --bar-color: #2b6cb0; --bar-border: #1d4f82"><span class="rate">2 Mb/s</span><span class="bar"></span><strong>802.11</strong><span class="year">1997</span></div>
+  <div style="--bar-height: 2.3em; --bar-color: #007c91; --bar-border: #005868"><span class="rate">11 Mb/s</span><span class="bar"></span><strong>Wi-Fi 1</strong><span class="year">1999</span></div>
+  <div style="--bar-height: 3.4em; --bar-color: #32815d; --bar-border: #245b42"><span class="rate">54 Mb/s</span><span class="bar"></span><strong>Wi-Fi 2</strong><span class="year">1999</span></div>
+  <div style="--bar-height: 3.4em; --bar-color: #4f8a43; --bar-border: #38632f"><span class="rate">54 Mb/s</span><span class="bar"></span><strong>Wi-Fi 3</strong><span class="year">2003</span></div>
+  <div style="--bar-height: 4.7em; --bar-color: #8b9238; --bar-border: #626728"><span class="rate">600 Mb/s</span><span class="bar"></span><strong>Wi-Fi 4</strong><span class="year">2009</span></div>
+  <div style="--bar-height: 6em; --bar-color: #bf8a2e; --bar-border: #87611f"><span class="rate">6,93 Gb/s</span><span class="bar"></span><strong>Wi-Fi 5</strong><span class="year">2013</span></div>
+  <div style="--bar-height: 6.4em; --bar-color: #c66f2b; --bar-border: #8c4f1f"><span class="rate">9,61 Gb/s</span><span class="bar"></span><strong>Wi-Fi 6 / 6E</strong><span class="year">2021</span></div>
+  <div style="--bar-height: 7.4em; --bar-color: #b8443f; --bar-border: #822f2c"><span class="rate">do 46 Gb/s</span><span class="bar"></span><strong>Wi-Fi 7</strong><span class="year">2024</span></div>
 </div>
 
-<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności PHY.</p>
+<p class="credits">Wysokość słupków: skala logarytmiczna maksymalnej przepływności PHY. Kolor: chłodny dla niższej, ciepły dla wyższej szybkości.</p>
 
 ---
 

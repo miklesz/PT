@@ -96,10 +96,7 @@ const html = `<!doctype html>
       .reveal .wifi-speed-chart { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.45em; align-items: end; max-width: 1080px; height: 10em; margin: 0.3em auto 0; padding: 0 0.1em; border-bottom: 3px solid var(--pt-blue); }
       .reveal .wifi-speed-chart > div { display: flex; flex-direction: column; justify-content: end; align-items: stretch; height: 100%; text-align: center; }
       .reveal .wifi-speed-chart .rate { min-height: 1.45em; display: grid; place-content: end center; color: var(--pt-blue); font-size: 0.46em; font-weight: 700; }
-      .reveal .wifi-speed-chart .bar { height: var(--bar-height); min-height: 0.35em; background: #007c91; border-top: 5px solid #003b70; }
-      .reveal .wifi-speed-chart > div:nth-child(2n) .bar { background: #0071a8; }
-      .reveal .wifi-speed-chart > div:nth-child(3n) .bar { background: #4f7f3d; }
-      .reveal .wifi-speed-chart > div:nth-child(4n) .bar { background: #b35c2e; }
+      .reveal .wifi-speed-chart .bar { height: var(--bar-height); min-height: 0.35em; background: var(--bar-color); border-top: 5px solid var(--bar-border); }
       .reveal .wifi-speed-chart strong { margin-top: 0.35em; font-size: 0.45em; }
       .reveal .wifi-speed-chart .year { color: var(--pt-muted); font-size: 0.4em; }
       .reveal .wifi-standard-table { display: grid; grid-template-columns: 1.1fr 0.82fr 0.95fr 1.2fr 0.8fr; max-width: 1080px; margin: 0.4em auto 0; font-size: 0.47em; line-height: 1.15; border-top: 2px solid var(--pt-blue); border-left: 2px solid var(--pt-blue); }
