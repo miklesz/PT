@@ -18,6 +18,7 @@ GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
 - [04. Kable miedziane — źródło prezentacji](lectures/04-kable-miedziane/lecture.md)
 - [05. Kable światłowodowe — źródło prezentacji](lectures/05-swiatlowody/lecture.md)
 - [06. Transmisja bezprzewodowa — źródło prezentacji](lectures/06-transmisja-bezprzewodowa/lecture.md)
+- [07. Systemy dostępu wielokrotnego — źródło prezentacji](lectures/07-dostep-wielokrotny/lecture.md)
 - [01. Wprowadzenie do przedmiotu](notes/01-wprowadzenie-do-przedmiotu.md)
 - [02. Co to jest telekomunikacja](notes/02-co-to-jest-telekomunikacja.md)
 - [03. Podstawowe pojęcia, jednostki, ograniczenia](notes/03-podstawowe-pojecia-jednostki-ograniczenia.md)
