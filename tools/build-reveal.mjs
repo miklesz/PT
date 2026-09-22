@@ -77,6 +77,8 @@ const html = `<!doctype html>
       .reveal .gateway-path-svg .router-box, .reveal .gateway-path-svg .router-circle { fill: #fff; stroke: #4f7f3d; stroke-width: 3; }
       .reveal .gateway-path-svg .gateway-link { stroke: #176b80; stroke-width: 4; }
       .reveal .gateway-path-svg .link-label { font: 700 15px sans-serif; fill: #176b80; }
+      .reveal .gateway-path-svg .route-label { font-size: 13px; }
+      .reveal .gateway-path-svg .address-detail { font-size: 13px; }
       .reveal .shared-medium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em 1.3em; align-items: end; max-width: 1000px; margin: 0.8em auto 0; }
       .reveal .radio-station { display: grid; justify-items: center; gap: 0.16em; font-size: 0.62em; }
       .reveal .radio-station .node { width: 4.4em; height: 3.1em; position: relative; display: grid; place-content: center; border: 4px solid var(--station); background: #fff; color: var(--station); font-weight: 700; }
