@@ -212,7 +212,7 @@ Utrzymują rekordy dla konkretnych stref DNS.
 
 <!-- .slide: class="section-slide" -->
 
-# BGP
+# BGP (Border Gateway Protocol)
 
 ---
 
@@ -226,7 +226,7 @@ Każdy AS ma numer ASN (*Autonomous System Number*).
 
 ## BGP-4
 
-*Border Gateway Protocol* jest protokołem routingu między systemami autonomicznymi. Działa nad TCP, ale steruje wyborem tras między AS-ami.
+*Border Gateway Protocol* (BGP) jest protokołem routingu między systemami autonomicznymi. Działa nad TCP, ale steruje wyborem tras między AS-ami.
 
 - wymienia osiągalne prefiksy,
 - korzysta z polityki, nie tylko najkrótszego kosztu,
