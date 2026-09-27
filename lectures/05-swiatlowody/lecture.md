@@ -310,6 +310,14 @@ W typowym włóknie krzemionkowym dyspersja materiałowa jest niewielka w okolic
 
 ---
 
+## Dlaczego zmieniano długość fali?
+
+Pierwsze systemy pracowały w okolicy **830–900 nm**. Przejście w okolice **1300 nm** ograniczało dyspersję materiałową, a rozwój produkcji włókien zmniejszał tam tłumienie. Później zaczęto szeroko wykorzystywać okolice **1550 nm**, gdzie tłumienie szkła kwarcowego jest bardzo małe.
+
+Oryginalny wykład ilustrował tę historię wartościami około **3–5 dB/km** przy 850 nm, **0,5–1 dB/km** przy 1300 nm i **0,2 dB/km** przy 1550 nm. To przykłady historycznych włókien, a nie parametry gwarantowane dla każdego współczesnego łącza.
+
+---
+
 ## Dyspersja falowodowa
 
 Część pola optycznego propaguje także w płaszczu. Udział tej części zmienia się z długością fali, dlatego geometria rdzenia i płaszcza wpływa na opóźnienie składowych impulsu.

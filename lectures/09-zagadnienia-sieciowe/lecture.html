@@ -223,8 +223,8 @@
       .reveal .routing-router { border-color: #007c91; background: #e9f8fa; }.reveal .routing-network small, .reveal .routing-router small { margin-top: 0.22em; color: var(--pt-muted); font-size: 0.76em; font-weight: 600; }
       .reveal .routing-arrow { display: grid; justify-items: center; color: #007c91; font-size: 1.05em; font-weight: 700; line-height: 0.8; }.reveal .routing-arrow small { margin-top: 0.2em; color: var(--pt-muted); font-size: 0.36em; font-weight: 600; }
       .reveal .algorithm-demo { max-width: 1040px; margin: 0.35em auto 0; }.reveal .algorithm-demo svg { display: block; width: 100%; max-height: 42vh; margin: 0 auto; overflow: visible; }
-      .reveal .algo-edge line { stroke: #9aa9b5; stroke-width: 4; }.reveal .algo-edge text { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-edge.active line { stroke: #007c91; stroke-width: 7; }.reveal .algo-edge.active text { fill: #007c91; }
-      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
+      .reveal .algo-edge line, .reveal .algo-edge path { fill: none; stroke: #9aa9b5; stroke-width: 3; }.reveal .algo-edge text { fill: #5b6b78; font-size: 17px; font-weight: 700; text-anchor: middle; }.reveal .algo-edge.active line, .reveal .algo-edge.active path { stroke: #007c91; stroke-width: 5; }.reveal .algo-edge.active text { fill: #007c91; }
+      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #344b5d; font-size: 19px; font-weight: 700; text-anchor: middle; paint-order: stroke; stroke: #fff; stroke-width: 5px; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
       .reveal .algorithm-controls { display: flex; justify-content: center; align-items: center; gap: 0.8em; margin: 0.18em auto 0; }.reveal .algorithm-controls button { width: 2em; height: 2em; border: 2px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; cursor: pointer; }.reveal .algorithm-controls button:hover { background: #e9f8fa; }.reveal .algorithm-controls strong { min-width: 14em; color: #006779; font-size: 0.54em; text-align: center; }
       .reveal .algorithm-hint { margin: 0.2em 0 0; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
       .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
@@ -297,6 +297,14 @@
 Sieć komputerowa to zbiór połączonych urządzeń, które wymieniają dane i współdzielą zasoby według ustalonych protokołów.
 
 Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, współdzielenie plików, urządzeń i połączenia z Internetem.
+
+---
+
+## Mapa połączeń Internetu z 2015 roku
+
+<div class="media-gallery single-visual"><img src="media/image2.png" alt="Wizualizacja części połączeń Internetu według danych z 11 lipca 2015 roku"></div>
+
+<p class="credits">Historyczna wizualizacja projektu Opte. Linie łączą węzły sieci; nie jest to aktualna mapa ani mapa geograficzna.</p>
 
 ---
 
@@ -743,11 +751,11 @@ Zależy od:
 
       const dijkstraSteps = [
         { caption: 'Inicjalizacja', current: 's', settled: ['s'], active: [], distances: { s: '0', a: '∞', d: '∞', c: '∞', b: '∞', t: '∞' }, explanation: 'Startujemy w <strong>s</strong>: jego odległość jest równa 0, pozostałe wierzchołki mają odległość nieskończoną.' },
-        { caption: 'Iteracja 1: relaksacja z s', current: 'd', settled: ['s'], active: ['sa', 'sd'], distances: { s: '0', a: '15', d: '9', c: '∞', b: '∞', t: '∞' }, explanation: 'Z <strong>s</strong> docieramy do <strong>a</strong> kosztem 15 i do <strong>d</strong> kosztem 9. Najmniejszą etykietę tymczasową ma <strong>d</strong>.' },
-        { caption: 'Iteracja 2: wybór d', current: 'c', settled: ['s', 'd'], active: ['da', 'dc'], distances: { s: '0', a: '13', d: '9', c: '11', b: '∞', t: '∞' }, explanation: 'Ustalamy <strong>d = 9</strong>. Przejście przez d poprawia koszt do <strong>a</strong> z 15 na 13 oraz wyznacza <strong>c = 11</strong>.' },
-        { caption: 'Iteracja 3: wybór c', current: 'a', settled: ['s', 'd', 'c'], active: ['cb'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '∞' }, explanation: 'Ustalamy <strong>c = 11</strong> i odkrywamy dojście do <strong>b</strong> o koszcie 17.' },
-        { caption: 'Iteracja 4: wybór a', current: 'b', settled: ['s', 'd', 'c', 'a'], active: ['ab'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '∞' }, explanation: 'Ustalamy <strong>a = 13</strong>. Krawędź a → b nie poprawia istniejącego kosztu 17.' },
-        { caption: 'Iteracja 5: dojście do t', current: 't', settled: ['s', 'd', 'c', 'a', 'b', 't'], active: ['bt'], distances: { s: '0', a: '13', d: '9', c: '11', b: '17', t: '22' }, explanation: 'Ustalamy <strong>b = 17</strong>, a następnie <strong>t = 22</strong>. Najkrótsza droga ma długość 22.' }
+        { caption: 'Iteracja 1: relaksacja z s', current: 'd', settled: ['s'], active: ['sa', 'sd'], distances: { s: '0', a: '15', d: '9', c: '∞', b: '∞', t: '∞' }, explanation: 'Z <strong>s</strong> docieramy do <strong>d</strong> kosztem 9 i do <strong>a</strong> kosztem 15. Najmniejszą etykietę tymczasową ma d.' },
+        { caption: 'Iteracja 2: wybór d', current: 'c', settled: ['s', 'd'], active: ['da', 'dc'], distances: { s: '0', a: '13', d: '9', c: '11', b: '∞', t: '∞' }, explanation: 'Ustalamy <strong>d = 9</strong>. Droga przez d poprawia koszt do a z 15 na 13 i daje <strong>c = 11</strong>.' },
+        { caption: 'Iteracja 3: wybór c', current: 'a', settled: ['s', 'd', 'c'], active: ['ca', 'ct'], distances: { s: '0', a: '13', d: '9', c: '11', b: '∞', t: '18' }, explanation: 'Ustalamy <strong>c = 11</strong>. Łuk c → t daje 18; c → a daje 14, więc nie poprawia znanego kosztu a = 13.' },
+        { caption: 'Iteracja 4: wybór a', current: 't', settled: ['s', 'd', 'c', 'a'], active: ['ab'], distances: { s: '0', a: '13', d: '9', c: '11', b: '48', t: '18' }, explanation: 'Ustalamy <strong>a = 13</strong>. Łuk a → b daje b = 48. Następną najmniejszą etykietę ma t = 18.' },
+        { caption: 'Iteracja 5: dojście do t', current: 't', settled: ['s', 'd', 'c', 'a', 't'], active: ['sd', 'dc', 'ct'], distances: { s: '0', a: '13', d: '9', c: '11', b: '48', t: '18' }, explanation: 'Ustalamy <strong>t = 18</strong>. Najkrótsza droga w oryginalnym przykładzie to <code>s → d → c → t</code>, o koszcie 9 + 2 + 7.' }
       ];
       let dijkstraStep = 0;
       const setDijkstraStep = (index) => {
@@ -766,14 +774,16 @@ Zależy od:
         demo.querySelector('.dijkstra-explanation').innerHTML = step.explanation;
       };
 
-      const flowCapacities = { sa: 3, sc: 2, ab: 3, ad: 5, cd: 1, bt: 4, dt: 7 };
+      const flowCapacities = { sa: 3, sc: 5, ca: 3, ab: 2, ad: 7, at: 2, cd: 1, dt: 4 };
       const flowSteps = [
         { caption: 'Stan początkowy', active: [], total: '', capacities: flowCapacities, explanation: 'Liczby przy łukach i w macierzy oznaczają <strong>pozostałe pojemności</strong>: maksymalną ilość przepływu, którą można jeszcze przesłać daną krawędzią.' },
         { caption: 'Ścieżka 1: s → a → d → t', active: ['sa', 'ad', 'dt'], total: '', capacities: flowCapacities, explanation: 'Pierwsza znaleziona ścieżka powiększająca prowadzi przez <code>s → a → d → t</code>. Jej wąskie gardło to s → a o pojemności 3.' },
-        { caption: 'Po wysłaniu 3 jednostek', active: ['sa', 'ad', 'dt'], total: '<code>Łączny przepływ: 3</code>', capacities: { sa: 0, sc: 2, ab: 3, ad: 2, cd: 1, bt: 4, dt: 4 }, explanation: 'Odejmujemy 3 od każdej krawędzi pierwszej ścieżki. Krawędź s → a jest <strong>nasycona</strong>, więc od niej nie można już rozpocząć kolejnej ścieżki.' },
-        { caption: 'Ścieżka 2: s → c → d → t', active: ['sc', 'cd', 'dt'], total: '<code>Dotychczas: 3</code>', capacities: { sa: 0, sc: 2, ab: 3, ad: 2, cd: 1, bt: 4, dt: 4 }, explanation: 'Szukamy od nowa w sieci rezydualnej. Pozostaje ścieżka <code>s → c → d → t</code>, której wąskie gardło ma pojemność 1.' },
-        { caption: 'Po wysłaniu 1 jednostki', active: ['sc', 'cd', 'dt'], total: '<code>3 + 1 = 4</code>', capacities: { sa: 0, sc: 1, ab: 3, ad: 2, cd: 0, bt: 4, dt: 3 }, explanation: 'Odejmujemy 1 od drugiej ścieżki. Krawędź c → d jest teraz <strong>nasycona</strong>.' },
-        { caption: 'Brak kolejnej ścieżki', active: [], total: '<code>Maksymalny przepływ: 4</code>', capacities: { sa: 0, sc: 1, ab: 3, ad: 2, cd: 0, bt: 4, dt: 3 }, explanation: 'Z s pozostaje tylko krawędź do c, ale c → d ma pojemność 0. Nie istnieje już ścieżka powiększająca do t, więc wynik <strong>4</strong> jest maksymalny.' }
+        { caption: 'Po wysłaniu 3 jednostek', active: ['sa', 'ad', 'dt'], total: '<code>Łączny przepływ: 3</code>', capacities: { sa: 0, sc: 5, ca: 3, ab: 2, ad: 4, at: 2, cd: 1, dt: 1 }, explanation: 'Odejmujemy 3 od pojemności łuków pierwszej ścieżki. Łuk s → a jest nasycony; łuk d → t ma jeszcze pojemność 1.' },
+        { caption: 'Ścieżka 2: s → c → d → t', active: ['sc', 'cd', 'dt'], total: '<code>Dotychczas: 3</code>', capacities: { sa: 0, sc: 5, ca: 3, ab: 2, ad: 4, at: 2, cd: 1, dt: 1 }, explanation: 'Po powrocie do źródła wybieramy <code>s → c → d → t</code>. Najmniejsza wolna pojemność na tej drodze to 1.' },
+        { caption: 'Po wysłaniu 1 jednostki', active: ['sc', 'cd', 'dt'], total: '<code>3 + 1 = 4</code>', capacities: { sa: 0, sc: 4, ca: 3, ab: 2, ad: 4, at: 2, cd: 0, dt: 0 }, explanation: 'Łuki c → d oraz d → t są nasycone, ale w sieci pozostaje inna droga do t.' },
+        { caption: 'Ścieżka 3: s → c → a → t', active: ['sc', 'ca', 'at'], total: '<code>Dotychczas: 4</code>', capacities: { sa: 0, sc: 4, ca: 3, ab: 2, ad: 4, at: 2, cd: 0, dt: 0 }, explanation: 'Wracamy do s i wybieramy <code>s → c → a → t</code>. Wąskim gardłem jest a → t o pojemności 2.' },
+        { caption: 'Po wysłaniu 2 jednostek', active: ['sc', 'ca', 'at'], total: '<code>3 + 1 + 2 = 6</code>', capacities: { sa: 0, sc: 2, ca: 1, ab: 2, ad: 4, at: 0, cd: 0, dt: 0 }, explanation: 'Do ujścia dotarło łącznie 6 jednostek. Oba łuki prowadzące do t są teraz nasycone.' },
+        { caption: 'Brak kolejnej ścieżki', active: [], total: '<code>Maksymalny przepływ: 6</code>', capacities: { sa: 0, sc: 2, ca: 1, ab: 2, ad: 4, at: 0, cd: 0, dt: 0 }, explanation: 'Przekrój przy ujściu ma pojemność 2 + 4 = 6. Skoro osiągnęliśmy tę wartość, przepływu nie da się powiększyć.' }
       ];
       let flowStep = 0;
       const setFlowStep = (index) => {
@@ -793,14 +803,14 @@ Zależy od:
         demo.querySelector('.flow-explanation').innerHTML = step.explanation;
       };
 
-      const dinicCapacities = { sx: 5, sy: 5, xu: 5, yu: 5, yw: 5, ut: 5, wt: 5 };
+      const dinicCapacities = { sx: 5, sy: 5, yx: 5, xu: 5, uy: 5, yw: 5, ut: 5, wt: 5 };
       const dinicSteps = [
-        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje odległość od źródła i tworzy poziomy 0–3. W dalszej fazie używane są tylko łuki prowadzące do następnego poziomu.' },
+        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje poziomy 0–3. Łuki y → x i u → y są w sieci wejściowej, lecz nie prowadzą do następnego poziomu, więc nie należą do tego grafu poziomów.' },
         { caption: 'Ścieżka 1: s → x → u → t', active: ['sx', 'xu', 'ut'], total: '', capacities: dinicCapacities, explanation: 'Pierwsza ścieżka w grafie poziomów ma przepustowość 5, więc można nią przesłać 5 jednostek.' },
-        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
-        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
-        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
-        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
+        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, uy: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
+        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, uy: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
+        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, uy: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
+        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, uy: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
       ];
       let dinicStep = 0;
       const setDinicStep = (index) => {

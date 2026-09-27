@@ -138,20 +138,25 @@ Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
 ## Dijkstra: kolejne iteracje
 
 <div class="algorithm-demo dijkstra-demo">
-  <svg viewBox="0 0 760 300" role="img" aria-label="Graf do demonstracji kolejnych iteracji algorytmu Dijkstry.">
-    <g class="algo-edge" data-edge="sa"><line x1="95" y1="160" x2="220" y2="80"/><text x="154" y="108">15</text></g>
-    <g class="algo-edge" data-edge="sd"><line x1="95" y1="160" x2="220" y2="240"/><text x="154" y="222">9</text></g>
-    <g class="algo-edge" data-edge="da"><line x1="250" y1="218" x2="250" y2="102"/><text x="264" y="164">4</text></g>
-    <g class="algo-edge" data-edge="dc"><line x1="278" y1="230" x2="380" y2="173"/><text x="328" y="191">2</text></g>
-    <g class="algo-edge" data-edge="ac"><line x1="278" y1="91" x2="380" y2="147"/><text x="328" y="108">7</text></g>
-    <g class="algo-edge" data-edge="cb"><line x1="430" y1="147" x2="532" y2="91"/><text x="480" y="108">6</text></g>
-    <g class="algo-edge" data-edge="ab"><line x1="280" y1="80" x2="530" y2="80"/><text x="405" y="69">6</text></g>
-    <g class="algo-edge" data-edge="bt"><line x1="580" y1="91" x2="665" y2="147"/><text x="624" y="108">5</text></g>
+  <svg viewBox="0 0 760 320" role="img" aria-label="Skierowany graf z oryginalnego wykładu: najkrótsza droga s, d, c, t ma wagę 18.">
+    <defs><marker id="dijkstra-arrow" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L6,3.5 L0,7 Z" fill="#9aa9b5"/></marker></defs>
+    <g class="algo-edge" data-edge="sd"><line x1="94" y1="148" x2="224" y2="91" marker-end="url(#dijkstra-arrow)"/><text x="150" y="104">9</text></g>
+    <g class="algo-edge" data-edge="sa"><line x1="94" y1="172" x2="224" y2="229" marker-end="url(#dijkstra-arrow)"/><text x="150" y="224">15</text></g>
+    <g class="algo-edge" data-edge="da"><line x1="250" y1="106" x2="250" y2="214" marker-end="url(#dijkstra-arrow)"/><text x="266" y="163">4</text></g>
+    <g class="algo-edge" data-edge="dc"><path d="M276 80 H454" marker-end="url(#dijkstra-arrow)"/><text x="365" y="68">2</text></g>
+    <g class="algo-edge" data-edge="cd"><path d="M454 69 Q366 15 278 69" marker-end="url(#dijkstra-arrow)"/><text x="366" y="34">2</text></g>
+    <g class="algo-edge" data-edge="ca"><line x1="460" y1="96" x2="276" y2="224" marker-end="url(#dijkstra-arrow)"/><text x="355" y="139">3</text></g>
+    <g class="algo-edge" data-edge="ab"><line x1="276" y1="240" x2="454" y2="240" marker-end="url(#dijkstra-arrow)"/><text x="365" y="226">35</text></g>
+    <g class="algo-edge" data-edge="ba"><path d="M454 252 Q366 309 278 252" marker-end="url(#dijkstra-arrow)"/><text x="366" y="303">16</text></g>
+    <g class="algo-edge" data-edge="bc"><line x1="480" y1="214" x2="480" y2="106" marker-end="url(#dijkstra-arrow)"/><text x="497" y="163">6</text></g>
+    <g class="algo-edge" data-edge="ct"><line x1="505" y1="90" x2="664" y2="148" marker-end="url(#dijkstra-arrow)"/><text x="595" y="106">7</text></g>
+    <g class="algo-edge" data-edge="tb"><line x1="665" y1="174" x2="505" y2="229" marker-end="url(#dijkstra-arrow)"/><text x="595" y="222">5</text></g>
+    <g class="algo-edge" data-edge="bt"><path d="M506 251 Q635 298 676 184" marker-end="url(#dijkstra-arrow)"/><text x="623" y="277">21</text></g>
     <g class="algo-node" data-node="s"><circle cx="70" cy="160" r="25"/><text class="node-name" x="70" y="166">s</text><text class="node-distance" x="70" y="205">0</text></g>
-    <g class="algo-node" data-node="a"><circle cx="250" cy="80" r="25"/><text class="node-name" x="250" y="86">a</text><text class="node-distance" x="250" y="125">∞</text></g>
-    <g class="algo-node" data-node="d"><circle cx="250" cy="240" r="25"/><text class="node-name" x="250" y="246">d</text><text class="node-distance" x="250" y="285">∞</text></g>
-    <g class="algo-node" data-node="c"><circle cx="405" cy="160" r="25"/><text class="node-name" x="405" y="166">c</text><text class="node-distance" x="405" y="205">∞</text></g>
-    <g class="algo-node" data-node="b"><circle cx="555" cy="80" r="25"/><text class="node-name" x="555" y="86">b</text><text class="node-distance" x="555" y="125">∞</text></g>
+    <g class="algo-node" data-node="d"><circle cx="250" cy="80" r="25"/><text class="node-name" x="250" y="86">d</text><text class="node-distance" x="218" y="129">∞</text></g>
+    <g class="algo-node" data-node="a"><circle cx="250" cy="240" r="25"/><text class="node-name" x="250" y="246">a</text><text class="node-distance" x="250" y="285">∞</text></g>
+    <g class="algo-node" data-node="c"><circle cx="480" cy="80" r="25"/><text class="node-name" x="480" y="86">c</text><text class="node-distance" x="513" y="129">∞</text></g>
+    <g class="algo-node" data-node="b"><circle cx="480" cy="240" r="25"/><text class="node-name" x="480" y="246">b</text><text class="node-distance" x="480" y="285">∞</text></g>
     <g class="algo-node" data-node="t"><circle cx="690" cy="160" r="25"/><text class="node-name" x="690" y="166">t</text><text class="node-distance" x="690" y="205">∞</text></g>
   </svg>
   <div class="algorithm-controls"><button class="dijkstra-prev" type="button" title="Poprzednia iteracja" aria-label="Poprzednia iteracja">←</button><strong class="dijkstra-caption"></strong><button class="dijkstra-next" type="button" title="Następna iteracja" aria-label="Następna iteracja">→</button></div>
@@ -196,6 +201,14 @@ Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótsz
 
 ---
 
+## Szukanie ścieżki w przykładzie
+
+W oryginalnym przykładzie zaczynamy w `s` i idziemy do `a`. Jeśli wybierzemy następnie `b`, trafimy w ślepy zaułek: z `b` nie ma drogi do ujścia `t`. Cofamy się więc do `a` i próbujemy przez `d`.
+
+Pierwsza znaleziona ścieżka to `s → a → d → t`. Podczas jednego poszukiwania nie odwiedzamy ponownie węzła, który już leży na tej ścieżce.
+
+---
+
 ## Ford-Fulkerson: ścieżka powiększająca
 
 <div class="algorithm-demo flow-demo">
@@ -203,12 +216,13 @@ Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótsz
   <svg viewBox="0 0 700 270" role="img" aria-label="Sieć przepływowa z węzłami s, a, b, c, d i t.">
     <defs><marker id="flow-arrow" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 Z"/></marker></defs>
     <g class="flow-edge" data-edge="sa"><line x1="88" y1="150" x2="234" y2="82" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="sa" x="151" y="93">3</text></g>
-    <g class="flow-edge" data-edge="sc"><line x1="88" y1="155" x2="234" y2="218" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="sc" x="151" y="229">2</text></g>
-    <g class="flow-edge" data-edge="ab"><line x1="275" y1="92" x2="405" y2="92" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="ab" x="340" y="70">3</text></g>
-    <g class="flow-edge" data-edge="ad"><line x1="270" y1="105" x2="410" y2="210" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="ad" x="323" y="187">5</text></g>
+    <g class="flow-edge" data-edge="sc"><line x1="88" y1="155" x2="234" y2="218" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="sc" x="151" y="229">5</text></g>
+    <g class="flow-edge" data-edge="ca"><line x1="250" y1="194" x2="250" y2="106" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="ca" x="268" y="156">3</text></g>
+    <g class="flow-edge" data-edge="ab"><line x1="275" y1="92" x2="405" y2="92" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="ab" x="340" y="70">2</text></g>
+    <g class="flow-edge" data-edge="ad"><line x1="270" y1="105" x2="410" y2="210" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="ad" x="323" y="187">7</text></g>
+    <g class="flow-edge" data-edge="at"><line x1="275" y1="79" x2="596" y2="145" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="at" x="478" y="93">2</text></g>
     <g class="flow-edge" data-edge="cd"><line x1="270" y1="220" x2="410" y2="220" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="cd" x="340" y="246">1</text></g>
-    <g class="flow-edge" data-edge="bt"><line x1="445" y1="96" x2="594" y2="145" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="bt" x="520" y="91">4</text></g>
-    <g class="flow-edge" data-edge="dt"><line x1="445" y1="208" x2="594" y2="158" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="dt" x="530" y="214">7</text></g>
+    <g class="flow-edge" data-edge="dt"><line x1="445" y1="208" x2="594" y2="158" marker-end="url(#flow-arrow)"/><text class="flow-capacity" data-edge="dt" x="530" y="214">4</text></g>
     <g class="flow-node source"><circle cx="65" cy="155" r="26"/><text x="65" y="162">s</text></g><g class="flow-node"><circle cx="250" cy="80" r="26"/><text x="250" y="87">a</text></g><g class="flow-node"><circle cx="250" cy="220" r="26"/><text x="250" y="227">c</text></g><g class="flow-node"><circle cx="430" cy="80" r="26"/><text x="430" y="87">b</text></g><g class="flow-node"><circle cx="430" cy="220" r="26"/><text x="430" y="227">d</text></g><g class="flow-node sink"><circle cx="620" cy="155" r="26"/><text x="620" y="162">t</text></g>
   </svg>
   <div class="flow-matrix-panel">
@@ -217,11 +231,11 @@ Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótsz
     <table class="flow-matrix" aria-label="Macierz pojemności krawędzi">
       <thead><tr><th></th><th>s</th><th>a</th><th>b</th><th>c</th><th>d</th><th>t</th></tr></thead>
       <tbody>
-        <tr><th>s</th><td>–</td><td data-edge="sa">3</td><td>0</td><td data-edge="sc">2</td><td>0</td><td>0</td></tr>
-        <tr><th>a</th><td>0</td><td>–</td><td data-edge="ab">3</td><td>0</td><td data-edge="ad">5</td><td>0</td></tr>
-        <tr><th>b</th><td>0</td><td>0</td><td>–</td><td>0</td><td>0</td><td data-edge="bt">4</td></tr>
-        <tr><th>c</th><td>0</td><td>0</td><td>0</td><td>–</td><td data-edge="cd">1</td><td>0</td></tr>
-        <tr><th>d</th><td>0</td><td>0</td><td>0</td><td>0</td><td>–</td><td data-edge="dt">7</td></tr>
+        <tr><th>s</th><td>–</td><td data-edge="sa">3</td><td>0</td><td data-edge="sc">5</td><td>0</td><td>0</td></tr>
+        <tr><th>a</th><td>0</td><td>–</td><td data-edge="ab">2</td><td>0</td><td data-edge="ad">7</td><td data-edge="at">2</td></tr>
+        <tr><th>b</th><td>0</td><td>0</td><td>–</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><th>c</th><td>0</td><td data-edge="ca">3</td><td>0</td><td>–</td><td data-edge="cd">1</td><td>0</td></tr>
+        <tr><th>d</th><td>0</td><td>0</td><td>0</td><td>0</td><td>–</td><td data-edge="dt">4</td></tr>
         <tr><th>t</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>–</td></tr>
       </tbody>
     </table>
@@ -262,7 +276,7 @@ Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
   <svg viewBox="0 0 760 250" role="img" aria-label="Graf poziomów algorytmu Dinica: źródło, dwa poziomy pośrednie i ujście.">
     <defs><marker id="dinic-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z"/></marker></defs>
     <g class="level-band"><rect x="15" y="25" width="105" height="190"/><text x="67" y="48">poziom 0</text></g><g class="level-band"><rect x="175" y="25" width="145" height="190"/><text x="247" y="48">poziom 1</text></g><g class="level-band"><rect x="390" y="25" width="145" height="190"/><text x="462" y="48">poziom 2</text></g><g class="level-band"><rect x="635" y="25" width="105" height="190"/><text x="687" y="48">poziom 3</text></g>
-    <g class="dinic-edge" data-edge="sx"><line x1="102" y1="125" x2="210" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="sx" x="151" y="91">5</text></g><g class="dinic-edge" data-edge="sy"><line x1="102" y1="125" x2="210" y2="167" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="sy" x="151" y="180">5</text></g><g class="dinic-edge" data-edge="xu"><line x1="280" y1="83" x2="425" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="xu" x="350" y="70">5</text></g><g class="dinic-edge" data-edge="yu"><line x1="280" y1="167" x2="425" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yu" x="345" y="116">5</text></g><g class="dinic-edge" data-edge="yw"><line x1="280" y1="167" x2="425" y2="167" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yw" x="350" y="155">5</text></g><g class="dinic-edge" data-edge="ut"><line x1="495" y1="83" x2="652" y2="125" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="ut" x="572" y="91">5</text></g><g class="dinic-edge" data-edge="wt"><line x1="495" y1="167" x2="652" y2="125" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="wt" x="572" y="180">5</text></g>
+    <g class="dinic-edge" data-edge="sx"><line x1="102" y1="125" x2="210" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="sx" x="151" y="91">5</text></g><g class="dinic-edge" data-edge="sy"><line x1="102" y1="125" x2="210" y2="167" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="sy" x="151" y="180">5</text></g><g class="dinic-edge" data-edge="yx"><line x1="250" y1="148" x2="250" y2="103" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yx" x="270" y="133">5</text></g><g class="dinic-edge" data-edge="xu"><line x1="280" y1="83" x2="425" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="xu" x="350" y="70">5</text></g><g class="dinic-edge" data-edge="uy"><line x1="435" y1="94" x2="279" y2="158" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="uy" x="365" y="116">5</text></g><g class="dinic-edge" data-edge="yw"><line x1="280" y1="167" x2="425" y2="167" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yw" x="350" y="155">5</text></g><g class="dinic-edge" data-edge="ut"><line x1="495" y1="83" x2="652" y2="125" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="ut" x="572" y="91">5</text></g><g class="dinic-edge" data-edge="wt"><line x1="495" y1="167" x2="652" y2="125" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="wt" x="572" y="180">5</text></g>
     <g class="dinic-node"><circle cx="80" cy="125" r="22"/><text x="80" y="132">s</text></g><g class="dinic-node"><circle cx="250" cy="80" r="22"/><text x="250" y="87">x</text></g><g class="dinic-node"><circle cx="250" cy="170" r="22"/><text x="250" y="177">y</text></g><g class="dinic-node"><circle cx="465" cy="80" r="22"/><text x="465" y="87">u</text></g><g class="dinic-node"><circle cx="465" cy="170" r="22"/><text x="465" y="177">w</text></g><g class="dinic-node"><circle cx="680" cy="125" r="22"/><text x="680" y="132">t</text></g>
   </svg>
   <div class="algorithm-controls"><button class="dinic-prev" type="button" title="Poprzedni krok" aria-label="Poprzedni krok">←</button><strong class="dinic-caption"></strong><button class="dinic-next" type="button" title="Następny krok" aria-label="Następny krok">→</button></div>

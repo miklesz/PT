@@ -21,6 +21,14 @@ Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, wsp�
 
 ---
 
+## Mapa połączeń Internetu z 2015 roku
+
+<div class="media-gallery single-visual"><img src="media/image2.png" alt="Wizualizacja części połączeń Internetu według danych z 11 lipca 2015 roku"></div>
+
+<p class="credits">Historyczna wizualizacja projektu Opte. Linie łączą węzły sieci; nie jest to aktualna mapa ani mapa geograficzna.</p>
+
+---
+
 ## Organizacja sieci: serwer i równorzędni
 
 W sieci z **serwerem** wybrane urządzenie udostępnia usługi lub dane pozostałym, np. pliki, drukarkę albo bazę danych. Zarządzanie można centralizować.
