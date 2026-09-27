@@ -37,6 +37,16 @@ W medium dzielonym wiele stacji korzysta z jednego kanału transmisyjnego. Gdy d
 
 ---
 
+## Kto odbiera ramkę w medium dzielonym?
+
+W klasycznym Ethernecie na wspólnym kablu sygnał dociera do wszystkich stacji. Zbiór stacji, których transmisje mogą się wzajemnie zderzyć, tworzy **domenę kolizyjną**.
+
+- Nagłówek ramki zawiera docelowy adres **MAC** (*Media Access Control*).
+- Każda stacja może odebrać sygnał, ale zwykle tylko adresat przyjmuje ramkę do dalszego przetwarzania.
+- Terminatory na końcach dawnej magistrali pochłaniały energię sygnału, ograniczając odbicia.
+
+---
+
 ## Metody dostępu
 
 <div class="columns"><div>
@@ -49,7 +59,7 @@ Stacje samodzielnie próbują uzyskać dostęp. Kolizje są możliwe, ale protok
 
 **Kontrolowane**
 
-Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji transmisji.
+Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji transmisji. Przykłady historyczne: przepytywanie stacji oraz przekazywanie znacznika w magistrali lub pierścieniu.
 
 </div></div>
 
@@ -124,6 +134,7 @@ To prosty protokół, ale przy większym obciążeniu często dochodzi do kolizj
 3. jeśli jest zajęte, czeka zgodnie z regułą protokołu.
 
 Kolizja pozostaje możliwa z powodu opóźnienia propagacji.
+Sygnał potrzebuje czasu na dotarcie do drugiego końca sieci i z powrotem; ten czas obiegu to **RTT** (*round-trip time*).
 
 ---
 

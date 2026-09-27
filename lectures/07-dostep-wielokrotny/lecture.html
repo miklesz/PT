@@ -224,7 +224,7 @@
       .reveal .routing-arrow { display: grid; justify-items: center; color: #007c91; font-size: 1.05em; font-weight: 700; line-height: 0.8; }.reveal .routing-arrow small { margin-top: 0.2em; color: var(--pt-muted); font-size: 0.36em; font-weight: 600; }
       .reveal .algorithm-demo { max-width: 1040px; margin: 0.35em auto 0; }.reveal .algorithm-demo svg { display: block; width: 100%; max-height: 42vh; margin: 0 auto; overflow: visible; }
       .reveal .algo-edge line, .reveal .algo-edge path { fill: none; stroke: #9aa9b5; stroke-width: 3; }.reveal .algo-edge text { fill: #5b6b78; font-size: 17px; font-weight: 700; text-anchor: middle; }.reveal .algo-edge.active line, .reveal .algo-edge.active path { stroke: #007c91; stroke-width: 5; }.reveal .algo-edge.active text { fill: #007c91; }
-      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
+      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #344b5d; font-size: 19px; font-weight: 700; text-anchor: middle; paint-order: stroke; stroke: #fff; stroke-width: 5px; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
       .reveal .algorithm-controls { display: flex; justify-content: center; align-items: center; gap: 0.8em; margin: 0.18em auto 0; }.reveal .algorithm-controls button { width: 2em; height: 2em; border: 2px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; cursor: pointer; }.reveal .algorithm-controls button:hover { background: #e9f8fa; }.reveal .algorithm-controls strong { min-width: 14em; color: #006779; font-size: 0.54em; text-align: center; }
       .reveal .algorithm-hint { margin: 0.2em 0 0; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
       .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
@@ -316,6 +316,16 @@ W medium dzielonym wiele stacji korzysta z jednego kanału transmisyjnego. Gdy d
 
 ---
 
+## Kto odbiera ramkę w medium dzielonym?
+
+W klasycznym Ethernecie na wspólnym kablu sygnał dociera do wszystkich stacji. Zbiór stacji, których transmisje mogą się wzajemnie zderzyć, tworzy **domenę kolizyjną**.
+
+- Nagłówek ramki zawiera docelowy adres **MAC** (*Media Access Control*).
+- Każda stacja może odebrać sygnał, ale zwykle tylko adresat przyjmuje ramkę do dalszego przetwarzania.
+- Terminatory na końcach dawnej magistrali pochłaniały energię sygnału, ograniczając odbicia.
+
+---
+
 ## Metody dostępu
 
 <div class="columns"><div>
@@ -328,7 +338,7 @@ Stacje samodzielnie próbują uzyskać dostęp. Kolizje są możliwe, ale protok
 
 **Kontrolowane**
 
-Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji transmisji.
+Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji transmisji. Przykłady historyczne: przepytywanie stacji oraz przekazywanie znacznika w magistrali lub pierścieniu.
 
 </div></div>
 
@@ -403,6 +413,7 @@ To prosty protokół, ale przy większym obciążeniu często dochodzi do kolizj
 3. jeśli jest zajęte, czeka zgodnie z regułą protokołu.
 
 Kolizja pozostaje możliwa z powodu opóźnienia propagacji.
+Sygnał potrzebuje czasu na dotarcie do drugiego końca sieci i z powrotem; ten czas obiegu to **RTT** (*round-trip time*).
 
 ---
 
