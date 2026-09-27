@@ -53,6 +53,12 @@ const html = `<!doctype html>
       .reveal .stack .tcp { grid-column: span 3; background: #dceef2; }
       .reveal .stack .net { background: #e7edf6; }
       .reveal .stack .link { grid-column: span 2; background: #eff0df; }
+      .reveal .osi-stack { display: grid; gap: 0.08em; max-width: 720px; margin: 0.35em auto; }
+      .reveal .osi-stack > div { display: grid; grid-template-columns: 2.2em 1fr; align-items: center; min-height: 1.55em; border: 2px solid var(--pt-blue); background: #e7edf6; font-size: 0.77em; text-align: left; }
+      .reveal .osi-stack > div:nth-child(-n+3) { background: #dceef2; }
+      .reveal .osi-stack > div:nth-child(n+5) { background: #eff0df; }
+      .reveal .osi-stack span { display: grid; place-items: center; height: 100%; border-right: 2px solid var(--pt-blue); color: var(--pt-blue); font-weight: 700; }
+      .reveal .osi-stack strong { padding: 0.12em 0.5em; font-weight: 600; }
       .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
       .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
       .reveal .packet span:last-child { border-right: 0; flex: 2; }

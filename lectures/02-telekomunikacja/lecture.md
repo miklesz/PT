@@ -259,8 +259,14 @@ Zwykle jest organizowana **warstwowo**. Poszczególne architektury różnią si�
 
 ## Siedem warstw ISO/OSI
 
-<div class="stack">
-  <div>Aplikacji</div><div>Prezentacji</div><div>Sesji</div><div>Transportowa</div><div>Sieciowa</div><div>Łącza danych</div><div>Fizyczna</div>
+<div class="osi-stack" role="list" aria-label="Siedem warstw modelu ISO/OSI od najwyższej do najniższej">
+  <div role="listitem"><span>7</span><strong>Aplikacji</strong></div>
+  <div role="listitem"><span>6</span><strong>Prezentacji</strong></div>
+  <div role="listitem"><span>5</span><strong>Sesji</strong></div>
+  <div role="listitem"><span>4</span><strong>Transportowa</strong></div>
+  <div role="listitem"><span>3</span><strong>Sieciowa</strong></div>
+  <div role="listitem"><span>2</span><strong>Łącza danych</strong></div>
+  <div role="listitem"><span>1</span><strong>Fizyczna</strong></div>
 </div>
 
 Komunikacja między odpowiadającymi sobie warstwami jest logiczna; faktyczna transmisja odbywa się przez medium fizyczne.
