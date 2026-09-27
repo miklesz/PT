@@ -365,6 +365,14 @@ Pary transmisyjne są zamienione między końcami kabla. Historycznie umożliwia
 
 ---
 
+## Złącze Token Ring: cechy
+
+Historyczne złącze IBM Token Ring było **hermafrodytyczne**: dwa jednakowe końce mogły się ze sobą łączyć. Wykorzystywało klips blokujący.
+
+Jego rozmiar, liczba elementów i koszt utrudniały gęsty montaż w panelach krosowych. Oryginalny wykład zestawia je ze znacznie mniejszym złączem używanym w okablowaniu Ethernetu.
+
+---
+
 ## Podsumowanie
 
 - Koncentryk jest odpornym, ale historycznym medium sieciowym.

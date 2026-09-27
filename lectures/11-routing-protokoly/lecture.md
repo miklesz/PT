@@ -348,6 +348,22 @@ Każdy AS ma numer ASN (*Autonomous System Number*).
 
 ---
 
+## Jak BGP wymienia trasy?
+
+Sąsiednie rutery BGP utrzymują sesję **TCP na porcie 179**. Dzięki TCP protokół nie musi sam realizować retransmisji, potwierdzeń i porządkowania komunikatów.
+
+Ogłoszenie trasy zawiera prefiks oraz atrybuty. `AS_PATH` pokazuje listę przebytych systemów autonomicznych; ruter odrzuca trasę zawierającą jego własny AS, co pomaga zapobiegać pętlom między AS-ami.
+
+---
+
+## Prefiksy i agregacja w BGP
+
+BGP-4 wymienia prefiksy bezklasowe, np. `203.0.113.0/24`. Sąsiednie prefiksy można czasem ogłosić jako jeden większy prefiks, jeżeli prowadzą tą samą drogą i polityka na to pozwala.
+
+Agregacja zmniejsza liczbę wpisów w tablicach routingu. Nie wynika automatycznie z samej ciągłości adresów: ogłoszenie musi odpowiadać rzeczywistej osiągalności sieci.
+
+---
+
 ## Dlaczego BGP jest inne?
 
 Routing wewnątrz jednej organizacji może optymalizować metrykę techniczną. Routing między operatorami i dużymi sieciami musi uwzględniać także biznesową politykę tranzytu (odpłatnego przenoszenia ruchu), peeringu (bezpośredniej wymiany ruchu) i bezpieczeństwa.

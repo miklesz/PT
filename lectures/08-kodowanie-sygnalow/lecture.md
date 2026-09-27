@@ -118,6 +118,14 @@ PCM (*Pulse Code Modulation*) oznacza cyfrowe kodowanie sygnału przez próbkowa
 
 ---
 
+## Co zniekształca sygnał?
+
+Na odbiorniku sygnał może różnić się od sygnału na wyjściu nadajnika. Przyczynami są m.in. odbicia, spadek napięcia lub mocy, nieliniowość nadajnika i odbiornika oraz wahania fazy.
+
+Maska telekomunikacyjna określa dopuszczalny kształt przebiegu mimo tych zmian.
+
+---
+
 ## HDB
 
 Kody HDB (*High Density Bipolar*) zastępują długie serie zer wzorcami zawierającymi impulsy naruszające regułę bipolarności.
@@ -154,6 +162,16 @@ Ponieważ `B` i `V` mają tu tę samą polaryzację dodatnią, dekoder rozpoznaj
   <label>Ciąg binarny<input class="hdb3-input" value="100000001" inputmode="numeric" maxlength="20"></label>
   <div class="lab-result hdb3-result" aria-live="polite"></div>
 </div>
+
+---
+
+## Korzyści i ograniczenia HDB
+
+- Zastępowanie długich serii zer ułatwia synchronizację bez narzucania struktury danych.
+- Przemienność biegunowości i celowe naruszenia reguły pomagają wykryć część błędów.
+- Trzy poziomy sygnału oraz zależność od wcześniejszych impulsów komplikują odbiór; błędna interpretacja może wpływać na kolejne symbole.
+
+Oryginalny wykład omawia także wariant HDB2, w którym analiza trzech pozycji wprowadza opóźnienie kodowania i dekodowania.
 
 ---
 
@@ -207,7 +225,7 @@ Sprawdza wagę słowa, rozpoznaje kod i sygnalizuje nieprawidłową kombinację.
 
 ## Zastosowanie kodu „2 z 5”
 
-Jednym z historycznych zastosowań jest kod kreskowy *Interleaved 2 of 5*, używany między innymi do oznaczania przesyłek i produktów.
+Historyczne zastosowania obejmują centrale telefoniczne (przesyłanie cyfr wybieranego numeru), dawne systemy komputerowe oraz kody kreskowe *Interleaved 2 of 5*, używane między innymi do oznaczania przesyłek i produktów.
 
 ![Przykład kodu kreskowego Interleaved 2 of 5](media/image9.png)
 

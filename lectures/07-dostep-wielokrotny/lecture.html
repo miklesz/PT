@@ -475,6 +475,14 @@ CSMA/CD (*Carrier Sense Multiple Access with Collision Detection*, wielodostęp 
 
 ---
 
+## Sekwencja zagłuszająca
+
+W klasycznym Ethernecie współdzielonym stacja monitoruje medium również podczas własnego nadawania. Po wykryciu kolizji przerywa ramkę i wysyła **jam sequence**, aby inne stacje także rozpoznały kolizję.
+
+W oryginalnym wykładzie pokazano 32-bitową sekwencję zagłuszającą. Uszkodzona ramka zostaje odrzucona, bo nie przechodzi kontroli FCS/CRC; nadawcy ponawiają próbę po losowym czasie.
+
+---
+
 ## Kolizja w CSMA/CD: propagacja
 
 <div class="media-gallery csma-cd-gallery">
@@ -496,6 +504,8 @@ CSMA/CD (*Carrier Sense Multiple Access with Collision Detection*, wielodostęp 
 ## Minimalny rozmiar ramki
 
 Nadawca musi jeszcze transmitować, kiedy ewentualny sygnał kolizji zdąży do niego wrócić z najdalszego punktu sieci. Z tego wynika minimalny rozmiar ramki Ethernetu.
+
+W klasycznym Ethernecie ramka ma co najmniej **64 bajty** od adresu docelowego do FCS, a pole danych co najmniej **46 bajtów**. Limit zasięgu segmentu i liczba wzmacniaczy wynikają z czasu propagacji w obie strony.
 
 ---
 

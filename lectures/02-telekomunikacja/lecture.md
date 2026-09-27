@@ -268,25 +268,27 @@ Komunikacja między odpowiadającymi sobie warstwami jest logiczna; faktyczna tr
 
 ---
 
-## Warstwy 5–7
+## Warstwa 5: sesji
 
-<div class="columns"><div>
+Opisuje organizację dialogu między aplikacjami: rozpoczęcie i zakończenie sesji, sterowanie wymianą oraz punkty synchronizacji, które mogą ułatwić wznowienie pracy po przerwaniu.
 
-**Sesji**
+Model OSI przypisuje te zadania warstwie sesji. W rzeczywistym stosie TCP/IP nie zawsze istnieje dla nich osobna warstwa.
 
-Sterowanie wymianą danych, dialogiem aplikacji i punktami retransmisji.
+---
 
-**Prezentacji**
+## Warstwa 6: prezentacji
 
-Format danych, kompresja, kodowanie, szyfrowanie i konwersje.
+Uzgadnia sposób reprezentacji danych między systemami: format, składnię i kodowanie znaków. Może też obejmować kompresję oraz szyfrowanie.
 
-</div><div>
+Przykład: nadawca zapisuje tekst w określonym kodowaniu, a odbiorca interpretuje bajty według tej samej reguły.
 
-**Aplikacji**
+---
 
-Usługi komunikacyjne dla programów użytkownika, np. przeglądarek i klientów pocztowych.
+## Warstwa 7: aplikacji
 
-</div></div>
+Udostępnia programom usługi komunikacyjne i określa zachowanie protokołów widocznych dla aplikacji, np. HTTP, SMTP i FTP.
+
+Przeglądarka oraz klient pocztowy są programami korzystającymi z usług tej warstwy; same nie są warstwą modelu OSI.
 
 ---
 
@@ -333,9 +335,9 @@ TCP (niezawodny transport), SPX (transport IPX), NetBEUI (historyczny protokół
 
 **Sieciowe**
 
-IP (*Internet Protocol*), IPX (*Internet Packet Exchange*)
+IP (*Internet Protocol*), IPX (*Internetwork Packet Exchange*)
 
-Zapewniają adresowanie, routing, weryfikację błędów oraz retransmisję.
+Zapewniają adresowanie logiczne i przekazywanie pakietów między sieciami. Ewentualna retransmisja zależy od innych protokołów i warstw.
 
 </div></div>
 
@@ -448,8 +450,8 @@ Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) łączy funkc
 ## Warstwa transportowa TCP/IP
 
 - Komunikacja między programami użytkownika.
-- Kontrola przepływu informacji.
-- Niezawodność: potwierdzenia po stronie odbiorcy i ponowne wysyłanie utraconych pakietów.
+- TCP zapewnia kontrolę przepływu, potwierdzenia i retransmisję utraconych segmentów.
+- UDP nie zapewnia tych mechanizmów samodzielnie; pozostawia je aplikacji, jeśli są potrzebne.
 
 ---
 
@@ -458,6 +460,14 @@ Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) łączy funkc
 - Najwyższy poziom: programy użytkowe.
 - Dostęp do usług niższych warstw.
 - Dane mogą być przesyłane jako komunikaty lub strumienie bajtów.
+
+---
+
+## Dwa hosty, dwa rutery
+
+Przykładowa droga pakietu: **Host A → R1 → R2 → Host B**. Każdy odcinek może używać innej technologii łącza danych.
+
+Host A tworzy dane aplikacji, segment transportowy i pakiet IP. Na każdym odcinku pakiet IP otrzymuje ramkę właściwą dla lokalnego łącza; ruter zdejmuje tę ramkę, wybiera następny skok i tworzy nową ramkę. Host B rozpakowuje dane w odwrotnej kolejności.
 
 ---
 

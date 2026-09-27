@@ -21,6 +21,14 @@ Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, wsp�
 
 ---
 
+## Organizacja sieci: serwer i równorzędni
+
+W sieci z **serwerem** wybrane urządzenie udostępnia usługi lub dane pozostałym, np. pliki, drukarkę albo bazę danych. Zarządzanie można centralizować.
+
+W sieci **peer-to-peer** komputery mogą bezpośrednio udostępniać zasoby sobie nawzajem. Rola urządzenia zależy od usługi; nie musi istnieć jeden centralny serwer.
+
+---
+
 ## Rodzaje sieci
 
 <div class="network-scale">
@@ -108,6 +116,14 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
 
 ---
 
+## Magistrala: zalety i ograniczenia
+
+**Zalety:** krótki wspólny kabel, brak urządzenia centralnego, niski koszt historycznych instalacji i możliwość wyłączenia pojedynczej stacji bez przerwania kabla.
+
+**Ograniczenia:** tylko jedna transmisja w danym czasie, kolizje, trudne wykrywanie usterek, słaba skalowalność i bezpieczeństwo. Awaria głównego kabla odcina cały segment.
+
+---
+
 ## Topologia pierścienia
 
 <div class="ring-diagram">
@@ -127,6 +143,14 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
 
 ---
 
+## Pierścień: zalety i ograniczenia
+
+Pierścień może korzystać ze stosunkowo krótkiego okablowania. W prostym wariancie awaria stacji lub odcinka może jednak zatrzymać transmisję, a diagnostyka, dołączanie stacji i rekonfiguracja bywają pracochłonne.
+
+Warianty z mechanizmami obejścia awarii lub drugim pierścieniem ograniczają te problemy; zależy to od konkretnej technologii.
+
+---
+
 ## Pierścień podwójny
 
 Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu jednego z odcinków.
@@ -138,6 +162,12 @@ Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu j
 </div>
 
 <p class="double-ring-note">Drugi pierścień zapewnia alternatywną drogę transmisji.</p>
+
+---
+
+## Pierścień podwójny: kompromis
+
+Druga droga może utrzymać działanie po przerwaniu pojedynczego odcinka i pozwala na wysoką przepustowość. Ceną są bardziej złożone urządzenia, diagnostyka i procedury rekonfiguracji.
 
 ---
 
@@ -170,6 +200,14 @@ Powiela sygnał do wszystkich portów; medium pozostaje współdzielone.
 Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
 
 </div></div>
+
+---
+
+## Gwiazda: zalety i ograniczenia
+
+Oddzielne łącza ułatwiają rozbudowę, konserwację i wskazanie uszkodzonego kabla. Awaria jednego komputera zwykle nie zatrzymuje pozostałych.
+
+Potrzeba więcej kabli i portów niż w magistrali. Awaria centralnego koncentratora lub przełącznika odcina podłączone do niego stacje.
 
 ---
 
@@ -208,6 +246,14 @@ MSAU (*Multistation Access Unit*) to koncentrator używany historycznie w siecia
 
 ---
 
+## Topologia hierarchiczna: kompromis
+
+Rozgałęzienia pozwalają rozbudowywać sieć i porządkować jej segmenty. Awaria pojedynczej stacji lub lokalnego kabla nie musi wpływać na całość.
+
+Sieć wymaga wielu połączeń, a elementy wyższego poziomu stają się punktami krytycznymi. Znalezienie usterki w dużej strukturze może być trudne bez dokumentacji i monitoringu.
+
+---
+
 ## Topologia siatki
 
 <div class="columns"><div>
@@ -228,6 +274,14 @@ Każdy węzeł łączy się z każdym. Zapewnia wysoką odporność, ale liczba 
   <img src="media/image18.png" alt="Częściowa topologia siatki">
   <img src="media/image19.png" alt="Pełna topologia siatki">
 </div>
+
+---
+
+## Siatka: zalety i ograniczenia
+
+Połączenia nadmiarowe dają alternatywną drogę po awarii węzła albo łącza. Jest to przydatne również w niektórych sieciach bezprzewodowych.
+
+Pełna siatka wymaga jednak wielu portów i połączeń, a jej budowa i utrzymanie są kosztowne. Dlatego często stosuje się siatkę częściową.
 
 ---
 
