@@ -56,6 +56,14 @@ Informacja jest kodowana jako modulowana wiązka światła, zwykle pochodząca z
 
 ---
 
+## Ewolucja światłowodów
+
+Wczesne próby prowadzenia promieniowania podczerwonego wykorzystywały metalowe rurki o wypolerowanych ściankach. Współczesne światłowody to dielektryczne włókna, najczęściej szklane, z warstwami ochronnymi.
+
+Włókno prowadzi światło dlatego, że współczynnik załamania płaszcza jest mniejszy niż współczynnik załamania rdzenia.
+
+---
+
 ## Materiał: ewolucja światłowodów
 
 <video controls preload="metadata"><source src="media/slide-007-media1.mp4" type="video/mp4"></video>
@@ -86,6 +94,14 @@ Laser może dostarczyć intensywną, łatwą do modulowania wiązkę światła. 
 ## Odporność na błędy
 
 <video controls preload="metadata"><source src="media/slide-012-media3.mp4" type="video/mp4"></video>
+
+---
+
+## Zasięg i trwałość łącza optycznego
+
+- Małe tłumienie pozwala budować odcinki bez wzmacniacza liczące dziesiątki kilometrów; w starszych przykładach podawano **80–100 km**. Rzeczywisty zasięg zależy od włókna, długości fali, nadajnika i budżetu mocy.
+- Projektowa trwałość kabla bywa liczona w dekadach; oryginalny wykład podawał **25 lat**, lecz nie jest to gwarancja dla każdego kabla i sposobu instalacji.
+- Jedno włókno może przenosić wiele kanałów i usług, a sygnał optyczny można wzmacniać.
 
 ---
 

@@ -415,6 +415,24 @@ Pozwala to utrzymać synchronizację, nawet gdy źródło generuje długi ciąg 
 
 ---
 
+## HDB-2 jako kod pseudoternarny
+
+Sygnał danych ma dwa stany (`0`, `1`), ale sygnał liniowy używa trzech poziomów napięcia: `−V`, `0`, `+V`. Kolejne jedynki są reprezentowane naprzemiennie przez impuls dodatni i ujemny; zwykłe zero oznacza brak impulsu.
+
+W HDB-2 długa seria zer nie pozostaje ciszą: pojawia się impuls **V**, który celowo narusza tę przemienność. Odbiornik rozpoznaje w nim znacznik zastąpionych zer, nie nową jedynkę danych.
+
+---
+
+## Po co HDB-2 w torze transmisyjnym?
+
+- Zmiany sygnału podczas długiej serii zer pomagają odbiornikowi odzyskać taktowanie.
+- Dobór polaryzacji ogranicza składową stałą i energię widma blisko częstotliwości zerowej.
+- Nadmiar wynikający z trzech poziomów pozwala wykryć część naruszeń oczekiwanej kolejności impulsów.
+
+Kosztem jest większa wrażliwość na zakłócenia między poziomami i konieczność uwzględnienia wcześniejszych impulsów przy kodowaniu oraz dekodowaniu.
+
+---
+
 ## Synchronizacja w HDB3
 
 HDB3 (*High Density Bipolar of order 3*) zastępuje ciąg czterech zer wzorcem:
@@ -450,7 +468,7 @@ Ponieważ `B` i `V` mają tu tę samą polaryzację dodatnią, dekoder rozpoznaj
 - Przemienność biegunowości i celowe naruszenia reguły pomagają wykryć część błędów.
 - Trzy poziomy sygnału oraz zależność od wcześniejszych impulsów komplikują odbiór; błędna interpretacja może wpływać na kolejne symbole.
 
-Oryginalny wykład omawia także wariant HDB2, w którym analiza trzech pozycji wprowadza opóźnienie kodowania i dekodowania.
+W HDB-2 analiza trzech kolejnych pozycji wprowadza opóźnienie kodowania i dekodowania. Błędna decyzja dekodera może też wpłynąć na interpretację następnych symboli.
 
 ---
 

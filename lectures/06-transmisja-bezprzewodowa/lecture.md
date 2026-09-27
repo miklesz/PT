@@ -254,6 +254,16 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 - **802.11a:** wykorzystuje 5 GHz, więc nie współpracuje radiowo z urządzeniami wyłącznie 2,4 GHz.
 - Historyczne standardy są istotne przy obsłudze starszych urządzeń i planowaniu kompatybilności.
 
+Szybkość warstwy fizycznej nie jest przepływnością użytkową: przykładowo 802.11b oferowało do 11 Mb/s w warstwie radiowej, lecz w praktyce dane aplikacji przesyłano wolniej. Standard mógł też obniżać szybkość radiową przy słabszym sygnale.
+
+---
+
+## Producenckie rozszerzenia dawnego Wi-Fi
+
+**802.11b+** i **Super G** były historycznymi nazwami rozwiązań producentów, a nie odrębnymi standardami IEEE. Reklamowały wyższe szybkości, m.in. przez łączenie kanałów, ale zgodność między urządzeniami różnych firm nie była gwarantowana.
+
+To przykład różnicy między standardem 802.11 a funkcją konkretnego produktu.
+
 ---
 
 ## 802.11n, ac i ax

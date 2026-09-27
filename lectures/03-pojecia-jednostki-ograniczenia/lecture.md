@@ -174,6 +174,8 @@ Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzen
 
 Dotyczy przede wszystkim sieci nadawczych: radia, telewizji i portali, w których każdy nowy odbiorca zwiększa wartość sieci liniowo.
 
+David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
+
 </div><div>
 
 <img src="media/image6.jpg" alt="David Sarnoff" height="380">

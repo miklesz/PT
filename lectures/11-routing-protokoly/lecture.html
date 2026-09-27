@@ -439,6 +439,14 @@ Pole `IHL` podaje długość nagłówka w słowach po `4 B`. Dla `IHL = 6` nagł
 
 ---
 
+## Kolejność transmisji IPv4
+
+Oktety nagłówka i danych są przesyłane kolejno, od pierwszego do ostatniego. W obrębie nagłówka najpierw występują pola widoczne po lewej stronie pierwszego wiersza schematu, potem następne wiersze; po nagłówku następują dane.
+
+To kolejność bajtów w datagramie, nie kolejność odwiedzania ruterów.
+
+---
+
 ## Adres IPv4
 
 Adres IPv4 ma 32 bity, zwykle zapisane jako cztery oktety, np. `192.0.2.25`.
@@ -574,6 +582,8 @@ Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. 
 ## DNS
 
 DNS (*Domain Name System*) tłumaczy nazwy, np. `example.org`, na adresy IP i przechowuje inne rekordy związane z domeną.
+
+Warto rozdzielić **rejestrację domeny i publikację jej rekordów** od **bieżącego odpytywania DNS** przez urządzenia szukające adresu. To powiązane, ale różne czynności.
 
 <div class="columns"><div>
 
