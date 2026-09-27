@@ -48,7 +48,12 @@
       .reveal .encap-ip { flex: 0 0 18%; background: #e7e2f5; }
       .reveal .encap-frame { flex: 0 0 15%; background: #dceef2; }
       .reveal .encap-stage:last-child .encap-frame:last-child { flex-basis: 9%; }
+      .reveal .encap-intro { font-size: 0.78em; }
       .reveal .encap-caption { color: var(--pt-muted); font-size: 0.68em; text-align: center; }
+      .reveal .encap-glossary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5em; margin-top: 0.1em; font-size: 0.54em; text-align: center; }
+      .reveal .encap-glossary span { min-width: 0; }
+      .reveal .encap-glossary strong { color: var(--pt-blue); }
+      .reveal .encap-glossary small { display: block; color: var(--pt-muted); font-size: 0.85em; }
       .reveal .osi-stack { display: grid; gap: 0.08em; max-width: 720px; margin: 0.35em auto; }
       .reveal .osi-stack > div { display: grid; grid-template-columns: 2.2em 1fr; align-items: center; min-height: 1.55em; border: 2px solid var(--pt-blue); background: #e7edf6; font-size: 0.77em; text-align: left; }
       .reveal .osi-stack > div:nth-child(-n+3) { background: #dceef2; }
@@ -775,7 +780,7 @@ W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują now
 
 ## Uproszczony stos protokołów
 
-Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) grupuje funkcje siedmiu warstw OSI w czterech warstwach.
+<p class="encap-intro">Model TCP/IP (TCP: <em>Transmission Control Protocol</em>; IP: <em>Internet Protocol</em>) grupuje funkcje siedmiu warstw OSI (<em>Open Systems Interconnection</em>) w czterech warstwach.</p>
 
 <div class="tcp-encap" role="img" aria-label="Cztery warstwy TCP/IP i kolejne etapy kapsułkowania danych: aplikacja, transport UDP, Internet IP oraz ramka sieciowa">
   <div class="encap-stage"><strong>Aplikacji</strong><div class="encap-units"><span class="encap-data">Dane</span></div></div>
@@ -784,7 +789,12 @@ Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) grupuje funkc
   <div class="encap-stage"><strong>Dostępu do sieci</strong><div class="encap-units"><span class="encap-frame">Nagłówek ramki</span><span class="encap-ip">Nagłówek IP</span><span class="encap-udp">Nagłówek UDP</span><span class="encap-data">Dane</span><span class="encap-frame">FCS</span></div></div>
 </div>
 
-<p class="encap-caption">Przykład dla UDP/IP w ramce Ethernet: każda niższa warstwa dodaje własne pola.</p>
+<p class="encap-caption">Przykład UDP/IP w ramce Ethernet. Każda niższa warstwa dodaje własne pola.</p>
+<div class="encap-glossary">
+  <span><strong>UDP</strong> <em>User Datagram Protocol</em><small>protokół transportowy</small></span>
+  <span><strong>IP</strong> <em>Internet Protocol</em><small>adresowanie pakietów</small></span>
+  <span><strong>FCS</strong> <em>Frame Check Sequence</em><small>wykrywanie błędów ramki</small></span>
+</div>
 
 ---
 

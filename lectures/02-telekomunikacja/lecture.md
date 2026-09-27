@@ -471,7 +471,7 @@ W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują now
 
 ## Uproszczony stos protokołów
 
-Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) grupuje funkcje siedmiu warstw OSI w czterech warstwach.
+<p class="encap-intro">Model TCP/IP (TCP: <em>Transmission Control Protocol</em>; IP: <em>Internet Protocol</em>) grupuje funkcje siedmiu warstw OSI (<em>Open Systems Interconnection</em>) w czterech warstwach.</p>
 
 <div class="tcp-encap" role="img" aria-label="Cztery warstwy TCP/IP i kolejne etapy kapsułkowania danych: aplikacja, transport UDP, Internet IP oraz ramka sieciowa">
   <div class="encap-stage"><strong>Aplikacji</strong><div class="encap-units"><span class="encap-data">Dane</span></div></div>
@@ -480,7 +480,12 @@ Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) grupuje funkc
   <div class="encap-stage"><strong>Dostępu do sieci</strong><div class="encap-units"><span class="encap-frame">Nagłówek ramki</span><span class="encap-ip">Nagłówek IP</span><span class="encap-udp">Nagłówek UDP</span><span class="encap-data">Dane</span><span class="encap-frame">FCS</span></div></div>
 </div>
 
-<p class="encap-caption">Przykład dla UDP/IP w ramce Ethernet: każda niższa warstwa dodaje własne pola.</p>
+<p class="encap-caption">Przykład UDP/IP w ramce Ethernet. Każda niższa warstwa dodaje własne pola.</p>
+<div class="encap-glossary">
+  <span><strong>UDP</strong> <em>User Datagram Protocol</em><small>protokół transportowy</small></span>
+  <span><strong>IP</strong> <em>Internet Protocol</em><small>adresowanie pakietów</small></span>
+  <span><strong>FCS</strong> <em>Frame Check Sequence</em><small>wykrywanie błędów ramki</small></span>
+</div>
 
 ---
 
