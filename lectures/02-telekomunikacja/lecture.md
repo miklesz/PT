@@ -41,9 +41,9 @@ Od znaków elektrycznych do globalnej sieci komputerowej.
 
 <div class="columns"><div>
 
-- W 1832 r. wykorzystał magnetyzm do stworzenia telegrafii elektromagnetycznej.
-- Współtworzył kod znany jako alfabet Morse'a.
-- Kod korzystał z trzech stanów: brak sygnału, sygnał krótki i długi.
+- Amerykański wynalazca, a także malarz i rzeźbiarz.
+- W 1832 r. wykorzystał elektromagnetyzm do prac nad telegrafem.
+- Uzyskał patent na własny system telegraficzny; nad podobnymi urządzeniami pracowali także inni wynalazcy.
 
 </div><div>
 
@@ -53,12 +53,26 @@ Od znaków elektrycznych do globalnej sieci komputerowej.
 
 ---
 
+## Alfabet Morse'a
+
+Morse opracowywał kod telegraficzny wraz z **Alfredem Vailem**.
+
+W pierwotnym opisie transmisja rozróżnia trzy stany:
+
+- brak sygnału,
+- krótki sygnał,
+- długi sygnał.
+
+Odpowiednie sekwencje reprezentują litery i cyfry.
+
+---
+
 ## Alexander Graham Bell: telefon
 
 <div class="columns"><div>
 
 - Szkocki wynalazca telefonu i wielu innych urządzeń telekomunikacyjnych.
-- Zajmował się fizjologią dźwięku.
+- Pracował jako logopeda i nauczyciel muzyki; zajmował się fizjologią dźwięku.
 - W ramach badań opatentował głośnik i mikrofon, a potem urządzenie przekazujące dźwięk na odległość.
 
 </div><div>
@@ -74,7 +88,7 @@ Od znaków elektrycznych do globalnej sieci komputerowej.
 <div class="columns"><div>
 
 - Pionier radia i przemysłu elektronicznego.
-- W 1901 r. nawiązał łączność bezprzewodową między Nową Fundlandią i Kornwalią.
+- W grudniu 1901 r. nawiązał łączność bezprzewodową między St. John's (Nowa Fundlandia) a Poldhu (Kornwalia).
 - Laureat Nagrody Nobla z fizyki w 1909 r. za wkład w rozwój telegrafii bezprzewodowej.
 
 </div><div>
@@ -105,9 +119,13 @@ Od znaków elektrycznych do globalnej sieci komputerowej.
 
 <div class="columns"><div>
 
+<div class="small">
+
 - Szkocki inżynier i twórca pierwszego działającego systemu telewizyjnego.
-- W 1925 r. zademonstrował transmisję ruchomych obrazów w Londynie.
-- Jego prace stały się podstawą eksperymentów BBC z nadawaniem telewizyjnym.
+- 25 marca 1925 r. zademonstrował transmisję ruchomych obrazów w londyńskim domu towarowym Selfridges.
+- Jego prace stały się podstawą eksperymentów BBC z nadawaniem telewizyjnym rozpoczętych 30 września 1929 r.
+
+</div>
 
 </div><div>
 
@@ -117,17 +135,41 @@ Od znaków elektrycznych do globalnej sieci komputerowej.
 
 ---
 
-## Od komputerów do Internetu
+## George Stibitz: zdalne obliczenia
 
 <div class="columns"><div>
 
-- **George Stibitz:** zdalnie sterowany kalkulator elektromechaniczny; w 1940 r. przesłał zapytanie dalekopisem do komputera w Nowym Jorku.
-- **Robert Metcalfe:** współtwórca Ethernetu, technologii łączenia komputerów na krótkich dystansach.
+<div class="small">
+
+- W 1937 r. skonstruował elektromechaniczny sumator binarny „Model K”.
+- W 1939 r. zbudował zdalnie sterowany kalkulator elektromechaniczny.
+- 11 września 1940 r. przesłał dalekopisem zapytanie z Dartmouth do maszyny w Nowym Jorku i otrzymał odpowiedź tą samą drogą.
+
+</div>
 
 </div><div>
 
-<img src="media/image6.jpeg" alt="George Stibitz" height="220">
-<img src="media/image7.jpeg" alt="Robert Metcalfe" height="220">
+![George Stibitz](media/image6.jpeg)
+
+</div></div>
+
+---
+
+## Robert Metcalfe: Ethernet
+
+<div class="columns"><div>
+
+<div class="small">
+
+- Współtwórca Ethernetu, technologii łączenia komputerów w sieciach lokalnych, oraz współzałożyciel 3Com.
+- W 1976 r. opublikował wraz z Davidem Boggsem opis Ethernetu w „Communications of the ACM”.
+- Za prace nad sieciami lokalnymi otrzymał w 1980 r. nagrodę Grace Murray Hopper Award, a w 2005 r. National Medal of Technology.
+
+</div>
+
+</div><div>
+
+![Robert Metcalfe](media/image7.jpeg)
 
 </div></div>
 

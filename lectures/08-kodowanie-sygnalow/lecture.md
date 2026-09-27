@@ -201,9 +201,24 @@ W HDB-2 analiza trzech kolejnych pozycji wprowadza opóźnienie kodowania i deko
 
 ---
 
+## Dopuszczalne słowa kodu „2 z 5”
+
+Każda z dziesięciu kombinacji dwóch jedynek na pięciu pozycjach jest prawidłowa:
+
+| | | | | |
+| --- | --- | --- | --- | --- |
+| `01100` | `11000` | `10100` | `10010` | `01010` |
+| `00110` | `10001` | `01001` | `00101` | `00011` |
+
+Przypisanie słów do cyfr jest umową konkretnego wariantu kodowania.
+
+---
+
 ## Odporność na błędy kodu „2 z 5”
 
-Jeżeli podczas transmisji zmieni się pojedynczy bit, liczba jedynek przestaje wynosić dwa. Dekoder może wtedy wykryć błąd, choć nie musi umieć go poprawić.
+Minimalna odległość Hamminga między prawidłowymi słowami wynosi **2**. Każdy błąd jednego, trzech lub pięciu bitów zmienia wagę słowa, więc dekoder go wykryje. Samo wykrycie nie oznacza, że potrafi wskazać poprawną cyfrę.
+
+Dla błędów dwóch i czterech bitów test wagi wykrywa **40%** przypadków. Na przykład przy dwóch przekłamaniach sześć z dziesięciu par pozycji zamienia jedną `1` na `0` i jedno `0` na `1`; waga nadal wynosi wtedy dwa, więc taki błąd pozostaje niewykryty.
 
 ---
 

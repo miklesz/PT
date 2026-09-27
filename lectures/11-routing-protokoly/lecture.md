@@ -29,7 +29,7 @@ Warstwa trzecia odpowiada za dostarczanie pakietów między sieciami. Jej podsta
 
 **IPX — Internetwork Packet Exchange**
 
-Historyczny protokół sieciowy używany między innymi w środowiskach Novell NetWare.
+Historyczny, bezpołączeniowy protokół sieciowy środowiska Novell NetWare. Obsługiwał adresowanie i routing pakietów w sieciach LAN i WAN, lecz sam nie gwarantował dostarczenia. Współpracował z transportowym SPX.
 
 </div><div>
 
@@ -49,6 +49,26 @@ Podstawowy protokół warstwy sieciowej Internetu. Współdziała z TCP (*Transm
 - fragmentacja w IPv4, gdy jest konieczna.
 
 IP jest protokołem bezpołączeniowym i nie gwarantuje dostarczenia, kolejności ani braku duplikatów.
+
+---
+
+## Czego sam IP nie zapewnia?
+
+- Nie gwarantuje integralności danych użytkownika ani niezawodnego dostarczenia.
+- Nie steruje przepływem między aplikacjami i nie ustawia datagramów w kolejności.
+- Pola DSCP i ECN pomagają obsługiwać priorytet i przeciążenie, ale nie są gwarancją jakości usługi.
+
+Te zadania realizują w razie potrzeby inne warstwy i protokoły, np. TCP.
+
+---
+
+## IP między warstwami
+
+**Nad IP:** TCP przekazuje segment do IP, aby wysłać go do adresu docelowego.
+
+**Pod IP:** IP przekazuje datagram do technologii lokalnego łącza, np. Ethernetu, która dostarcza ramkę do następnego węzła.
+
+Na kolejnym łączu ruter może użyć innej technologii ramki, choć datagram pozostaje pakietem IP.
 
 ---
 
@@ -114,6 +134,7 @@ Pozwala sygnalizować przeciążenie bez odrzucenia pakietu.
 - **Protocol:** wskazuje protokół wyższej warstwy, np. TCP, UDP albo ICMP (*Internet Control Message Protocol*).
 - **Fragmentation:** identyfikacja, flagi i przesunięcie umożliwiają składanie fragmentów.
 - **Header checksum:** kontroluje poprawność samego nagłówka.
+- **Options / Padding:** opcje są nieobowiązkowe, a zerowe dopełnienie wyrównuje długość nagłówka do wielokrotności 32 bitów.
 
 ---
 
