@@ -209,15 +209,7 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 
 ## Prawo Metcalfe'a
 
-<div class="columns"><div>
-
 > Użyteczność sieci telekomunikacyjnej rośnie proporcjonalnie do kwadratu liczby podłączonych urządzeń lub użytkowników.
-
-</div><div>
-
-![Ilustracja prawa Metcalfe'a](media/image9.jpeg)
-
-</div></div>
 
 ---
 
@@ -241,7 +233,7 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 
 ## Prawo Metcalfe'a: film
 
-<video controls preload="metadata"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/metcalfe-film-poster.jpg"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
 
 ---
 
