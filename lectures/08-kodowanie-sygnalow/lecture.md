@@ -9,7 +9,7 @@
 - podstawowe pojęcia kodowe,
 - odległość Hamminga i waga kodu,
 - maski telekomunikacyjne i właściwości sygnału,
-- HDB, kod „2 z 5” oraz kody splotowe.
+- HDB, kod „2 z 5”, kody ilorazowe i splotowe.
 
 ---
 
@@ -231,6 +231,85 @@ Jednym z historycznych zastosowań jest kod kreskowy *Interleaved 2 of 5*, używ
 
 ---
 
+<!-- .slide: class="section-slide" -->
+
+# Kodowanie ilorazowe
+
+---
+
+## Bity jako wielomian
+
+Ciąg `10101` można zapisać jako `h(x) = x⁴ + x² + 1`: pozycje jedynek wyznaczają potęgi `x`.
+
+Obliczenia wykonuje się nad `GF(2)`. Współczynniki mają wartości `0` lub `1`, a dodawanie i odejmowanie są operacją XOR.
+
+---
+
+## Wielomiany w kodzie ilorazowym
+
+- `h(x)` — wielomian informacji,
+- `g(x)` — wielomian generujący o stopniu `p`,
+- `s(x)` — przesyłane słowo kodowe.
+
+Przy dekodowaniu dzielimy odebrane słowo przez `g(x)`. **Zerowa reszta** oznacza słowo zgodne z regułą kodu; nie dowodzi jednak, że w transmisji nie wystąpił żaden błąd.
+
+---
+
+## Kodowanie niesystematyczne
+
+Koder mnoży wielomian informacji przez wielomian generujący:
+
+`s(x) = h(x) · g(x)`
+
+Wynik jest podzielny przez `g(x)`, ale bity informacji nie muszą zajmować osobnego, niezmienionego fragmentu słowa kodowego.
+
+**Droga sygnału:** `h(x)` → mnożenie przez `g(x)` → `s(x)`.
+
+---
+
+## Dekodowanie niesystematyczne
+
+Dekoder dzieli odebrane `y(x)` przez `g(x)`:
+
+`y(x) = q(x) · g(x) + r(x)`
+
+- `r(x) = 0`: słowo spełnia regułę kodu, a iloraz `q(x)` odtwarza informację.
+- `r(x) ≠ 0`: wykryto błąd zgodnie z możliwościami tego kodu.
+
+**Droga sygnału:** `y(x)` → dzielenie przez `g(x)` → iloraz i reszta.
+
+---
+
+## Wariant systematyczny
+
+W kodzie systematycznym bity informacji pozostają na początku słowa kodowego, a `p` bitów kontrolnych trafia na koniec.
+
+Najpierw przesuwamy informację o `p` pozycji: `xᵖ · h(x)`. Potem obliczamy resztę `R(x)` z dzielenia tej wartości przez `g(x)`.
+
+---
+
+## Kodowanie systematyczne
+
+`R(x) = reszta z [xᵖ · h(x)] / g(x)`
+
+`s(x) = xᵖ · h(x) − R(x)`
+
+W `GF(2)` odejmowanie jest XOR. Dlatego uzyskane `s(x)` dzieli się przez `g(x)` bez reszty, a pierwsze bity nadal zapisują `h(x)`.
+
+Przykład: `h = 10101`, `g = 1011`, `p = 3` → `xᵖh = 10101000`, `R = 101`, `s = 10101101`.
+
+---
+
+## Dekodowanie systematyczne
+
+Odebrane słowo dzielimy przez `g(x)` i sprawdzamy resztę. Gdy wynosi zero, część informacyjna to pierwsze `k` bitów słowa kodowego.
+
+`10101101 ÷ 1011` daje resztę `000`; odczytana informacja to `10101`, a bity kontrolne to `101`.
+
+Niezerowa reszta sygnalizuje błąd wykrywalny przez ten kod.
+
+---
+
 ## Kod splotowy
 
 Kodowanie splotowe (*convolutional coding*) tworzy ciąg wyjściowy zależny od bieżących i wcześniejszych bitów wejściowych.
@@ -335,4 +414,4 @@ Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwię
 
 - Odległość Hamminga i waga pomagają opisać właściwości kodu.
 - Kody transmisyjne mogą wspierać synchronizację i odporność na błędy.
-- HDB, „2 z 5” i kody splotowe rozwiązują różne problemy transmisyjne.
+- HDB, „2 z 5”, kody ilorazowe i splotowe rozwiązują różne problemy transmisyjne.

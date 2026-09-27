@@ -61,6 +61,12 @@ Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji t
 
 ---
 
+## Skąd wzięło się ALOHA?
+
+Metodę opracowano dla sieci ALOHAnet na Uniwersytecie Hawajskim. Stacje radiowe współdzieliły kanał i przesyłały dane do centralnej stacji, więc potrzebowały reguły ponawiania transmisji po kolizji.
+
+---
+
 ## Zwykłe ALOHA
 
 - Nadaj, gdy masz dane.

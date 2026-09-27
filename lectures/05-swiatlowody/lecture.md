@@ -172,6 +172,34 @@ Tłumienie określa, o ile maleje moc optyczna sygnału podczas propagacji. W pr
 
 ---
 
+## Straty materiałowe
+
+Szkło kwarcowe (`SiO₂`) nie jest idealnie jednorodne. Fluktuacje gęstości i współczynnika załamania rozpraszają światło, a domieszki mogą je pochłaniać.
+
+W oryginalnym wykładzie rozróżniono **rozpraszanie Rayleigha** oraz **absorpcję**. Ich wpływ zależy od długości fali, dlatego dobiera się odpowiednie okna transmisyjne.
+
+---
+
+## Zanieczyszczenia i okna transmisyjne
+
+Zanieczyszczenia metalami, m.in. żelazem, miedzią i chromem, oraz grupy `OH⁻` zwiększają absorpcję. Jej wartość zależy od rodzaju i stężenia domieszek.
+
+Typowe okna transmisyjne leżą w pobliżu **850 nm**, **1310 nm** i **1550 nm**. Dobór okna uwzględnia zarówno tłumienie, jak i dyspersję oraz dostępne źródła światła.
+
+---
+
+## Rozpraszanie Rayleigha: przykład
+
+Oryginalny wykład podaje dla czystego szkła kwarcowego orientacyjne składowe tłumienia od rozpraszania:
+
+| Długość fali | 850 nm | 1300 nm | 1550 nm |
+| --- | ---: | ---: | ---: |
+| Tłumienie Rayleigha | 1,53 dB/km | 0,28 dB/km | 0,138 dB/km |
+
+Są to wartości **samego rozpraszania**, a nie pełne tłumienie dowolnego rzeczywistego kabla. Absorpcja i niedoskonałości zwiększają straty.
+
+---
+
 ## Straty falowodowe
 
 <video controls preload="metadata"><source src="media/slide-031-media6.mp4" type="video/mp4"></video>
@@ -255,6 +283,22 @@ Różne długości fali poruszają się z różną prędkością; obejmuje dyspe
 - **Materiałowa:** współczynnik załamania zależy od długości fali.
 - **Falowodowa:** właściwości propagacji wynikają także z geometrii rdzenia i płaszcza.
 - Obie ograniczają maksymalną odległość i przepływność łącza.
+
+---
+
+## Dyspersja materiałowa
+
+Współczynnik załamania szkła zależy od długości fali. Źródło emituje pewien zakres długości fal, więc składowe impulsu docierają do odbiornika w różnym czasie.
+
+W typowym włóknie krzemionkowym dyspersja materiałowa jest niewielka w okolicy **1300 nm**. Nie oznacza to, że cała dyspersja chromatyczna włókna wynosi tam zero.
+
+---
+
+## Dyspersja falowodowa
+
+Część pola optycznego propaguje także w płaszczu. Udział tej części zmienia się z długością fali, dlatego geometria rdzenia i płaszcza wpływa na opóźnienie składowych impulsu.
+
+Dyspersję chromatyczną można modyfikować przez konstrukcję włókna; w praktyce rozpatruje się sumę wkładów materiałowego i falowodowego.
 
 ---
 

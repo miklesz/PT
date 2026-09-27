@@ -53,14 +53,15 @@
       .reveal .ipv4-row.fragment { background: #eff0df; }
       .reveal .ipv4-row.forwarding { background: #f7e8d1; }
       .reveal .ipv4-header-svg { display: block; width: min(100%, 1120px); max-height: 600px; margin: 0.1em auto 0; }
-      .reveal .gateway-path-svg { display: block; width: min(100%, 1160px); max-height: 460px; margin: 0.15em auto 0; }
-      .reveal .gateway-path-svg .zone { font: 700 22px sans-serif; fill: #172f3d; }
-      .reveal .gateway-path-svg .subzone, .reveal .gateway-path-svg .node-detail { font: 15px sans-serif; fill: #4f5f68; }
-      .reveal .gateway-path-svg .node-title { font: 700 18px sans-serif; fill: #172f3d; }
+      .reveal .gateway-path-svg { display: block; width: min(100%, 1040px); max-height: 410px; margin: 0.15em auto 0; }
+      .reveal .gateway-path-svg .zone { font: 700 20px sans-serif; fill: #172f3d; }
+      .reveal .gateway-path-svg .subzone, .reveal .gateway-path-svg .node-detail { font: 13px sans-serif; fill: #4f5f68; }
+      .reveal .gateway-path-svg .node-title { font: 700 17px sans-serif; fill: #172f3d; }
       .reveal .gateway-path-svg .host-box { fill: #fff; stroke: #176b80; stroke-width: 3; }
       .reveal .gateway-path-svg .router-box, .reveal .gateway-path-svg .router-circle { fill: #fff; stroke: #4f7f3d; stroke-width: 3; }
       .reveal .gateway-path-svg .gateway-link { stroke: #176b80; stroke-width: 4; }
       .reveal .gateway-path-svg .link-label { font: 700 15px sans-serif; fill: #176b80; }
+      .reveal .gateway-path-svg .route-label { font-size: 11px; }
       .reveal .shared-medium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em 1.3em; align-items: end; max-width: 1000px; margin: 0.8em auto 0; }
       .reveal .radio-station { display: grid; justify-items: center; gap: 0.16em; font-size: 0.62em; }
       .reveal .radio-station .node { width: 4.4em; height: 3.1em; position: relative; display: grid; place-content: center; border: 4px solid var(--station); background: #fff; color: var(--station); font-weight: 700; }
@@ -450,6 +451,34 @@ Tłumienie określa, o ile maleje moc optyczna sygnału podczas propagacji. W pr
 
 ---
 
+## Straty materiałowe
+
+Szkło kwarcowe (`SiO₂`) nie jest idealnie jednorodne. Fluktuacje gęstości i współczynnika załamania rozpraszają światło, a domieszki mogą je pochłaniać.
+
+W oryginalnym wykładzie rozróżniono **rozpraszanie Rayleigha** oraz **absorpcję**. Ich wpływ zależy od długości fali, dlatego dobiera się odpowiednie okna transmisyjne.
+
+---
+
+## Zanieczyszczenia i okna transmisyjne
+
+Zanieczyszczenia metalami, m.in. żelazem, miedzią i chromem, oraz grupy `OH⁻` zwiększają absorpcję. Jej wartość zależy od rodzaju i stężenia domieszek.
+
+Typowe okna transmisyjne leżą w pobliżu **850 nm**, **1310 nm** i **1550 nm**. Dobór okna uwzględnia zarówno tłumienie, jak i dyspersję oraz dostępne źródła światła.
+
+---
+
+## Rozpraszanie Rayleigha: przykład
+
+Oryginalny wykład podaje dla czystego szkła kwarcowego orientacyjne składowe tłumienia od rozpraszania:
+
+| Długość fali | 850 nm | 1300 nm | 1550 nm |
+| --- | ---: | ---: | ---: |
+| Tłumienie Rayleigha | 1,53 dB/km | 0,28 dB/km | 0,138 dB/km |
+
+Są to wartości **samego rozpraszania**, a nie pełne tłumienie dowolnego rzeczywistego kabla. Absorpcja i niedoskonałości zwiększają straty.
+
+---
+
 ## Straty falowodowe
 
 <video controls preload="metadata"><source src="media/slide-031-media6.mp4" type="video/mp4"></video>
@@ -533,6 +562,22 @@ Różne długości fali poruszają się z różną prędkością; obejmuje dyspe
 - **Materiałowa:** współczynnik załamania zależy od długości fali.
 - **Falowodowa:** właściwości propagacji wynikają także z geometrii rdzenia i płaszcza.
 - Obie ograniczają maksymalną odległość i przepływność łącza.
+
+---
+
+## Dyspersja materiałowa
+
+Współczynnik załamania szkła zależy od długości fali. Źródło emituje pewien zakres długości fal, więc składowe impulsu docierają do odbiornika w różnym czasie.
+
+W typowym włóknie krzemionkowym dyspersja materiałowa jest niewielka w okolicy **1300 nm**. Nie oznacza to, że cała dyspersja chromatyczna włókna wynosi tam zero.
+
+---
+
+## Dyspersja falowodowa
+
+Część pola optycznego propaguje także w płaszczu. Udział tej części zmienia się z długością fali, dlatego geometria rdzenia i płaszcza wpływa na opóźnienie składowych impulsu.
+
+Dyspersję chromatyczną można modyfikować przez konstrukcję włókna; w praktyce rozpatruje się sumę wkładów materiałowego i falowodowego.
 
 ---
 

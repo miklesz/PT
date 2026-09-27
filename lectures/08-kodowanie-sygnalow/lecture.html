@@ -53,14 +53,15 @@
       .reveal .ipv4-row.fragment { background: #eff0df; }
       .reveal .ipv4-row.forwarding { background: #f7e8d1; }
       .reveal .ipv4-header-svg { display: block; width: min(100%, 1120px); max-height: 600px; margin: 0.1em auto 0; }
-      .reveal .gateway-path-svg { display: block; width: min(100%, 1160px); max-height: 460px; margin: 0.15em auto 0; }
-      .reveal .gateway-path-svg .zone { font: 700 22px sans-serif; fill: #172f3d; }
-      .reveal .gateway-path-svg .subzone, .reveal .gateway-path-svg .node-detail { font: 15px sans-serif; fill: #4f5f68; }
-      .reveal .gateway-path-svg .node-title { font: 700 18px sans-serif; fill: #172f3d; }
+      .reveal .gateway-path-svg { display: block; width: min(100%, 1040px); max-height: 410px; margin: 0.15em auto 0; }
+      .reveal .gateway-path-svg .zone { font: 700 20px sans-serif; fill: #172f3d; }
+      .reveal .gateway-path-svg .subzone, .reveal .gateway-path-svg .node-detail { font: 13px sans-serif; fill: #4f5f68; }
+      .reveal .gateway-path-svg .node-title { font: 700 17px sans-serif; fill: #172f3d; }
       .reveal .gateway-path-svg .host-box { fill: #fff; stroke: #176b80; stroke-width: 3; }
       .reveal .gateway-path-svg .router-box, .reveal .gateway-path-svg .router-circle { fill: #fff; stroke: #4f7f3d; stroke-width: 3; }
       .reveal .gateway-path-svg .gateway-link { stroke: #176b80; stroke-width: 4; }
       .reveal .gateway-path-svg .link-label { font: 700 15px sans-serif; fill: #176b80; }
+      .reveal .gateway-path-svg .route-label { font-size: 11px; }
       .reveal .shared-medium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8em 1.3em; align-items: end; max-width: 1000px; margin: 0.8em auto 0; }
       .reveal .radio-station { display: grid; justify-items: center; gap: 0.16em; font-size: 0.62em; }
       .reveal .radio-station .node { width: 4.4em; height: 3.1em; position: relative; display: grid; place-content: center; border: 4px solid var(--station); background: #fff; color: var(--station); font-weight: 700; }
@@ -287,7 +288,7 @@
 - podstawowe pojęcia kodowe,
 - odległość Hamminga i waga kodu,
 - maski telekomunikacyjne i właściwości sygnału,
-- HDB, kod „2 z 5” oraz kody splotowe.
+- HDB, kod „2 z 5”, kody ilorazowe i splotowe.
 
 ---
 
@@ -509,6 +510,85 @@ Jednym z historycznych zastosowań jest kod kreskowy *Interleaved 2 of 5*, używ
 
 ---
 
+<!-- .slide: class="section-slide" -->
+
+# Kodowanie ilorazowe
+
+---
+
+## Bity jako wielomian
+
+Ciąg `10101` można zapisać jako `h(x) = x⁴ + x² + 1`: pozycje jedynek wyznaczają potęgi `x`.
+
+Obliczenia wykonuje się nad `GF(2)`. Współczynniki mają wartości `0` lub `1`, a dodawanie i odejmowanie są operacją XOR.
+
+---
+
+## Wielomiany w kodzie ilorazowym
+
+- `h(x)` — wielomian informacji,
+- `g(x)` — wielomian generujący o stopniu `p`,
+- `s(x)` — przesyłane słowo kodowe.
+
+Przy dekodowaniu dzielimy odebrane słowo przez `g(x)`. **Zerowa reszta** oznacza słowo zgodne z regułą kodu; nie dowodzi jednak, że w transmisji nie wystąpił żaden błąd.
+
+---
+
+## Kodowanie niesystematyczne
+
+Koder mnoży wielomian informacji przez wielomian generujący:
+
+`s(x) = h(x) · g(x)`
+
+Wynik jest podzielny przez `g(x)`, ale bity informacji nie muszą zajmować osobnego, niezmienionego fragmentu słowa kodowego.
+
+**Droga sygnału:** `h(x)` → mnożenie przez `g(x)` → `s(x)`.
+
+---
+
+## Dekodowanie niesystematyczne
+
+Dekoder dzieli odebrane `y(x)` przez `g(x)`:
+
+`y(x) = q(x) · g(x) + r(x)`
+
+- `r(x) = 0`: słowo spełnia regułę kodu, a iloraz `q(x)` odtwarza informację.
+- `r(x) ≠ 0`: wykryto błąd zgodnie z możliwościami tego kodu.
+
+**Droga sygnału:** `y(x)` → dzielenie przez `g(x)` → iloraz i reszta.
+
+---
+
+## Wariant systematyczny
+
+W kodzie systematycznym bity informacji pozostają na początku słowa kodowego, a `p` bitów kontrolnych trafia na koniec.
+
+Najpierw przesuwamy informację o `p` pozycji: `xᵖ · h(x)`. Potem obliczamy resztę `R(x)` z dzielenia tej wartości przez `g(x)`.
+
+---
+
+## Kodowanie systematyczne
+
+`R(x) = reszta z [xᵖ · h(x)] / g(x)`
+
+`s(x) = xᵖ · h(x) − R(x)`
+
+W `GF(2)` odejmowanie jest XOR. Dlatego uzyskane `s(x)` dzieli się przez `g(x)` bez reszty, a pierwsze bity nadal zapisują `h(x)`.
+
+Przykład: `h = 10101`, `g = 1011`, `p = 3` → `xᵖh = 10101000`, `R = 101`, `s = 10101101`.
+
+---
+
+## Dekodowanie systematyczne
+
+Odebrane słowo dzielimy przez `g(x)` i sprawdzamy resztę. Gdy wynosi zero, część informacyjna to pierwsze `k` bitów słowa kodowego.
+
+`10101101 ÷ 1011` daje resztę `000`; odczytana informacja to `10101`, a bity kontrolne to `101`.
+
+Niezerowa reszta sygnalizuje błąd wykrywalny przez ten kod.
+
+---
+
 ## Kod splotowy
 
 Kodowanie splotowe (*convolutional coding*) tworzy ciąg wyjściowy zależny od bieżących i wcześniejszych bitów wejściowych.
@@ -613,7 +693,7 @@ Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwię
 
 - Odległość Hamminga i waga pomagają opisać właściwości kodu.
 - Kody transmisyjne mogą wspierać synchronizację i odporność na błędy.
-- HDB, „2 z 5” i kody splotowe rozwiązują różne problemy transmisyjne.
+- HDB, „2 z 5”, kody ilorazowe i splotowe rozwiązują różne problemy transmisyjne.
 
       </textarea></section>
     </div></div>

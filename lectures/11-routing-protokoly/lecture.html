@@ -287,7 +287,8 @@
 
 - protokoły i usługi związane z warstwą sieciową,
 - IP i jego nagłówek,
-- adresacja i konfiguracja hosta,
+- adresacja, NAT i konfiguracja hosta,
+- przykłady datagramów i ćwiczenia,
 - DNS,
 - BGP oraz routing między systemami autonomicznymi.
 
@@ -403,11 +404,124 @@ W praktyce preferuje się unikanie fragmentacji przez odpowiedni dobór MTU i me
 
 ---
 
+## Najprostszy datagram IPv4
+
+Nagłówek bez opcji ma **5 słów po 32 bity**, czyli `20 bajtów` (`IHL = 5`).
+
+Przykład z oryginalnego wykładu: `1 bajt` danych daje **21 bajtów** długości całkowitej. Flaga `MF = 0` i przesunięcie `0` oznaczają, że nie jest to fragment większego datagramu.
+
+---
+
+## Fragmentacja: pakiet wejściowy
+
+Przykład obliczeniowy: nagłówek `20 B` i dane `2000 B` dają datagram o długości **2020 B**. Łącze ma `MTU = 1500 B`.
+
+Każdy fragment potrzebuje własnego nagłówka. W pierwszym zmieści się najwyżej `1480 B` danych; wielkość fragmentów oprócz ostatniego musi być wielokrotnością `8 B`.
+
+---
+
+## Fragmentacja: dwa fragmenty
+
+| Fragment | Dane | Długość całkowita | Offset | MF |
+| --- | ---: | ---: | ---: | ---: |
+| Pierwszy | `1480 B` | `1500 B` | `0` | `1` |
+| Drugi | `520 B` | `540 B` | `185` | `0` |
+
+Offset liczymy w blokach po `8 B`: `1480 / 8 = 185`. Oba fragmenty mają tę samą wartość pola **Identyfikacja**, aby odbiorca mógł je złożyć.
+
+---
+
+## Datagram z opcjami
+
+Pole `IHL` podaje długość nagłówka w słowach po `4 B`. Dla `IHL = 6` nagłówek ma `24 B`: standardowe `20 B` oraz `4 B` opcji lub dopełnienia.
+
+**Długość całkowita** nadal obejmuje nagłówek i dane. Przy `100 B` danych wynosi więc `124 B`.
+
+---
+
 ## Adres IPv4
 
 Adres IPv4 ma 32 bity, zwykle zapisane jako cztery oktety, np. `192.0.2.25`.
 
 Maska albo długość prefiksu rozdziela część sieciową i hosta, np. `192.0.2.0/24`.
+
+---
+
+## Adres sieci i maska
+
+Adres sieci powstaje przez bitowe **AND** adresu hosta i maski. Na przykład:
+
+`192.168.0.2 AND 255.255.255.0 = 192.168.0.0`
+
+Maskę `/24` można zapisać jako `255.255.255.0` albo binarnie `11111111.11111111.11111111.00000000`.
+
+---
+
+## Adres sieci i rozgłoszeniowy
+
+Dla `192.168.0.0/24` adres sieci to `192.168.0.0`, a adres rozgłoszeniowy to `192.168.0.255`. Typowe adresy hostów mieszczą się od `192.168.0.1` do `192.168.0.254`.
+
+Przy `h` bitach hosta klasyczna podsieć z adresem rozgłoszeniowym ma `2ʰ − 2` użytecznych adresów. Dla `/24` jest to `254`; dla `/30` są to `2`. Łącza `/31` stanowią osobny przypadek.
+
+---
+
+## Dawny podział adresów na klasy
+
+W historycznym adresowaniu klasowym pierwszy oktet wskazywał klasę: **A** (`0–127`), **B** (`128–191`) albo **C** (`192–223`). Klasa **D** (`224–239`) służy do multicastu.
+
+Współczesne sieci używają prefiksów CIDR, np. `/23` lub `/27`; z samego pierwszego oktetu nie wolno wywnioskować aktualnej maski podsieci.
+
+---
+
+## Adresy prywatne i pętla zwrotna
+
+- `10.0.0.0/8`, `172.16.0.0/12` i `192.168.0.0/16` to zakresy prywatne IPv4.
+- Nie są trasowane przez publiczny Internet bez translacji lub tunelowania.
+- `127.0.0.1` jest adresem pętli zwrotnej (*loopback*): pakiety zostają na własnym hoście.
+
+---
+
+## NAT i maskarada
+
+NAT (*Network Address Translation*) zmienia adresy w pakietach na granicy sieci. W typowym domowym wariancie wiele hostów z adresami prywatnymi korzysta z jednego publicznego adresu IPv4.
+
+Ruter rozróżnia połączenia także po numerach portów. Ten wariant bywa nazywany **maskaradą** lub PAT (*Port Address Translation*).
+
+---
+
+## Ćwiczenia: konfiguracja hosta (1/3)
+
+Dla każdego przypadku sprawdź, czy adres sieci i brama pasują do adresu IP oraz maski hosta.
+
+1. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `172.16.0.1`.
+2. IP `192.168.0.2`, maska `255.255.255.0`, sieć `172.16.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: konfiguracja hosta (2/3)
+
+3. IP `192.168.0.2`, maska `255.255.255.128`, sieć `192.168.0.0`, brama `192.168.0.129`.
+
+4. IP `192.168.0.2`, maska `255.0.0.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: konfiguracja hosta (3/3)
+
+5. IP `127.0.0.1`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+6. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: odpowiedzi
+
+- **1:** brama jest poza siecią hosta.
+- **2:** podany adres sieci jest błędny.
+- **3:** brama `192.168.0.129` jest w drugiej podsieci `/25`.
+- **4:** przy masce `/8` adres sieci powinien być `192.0.0.0`.
+- **5:** `127.0.0.1` jest adresem pętli zwrotnej.
+- **6:** konfiguracja jest spójna.
 
 ---
 

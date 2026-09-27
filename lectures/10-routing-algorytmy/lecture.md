@@ -49,6 +49,40 @@ W Internecie kluczowym protokołem tej warstwy jest IP (*Internet Protocol*).
 
 ---
 
+## Ruter: połączenia i realizacja
+
+Ruter przekazuje pakiety pomiędzy odrębnymi sieciami. Zwykle ma co najmniej dwa interfejsy fizyczne, lecz może też obsługiwać kilka sieci logicznych przez jeden interfejs, np. za pomocą VLAN-ów (*Virtual Local Area Network*).
+
+Pierwsze rutery były komputerami ogólnego przeznaczenia. W urządzeniach dużej wydajności przekazywanie pakietów przyspieszają wyspecjalizowane układy; niezawodność poprawiają m.in. pamięć trwała i redundantne zasilanie.
+
+---
+
+## TTL: granica liczby skoków
+
+Każdy ruter zmniejsza pole **TTL** (*Time To Live*) pakietu IPv4 o jeden. Pakiet z wartością `1` nie jest dalej przekazywany; ruter może odesłać komunikat **ICMP Time Exceeded**.
+
+Dzięki temu pakiet nie krąży bez końca, gdy tablice routingu zawierają pętlę.
+
+---
+
+## Trasy statyczne i dynamiczne
+
+- **Statyczna:** administrator wpisuje trasę ręcznie.
+- **Dynamiczna:** rutery wymieniają informacje i aktualizują trasy protokołem, np. RIP, OSPF lub IS-IS.
+- **Między systemami autonomicznymi:** BGP uwzględnia politykę operatorów i umowy o wymianie ruchu.
+
+IGRP i EIGRP również pojawiały się w oryginalnym wykładzie; są rozwiązaniami związanymi z ekosystemem Cisco.
+
+---
+
+## Wybór trasy i polityka
+
+Metryka trasy może opisywać koszt, opóźnienie lub inne właściwości łącza. Ruter najpierw dopasowuje adres celu do prefiksów w tablicy, a następnie wybiera trasę według reguł protokołu i konfiguracji.
+
+W BGP trasa preferowana przez operatora nie musi być najkrótsza geometrycznie. Znaczenie mają także umowy tranzytowe i peeringowe.
+
+---
+
 ## Tablica routingu
 
 | Prefiks docelowy | Następny skok | Interfejs | Metryka |

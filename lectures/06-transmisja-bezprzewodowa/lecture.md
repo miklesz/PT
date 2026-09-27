@@ -300,6 +300,26 @@ Kanały o szerokości 20 MHz nakładają się. W typowej konfiguracji stosuje si
 
 ---
 
+## 802.11ah: Wi-Fi HaLow
+
+IEEE 802.11ah przenosi Wi-Fi do pasm **poniżej 1 GHz** (dostępne częstotliwości zależą od kraju). Niższa częstotliwość sprzyja większemu zasięgowi niż typowe pasma 2,4 i 5 GHz, kosztem mniejszej przepływności.
+
+Standard przewidziano między innymi dla czujników i urządzeń Internetu rzeczy, w których ważne są oszczędzanie energii oraz obsługa wielu stacji.
+
+---
+
+## Inne rozszerzenia IEEE 802.11
+
+- **802.11d / h / j:** dostosowanie pracy radiowej do wymagań regionalnych.
+- **802.11e:** mechanizmy jakości obsługi i priorytetów ruchu.
+- **802.11i:** mechanizmy bezpieczeństwa sieci WLAN.
+- **802.11f:** historyczna specyfikacja współpracy punktów dostępowych.
+- **802.11aj:** regionalny wariant dla pasma 45 GHz.
+
+Są to rozszerzenia rodziny 802.11, a nie kolejne generacje oznaczane nazwami Wi-Fi 4, 5, 6 i 7.
+
+---
+
 ## WiGig i pasmo 60 GHz
 
 ![Logo Wireless Gigabit Alliance](media/image25.png)
