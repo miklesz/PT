@@ -37,6 +37,18 @@
       .reveal .stack .tcp { grid-column: span 3; background: #dceef2; }
       .reveal .stack .net { background: #e7edf6; }
       .reveal .stack .link { grid-column: span 2; background: #eff0df; }
+      .reveal .tcp-encap { display: grid; gap: 0.16em; margin: 0.65em auto 0.3em; max-width: 1050px; font-size: 0.68em; }
+      .reveal .encap-stage { display: grid; grid-template-columns: 7.5em 1fr; gap: 0.35em; min-height: 3.25em; align-items: stretch; }
+      .reveal .encap-stage > strong { display: grid; place-content: center; padding: 0.15em; border-left: 0.18em solid var(--pt-blue); background: #e7edf6; color: var(--pt-blue); text-align: center; font-size: 0.84em; }
+      .reveal .encap-units { display: flex; min-width: 0; border: 2px solid var(--pt-blue); }
+      .reveal .encap-units span { display: grid; place-content: center; min-width: 0; padding: 0.2em; border-right: 2px solid var(--pt-blue); text-align: center; font-size: 0.64em; line-height: 1.15; }
+      .reveal .encap-units span:last-child { border-right: 0; }
+      .reveal .encap-data { flex: 1 1 0; background: #e6f3d9; }
+      .reveal .encap-udp { flex: 0 0 19%; background: #f2deeb; }
+      .reveal .encap-ip { flex: 0 0 18%; background: #e7e2f5; }
+      .reveal .encap-frame { flex: 0 0 15%; background: #dceef2; }
+      .reveal .encap-stage:last-child .encap-frame:last-child { flex-basis: 9%; }
+      .reveal .encap-caption { color: var(--pt-muted); font-size: 0.68em; text-align: center; }
       .reveal .osi-stack { display: grid; gap: 0.08em; max-width: 720px; margin: 0.35em auto; }
       .reveal .osi-stack > div { display: grid; grid-template-columns: 2.2em 1fr; align-items: center; min-height: 1.55em; border: 2px solid var(--pt-blue); background: #e7edf6; font-size: 0.77em; text-align: left; }
       .reveal .osi-stack > div:nth-child(-n+3) { background: #dceef2; }

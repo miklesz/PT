@@ -471,19 +471,16 @@ W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują now
 
 ## Uproszczony stos protokołów
 
-<div class="columns"><div>
+Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) grupuje funkcje siedmiu warstw OSI w czterech warstwach.
 
-Model TCP/IP (*Transmission Control Protocol / Internet Protocol*) łączy funkcje siedmiu warstw OSI w cztery warstwy:
-
-<div class="stack">
-  <div class="tcp">Aplikacji</div><div>Transportowa</div><div class="net">Internetu</div><div class="link">Dostępu do sieci</div>
+<div class="tcp-encap" role="img" aria-label="Cztery warstwy TCP/IP i kolejne etapy kapsułkowania danych: aplikacja, transport UDP, Internet IP oraz ramka sieciowa">
+  <div class="encap-stage"><strong>Aplikacji</strong><div class="encap-units"><span class="encap-data">Dane</span></div></div>
+  <div class="encap-stage"><strong>Transportowa</strong><div class="encap-units"><span class="encap-udp">Nagłówek UDP</span><span class="encap-data">Dane</span></div></div>
+  <div class="encap-stage"><strong>Internetu</strong><div class="encap-units"><span class="encap-ip">Nagłówek IP</span><span class="encap-udp">Nagłówek UDP</span><span class="encap-data">Dane</span></div></div>
+  <div class="encap-stage"><strong>Dostępu do sieci</strong><div class="encap-units"><span class="encap-frame">Nagłówek ramki</span><span class="encap-ip">Nagłówek IP</span><span class="encap-udp">Nagłówek UDP</span><span class="encap-data">Dane</span><span class="encap-frame">FCS</span></div></div>
 </div>
 
-</div><div>
-
-![Kapsułkowanie w stosie TCP/IP](media/image16.png)
-
-</div></div>
+<p class="encap-caption">Przykład dla UDP/IP w ramce Ethernet: każda niższa warstwa dodaje własne pola.</p>
 
 ---
 
