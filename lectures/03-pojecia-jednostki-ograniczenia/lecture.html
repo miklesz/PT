@@ -63,6 +63,15 @@
       .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
       .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
       .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .decibel-scale { margin: 0.8em auto 0.65em; max-width: 1000px; }
+      .reveal .decibel-range { display: grid; grid-template-columns: 3fr 1fr 3fr; color: var(--pt-muted); font-size: 0.55em; text-align: center; }
+      .reveal .decibel-values { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.12em; margin-top: 0.35em; }
+      .reveal .decibel-values > div { min-width: 0; padding: 0.4em 0.08em; border-top: 0.18em solid; background: #f6f8f9; text-align: center; font-size: 0.68em; }
+      .reveal .decibel-values .loss { border-color: #2a79a1; background: #e6f2f6; }
+      .reveal .decibel-values .unity { border-color: #59676b; background: #edf0ed; }
+      .reveal .decibel-values .gain { border-color: #a65c30; background: #f9ece1; }
+      .reveal .decibel-values strong, .reveal .decibel-values small { display: block; white-space: nowrap; }
+      .reveal .decibel-values small { margin-top: 0.32em; color: var(--pt-muted); font-size: 0.77em; }
       .reveal .packet-layout { display: grid; grid-template-columns: 1.1fr 1.8fr 1.25fr; gap: 0.12em; margin: 0.65em auto 0.75em; max-width: 920px; font-size: 0.72em; }
       .reveal .packet-layout > div { display: grid; align-content: center; min-height: 4.2em; padding: 0.32em 0.45em; border: 2px solid var(--pt-blue); text-align: center; }
       .reveal .packet-layout strong { color: var(--pt-blue); font-size: 1.05em; }
@@ -359,11 +368,22 @@ Sygnał to abstrakcyjny model mierzalnej wielkości zmieniającej się w czasie,
 
 ## Skala logarytmiczna
 
-<div class="packet"><span>−30 dB<br>0,001</span><span>−20 dB<br>0,01</span><span>−10 dB<br>0,1</span><span>0 dB<br>1</span><span>10 dB<br>10</span><span>20 dB<br>100</span><span>30 dB<br>1000</span></div>
+<div class="decibel-scale" role="img" aria-label="Stosunek mocy: minus 30 decybeli to 0,001; minus 20 to 0,01; minus 10 to 0,1; zero to 1; plus 10 to 10; plus 20 to 100; plus 30 to 1000">
+  <div class="decibel-range"><span>Tłumienie</span><span>Punkt odniesienia</span><span>Wzmocnienie</span></div>
+  <div class="decibel-values">
+    <div class="loss"><strong>−30 dB</strong><small>× 0,001</small></div>
+    <div class="loss"><strong>−20 dB</strong><small>× 0,01</small></div>
+    <div class="loss"><strong>−10 dB</strong><small>× 0,1</small></div>
+    <div class="unity"><strong>0 dB</strong><small>× 1</small></div>
+    <div class="gain"><strong>+10 dB</strong><small>× 10</small></div>
+    <div class="gain"><strong>+20 dB</strong><small>× 100</small></div>
+    <div class="gain"><strong>+30 dB</strong><small>× 1000</small></div>
+  </div>
+</div>
 
-Dla stosunku wielkości `X`:
+Każdy krok o **+10 dB** oznacza **10 razy większą moc**. Dla stosunku mocy:
 
-`dB = 10 · log10(X)`
+`L = 10 · log₁₀(P₂/P₁) dB`
 
 ---
 

@@ -50,11 +50,22 @@ Sygnał to abstrakcyjny model mierzalnej wielkości zmieniającej się w czasie,
 
 ## Skala logarytmiczna
 
-<div class="packet"><span>−30 dB<br>0,001</span><span>−20 dB<br>0,01</span><span>−10 dB<br>0,1</span><span>0 dB<br>1</span><span>10 dB<br>10</span><span>20 dB<br>100</span><span>30 dB<br>1000</span></div>
+<div class="decibel-scale" role="img" aria-label="Stosunek mocy: minus 30 decybeli to 0,001; minus 20 to 0,01; minus 10 to 0,1; zero to 1; plus 10 to 10; plus 20 to 100; plus 30 to 1000">
+  <div class="decibel-range"><span>Tłumienie</span><span>Punkt odniesienia</span><span>Wzmocnienie</span></div>
+  <div class="decibel-values">
+    <div class="loss"><strong>−30 dB</strong><small>× 0,001</small></div>
+    <div class="loss"><strong>−20 dB</strong><small>× 0,01</small></div>
+    <div class="loss"><strong>−10 dB</strong><small>× 0,1</small></div>
+    <div class="unity"><strong>0 dB</strong><small>× 1</small></div>
+    <div class="gain"><strong>+10 dB</strong><small>× 10</small></div>
+    <div class="gain"><strong>+20 dB</strong><small>× 100</small></div>
+    <div class="gain"><strong>+30 dB</strong><small>× 1000</small></div>
+  </div>
+</div>
 
-Dla stosunku wielkości `X`:
+Każdy krok o **+10 dB** oznacza **10 razy większą moc**. Dla stosunku mocy:
 
-`dB = 10 · log10(X)`
+`L = 10 · log₁₀(P₂/P₁) dB`
 
 ---
 
