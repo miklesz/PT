@@ -148,12 +148,12 @@ Host potrzebuje zwykle:
 Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. Ruter podejmuje dalszą decyzję trasowania.
 
 <svg class="gateway-path-svg" viewBox="0 0 1160 360" role="img" aria-label="Pakiet z hosta A przechodzi przez bramę domyślną, rutery Internetu i dociera do hosta B w sieci docelowej.">
-  <defs><marker id="gateway-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 Z" fill="#176b80"/></marker><marker id="gateway-short-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L5,3 L0,6 Z" fill="#176b80"/></marker></defs>
+  <defs><marker id="gateway-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 Z" fill="#176b80"/></marker></defs>
   <rect x="35" y="62" width="250" height="230" rx="4" fill="#e7edf6" stroke="#176b80" stroke-width="2"/>
   <text x="160" y="92" text-anchor="middle" class="zone">Twoja sieć lokalna</text><text x="160" y="115" text-anchor="middle" class="subzone">192.0.2.0 / 24</text>
   <rect x="70" y="150" width="120" height="72" rx="4" class="host-box"/><text x="130" y="180" text-anchor="middle" class="node-title">Host A</text><text x="130" y="205" text-anchor="middle" class="node-detail">192.0.2.25</text>
-  <rect x="205" y="140" width="60" height="95" rx="4" class="router-box"/><text x="235" y="173" text-anchor="middle" class="node-title">R1</text><text x="235" y="197" text-anchor="middle" class="node-detail">brama</text><text x="235" y="216" text-anchor="middle" class="node-detail">192.0.2.1</text>
-  <line x1="190" y1="186" x2="204" y2="186" class="gateway-link" marker-end="url(#gateway-short-arrow)"/>
+  <rect x="220" y="140" width="60" height="95" rx="4" class="router-box"/><text x="250" y="173" text-anchor="middle" class="node-title">R1</text><text x="250" y="197" text-anchor="middle" class="node-detail">brama</text><text x="250" y="216" text-anchor="middle" class="node-detail">192.0.2.1</text>
+  <line x1="190" y1="186" x2="219" y2="186" class="gateway-link" marker-end="url(#gateway-arrow)"/>
   <line x1="285" y1="186" x2="425" y2="186" class="gateway-link" marker-end="url(#gateway-arrow)"/><text x="355" y="150" text-anchor="middle" class="link-label route-label">cel poza siecią</text><text x="355" y="168" text-anchor="middle" class="link-label route-label">198.51.100.10</text>
   <rect x="430" y="115" width="295" height="142" rx="4" fill="#eff0df" stroke="#4f7f3d" stroke-width="2"/>
   <text x="577" y="151" text-anchor="middle" class="zone">Internet</text><text x="577" y="176" text-anchor="middle" class="subzone">kolejne rutery wybierają trasę</text>
@@ -163,9 +163,9 @@ Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. 
   <line x1="725" y1="186" x2="865" y2="186" class="gateway-link" marker-end="url(#gateway-arrow)"/>
   <rect x="870" y="62" width="255" height="230" rx="4" fill="#f7e8d1" stroke="#b35c2e" stroke-width="2"/>
   <text x="997" y="92" text-anchor="middle" class="zone">Sieć docelowa</text><text x="997" y="115" text-anchor="middle" class="subzone">198.51.100.0 / 24</text>
-  <rect x="890" y="140" width="60" height="95" rx="4" class="router-box"/><text x="920" y="173" text-anchor="middle" class="node-title">R4</text><text x="920" y="197" text-anchor="middle" class="node-detail">ruter</text>
+  <rect x="875" y="140" width="60" height="95" rx="4" class="router-box"/><text x="905" y="173" text-anchor="middle" class="node-title">R4</text><text x="905" y="197" text-anchor="middle" class="node-detail">ruter</text>
   <rect x="965" y="150" width="140" height="72" rx="4" class="host-box"/><text x="1035" y="180" text-anchor="middle" class="node-title">Host B</text><text x="1035" y="205" text-anchor="middle" class="node-detail">198.51.100.10</text>
-  <line x1="950" y1="186" x2="964" y2="186" class="gateway-link" marker-end="url(#gateway-short-arrow)"/>
+  <line x1="935" y1="186" x2="964" y2="186" class="gateway-link" marker-end="url(#gateway-arrow)"/>
 </svg>
 
 <p class="credits">Brama domyślna to pierwszy ruter używany wtedy, gdy adres docelowy nie należy do lokalnej sieci hosta.</p>
