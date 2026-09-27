@@ -373,7 +373,11 @@ Przeglądarka oraz klient pocztowy są programami korzystającymi z usług tej w
 
 ## Pakiety i ramki
 
-<div class="packet"><span>Nagłówek</span><span>Dane</span><span>Opcjonalne informacje kontrolne</span></div>
+<div class="packet-layout" role="img" aria-label="Jednostka danych: nagłówek, dane i opcjonalna stopka kontrolna">
+  <div class="packet-header"><strong>Nagłówek</strong><small>adresy i pola sterujące</small></div>
+  <div class="packet-data"><strong>Dane</strong><small>przenoszona informacja</small></div>
+  <div class="packet-trailer"><strong>Stopka kontrolna</strong><small>opcjonalna, np. FCS ramki</small></div>
+</div>
 
 - Warstwy tworzą pakiety i ramki o strukturze zdefiniowanej przez protokół.
 - Krótsze jednostki ograniczają skutki błędów i zmniejszają opóźnienia.

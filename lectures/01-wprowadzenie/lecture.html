@@ -46,6 +46,13 @@
       .reveal .packet { display: flex; margin: 0.7em auto; max-width: 850px; border: 2px solid var(--pt-blue); font-size: 0.7em; }
       .reveal .packet span { padding: 0.45em 0.75em; border-right: 2px solid var(--pt-blue); text-align: center; flex: 1; }
       .reveal .packet span:last-child { border-right: 0; flex: 2; }
+      .reveal .packet-layout { display: grid; grid-template-columns: 1.1fr 1.8fr 1.25fr; gap: 0.12em; margin: 0.65em auto 0.75em; max-width: 920px; font-size: 0.72em; }
+      .reveal .packet-layout > div { display: grid; align-content: center; min-height: 4.2em; padding: 0.32em 0.45em; border: 2px solid var(--pt-blue); text-align: center; }
+      .reveal .packet-layout strong { color: var(--pt-blue); font-size: 1.05em; }
+      .reveal .packet-layout small { display: block; margin-top: 0.15em; color: var(--pt-muted); font-size: 0.65em; }
+      .reveal .packet-header { background: #dceef2; }
+      .reveal .packet-data { background: #f7e8d1; }
+      .reveal .packet-trailer { background: #eff0df; border-style: dashed !important; }
       .reveal .ipv4-header { max-width: 1000px; margin: 0.45em auto 0; border: 2px solid var(--pt-blue); font-size: 0.58em; text-align: center; }
       .reveal .ipv4-row, .reveal .ipv4-addresses { display: grid; border-bottom: 2px solid var(--pt-blue); }
       .reveal .ipv4-row.control { grid-template-columns: 1fr 1fr 1.2fr; }
