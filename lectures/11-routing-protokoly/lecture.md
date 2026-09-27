@@ -217,7 +217,7 @@ Przy `h` bitach hosta klasyczna podsieć z adresem rozgłoszeniowym ma `2ʰ − 
 
 ## Dawny podział adresów na klasy
 
-W historycznym adresowaniu klasowym pierwszy oktet wskazywał klasę: **A** (`0–127`), **B** (`128–191`) albo **C** (`192–223`). Klasa **D** (`224–239`) służy do multicastu.
+W historycznym adresowaniu klasowym pierwszy oktet wskazywał klasę: **A** (`0–127`), **B** (`128–191`) albo **C** (`192–223`). Klasa **D** (`224–239`) służy do multicastu, a **E** (`240–255`) obejmuje adresy zarezerwowane; nie wszystkie adresy z tych zakresów nadają się do zwykłego przypisania hostowi.
 
 Współczesne sieci używają prefiksów CIDR, np. `/23` lub `/27`; z samego pierwszego oktetu nie wolno wywnioskować aktualnej maski podsieci.
 

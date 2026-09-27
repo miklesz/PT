@@ -50,7 +50,7 @@ Sygnał to abstrakcyjny model mierzalnej wielkości zmieniającej się w czasie,
 
 ## Skala logarytmiczna
 
-<div class="packet"><span>−30 dB<br>0,001</span><span>−10 dB<br>0,1</span><span>0 dB<br>1</span><span>10 dB<br>10</span><span>20 dB<br>100</span><span>30 dB<br>1000</span></div>
+<div class="packet"><span>−30 dB<br>0,001</span><span>−20 dB<br>0,01</span><span>−10 dB<br>0,1</span><span>0 dB<br>1</span><span>10 dB<br>10</span><span>20 dB<br>100</span><span>30 dB<br>1000</span></div>
 
 Dla stosunku wielkości `X`:
 
@@ -120,6 +120,8 @@ Natężenie strumienia danych faktycznie przepływającego przez kanał, ang. *b
 
 <div class="columns"><div>
 
+<div class="small">
+
 Jeżeli sygnał ciągły nie ma składowych o częstotliwości równej lub większej niż `B`, można go wiernie odtworzyć z próbek pobranych nie rzadziej niż co:
 
 `1 / (2B)`
@@ -128,9 +130,11 @@ Jeżeli sygnał ciągły nie ma składowych o częstotliwości równej lub więk
 
 Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzenie o próbkowaniu.
 
+</div>
+
 </div><div>
 
-![Pasmo sygnału ograniczone do B](media/image2.png)
+<img src="media/image2.png" alt="Pasmo sygnału ograniczone do B" height="300">
 
 </div></div>
 
@@ -168,9 +172,9 @@ Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzen
 
 ## Prawo Sarnoffa
 
-<div class="columns"><div>
+<div class="columns"><div class="small">
 
-> Wartość sieci telekomunikacyjnej jest proporcjonalna do liczby jej odbiorców.
+**Wartość sieci telekomunikacyjnej jest proporcjonalna do liczby jej odbiorców.**
 
 Dotyczy przede wszystkim sieci nadawczych: radia, telewizji i portali, w których każdy nowy odbiorca zwiększa wartość sieci liniowo.
 
@@ -178,11 +182,23 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 
 </div><div>
 
-<img src="media/image6.jpg" alt="David Sarnoff" height="380">
-
-![Ilustracja prawa Sarnoffa](media/image7.jpeg)
+<img src="media/image6.jpg" alt="David Sarnoff" height="220">
 
 </div></div>
+
+---
+
+## Prawo Sarnoffa: ilustracja
+
+<img src="media/image7.jpeg" alt="Ilustracja prawa Sarnoffa: jeden nadawca i wielu odbiorców" height="310">
+
+Każdy kolejny odbiorca zwiększa wartość sieci nadawczej w modelu liniowym.
+
+---
+
+## Prawo Sarnoffa: film
+
+<video controls preload="metadata"><source src="media/vY939jNAM14.mp4" type="video/mp4"></video>
 
 ---
 
@@ -215,6 +231,12 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 ![Liczba połączeń w sieci](media/image8.png)
 
 </div></div>
+
+---
+
+## Prawo Metcalfe'a: film
+
+<video controls preload="metadata"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
 
 ---
 

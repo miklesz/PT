@@ -124,7 +124,7 @@
       .reveal .hdb3-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em; max-width: 790px; margin: 0.1em auto 0; color: var(--pt-muted); font-size: 0.4em; }
       .reveal .hdb3-legend > div { display: grid; grid-template-columns: auto 1fr; gap: 0.4em; align-items: center; padding: 0.35em 0.5em; border-top: 2px solid #cfd9de; text-align: left; }
       .reveal .hdb3-legend strong { color: var(--pt-blue); font-size: 1.25em; }
-      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 35vh; margin: 0.15em auto 0; overflow: visible; }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 30vh; margin: 0.15em auto 0; overflow: visible; }
       .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
       .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
       .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
@@ -224,7 +224,7 @@
       .reveal .routing-arrow { display: grid; justify-items: center; color: #007c91; font-size: 1.05em; font-weight: 700; line-height: 0.8; }.reveal .routing-arrow small { margin-top: 0.2em; color: var(--pt-muted); font-size: 0.36em; font-weight: 600; }
       .reveal .algorithm-demo { max-width: 1040px; margin: 0.35em auto 0; }.reveal .algorithm-demo svg { display: block; width: 100%; max-height: 42vh; margin: 0 auto; overflow: visible; }
       .reveal .algo-edge line, .reveal .algo-edge path { fill: none; stroke: #9aa9b5; stroke-width: 3; }.reveal .algo-edge text { fill: #5b6b78; font-size: 17px; font-weight: 700; text-anchor: middle; }.reveal .algo-edge.active line, .reveal .algo-edge.active path { stroke: #007c91; stroke-width: 5; }.reveal .algo-edge.active text { fill: #007c91; }
-      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
+      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #344b5d; font-size: 19px; font-weight: 700; text-anchor: middle; paint-order: stroke; stroke: #fff; stroke-width: 5px; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
       .reveal .algorithm-controls { display: flex; justify-content: center; align-items: center; gap: 0.8em; margin: 0.18em auto 0; }.reveal .algorithm-controls button { width: 2em; height: 2em; border: 2px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; cursor: pointer; }.reveal .algorithm-controls button:hover { background: #e9f8fa; }.reveal .algorithm-controls strong { min-width: 14em; color: #006779; font-size: 0.54em; text-align: center; }
       .reveal .algorithm-hint { margin: 0.2em 0 0; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
       .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
@@ -329,7 +329,7 @@ Sygnał to abstrakcyjny model mierzalnej wielkości zmieniającej się w czasie,
 
 ## Skala logarytmiczna
 
-<div class="packet"><span>−30 dB<br>0,001</span><span>−10 dB<br>0,1</span><span>0 dB<br>1</span><span>10 dB<br>10</span><span>20 dB<br>100</span><span>30 dB<br>1000</span></div>
+<div class="packet"><span>−30 dB<br>0,001</span><span>−20 dB<br>0,01</span><span>−10 dB<br>0,1</span><span>0 dB<br>1</span><span>10 dB<br>10</span><span>20 dB<br>100</span><span>30 dB<br>1000</span></div>
 
 Dla stosunku wielkości `X`:
 
@@ -399,6 +399,8 @@ Natężenie strumienia danych faktycznie przepływającego przez kanał, ang. *b
 
 <div class="columns"><div>
 
+<div class="small">
+
 Jeżeli sygnał ciągły nie ma składowych o częstotliwości równej lub większej niż `B`, można go wiernie odtworzyć z próbek pobranych nie rzadziej niż co:
 
 `1 / (2B)`
@@ -407,9 +409,11 @@ Jeżeli sygnał ciągły nie ma składowych o częstotliwości równej lub więk
 
 Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzenie o próbkowaniu.
 
+</div>
+
 </div><div>
 
-![Pasmo sygnału ograniczone do B](media/image2.png)
+<img src="media/image2.png" alt="Pasmo sygnału ograniczone do B" height="300">
 
 </div></div>
 
@@ -447,9 +451,9 @@ Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzen
 
 ## Prawo Sarnoffa
 
-<div class="columns"><div>
+<div class="columns"><div class="small">
 
-> Wartość sieci telekomunikacyjnej jest proporcjonalna do liczby jej odbiorców.
+**Wartość sieci telekomunikacyjnej jest proporcjonalna do liczby jej odbiorców.**
 
 Dotyczy przede wszystkim sieci nadawczych: radia, telewizji i portali, w których każdy nowy odbiorca zwiększa wartość sieci liniowo.
 
@@ -457,11 +461,23 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 
 </div><div>
 
-<img src="media/image6.jpg" alt="David Sarnoff" height="380">
-
-![Ilustracja prawa Sarnoffa](media/image7.jpeg)
+<img src="media/image6.jpg" alt="David Sarnoff" height="220">
 
 </div></div>
+
+---
+
+## Prawo Sarnoffa: ilustracja
+
+<img src="media/image7.jpeg" alt="Ilustracja prawa Sarnoffa: jeden nadawca i wielu odbiorców" height="310">
+
+Każdy kolejny odbiorca zwiększa wartość sieci nadawczej w modelu liniowym.
+
+---
+
+## Prawo Sarnoffa: film
+
+<video controls preload="metadata"><source src="media/vY939jNAM14.mp4" type="video/mp4"></video>
 
 ---
 
@@ -494,6 +510,12 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 ![Liczba połączeń w sieci](media/image8.png)
 
 </div></div>
+
+---
+
+## Prawo Metcalfe'a: film
+
+<video controls preload="metadata"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
 
 ---
 

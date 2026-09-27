@@ -59,9 +59,18 @@ Stacje samodzielnie próbują uzyskać dostęp. Kolizje są możliwe, ale protok
 
 **Kontrolowane**
 
-Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji transmisji. Przykłady historyczne: przepytywanie stacji oraz przekazywanie znacznika w magistrali lub pierścieniu.
+Dostęp jest przydzielany według ustalonej reguły. Ogranicza to kolizje kosztem dodatkowej organizacji transmisji.
 
 </div></div>
+
+---
+
+## Historyczne metody kontrolowane
+
+- **Przepytywanie:** urządzenie centralne pyta stacje, czy chcą nadawać.
+- **Przekazywanie znacznika:** prawo nadawania przechodzi między stacjami w magistrali albo pierścieniu.
+- **Pierścień szczelinowy:** po pierścieniu krążą szczeliny gotowe na dane.
+- **Wtrącany rejestr:** stacja wprowadza własne dane do obiegu pierścienia.
 
 ---
 
@@ -74,6 +83,8 @@ Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji t
 ## Skąd wzięło się ALOHA?
 
 Metodę opracowano dla sieci ALOHAnet na Uniwersytecie Hawajskim. Stacje radiowe współdzieliły kanał i przesyłały dane do centralnej stacji, więc potrzebowały reguły ponawiania transmisji po kolizji.
+
+<img src="media/image5.gif" alt="Wyspy Hawajskie, między którymi łączność zapewniał ALOHAnet" height="300">
 
 ---
 
@@ -108,6 +119,14 @@ To prosty protokół, ale przy większym obciążeniu często dochodzi do kolizj
 <div class="media-gallery single-visual">
   <img src="media/image7.png" alt="Kolizje w ALOHA">
 </div>
+
+---
+
+## ALOHA: kiedy ramki się nakładają?
+
+Kolizja występuje, gdy ramka innej stacji rozpocznie się w takim momencie, że jej sygnał nakłada się na choćby część rozpatrywanej ramki. W zwykłym ALOHA możliwy okres kolizji jest dłuższy niż w wariancie szczelinowym.
+
+<img src="media/image8.png" alt="Okno czasowe, w którym druga ramka może kolidować z pierwszą w ALOHA" height="280">
 
 ---
 
@@ -163,7 +182,13 @@ CSMA/CA (*Carrier Sense Multiple Access with Collision Avoidance*, wielodostęp 
 - opcjonalnie RTS/CTS (*Request to Send / Clear to Send*), czyli krótka wymiana rezerwująca medium,
 - potwierdzenia odbioru.
 
-![Jednoczesna chęć nadawania w CSMA](media/image10.png)
+---
+
+## Jednoczesna chęć nadawania
+
+<img src="media/image10.png" alt="Dwie stacje podejmują próbę nadawania w tym samym czasie" height="430">
+
+Samo nasłuchiwanie nie wyklucza kolizji: sygnał drugiej stacji potrzebuje czasu, by dotrzeć do nadajnika.
 
 ---
 

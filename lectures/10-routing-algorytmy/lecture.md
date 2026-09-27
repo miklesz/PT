@@ -53,6 +53,8 @@ W Internecie kluczowym protokołem tej warstwy jest IP (*Internet Protocol*).
 
 Ruter przekazuje pakiety pomiędzy odrębnymi sieciami. Zwykle ma co najmniej dwa interfejsy fizyczne, lecz może też obsługiwać kilka sieci logicznych przez jeden interfejs, np. za pomocą VLAN-ów (*Virtual Local Area Network*).
 
+Historyczne sieci ATM (*Asynchronous Transfer Mode*) i Frame Relay rozdzielały taki ruch przez kanały wirtualne: stałe **PVC** (*Permanent Virtual Circuit*) lub zestawiane na żądanie **SVC** (*Switched Virtual Circuit*).
+
 Pierwsze rutery były komputerami ogólnego przeznaczenia. W urządzeniach dużej wydajności przekazywanie pakietów przyspieszają wyspecjalizowane układy; niezawodność poprawiają m.in. pamięć trwała i redundantne zasilanie.
 
 ---
@@ -80,6 +82,8 @@ IGRP i EIGRP również pojawiały się w oryginalnym wykładzie; są rozwiązani
 Metryka trasy może opisywać koszt, opóźnienie lub inne właściwości łącza. Ruter najpierw dopasowuje adres celu do prefiksów w tablicy, a następnie wybiera trasę według reguł protokołu i konfiguracji.
 
 W BGP trasa preferowana przez operatora nie musi być najkrótsza geometrycznie. Znaczenie mają także umowy tranzytowe i peeringowe.
+
+Oprócz adresu celu polityka sieci może uwzględniać obciążenie, jakość usługi lub oznaczenia pakietów, np. DSCP (*Differentiated Services Code Point*). Nie oznacza to, że każdy protokół rutingu analizuje te pola przy każdym pakiecie.
 
 ---
 
@@ -300,6 +304,14 @@ Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
 ## Od algorytmów do protokołów
 
 Algorytmy są modelem decyzji trasowania. Protokoły routingu określają, jak rutery wymieniają informacje, budują widok sieci i aktualizują tablice.
+
+---
+
+## Historyczny protokół IPX
+
+**IPX** (*Internetwork Packet Exchange*) był protokołem warstwy sieciowej w sieciach Novell NetWare. Zapewniał adresowanie i przekazywanie pakietów między sieciami lokalnymi oraz rozległymi.
+
+Podobnie jak IP, sam IPX nie gwarantował dostarczenia każdego pakietu. W rodzinie protokołów współpracował z **SPX** (*Sequenced Packet Exchange*), który realizował usługi transportowe.
 
 ---
 

@@ -63,9 +63,12 @@
 
 Złącze stosowane dla sygnałów wysokiej częstotliwości, typowo do około 18 GHz. Jest większe i mechanicznie solidniejsze od BNC.
 
+Na zdjęciach: u góry **wtyk**, u dołu **gniazdo**.
+
 </div><div>
 
-<img src="media/image5.png" alt="Złącze N" height="300">
+<img src="media/image5.png" alt="Złącze N: wtyk" height="270">
+<img src="media/image6.png" alt="Złącze N: gniazdo" height="270">
 
 </div></div>
 
@@ -83,12 +86,27 @@ Złącze stosowane dla sygnałów wysokiej częstotliwości, typowo do około 18
 
 - Angielska nazwa: *twisted pair*.
 - Osiem miedzianych żył tworzy cztery pary.
-- Skręt par ogranicza przesłuchy, czyli przenikanie sygnału między parami, oraz zakłócenia.
 - Izolacja żył jest zwykle polietylenowa, a wspólna powłoka z PVC (*polyvinyl chloride*, polichlorek winylu).
 
 </div><div>
 
 ![Para skręcona](media/image7.png)
+
+</div></div>
+
+---
+
+## Dlaczego przewody są skręcone?
+
+<div class="columns"><div>
+
+- Każda para jest **linią symetryczną**: odbiornik porównuje napięcia dwóch przewodów.
+- Skręt pomaga ograniczać zakłócenia z otoczenia i przesłuch, czyli przenikanie sygnału między parami.
+- Różny skok skrętu par ogranicza ich wzajemne oddziaływanie.
+
+</div><div>
+
+<img src="media/image13.png" alt="Cztery skręcone pary wewnątrz kabla" height="340">
 
 </div></div>
 
@@ -112,9 +130,18 @@ Jej popularność wynika z dobrego stosunku możliwości do ceny oraz łatwości
 
 ---
 
+## Skrętka zakończona złączem
+
+<div class="media-gallery">
+  <img src="media/image10.png" alt="Kabel połączeniowy z wtykiem modularnym">
+  <img src="media/image12.png" alt="Zbliżenie wtyków na końcach skrętki">
+</div>
+
+---
+
 ## Rodzaje skrętek: UTP i FTP
 
-<div class="columns"><div>
+<div class="small">
 
 **UTP — Unshielded Twisted Pair**
 
@@ -124,7 +151,7 @@ Bez ekranowania. Najczęstszy wariant w typowych sieciach lokalnych (LAN, *Local
 
 Folia otacza cały kabel. Przydatna, gdy potrzebna jest dodatkowa ochrona przed zakłóceniami.
 
-</div></div>
+</div>
 
 ---
 
@@ -214,7 +241,7 @@ Ekran z oplotu wokół kabla oraz folia wokół każdej pary. Stosowany w środo
 
 <div class="columns"><div>
 
-Kable z wypełnieniem żelowym zwiększają odporność na warunki atmosferyczne i zakłócenia.
+Wypełnienie żelowe ogranicza wnikanie i wzdłużne rozchodzenie się wilgoci w kablu prowadzonym na zewnątrz lub w ziemi. Ochrona przed zakłóceniami elektromagnetycznymi zależy od konstrukcji par i ekranowania, nie od samego żelu.
 
 </div><div>
 
@@ -329,6 +356,24 @@ Pary transmisyjne są zamienione między końcami kabla. Historycznie umożliwia
 
 ---
 
+## Wtyki i zaciskarki
+
+<div class="columns"><div>
+
+**Wtyk ekranowany** ma metalową obudowę połączoną z ekranem kabla.
+
+<img src="media/image30.png" alt="Ekranowane wtyki modularne" height="260">
+
+</div><div>
+
+**Zaciskarka** mocuje styki wtyku na żyłach kabla. Narzędzia mogą obsługiwać także mniejsze wtyki telefoniczne.
+
+<img src="media/image31.png" alt="Zaciskarki do wtyków modularnych" height="260">
+
+</div></div>
+
+---
+
 ## Okablowanie Ethernet UTP
 
 <video controls preload="metadata"><source src="media/slide-032-media3.mp4" type="video/mp4"></video>
@@ -370,6 +415,14 @@ Pary transmisyjne są zamienione między końcami kabla. Historycznie umożliwia
 Historyczne złącze IBM Token Ring było **hermafrodytyczne**: dwa jednakowe końce mogły się ze sobą łączyć. Wykorzystywało klips blokujący.
 
 Jego rozmiar, liczba elementów i koszt utrudniały gęsty montaż w panelach krosowych. Oryginalny wykład zestawia je ze znacznie mniejszym złączem używanym w okablowaniu Ethernetu.
+
+---
+
+## Dawny standard IEEE 802.12
+
+IEEE 802.12 opisywał metodę dostępu **Demand Priority** dla sieci 100 Mb/s. Dopuszczał skrętkę symetryczną **100 Ω** kategorii 3–5, kabel ekranowany **150 Ω** oraz światłowód.
+
+To historyczny standard: [IEEE oznacza go dziś jako wycofany](https://standards.ieee.org/ieee/802.12/1172/). Nie należy go mylić ze współczesnym Ethernetem IEEE 802.3.
 
 ---
 

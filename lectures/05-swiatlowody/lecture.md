@@ -98,6 +98,14 @@ Laser może dostarczyć intensywną, łatwą do modulowania wiązkę światła. 
 
 ---
 
+## Odporność i tłumienie światłowodu
+
+- Światłowód jest odporny na zewnętrzne zakłócenia elektromagnetyczne, bo sygnał przenosi światło, a nie prąd w przewodzie.
+- Dla typowego włókna jednomodowego przy długości fali około 1550 nm tłumienie może wynosić około **0,2 dB/km**. Nie jest to wartość stała dla każdego włókna i każdej długości fali.
+- Niska stopa błędów zależy także od nadajnika, odbiornika, połączeń i zapasu mocy całego toru.
+
+---
+
 ## Zasięg i trwałość łącza optycznego
 
 - Małe tłumienie pozwala budować odcinki bez wzmacniacza liczące dziesiątki kilometrów; w starszych przykładach podawano **80–100 km**. Rzeczywisty zasięg zależy od włókna, długości fali, nadajnika i budżetu mocy.
@@ -116,21 +124,17 @@ Laser może dostarczyć intensywną, łatwą do modulowania wiązkę światła. 
 
 <div class="columns"><div>
 
-**Wielomodowe**
+**Wielomodowe (MMF, *multimode fiber*)**
 
 Wiele dróg propagacji światła w rdzeniu. Typowe dla krótszych odcinków i sieci lokalnych.
 W omawianych przykładach średnica rdzenia wynosi **50 lub 62,5 µm**.
 
 </div><div>
 
-**Jednomodowe**
+**Jednomodowe (SMF, *single-mode fiber*)**
 
 Jedna dominująca droga propagacji. Mała dyspersja i zastosowanie w długich łączach.
 Średnica rdzenia jest znacznie mniejsza, w przybliżeniu **5–10 µm**.
-
-</div><div>
-
-![Włókna jedno- i wielomodowe](media/typy-swiatlowodow.png)
 
 </div></div>
 
@@ -154,6 +158,34 @@ Współczynnik zmienia się skokowo na granicy rdzenia i płaszcza; różne drog
 
 ---
 
+## Dlaczego profil gradientowy pomaga?
+
+- Rdzeń ma warstwy o różnym domieszkowaniu: współczynnik załamania jest największy przy osi i maleje ku płaszczowi.
+- Promień biegnący dalej od osi pokonuje dłuższą drogę, ale w obszarze o mniejszym współczynniku załamania rozchodzi się szybciej.
+- Czasy przejścia różnych modów stają się do siebie bardziej zbliżone, co ogranicza dyspersję międzymodową.
+
+---
+
+## Bieg promieni: włókno gradientowe
+
+<img src="media/image9.png" alt="Łukowe drogi promieni we włóknie gradientowym" height="390">
+
+---
+
+## Dlaczego profil skokowy rozmywa impuls?
+
+W rdzeniu skokowym promienie wprowadzone pod różnymi kątami odbijają się na granicy rdzenia i płaszcza. W tym samym materiale poruszają się z podobną prędkością, lecz pokonują różne długości drogi.
+
+Docierają więc do końca włókna w różnym czasie. Poszerzenie impulsu ogranicza odstęp między kolejnymi impulsami, a przez to przepływność i zasięg łącza.
+
+---
+
+## Bieg promieni: włókno skokowe
+
+<img src="media/image10.png" alt="Zygzakowate drogi promieni we włóknie skokowym" height="390">
+
+---
+
 ## Materiał: wielomodowość
 
 <video controls preload="metadata"><source src="media/slide-021-media4.mp4" type="video/mp4"></video>
@@ -164,6 +196,7 @@ Współczynnik zmienia się skokowo na granicy rdzenia i płaszcza; różne drog
 
 - Ma mały rdzeń i prowadzi zasadniczo jeden mod.
 - Ogranicza dyspersję międzymodową.
+- W typowych łączach wykorzystuje źródło laserowe; odbiornik rejestruje mod podstawowy.
 - Jest podstawą łączy dalekiego zasięgu i sieci szkieletowych.
 
 ---
@@ -243,6 +276,7 @@ Szczególnie ważne są mikro- i makro-zgięcia.
 - Mogą wynikać z nacisku, naprężeń i niedoskonałości konstrukcji kabla.
 - Mogą powstawać podczas produkcji włókna lub późniejszego montażu.
 - Powodują mieszanie modów i ucieczkę części światła do płaszcza, czyli dodatkową utratę mocy.
+- We włóknie jednomodowym zaburzają rozkład pola modu podstawowego i również mogą zwiększać tłumienie.
 
 ---
 
@@ -268,7 +302,7 @@ Szczególnie ważne są mikro- i makro-zgięcia.
 ## Inne przyczyny strat
 
 - koncentracja zanieczyszczeń w szkle,
-- straty na złączach i spawach, zwłaszcza przy przesunięciu osi lub rozsunięciu czół włókien,
+- straty na złączach i spawach, zwłaszcza przy przesunięciu osi, rozsunięciu lub kątowym niedopasowaniu czół włókien,
 - niewłaściwy montaż,
 - starzenie materiału i wpływ środowiska.
 
@@ -310,11 +344,20 @@ Różne długości fali poruszają się z różną prędkością; obejmuje dyspe
 
 ---
 
+## Dyspersja międzymodowa
+
+W rdzeniu wielomodowym impuls jest sumą modów biegnących różnymi drogami. Włókno skokowe daje im szczególnie różne czasy przejścia, więc impuls na wyjściu staje się szerszy i zwykle słabszy.
+
+Włókno gradientowe ogranicza tę różnicę czasów, a dzięki temu pozwala zwiększyć użyteczne pasmo transmisji. Zniekształcenie rośnie z długością włókna.
+
+---
+
 ## Dyspersja chromatyczna
 
 - **Materiałowa:** współczynnik załamania zależy od długości fali.
 - **Falowodowa:** właściwości propagacji wynikają także z geometrii rdzenia i płaszcza.
 - Obie ograniczają maksymalną odległość i przepływność łącza.
+- Występuje zarówno we włóknach jednomodowych, jak i wielomodowych; w tych drugich dochodzi także dyspersja międzymodowa.
 
 ---
 

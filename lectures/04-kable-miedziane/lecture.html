@@ -124,7 +124,7 @@
       .reveal .hdb3-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em; max-width: 790px; margin: 0.1em auto 0; color: var(--pt-muted); font-size: 0.4em; }
       .reveal .hdb3-legend > div { display: grid; grid-template-columns: auto 1fr; gap: 0.4em; align-items: center; padding: 0.35em 0.5em; border-top: 2px solid #cfd9de; text-align: left; }
       .reveal .hdb3-legend strong { color: var(--pt-blue); font-size: 1.25em; }
-      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 35vh; margin: 0.15em auto 0; overflow: visible; }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 30vh; margin: 0.15em auto 0; overflow: visible; }
       .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
       .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
       .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
@@ -224,7 +224,7 @@
       .reveal .routing-arrow { display: grid; justify-items: center; color: #007c91; font-size: 1.05em; font-weight: 700; line-height: 0.8; }.reveal .routing-arrow small { margin-top: 0.2em; color: var(--pt-muted); font-size: 0.36em; font-weight: 600; }
       .reveal .algorithm-demo { max-width: 1040px; margin: 0.35em auto 0; }.reveal .algorithm-demo svg { display: block; width: 100%; max-height: 42vh; margin: 0 auto; overflow: visible; }
       .reveal .algo-edge line, .reveal .algo-edge path { fill: none; stroke: #9aa9b5; stroke-width: 3; }.reveal .algo-edge text { fill: #5b6b78; font-size: 17px; font-weight: 700; text-anchor: middle; }.reveal .algo-edge.active line, .reveal .algo-edge.active path { stroke: #007c91; stroke-width: 5; }.reveal .algo-edge.active text { fill: #007c91; }
-      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
+      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #344b5d; font-size: 19px; font-weight: 700; text-anchor: middle; paint-order: stroke; stroke: #fff; stroke-width: 5px; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
       .reveal .algorithm-controls { display: flex; justify-content: center; align-items: center; gap: 0.8em; margin: 0.18em auto 0; }.reveal .algorithm-controls button { width: 2em; height: 2em; border: 2px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; cursor: pointer; }.reveal .algorithm-controls button:hover { background: #e9f8fa; }.reveal .algorithm-controls strong { min-width: 14em; color: #006779; font-size: 0.54em; text-align: center; }
       .reveal .algorithm-hint { margin: 0.2em 0 0; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
       .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
@@ -342,9 +342,12 @@
 
 Złącze stosowane dla sygnałów wysokiej częstotliwości, typowo do około 18 GHz. Jest większe i mechanicznie solidniejsze od BNC.
 
+Na zdjęciach: u góry **wtyk**, u dołu **gniazdo**.
+
 </div><div>
 
-<img src="media/image5.png" alt="Złącze N" height="300">
+<img src="media/image5.png" alt="Złącze N: wtyk" height="270">
+<img src="media/image6.png" alt="Złącze N: gniazdo" height="270">
 
 </div></div>
 
@@ -362,12 +365,27 @@ Złącze stosowane dla sygnałów wysokiej częstotliwości, typowo do około 18
 
 - Angielska nazwa: *twisted pair*.
 - Osiem miedzianych żył tworzy cztery pary.
-- Skręt par ogranicza przesłuchy, czyli przenikanie sygnału między parami, oraz zakłócenia.
 - Izolacja żył jest zwykle polietylenowa, a wspólna powłoka z PVC (*polyvinyl chloride*, polichlorek winylu).
 
 </div><div>
 
 ![Para skręcona](media/image7.png)
+
+</div></div>
+
+---
+
+## Dlaczego przewody są skręcone?
+
+<div class="columns"><div>
+
+- Każda para jest **linią symetryczną**: odbiornik porównuje napięcia dwóch przewodów.
+- Skręt pomaga ograniczać zakłócenia z otoczenia i przesłuch, czyli przenikanie sygnału między parami.
+- Różny skok skrętu par ogranicza ich wzajemne oddziaływanie.
+
+</div><div>
+
+<img src="media/image13.png" alt="Cztery skręcone pary wewnątrz kabla" height="340">
 
 </div></div>
 
@@ -391,9 +409,18 @@ Jej popularność wynika z dobrego stosunku możliwości do ceny oraz łatwości
 
 ---
 
+## Skrętka zakończona złączem
+
+<div class="media-gallery">
+  <img src="media/image10.png" alt="Kabel połączeniowy z wtykiem modularnym">
+  <img src="media/image12.png" alt="Zbliżenie wtyków na końcach skrętki">
+</div>
+
+---
+
 ## Rodzaje skrętek: UTP i FTP
 
-<div class="columns"><div>
+<div class="small">
 
 **UTP — Unshielded Twisted Pair**
 
@@ -403,7 +430,7 @@ Bez ekranowania. Najczęstszy wariant w typowych sieciach lokalnych (LAN, *Local
 
 Folia otacza cały kabel. Przydatna, gdy potrzebna jest dodatkowa ochrona przed zakłóceniami.
 
-</div></div>
+</div>
 
 ---
 
@@ -493,7 +520,7 @@ Ekran z oplotu wokół kabla oraz folia wokół każdej pary. Stosowany w środo
 
 <div class="columns"><div>
 
-Kable z wypełnieniem żelowym zwiększają odporność na warunki atmosferyczne i zakłócenia.
+Wypełnienie żelowe ogranicza wnikanie i wzdłużne rozchodzenie się wilgoci w kablu prowadzonym na zewnątrz lub w ziemi. Ochrona przed zakłóceniami elektromagnetycznymi zależy od konstrukcji par i ekranowania, nie od samego żelu.
 
 </div><div>
 
@@ -608,6 +635,24 @@ Pary transmisyjne są zamienione między końcami kabla. Historycznie umożliwia
 
 ---
 
+## Wtyki i zaciskarki
+
+<div class="columns"><div>
+
+**Wtyk ekranowany** ma metalową obudowę połączoną z ekranem kabla.
+
+<img src="media/image30.png" alt="Ekranowane wtyki modularne" height="260">
+
+</div><div>
+
+**Zaciskarka** mocuje styki wtyku na żyłach kabla. Narzędzia mogą obsługiwać także mniejsze wtyki telefoniczne.
+
+<img src="media/image31.png" alt="Zaciskarki do wtyków modularnych" height="260">
+
+</div></div>
+
+---
+
 ## Okablowanie Ethernet UTP
 
 <video controls preload="metadata"><source src="media/slide-032-media3.mp4" type="video/mp4"></video>
@@ -649,6 +694,14 @@ Pary transmisyjne są zamienione między końcami kabla. Historycznie umożliwia
 Historyczne złącze IBM Token Ring było **hermafrodytyczne**: dwa jednakowe końce mogły się ze sobą łączyć. Wykorzystywało klips blokujący.
 
 Jego rozmiar, liczba elementów i koszt utrudniały gęsty montaż w panelach krosowych. Oryginalny wykład zestawia je ze znacznie mniejszym złączem używanym w okablowaniu Ethernetu.
+
+---
+
+## Dawny standard IEEE 802.12
+
+IEEE 802.12 opisywał metodę dostępu **Demand Priority** dla sieci 100 Mb/s. Dopuszczał skrętkę symetryczną **100 Ω** kategorii 3–5, kabel ekranowany **150 Ω** oraz światłowód.
+
+To historyczny standard: [IEEE oznacza go dziś jako wycofany](https://standards.ieee.org/ieee/802.12/1172/). Nie należy go mylić ze współczesnym Ethernetem IEEE 802.3.
 
 ---
 

@@ -124,7 +124,7 @@
       .reveal .hdb3-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em; max-width: 790px; margin: 0.1em auto 0; color: var(--pt-muted); font-size: 0.4em; }
       .reveal .hdb3-legend > div { display: grid; grid-template-columns: auto 1fr; gap: 0.4em; align-items: center; padding: 0.35em 0.5em; border-top: 2px solid #cfd9de; text-align: left; }
       .reveal .hdb3-legend strong { color: var(--pt-blue); font-size: 1.25em; }
-      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 35vh; margin: 0.15em auto 0; overflow: visible; }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 30vh; margin: 0.15em auto 0; overflow: visible; }
       .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
       .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
       .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
@@ -224,7 +224,7 @@
       .reveal .routing-arrow { display: grid; justify-items: center; color: #007c91; font-size: 1.05em; font-weight: 700; line-height: 0.8; }.reveal .routing-arrow small { margin-top: 0.2em; color: var(--pt-muted); font-size: 0.36em; font-weight: 600; }
       .reveal .algorithm-demo { max-width: 1040px; margin: 0.35em auto 0; }.reveal .algorithm-demo svg { display: block; width: 100%; max-height: 42vh; margin: 0 auto; overflow: visible; }
       .reveal .algo-edge line, .reveal .algo-edge path { fill: none; stroke: #9aa9b5; stroke-width: 3; }.reveal .algo-edge text { fill: #5b6b78; font-size: 17px; font-weight: 700; text-anchor: middle; }.reveal .algo-edge.active line, .reveal .algo-edge.active path { stroke: #007c91; stroke-width: 5; }.reveal .algo-edge.active text { fill: #007c91; }
-      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #5b6b78; font-size: 19px; font-weight: 700; text-anchor: middle; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
+      .reveal .algo-node circle { fill: #fff; stroke: var(--pt-blue); stroke-width: 4; }.reveal .algo-node .node-name { fill: var(--pt-blue); font-size: 24px; font-weight: 700; text-anchor: middle; }.reveal .algo-node .node-distance { fill: #344b5d; font-size: 19px; font-weight: 700; text-anchor: middle; paint-order: stroke; stroke: #fff; stroke-width: 5px; }.reveal .algo-node.settled circle { fill: #e4f0e7; stroke: #4f7f3d; }.reveal .algo-node.current circle { fill: #e9f8fa; stroke: #007c91; stroke-width: 6; }
       .reveal .algorithm-controls { display: flex; justify-content: center; align-items: center; gap: 0.8em; margin: 0.18em auto 0; }.reveal .algorithm-controls button { width: 2em; height: 2em; border: 2px solid var(--pt-blue); border-radius: 50%; background: #fff; color: var(--pt-blue); font-size: 0.58em; font-weight: 700; cursor: pointer; }.reveal .algorithm-controls button:hover { background: #e9f8fa; }.reveal .algorithm-controls strong { min-width: 14em; color: #006779; font-size: 0.54em; text-align: center; }
       .reveal .algorithm-hint { margin: 0.2em 0 0; color: var(--pt-muted); font-size: 0.46em; text-align: center; }
       .reveal .dijkstra-explanation, .reveal .flow-demo p, .reveal .dinic-demo p { max-width: 900px; margin: 0.3em auto 0; color: var(--pt-ink); font-size: 0.55em; line-height: 1.28; text-align: center; }
@@ -329,6 +329,14 @@ Kluczowe elementy: urządzenia końcowe, punkty dostępowe, anteny, kontrolery i
 
 ---
 
+## Karty, anteny i osprzęt
+
+Karta radiowa może być wbudowana w urządzenie albo podłączona zewnętrznie, np. przez USB. Starsze komputery wykorzystywały także karty PCI i PCMCIA.
+
+Punkt dostępowy współpracuje z anteną, a instalacja może wymagać kabli antenowych, złączy, przejściówek lub rozdzielaczy. Te elementy nie są medium między stacjami, ale nadal należą do infrastruktury sieci bezprzewodowej.
+
+---
+
 ## Zalety i ograniczenia
 
 <div class="columns"><div>
@@ -409,6 +417,14 @@ Niewielki moduł radiowy może być częścią czujnika, sterownika lub urządze
   <img src="media/image10.png" alt="Logo Bluetooth">
   <img src="media/image11.jpg" alt="Logo Z-Wave">
 </div>
+
+---
+
+## Osobiste sieci radiowe: kontekst historyczny
+
+- Wczesny Bluetooth pracował w paśmie 2,4 GHz i oferował do około 723 kb/s w jednym kierunku. Nowsze odmiany mają inne szybkości i zastosowania.
+- Z-Wave rozwijał automatykę domową jako sieć o małej mocy, z możliwością przekazywania komunikatów między urządzeniami.
+- Thread łączy urządzenia małej mocy w sieć mesh opartą na IPv6 i IEEE 802.15.4; uwierzytelnianie i szyfrowanie są częścią jego projektu.
 
 ---
 
@@ -537,6 +553,15 @@ Szybkość warstwy fizycznej nie jest przepływnością użytkową: przykładowo
 
 ---
 
+## Od pierwszego 802.11 do 802.11g
+
+- Wersja 802.11 z 1997 r. przewidywała zarówno radio, jak i transmisję podczerwoną; rozwój WLAN skupił się później na radiu.
+- 802.11b wykorzystywało kanały o szerokości około 22 MHz i szybkość PHY do 11 Mb/s. Przepływność użytkowa była niższa.
+- 802.11a w paśmie 5 GHz oraz 802.11g w paśmie 2,4 GHz osiągały do 54 Mb/s w warstwie fizycznej.
+- 802.11g zachowywało zgodność z urządzeniami 802.11b, ale obecność starszych stacji mogła obniżać wydajność sieci.
+
+---
+
 ## Producenckie rozszerzenia dawnego Wi-Fi
 
 **802.11b+** i **Super G** były historycznymi nazwami rozwiązań producentów, a nie odrębnymi standardami IEEE. Reklamowały wyższe szybkości, m.in. przez łączenie kanałów, ale zgodność między urządzeniami różnych firm nie była gwarantowana.
@@ -550,6 +575,8 @@ To przykład różnicy między standardem 802.11 a funkcją konkretnego produktu
 - **802.11n:** MIMO (*Multiple Input Multiple Output*), czyli kilka anten i strumieni, oraz kanały 20/40 MHz.
 - **802.11ac:** szerokie kanały w 5 GHz i wielostrumieniowość.
 - **802.11ax:** poprawa wydajności w zatłoczonych środowiskach, OFDMA (*Orthogonal Frequency-Division Multiple Access*) i planowanie transmisji.
+
+802.11ac dopuszcza kanały do **160 MHz**, do **ośmiu strumieni przestrzennych**, modulację **256-QAM** (*Quadrature Amplitude Modulation*) i MU-MIMO w kierunku od punktu dostępowego do stacji. 802.11ax wprowadził także **1024-QAM**; większa przepływność wymaga odpowiednio dobrych warunków radiowych.
 
 ---
 
@@ -586,6 +613,7 @@ To przykład różnicy między standardem 802.11 a funkcją konkretnego produktu
 - Bardzo duża przepływność na krótkim dystansie.
 - Silne tłumienie i słaba penetracja przeszkód.
 - Zastosowania: łącza punkt-punkt, dokowanie bezprzewodowe, krótkodystansowe transmisje multimedialne.
+- 802.11ay rozwinął 802.11ad m.in. przez łączenie kanałów i transmisję wieloantenową MIMO; osiągalny zasięg i szybkość zależą od sprzętu oraz warunków propagacji.
 
 ---
 
@@ -606,6 +634,18 @@ Standard przewidziano między innymi dla czujników i urządzeń Internetu rzecz
 - **802.11aj:** regionalny wariant dla pasma 45 GHz.
 
 Są to rozszerzenia rodziny 802.11, a nie kolejne generacje oznaczane nazwami Wi-Fi 4, 5, 6 i 7.
+
+---
+
+## Pozostałe grupy IEEE 802
+
+- **802.15:** bezprzewodowe sieci osobiste, w tym 802.15.4 dla urządzeń małej mocy.
+- **802.16 / 802.16e:** szerokopasmowy dostęp radiowy WiMAX, także mobilny.
+- **802.18:** doradztwo w sprawach regulacji radiowych.
+- **802.20:** mobilny szerokopasmowy dostęp radiowy.
+- **802.22:** regionalne sieci bezprzewodowe.
+
+To historyczny przegląd rodzin standardów, nie lista technologii równie popularnych dziś.
 
 ---
 
@@ -676,6 +716,15 @@ LoRa (*Long Range*) to technika radiowa dalekiego zasięgu, a LoRaWAN (*Long Ran
 - Mała przepływność, daleki zasięg i niskie zużycie energii.
 - Przeznaczone dla czujników, telemetrii i IoT.
 - Nie zastępują Wi-Fi: optymalizują inny kompromis między zasięgiem, energią i ilością danych.
+- Wykorzystują częstotliwości poniżej 1 GHz, zależne od regionu, np. okolice 868 MHz w Europie i 915 MHz w Ameryce Północnej.
+
+---
+
+## LoRa: pochodzenie i pasma
+
+LoRa opracowała firma Cycleo; w 2012 r. przejął ją Semtech.
+
+Typowe pasma i dopuszczalna moc zależą od lokalnych przepisów. Przykładowych częstotliwości nie należy traktować jako uniwersalnych.
 
 ---
 

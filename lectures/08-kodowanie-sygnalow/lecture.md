@@ -92,6 +92,12 @@ Pomiar jest poprawny, gdy rzeczywisty przebieg pozostaje w granicach wyznaczonyc
 
 PDH (*Plesiochronous Digital Hierarchy*) to starsza hierarchia cyfrowa stosowana w sieciach telekomunikacyjnych.
 
+Oryginalny przykład przedstawia nie-ramkowany sygnał **140 Mb/s** z niesymetrycznego wyjścia **75 Ω**, kodowany liniowo jako **CMI** (*Coded Mark Inversion*). Maska jest porównywana z nałożonymi przebiegami wielu impulsów.
+
+---
+
+## Pomiar maski PDH 140 Mb/s
+
 <div class="media-gallery single-visual">
   <img src="media/image3.png" alt="Maska telekomunikacyjna dla PDH 140 Mb/s">
 </div>
@@ -101,6 +107,12 @@ PDH (*Plesiochronous Digital Hierarchy*) to starsza hierarchia cyfrowa stosowana
 ## Maska telekomunikacyjna: PCM 2 Mb/s
 
 PCM (*Pulse Code Modulation*) oznacza cyfrowe kodowanie sygnału przez próbkowanie, kwantyzację i zapis próbek.
+
+Tu oryginalny pomiar dotyczy nie-ramkowanego sygnału **2 Mb/s** z symetrycznego wyjścia **120 Ω** i kodu **HDB3**. Nakładanie kolejnych impulsów pokazuje, czy ich amplituda i kształt mieszczą się w masce.
+
+---
+
+## Pomiar maski PCM 2 Mb/s
 
 <div class="media-gallery single-visual">
   <img src="media/image4.png" alt="Maska telekomunikacyjna dla PCM 2 Mb/s">
@@ -170,8 +182,6 @@ AMI (*Alternate Mark Inversion*): kolejne `1` to naprzemienne impulsy `+` i `−
 
 <div class="hdb3-legend"><div><strong>B</strong><span>zwykły impuls zgodny z AMI</span></div><div><strong>V</strong><span>impuls o tej samej polaryzacji, celowo naruszający AMI</span></div></div>
 
-Ponieważ `B` i `V` mają tu tę samą polaryzację dodatnią, dekoder rozpoznaje `B00V` jako zastąpione zera, a nie dane użytkownika.
-
 ---
 
 ## HDB3: spróbuj sam
@@ -190,6 +200,14 @@ Ponieważ `B` i `V` mają tu tę samą polaryzację dodatnią, dekoder rozpoznaj
 - Trzy poziomy sygnału oraz zależność od wcześniejszych impulsów komplikują odbiór; błędna interpretacja może wpływać na kolejne symbole.
 
 W HDB-2 analiza trzech kolejnych pozycji wprowadza opóźnienie kodowania i dekodowania. Błędna decyzja dekodera może też wpłynąć na interpretację następnych symboli.
+
+---
+
+## Koder HDB-2: realizacja logiczna
+
+Oryginalny schemat pokazuje rejestry i bramki logiczne, które śledzą wcześniejsze impulsy, wybierają polaryzację oraz wprowadzają impuls naruszający regułę przemienności po długiej serii zer.
+
+<img src="media/image8.png" alt="Oryginalny schemat montażowy kodera HDB-2 z rejestrami i bramkami logicznymi" height="400">
 
 ---
 

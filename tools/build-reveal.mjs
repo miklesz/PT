@@ -140,7 +140,7 @@ const html = `<!doctype html>
       .reveal .hdb3-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em; max-width: 790px; margin: 0.1em auto 0; color: var(--pt-muted); font-size: 0.4em; }
       .reveal .hdb3-legend > div { display: grid; grid-template-columns: auto 1fr; gap: 0.4em; align-items: center; padding: 0.35em 0.5em; border-top: 2px solid #cfd9de; text-align: left; }
       .reveal .hdb3-legend strong { color: var(--pt-blue); font-size: 1.25em; }
-      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 35vh; margin: 0.15em auto 0; overflow: visible; }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 30vh; margin: 0.15em auto 0; overflow: visible; }
       .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
       .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
       .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }

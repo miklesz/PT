@@ -50,6 +50,14 @@ Kluczowe elementy: urządzenia końcowe, punkty dostępowe, anteny, kontrolery i
 
 ---
 
+## Karty, anteny i osprzęt
+
+Karta radiowa może być wbudowana w urządzenie albo podłączona zewnętrznie, np. przez USB. Starsze komputery wykorzystywały także karty PCI i PCMCIA.
+
+Punkt dostępowy współpracuje z anteną, a instalacja może wymagać kabli antenowych, złączy, przejściówek lub rozdzielaczy. Te elementy nie są medium między stacjami, ale nadal należą do infrastruktury sieci bezprzewodowej.
+
+---
+
 ## Zalety i ograniczenia
 
 <div class="columns"><div>
@@ -130,6 +138,14 @@ Niewielki moduł radiowy może być częścią czujnika, sterownika lub urządze
   <img src="media/image10.png" alt="Logo Bluetooth">
   <img src="media/image11.jpg" alt="Logo Z-Wave">
 </div>
+
+---
+
+## Osobiste sieci radiowe: kontekst historyczny
+
+- Wczesny Bluetooth pracował w paśmie 2,4 GHz i oferował do około 723 kb/s w jednym kierunku. Nowsze odmiany mają inne szybkości i zastosowania.
+- Z-Wave rozwijał automatykę domową jako sieć o małej mocy, z możliwością przekazywania komunikatów między urządzeniami.
+- Thread łączy urządzenia małej mocy w sieć mesh opartą na IPv6 i IEEE 802.15.4; uwierzytelnianie i szyfrowanie są częścią jego projektu.
 
 ---
 
@@ -258,6 +274,15 @@ Szybkość warstwy fizycznej nie jest przepływnością użytkową: przykładowo
 
 ---
 
+## Od pierwszego 802.11 do 802.11g
+
+- Wersja 802.11 z 1997 r. przewidywała zarówno radio, jak i transmisję podczerwoną; rozwój WLAN skupił się później na radiu.
+- 802.11b wykorzystywało kanały o szerokości około 22 MHz i szybkość PHY do 11 Mb/s. Przepływność użytkowa była niższa.
+- 802.11a w paśmie 5 GHz oraz 802.11g w paśmie 2,4 GHz osiągały do 54 Mb/s w warstwie fizycznej.
+- 802.11g zachowywało zgodność z urządzeniami 802.11b, ale obecność starszych stacji mogła obniżać wydajność sieci.
+
+---
+
 ## Producenckie rozszerzenia dawnego Wi-Fi
 
 **802.11b+** i **Super G** były historycznymi nazwami rozwiązań producentów, a nie odrębnymi standardami IEEE. Reklamowały wyższe szybkości, m.in. przez łączenie kanałów, ale zgodność między urządzeniami różnych firm nie była gwarantowana.
@@ -271,6 +296,8 @@ To przykład różnicy między standardem 802.11 a funkcją konkretnego produktu
 - **802.11n:** MIMO (*Multiple Input Multiple Output*), czyli kilka anten i strumieni, oraz kanały 20/40 MHz.
 - **802.11ac:** szerokie kanały w 5 GHz i wielostrumieniowość.
 - **802.11ax:** poprawa wydajności w zatłoczonych środowiskach, OFDMA (*Orthogonal Frequency-Division Multiple Access*) i planowanie transmisji.
+
+802.11ac dopuszcza kanały do **160 MHz**, do **ośmiu strumieni przestrzennych**, modulację **256-QAM** (*Quadrature Amplitude Modulation*) i MU-MIMO w kierunku od punktu dostępowego do stacji. 802.11ax wprowadził także **1024-QAM**; większa przepływność wymaga odpowiednio dobrych warunków radiowych.
 
 ---
 
@@ -307,6 +334,7 @@ To przykład różnicy między standardem 802.11 a funkcją konkretnego produktu
 - Bardzo duża przepływność na krótkim dystansie.
 - Silne tłumienie i słaba penetracja przeszkód.
 - Zastosowania: łącza punkt-punkt, dokowanie bezprzewodowe, krótkodystansowe transmisje multimedialne.
+- 802.11ay rozwinął 802.11ad m.in. przez łączenie kanałów i transmisję wieloantenową MIMO; osiągalny zasięg i szybkość zależą od sprzętu oraz warunków propagacji.
 
 ---
 
@@ -327,6 +355,18 @@ Standard przewidziano między innymi dla czujników i urządzeń Internetu rzecz
 - **802.11aj:** regionalny wariant dla pasma 45 GHz.
 
 Są to rozszerzenia rodziny 802.11, a nie kolejne generacje oznaczane nazwami Wi-Fi 4, 5, 6 i 7.
+
+---
+
+## Pozostałe grupy IEEE 802
+
+- **802.15:** bezprzewodowe sieci osobiste, w tym 802.15.4 dla urządzeń małej mocy.
+- **802.16 / 802.16e:** szerokopasmowy dostęp radiowy WiMAX, także mobilny.
+- **802.18:** doradztwo w sprawach regulacji radiowych.
+- **802.20:** mobilny szerokopasmowy dostęp radiowy.
+- **802.22:** regionalne sieci bezprzewodowe.
+
+To historyczny przegląd rodzin standardów, nie lista technologii równie popularnych dziś.
 
 ---
 
@@ -397,6 +437,15 @@ LoRa (*Long Range*) to technika radiowa dalekiego zasięgu, a LoRaWAN (*Long Ran
 - Mała przepływność, daleki zasięg i niskie zużycie energii.
 - Przeznaczone dla czujników, telemetrii i IoT.
 - Nie zastępują Wi-Fi: optymalizują inny kompromis między zasięgiem, energią i ilością danych.
+- Wykorzystują częstotliwości poniżej 1 GHz, zależne od regionu, np. okolice 868 MHz w Europie i 915 MHz w Ameryce Północnej.
+
+---
+
+## LoRa: pochodzenie i pasma
+
+LoRa opracowała firma Cycleo; w 2012 r. przejął ją Semtech.
+
+Typowe pasma i dopuszczalna moc zależą od lokalnych przepisów. Przykładowych częstotliwości nie należy traktować jako uniwersalnych.
 
 ---
 

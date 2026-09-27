@@ -124,7 +124,7 @@
       .reveal .hdb3-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65em; max-width: 790px; margin: 0.1em auto 0; color: var(--pt-muted); font-size: 0.4em; }
       .reveal .hdb3-legend > div { display: grid; grid-template-columns: auto 1fr; gap: 0.4em; align-items: center; padding: 0.35em 0.5em; border-top: 2px solid #cfd9de; text-align: left; }
       .reveal .hdb3-legend strong { color: var(--pt-blue); font-size: 1.25em; }
-      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 35vh; margin: 0.15em auto 0; overflow: visible; }
+      .reveal .hdb3-wave-svg { display: block; width: min(100%, 820px); max-height: 30vh; margin: 0.15em auto 0; overflow: visible; }
       .reveal .hdb3-wave-svg .axis { stroke: #7b8790; stroke-width: 3; }
       .reveal .hdb3-wave-svg .wave { fill: none; stroke: #007c91; stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
       .reveal .hdb3-wave-svg text { fill: var(--pt-text); font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
@@ -338,9 +338,18 @@ Stacje samodzielnie próbują uzyskać dostęp. Kolizje są możliwe, ale protok
 
 **Kontrolowane**
 
-Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji transmisji. Przykłady historyczne: przepytywanie stacji oraz przekazywanie znacznika w magistrali lub pierścieniu.
+Dostęp jest przydzielany według ustalonej reguły. Ogranicza to kolizje kosztem dodatkowej organizacji transmisji.
 
 </div></div>
+
+---
+
+## Historyczne metody kontrolowane
+
+- **Przepytywanie:** urządzenie centralne pyta stacje, czy chcą nadawać.
+- **Przekazywanie znacznika:** prawo nadawania przechodzi między stacjami w magistrali albo pierścieniu.
+- **Pierścień szczelinowy:** po pierścieniu krążą szczeliny gotowe na dane.
+- **Wtrącany rejestr:** stacja wprowadza własne dane do obiegu pierścienia.
 
 ---
 
@@ -353,6 +362,8 @@ Dostęp jest przydzielany, co ogranicza kolizje kosztem dodatkowej organizacji t
 ## Skąd wzięło się ALOHA?
 
 Metodę opracowano dla sieci ALOHAnet na Uniwersytecie Hawajskim. Stacje radiowe współdzieliły kanał i przesyłały dane do centralnej stacji, więc potrzebowały reguły ponawiania transmisji po kolizji.
+
+<img src="media/image5.gif" alt="Wyspy Hawajskie, między którymi łączność zapewniał ALOHAnet" height="300">
 
 ---
 
@@ -387,6 +398,14 @@ To prosty protokół, ale przy większym obciążeniu często dochodzi do kolizj
 <div class="media-gallery single-visual">
   <img src="media/image7.png" alt="Kolizje w ALOHA">
 </div>
+
+---
+
+## ALOHA: kiedy ramki się nakładają?
+
+Kolizja występuje, gdy ramka innej stacji rozpocznie się w takim momencie, że jej sygnał nakłada się na choćby część rozpatrywanej ramki. W zwykłym ALOHA możliwy okres kolizji jest dłuższy niż w wariancie szczelinowym.
+
+<img src="media/image8.png" alt="Okno czasowe, w którym druga ramka może kolidować z pierwszą w ALOHA" height="280">
 
 ---
 
@@ -442,7 +461,13 @@ CSMA/CA (*Carrier Sense Multiple Access with Collision Avoidance*, wielodostęp 
 - opcjonalnie RTS/CTS (*Request to Send / Clear to Send*), czyli krótka wymiana rezerwująca medium,
 - potwierdzenia odbioru.
 
-![Jednoczesna chęć nadawania w CSMA](media/image10.png)
+---
+
+## Jednoczesna chęć nadawania
+
+<img src="media/image10.png" alt="Dwie stacje podejmują próbę nadawania w tym samym czasie" height="430">
+
+Samo nasłuchiwanie nie wyklucza kolizji: sygnał drugiej stacji potrzebuje czasu, by dotrzeć do nadajnika.
 
 ---
 

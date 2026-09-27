@@ -71,9 +71,14 @@ Odpowiednie sekwencje reprezentują litery i cyfry.
 
 <div class="columns"><div>
 
+<div class="small">
+
 - Szkocki wynalazca telefonu i wielu innych urządzeń telekomunikacyjnych.
 - Pracował jako logopeda i nauczyciel muzyki; zajmował się fizjologią dźwięku.
+- W 1870 r. wyjechał do Ameryki Północnej, gdzie kontynuował badania nad dźwiękiem.
 - W ramach badań opatentował głośnik i mikrofon, a potem urządzenie przekazujące dźwięk na odległość.
+
+</div>
 
 </div><div>
 
@@ -103,9 +108,14 @@ Odpowiednie sekwencje reprezentują litery i cyfry.
 
 <div class="columns"><div>
 
+<div class="small">
+
 - Autor setek patentów w dziedzinie urządzeń elektrycznych.
-- Zaprezentował komunikację radiową już w 1893 r.
+- Pracował między innymi nad silnikiem i prądnicą prądu przemiennego oraz transformatorem rezonansowym.
+- W 1893 r. zaprezentował komunikację radiową na spotkaniu National Electric Light Association.
 - Tworzył także urządzenia zdalnie sterowane drogą radiową.
+
+</div>
 
 </div><div>
 
@@ -231,13 +241,17 @@ Zwykle jest organizowana **warstwowo**. Poszczególne architektury różnią si�
 
 <div class="columns"><div>
 
+<div class="small">
+
 - ISO/OSI (*International Organization for Standardization / Open Systems Interconnection*) opisuje model systemów otwartych: urządzeń zdolnych do wymiany informacji z innymi systemami.
 - Standard ISO 7498, rozwijany od końca lat 70.
 - Siedem niezależnych warstw; każda korzysta z usług warstwy niższej.
 
+</div>
+
 </div><div>
 
-![Komunikacja równorzędnych warstw](media/image10.png)
+<img src="media/image10.png" alt="Komunikacja równorzędnych warstw" height="300">
 
 </div></div>
 
@@ -357,7 +371,8 @@ Przeglądarka oraz klient pocztowy są programami korzystającymi z usług tej w
 
 - Warstwy tworzą pakiety i ramki o strukturze zdefiniowanej przez protokół.
 - Krótsze jednostki ograniczają skutki błędów i zmniejszają opóźnienia.
-- Nagłówek zwykle zawiera adresy, identyfikator, numer części informacji i dane do obsługi błędów.
+- Protokół określa format i zwykle maksymalną długość jednostki danych.
+- Nagłówek może zawierać adresy, identyfikator, numer części informacji, znacznik końca oraz dane do obsługi błędów.
 
 ---
 
@@ -408,7 +423,7 @@ Przykładowe zadania protokołów:
 
 **Kapsułkowanie** to przesyłanie pakietu jednego protokołu wewnątrz pakietu innego protokołu.
 
-W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują nową formę i własny nagłówek. Tunelowanie jest praktycznym zastosowaniem kapsułkowania.
+W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują nową formę i własny nagłówek. Tunelowanie jest praktycznym zastosowaniem kapsułkowania: pozwala połączyć dwie sieci używające tego samego protokołu przez sieć pośrednią używającą innego.
 
 ---
 
@@ -428,7 +443,7 @@ W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują now
 
 - Tłumaczenie sygnałów elektrycznych albo formatów danych.
 - Umożliwia transmisję między różnymi systemami komunikacyjnymi.
-- Może obejmować np. zmianę kodu znaków lub transmisji asynchronicznej na synchroniczną.
+- Może obejmować np. zmianę kodu znaków (historycznie ASCII na inny kod) lub transmisji asynchronicznej na synchroniczną.
 
 ---
 

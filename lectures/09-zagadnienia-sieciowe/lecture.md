@@ -19,6 +19,8 @@ Sieć komputerowa to zbiór połączonych urządzeń, które wymieniają dane i 
 
 Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, współdzielenie plików, urządzeń i połączenia z Internetem.
 
+Wspólnym zasobem może być także oprogramowanie lub centralna baza danych; użytkownicy wymieniają komunikaty, pocztę i pliki.
+
 ---
 
 ## Mapa połączeń Internetu z 2015 roku
@@ -26,6 +28,8 @@ Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, wsp�
 <div class="media-gallery single-visual"><img src="media/image2.png" alt="Wizualizacja części połączeń Internetu według danych z 11 lipca 2015 roku"></div>
 
 <p class="credits">Historyczna wizualizacja projektu Opte. Linie łączą węzły sieci; nie jest to aktualna mapa ani mapa geograficzna.</p>
+
+<p class="credits">W oryginalnej mapie długość linii odpowiada opóźnieniu między węzłami, a kolory grupują regiony świata oraz połączenia szkieletowe.</p>
 
 ---
 
@@ -83,12 +87,14 @@ Najprostsza topologia: jedno bezpośrednie łącze między dwoma punktami.
 **Łącze stałe**
 
 Zestawione na stałe między tymi samymi dwoma punktami.
+Przykład historyczny: dedykowany tor ze stadionu do studia telewizyjnego.
 
 </div><div>
 
 **Łącze komutowane**
 
 Tworzone na żądanie przez sieć pośrednią, a po zakończeniu zwalniane.
+Przykład: połączenie w klasycznej telefonii komutowanej.
 
 </div></div>
 
@@ -97,6 +103,8 @@ Tworzone na żądanie przez sieć pośrednią, a po zakończeniu zwalniane.
 ## Topologia liniowa
 
 Węzły są połączone kolejno; urządzenia pośrednie przekazują ruch dalej.
+
+Poza końcami łańcucha każdy węzeł łączy się z dwoma sąsiadami. Taka budowa nie wymaga osobnego urządzenia centralnego, ale w prostym wariancie pośrednie węzły muszą działać, aby dalsze mogły się komunikować.
 
 ![Topologia liniowa](media/image5.png)
 
@@ -115,6 +123,7 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
 - Wszystkie stacje współdzielą medium.
 - Prosta i historycznie tania, ale podatna na kolizje oraz awarię wspólnego segmentu.
 - Klasyczny Ethernet koncentryczny był przykładem takiej topologii.
+- Stacje łączono z koncentrycznym segmentem przez trójniki i złącza BNC; czas propagacji zależał od długości kabla.
 
 ---
 
@@ -177,6 +186,8 @@ Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu j
 
 Druga droga może utrzymać działanie po przerwaniu pojedynczego odcinka i pozwala na wysoką przepustowość. Ceną są bardziej złożone urządzenia, diagnostyka i procedury rekonfiguracji.
 
+Historycznym przykładem sieci z dwoma pierścieniami jest **FDDI** (*Fiber Distributed Data Interface*).
+
 ---
 
 ## Topologia gwiazdy
@@ -235,7 +246,7 @@ Potrzeba więcej kabli i portów niż w magistrali. Awaria centralnego koncentra
 
 MSAU (*Multistation Access Unit*) to koncentrator używany historycznie w sieciach Token Ring.
 
-<video controls preload="metadata" poster="media/image13.png"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image13.png" height="430"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
 
 ---
 
@@ -244,12 +255,17 @@ MSAU (*Multistation Access Unit*) to koncentrator używany historycznie w siecia
 - Łączą mniejsze topologie w większą strukturę.
 - Przykłady: pierścień-gwiazda, gwiazda-magistrala, magistrala-drzewo.
 - Ułatwiają skalowanie, segmentację i zarządzanie dużą siecią.
+- Liczba poziomów nie jest z góry określona; rozbudowa polega na dodawaniu kolejnych rozgałęzień.
 
-<div class="media-gallery">
-  <img src="media/image14.png" alt="Topologia hierarchiczna">
-  <img src="media/image15.png" alt="Topologia pierścień-gwiazda">
-  <img src="media/image16.png" alt="Topologia gwiazda-magistrala">
-  <img src="media/image17.png" alt="Topologia magistrala-drzewo">
+---
+
+## Przykłady topologii hierarchicznych
+
+<div class="media-gallery four">
+  <img src="media/image14.png" alt="Topologia hierarchiczna" height="215">
+  <img src="media/image15.png" alt="Topologia pierścień-gwiazda" height="215">
+  <img src="media/image16.png" alt="Topologia gwiazda-magistrala" height="215">
+  <img src="media/image17.png" alt="Topologia magistrala-drzewo" height="215">
 </div>
 
 ---
