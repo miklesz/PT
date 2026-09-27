@@ -215,19 +215,27 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 
 ## Skąd bierze się wzrost kwadratowy?
 
-<div class="columns"><div>
+Każdy nowy użytkownik może połączyć się ze wszystkimi wcześniejszymi.
 
-- Dla dwóch użytkowników istnieje jedno połączenie.
-- Każdy kolejny użytkownik może połączyć się z wszystkimi wcześniejszymi.
-- Liczba potencjalnych relacji rośnie znacznie szybciej niż sama liczba użytkowników.
+<svg viewBox="0 0 1050 390" role="img" aria-label="Dwie osoby: jedno połączenie; trzy osoby: trzy połączenia; cztery osoby: sześć połączeń" style="width:100%;max-height:390px;font-family:Arial,sans-serif">
+  <g fill="none" stroke="#29829a" stroke-width="6" stroke-linecap="round">
+    <path d="M105 170H245"/>
+    <path d="M425 195L525 80 625 195Z"/>
+    <path d="M790 80H950V230H790Z M790 80L950 230 M950 80L790 230"/>
+  </g>
+  <g fill="#fff" stroke="#075478" stroke-width="6">
+    <circle cx="105" cy="170" r="20"/><circle cx="245" cy="170" r="20"/>
+    <circle cx="425" cy="195" r="20"/><circle cx="525" cy="80" r="20"/><circle cx="625" cy="195" r="20"/>
+    <circle cx="790" cy="80" r="20"/><circle cx="950" cy="80" r="20"/><circle cx="950" cy="230" r="20"/><circle cx="790" cy="230" r="20"/>
+  </g>
+  <g text-anchor="middle" fill="#123c57">
+    <text x="175" y="315" font-size="31" font-weight="700">2 użytkowników</text><text x="175" y="358" font-size="27">1 połączenie</text>
+    <text x="525" y="315" font-size="31" font-weight="700">3 użytkowników</text><text x="525" y="358" font-size="27">3 połączenia</text>
+    <text x="870" y="315" font-size="31" font-weight="700">4 użytkowników</text><text x="870" y="358" font-size="27">6 połączeń</text>
+  </g>
+</svg>
 
-<div class="packet"><span>2 użytkowników<br>1 połączenie</span><span>3 użytkowników<br>3 połączenia</span><span>4 użytkowników<br>6 połączeń</span><span>n użytkowników<br>n(n−1)/2 połączeń</span></div>
-
-</div><div>
-
-![Liczba połączeń w sieci](media/image8.png)
-
-</div></div>
+<p class="small" style="text-align:center">Dla <strong>n</strong> użytkowników: <strong>n(n−1)/2</strong> możliwych połączeń.</p>
 
 ---
 
