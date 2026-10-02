@@ -305,9 +305,18 @@ To przykład różnicy między standardem 802.11 a funkcją konkretnego produktu
 
 ## MIMO: kilka anten, kilka strumieni
 
-![Schemat konfiguracji SISO, SIMO, MISO i MIMO](media/image21.png)
+<div class="columns"><div>
 
-<p class="credits">SISO oznacza jedną antenę nadawczą i odbiorczą; SIMO — jedną nadawczą i wiele odbiorczych, a MISO — odwrotnie.</p>
+<img src="media/image21.png" alt="Schemat konfiguracji SISO, SIMO, MISO i MIMO" style="max-height:50vh;max-width:100%;margin:0 auto">
+
+</div><div class="small">
+
+- **SISO:** jedna antena nadawcza, jedna odbiorcza.
+- **SIMO:** jedna nadawcza, wiele odbiorczych.
+- **MISO:** wiele nadawczych, jedna odbiorcza.
+- **MIMO:** wiele nadawczych i odbiorczych.
+
+</div></div>
 
 ---
 
