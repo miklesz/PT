@@ -794,21 +794,21 @@ Dzięki domieszkowaniu, w pewnych granicach, możliwe zmienianie parametrów św
 „  
 Topologie równoległe”  
 [  
-http://icis.pcz.czest.pl/materials/topologie/  
+Dawny publiczny materiał przekierowuje na logowanie. Opracowanie tematu: [Topologie sieci - materiały PT](../lectures/09-zagadnienia-sieciowe/lecture.md).  
 ]  
 „  
 Interaktywny podręcznik sieci komputerowych”  
 [  
-http://www.man.poznan.pl/~pawelw/dyplom/  
+Dawny podręcznik nie jest dostępny pod tym adresem. Materiał zastępczy: [Peter L. Dordal, An Introduction to Computer Networks](https://intronetworks.cs.luc.edu/).  
 ]  
 „  
 Topologie sieci”  
 [  
-http://www.republika.pl/legecki/topologie.html  
+Dawny materiał jest niedostępny. Opracowanie tematu: [Topologie sieci - materiały PT](../lectures/09-zagadnienia-sieciowe/lecture.md).  
 ]  
 „Grafy”  
 [  
-http://student.uci.agh.edu.pl/~wasikows/grafy/  
+Dawny materiał jest niedostępny. Opracowanie algorytmów grafowych: [Routing - algorytmy](../lectures/10-routing-algorytmy/lecture.md).  
 ]  
 Strona główna –  
 W  
@@ -823,11 +823,11 @@ http://pl.wikipedia.org/wiki/Strona_g%C5%82%C3%B3wna
 ![Literatura](../web/assets/05/slide-054.webp)
 
 „Interaktywny podręcznik sieci komputerowych”,  
-http://www.man.poznan.pl/~pawelw/dyplom/  
+Dawny podręcznik jest niedostępny. Materiał zastępczy: [Peter L. Dordal, An Introduction to Computer Networks](https://intronetworks.cs.luc.edu/).
 „Słownik techniki cyfrowej  
 ”  
 ,  
-http://slownik.kargul.net/  
+Dawny słownik jest niedostępny. Materiał uzupełniający: [Podstawowe pojęcia i jednostki - materiały PT](../lectures/03-pojecia-jednostki-ograniczenia/lecture.md).  
 19.11.2016  
 54
 

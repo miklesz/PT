@@ -2,6 +2,8 @@
 
 # Transmisja sygnałów w systemach dostępu wielokrotnego
 
+Mikołaj Leszczuk
+
 ---
 
 ## Plan wykładu

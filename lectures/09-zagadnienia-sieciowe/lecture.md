@@ -2,6 +2,8 @@
 
 # Podstawowe zagadnienia sieciowe
 
+Mikołaj Leszczuk
+
 ---
 
 ## Plan wykładu

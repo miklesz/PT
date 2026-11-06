@@ -548,11 +548,11 @@ medium
 3  
 )  
 „Lokalne sieci komputerowe”,  
-http://www.linuxpub.pl/download/sieci.pdf  
+Dawny plik PDF jest niedostępny. Materiał zastępczy: [Peter L. Dordal, An Introduction to Computer Networks](https://intronetworks.cs.luc.edu/).  
 “Aloha Protocol - Computer Science - Provided by Laynetworks.com”  
-http://www.laynetworks.com/ALOHA%20PROTOCOL.htm  
+Dawny materiał jest niedostępny. Materiał zastępczy: [ALOHA, CSMA i CSMA/CD - Gorry Fairhurst, University of Aberdeen](https://www.erg.abdn.ac.uk/users/gorry/course/lan-pages/csma-cd.html).  
 “CSMA”  
-http://www.cs.mu.oz.au/353/notes/node126.html
+Dawny materiał jest niedostępny. Materiał zastępczy: [CSMA i CSMA/CD - Gorry Fairhurst, University of Aberdeen](https://www.erg.abdn.ac.uk/users/gorry/course/lan-pages/csma-cd.html).
 
 ### 44. Literatura
 
@@ -562,11 +562,11 @@ http://www.cs.mu.oz.au/353/notes/node126.html
 3  
 )  
 “'Get IEEE 802'TM Home Page”  
-http://standards.ieee.org/getieee802/  
+https://standards.ieee.org/products-programs/ieee-get-program/  
 “Sieci – Profil Dydaktyczny”  
 http://irogozinska.strony.wi.ps.pl/  
 “Carrier Sense Multiple Access with Collision Detection (CSMA/CD)”  
-http://www.erg.abdn.ac.uk/users/gorry/course/lan-pages/csma-cd.html
+https://www.erg.abdn.ac.uk/users/gorry/course/lan-pages/csma-cd.html
 
 ### 45. Literatura (3/3)
 
@@ -578,18 +578,11 @@ Patan
 , “Dyskretne sieci  
 Hopfielda  
 ”,  
-www.issi.uz.zgora.pl  
-/~  
-patan  
-/  
-materialy  
-/  
-sn  
-/druk6.pdf  
+Dawny plik PDF jest niedostępny (HTTP 404); nie znaleziono dostępnej kopii tej pozycji.
 “Układy komutacyjne, kody konwersji liczb”,  
-http://kalitka.dhs.org/tc/cw2.html  
+Dawny adres prowadzi do strony parkingowej domeny. Opracowanie kodów: [Kodowanie sygnałów - materiały PT](../lectures/08-kodowanie-sygnalow/lecture.md).  
 “Słownik techniki cyfrowej”,  
-http://slownik.kargul.net/  
+Dawny słownik jest niedostępny. Materiał uzupełniający: [Podstawowe pojęcia i jednostki - materiały PT](../lectures/03-pojecia-jednostki-ograniczenia/lecture.md).  
 21.12.2019  
 45
 

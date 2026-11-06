@@ -946,13 +946,13 @@ Modele systemów telekomunikacyjnych (architektury sieci, Modele ISO/OSI i TCP/I
 ![Materiały (źródła) dodatkowe (1/2)](../web/assets/02/slide-059.webp)
 
 „ISO/OSI Network Model”,  
-www.ussg.iu.edu/usail/network/nfs  
+Dawny adres jest niedostępny i wskazywał ścieżkę NFS, nie model ISO/OSI. Opracowanie modelu: [Warstwy ISO/OSI - materiały PT](../lectures/02-telekomunikacja/lecture.md).
 „ISO – International Organization for Standardization”,  
-http://www.iso.ch/  
+https://www.iso.org/  
 „Jak działają sieci komputerowe, interaktywny podręcznik sieci komputerowych”,  
-www.man.poznan.pl/~pawelw/dyplom  
+Dawny podręcznik jest niedostępny. Materiał zastępczy: [Peter L. Dordal, An Introduction to Computer Networks](https://intronetworks.cs.luc.edu/).
 „Podstawy protokołu TCP/IP”,  
-www.staff.amu.edu.pl/~psi/informatyka/tcpip/  
+Dostępu do dawnego materiału nie udało się potwierdzić. Materiał zastępczy: [Peter L. Dordal, An Introduction to Computer Networks](https://intronetworks.cs.luc.edu/).
 59
 
 ### 60. Materiały (źródła) dodatkowe (2/2)

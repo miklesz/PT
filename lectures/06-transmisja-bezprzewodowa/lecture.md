@@ -2,6 +2,8 @@
 
 # Media transmisyjne: transmisja bezprzewodowa
 
+Mikołaj Leszczuk
+
 ---
 
 ## Plan wykładu

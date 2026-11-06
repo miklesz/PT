@@ -4,6 +4,8 @@
 
 ## Kable miedziane w telekomunikacji i teleinformatyce
 
+Mikołaj Leszczuk
+
 ---
 
 ## Plan wykładu

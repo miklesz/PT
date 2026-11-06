@@ -2,6 +2,8 @@
 
 # Kodowanie sygnałów
 
+Mikołaj Leszczuk
+
 ---
 
 ## Plan wykładu

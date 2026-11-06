@@ -526,11 +526,11 @@ Złącza RJ-45 i Token Ring
 „Interaktywny podręcznik sieci komputerowych  
 ”  
 ,  
-http://www.man.poznan.pl/~pawelw/dyplom/  
+Dawny podręcznik nie jest dostępny pod tym adresem. Materiał zastępczy: [Peter L. Dordal, An Introduction to Computer Networks](https://intronetworks.cs.luc.edu/).  
 „Topologie sieci  
 ”  
 ,  
-http://tzn.dabrowa.pl/do_pobrania/praca6/pliki/topologia.html  
+Dawny materiał jest niedostępny. Opracowanie tematu: [Topologie sieci - materiały PT](../lectures/09-zagadnienia-sieciowe/lecture.md).  
 „Grafy  
 ”  
 ,  
@@ -539,6 +539,6 @@ http://pl.wikipedia.org/wiki/Graf_(matematyka)
 Układy komutacyjne, kody konwersji liczb  
 ”  
 ,  
-http://kalitka.dhs.org/tc/cw2.html  
+Dawny adres prowadzi do strony parkingowej domeny. Opracowanie kodów: [Kodowanie sygnałów - materiały PT](../lectures/08-kodowanie-sygnalow/lecture.md).  
 44
 

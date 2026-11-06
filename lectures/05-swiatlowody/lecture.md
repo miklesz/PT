@@ -2,6 +2,8 @@
 
 # Media transmisyjne: światłowody
 
+Mikołaj Leszczuk
+
 ---
 
 ## Plan wykładu

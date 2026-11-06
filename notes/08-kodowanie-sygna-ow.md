@@ -624,11 +624,11 @@ h'(x)    │└───────┘        │ └───────┘
 
 “Kodowanie i systemy transmisji danych – Pomoc”  
 Krzysztof Patan, “Dyskretne sieci Hopfielda”,  
-www.issi.uz.zgora.pl/~patan/materialy/sn/druk6.pdf  
+Dawny plik PDF jest niedostępny (HTTP 404); nie znaleziono dostępnej kopii tej pozycji.
 “Układy komutacyjne, kody konwersji liczb”,  
-http://kalitka.dhs.org/tc/cw2.html  
+Dawny adres prowadzi do strony parkingowej domeny. Opracowanie kodów: [Kodowanie sygnałów - materiały PT](../lectures/08-kodowanie-sygnalow/lecture.md).  
 “Słownik techniki cyfrowej”,  
-http://slownik.kargul.net/  
+Dawny słownik jest niedostępny. Materiał uzupełniający: [Podstawowe pojęcia i jednostki - materiały PT](../lectures/03-pojecia-jednostki-ograniczenia/lecture.md).  
 26.11.2016  
 50
 

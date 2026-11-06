@@ -2,6 +2,8 @@
 
 # Routing: algorytmy
 
+Mikołaj Leszczuk
+
 ---
 
 ## Plan wykładu

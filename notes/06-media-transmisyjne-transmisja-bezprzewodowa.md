@@ -1040,7 +1040,7 @@ prędkość
 06.12.2020  
 44  
 By Wireless Gigabyte Alliance –  
-http://www.wigig.org/  
+https://www.wi-fi.org/  
 , Copyrighted free use,  
 https://commons.wikimedia.org/w/index.php?curid=11952645
 

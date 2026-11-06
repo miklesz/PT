@@ -57,7 +57,7 @@ mikolaj@leszcz.uk
 Tel.: +48 607 720 398  
 Przez dziekanat  
 Materiały dydaktyczne:  
-https://github.com/miklesz/Courses/tree/main/Podstawy%20Telekomunikacji  
+https://github.com/miklesz/PT  
 5
 
 ### 6. WYKŁAD
@@ -448,7 +448,7 @@ http://pl.wikipedia.org/wiki/Kategoria:Zal%C4%85%C5%BCki_artyku%C5%82%C3%B3w
 ![Inne sposoby na szukanie ciekawego tematu (1/3)](../web/assets/01/slide-035.webp)
 
 Najpotrzebniejsze strony:  
-http://pl.wikipedia.org/wiki/Szablon:Potrzebne/Kolejka  
+https://pl.wikipedia.org/wiki/Wikipedia:Propozycje_temat%C3%B3w  
 Strony do przetłumaczenia:  
 http://pl.wikipedia.org/wiki/Wikipedia:Strony_do_przet%C5%82umaczenia  
 http://pl.wikipedia.org/wiki/Wikipedia:T%C5%82umaczenie_miesi%C4%85ca  
@@ -463,7 +463,7 @@ http://pl.wikipedia.org/wiki/Wikipedia:Zal%C4%85%C5%BCki
 Brakujące artykuły:  
 http://pl.wikipedia.org/wiki/Wikipedia:Brakuj%C4%85ce_artyku%C5%82y  
 Strony do poszerzenia:  
-http://pl.wikipedia.org/wiki/Kategoria:Strony_do_poszerzenia  
+https://pl.wikipedia.org/wiki/Kategoria:Artyku%C5%82y_wymagaj%C4%85ce_uzupe%C5%82nienia_informacji  
 36
 
 ### 37. Inne sposoby na szukanie ciekawego tematu (3/3)
