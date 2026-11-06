@@ -129,13 +129,102 @@ Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
 
 ---
 
-## Dijkstra: kroki
+## Dijkstra: przykład krok po kroku
 
-1. Nadaj źródłu odległość `0`, pozostałym nieskończoność.
-2. Wybierz nieodwiedzony węzeł o najmniejszej znanej odległości.
-3. Zaktualizuj odległości jego sąsiadów przez relaksację krawędzi.
-4. Oznacz węzeł jako odwiedzony.
-5. Powtarzaj, aż nie ma osiągalnych węzłów.
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/dijkstra.jpg"><source src="media/local-replacements/dijkstra.mp4" type="video/mp4"></video>
+
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=GazC3A4OQTE&amp;t=178s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
+
+<p class="credits">Computerphile / Mike Pound · Dijkstra's Algorithm · fragment 02:58.000–08:48.000</p>
+
+<p class="small">Kolejka priorytetowa (<em>priority queue</em>) pozwala wybrać węzeł o najmniejszym koszcie. Koszt celu jest ostateczny dopiero przy takim wyborze, nie przy pierwszym znalezieniu drogi do celu.</p>
+
+---
+
+## Właściwości Dijkstry
+
+- Działa dla wag nieujemnych.
+- Po wyborze węzła o najmniejszym koszcie jego wynik jest ostateczny.
+- Stanowi podstawę algorytmów stanu łącza, takich jak SPF w OSPF.
+
+---
+
+<!-- .slide: class="section-slide" -->
+
+# Przepływ w sieci
+
+---
+
+## Ford-Fulkerson
+
+Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótszej ścieżki.
+
+- Każda krawędź ma pojemność.
+- Szukamy ścieżek powiększających od źródła do ujścia.
+- Zwiększamy przepływ o minimalną wolną pojemność na znalezionej ścieżce.
+- Wartość całkowita jest sumą przepływów przesłanych kolejnymi ścieżkami.
+
+---
+
+## Sieć rezydualna
+
+Po przesłaniu części przepływu pozostaje sieć rezydualna:
+
+- pokazuje, ile przepływu można jeszcze wysłać,
+- zawiera też krawędzie wsteczne, pozwalające skorygować wcześniejszą decyzję.
+
+---
+
+## Dinic
+
+Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
+
+1. buduje graf poziomów algorytmem BFS,
+2. wyszukuje przepływ blokujący w tym grafie,
+3. powtarza do braku ścieżki z źródła do ujścia.
+
+**BFS** (*Breadth-First Search*, przeszukiwanie wszerz) odwiedza najpierw wszystkich sąsiadów źródła, potem ich sąsiadów. Dzięki temu przypisuje węzłom kolejne poziomy odległości od źródła.
+
+---
+
+## Dijkstra, Ford-Fulkerson, Dinic
+
+<div class="comparison-grid">
+  <div><strong>Dijkstra</strong>najkrótsza ścieżka<br>minimalny koszt dojścia</div>
+  <div><strong>Ford-Fulkerson</strong>maksymalny przepływ<br>największy możliwy przepływ</div>
+  <div><strong>Dinic</strong>maksymalny przepływ<br>wydajniejsze przetwarzanie przepływu</div>
+</div>
+
+---
+
+## Od algorytmów do protokołów
+
+Algorytmy są modelem decyzji trasowania. Protokoły routingu określają, jak rutery wymieniają informacje, budują widok sieci i aktualizują tablice.
+
+---
+
+## Historyczny protokół IPX
+
+**IPX** (*Internetwork Packet Exchange*) był protokołem warstwy sieciowej w sieciach Novell NetWare. Zapewniał adresowanie i przekazywanie pakietów między sieciami lokalnymi oraz rozległymi.
+
+Podobnie jak IP, sam IPX nie gwarantował dostarczenia każdego pakietu. W rodzinie protokołów współpracował z **SPX** (*Sequenced Packet Exchange*), który realizował usługi transportowe.
+
+---
+
+## Podsumowanie
+
+- Ruter kieruje pakiety według tablicy routingu.
+- Dijkstra znajduje najkrótsze ścieżki przy nieujemnych wagach.
+- Ford-Fulkerson i Dinic dotyczą maksymalnego przepływu.
+- Następny krok to protokoły routingu używane w rzeczywistych sieciach.
+
+<!-- study-only:start -->
+
+---
+
+# Materiały do samodzielnej nauki
+
+Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
 
 ---
 
@@ -177,31 +266,6 @@ Jeśli bieżący koszt do `A` wynosi `4`, a krawędź `A → B` ma wagę `3`, ka
 `dist(B) = min(dist(B), dist(A) + w(A,B))`
 
 `w(A,B)` to **waga krawędzi** prowadzącej z `A` do `B` (w tym przykładzie: `3`).
-
----
-
-## Właściwości Dijkstry
-
-- Działa dla wag nieujemnych.
-- Po wyborze węzła o najmniejszym koszcie jego wynik jest ostateczny.
-- Stanowi podstawę algorytmów stanu łącza, takich jak SPF w OSPF.
-
----
-
-<!-- .slide: class="section-slide" -->
-
-# Przepływ w sieci
-
----
-
-## Ford-Fulkerson
-
-Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótszej ścieżki.
-
-- Każda krawędź ma pojemność.
-- Szukamy ścieżek powiększających od źródła do ujścia.
-- Zwiększamy przepływ o minimalną wolną pojemność na znalezionej ścieżce.
-- Wartość całkowita jest sumą przepływów przesłanych kolejnymi ścieżkami.
 
 ---
 
@@ -253,27 +317,6 @@ Pierwsza znaleziona ścieżka to `s → a → d → t`. Podczas jednego poszukiw
 
 ---
 
-## Sieć rezydualna
-
-Po przesłaniu części przepływu pozostaje sieć rezydualna:
-
-- pokazuje, ile przepływu można jeszcze wysłać,
-- zawiera też krawędzie wsteczne, pozwalające skorygować wcześniejszą decyzję.
-
----
-
-## Dinic
-
-Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
-
-1. buduje graf poziomów algorytmem BFS,
-2. wyszukuje przepływ blokujący w tym grafie,
-3. powtarza do braku ścieżki z źródła do ujścia.
-
-**BFS** (*Breadth-First Search*, przeszukiwanie wszerz) odwiedza najpierw wszystkich sąsiadów źródła, potem ich sąsiadów. Dzięki temu przypisuje węzłom kolejne poziomy odległości od źródła.
-
----
-
 ## Dinic: graf poziomów
 
 <div class="algorithm-demo dinic-demo">
@@ -289,35 +332,4 @@ Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
   <p class="dinic-explanation"></p>
 </div>
 
----
-
-## Dijkstra, Ford-Fulkerson, Dinic
-
-<div class="comparison-grid">
-  <div><strong>Dijkstra</strong>najkrótsza ścieżka<br>minimalny koszt dojścia</div>
-  <div><strong>Ford-Fulkerson</strong>maksymalny przepływ<br>największy możliwy przepływ</div>
-  <div><strong>Dinic</strong>maksymalny przepływ<br>wydajniejsze przetwarzanie przepływu</div>
-</div>
-
----
-
-## Od algorytmów do protokołów
-
-Algorytmy są modelem decyzji trasowania. Protokoły routingu określają, jak rutery wymieniają informacje, budują widok sieci i aktualizują tablice.
-
----
-
-## Historyczny protokół IPX
-
-**IPX** (*Internetwork Packet Exchange*) był protokołem warstwy sieciowej w sieciach Novell NetWare. Zapewniał adresowanie i przekazywanie pakietów między sieciami lokalnymi oraz rozległymi.
-
-Podobnie jak IP, sam IPX nie gwarantował dostarczenia każdego pakietu. W rodzinie protokołów współpracował z **SPX** (*Sequenced Packet Exchange*), który realizował usługi transportowe.
-
----
-
-## Podsumowanie
-
-- Ruter kieruje pakiety według tablicy routingu.
-- Dijkstra znajduje najkrótsze ścieżki przy nieujemnych wagach.
-- Ford-Fulkerson i Dinic dotyczą maksymalnego przepływu.
-- Następny krok to protokoły routingu używane w rzeczywistych sieciach.
+<!-- study-only:end -->

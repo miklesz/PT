@@ -12,7 +12,9 @@ const sourcePath = resolve(source);
 const markdown = await readFile(sourcePath, 'utf8');
 const outputPath = resolve(dirname(sourcePath), 'lecture.html');
 const title = markdown.match(/^#\s+(.+)$/m)?.[1] ?? basename(dirname(sourcePath));
-const embeddedMarkdown = markdown.replaceAll('</textarea', '<\\/textarea');
+// Keep marked study material in the source document, outside the slide deck.
+const slideMarkdown = markdown.replace(/<!-- study-only:start -->[\s\S]*?<!-- study-only:end -->/g, '').trimEnd();
+const embeddedMarkdown = slideMarkdown.replaceAll('</textarea', '<\\/textarea');
 
 const html = `<!doctype html>
 <html lang="pl">
@@ -36,6 +38,11 @@ const html = `<!doctype html>
       .reveal strong { color: var(--pt-blue); }
       .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
       .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal video:has(source[src*="local-replacements/"]) { width: 100%; height: 360px; max-height: 360px; object-fit: contain; margin: 0.25em auto; background: #111; }
+      .reveal video[hidden] { display: none; }
+      .reveal .video-original.video-unavailable { font-size: 0.8em; margin: 1em 0; }
+      .reveal section:has(source[src*="local-replacements/"]) > p { font-size: 0.65em; margin: 0.3em 0; line-height: 1.2; }
+      .reveal section:has(source[src*="local-replacements/"]) > p.credits { font-size: 0.42em; }
       .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
       .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
       .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }
@@ -547,6 +554,18 @@ ${embeddedMarkdown}
       };
 
       const initializeLabs = () => {
+        document.querySelectorAll('video[data-youtube-fallback]').forEach((video) => {
+          const link = (video.closest('p') || video).nextElementSibling;
+          if (!link?.classList.contains('video-original')) return;
+          const showOriginal = () => {
+            video.pause();
+            video.hidden = true;
+            link.classList.add('video-unavailable');
+          };
+          video.addEventListener('error', showOriginal);
+          video.querySelectorAll('source').forEach((source) => source.addEventListener('error', showOriginal));
+          if (video.error || video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) showOriginal();
+        });
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
         document.querySelector('.two-of-five-word')?.addEventListener('input', setTwoOfFiveCheckResult);

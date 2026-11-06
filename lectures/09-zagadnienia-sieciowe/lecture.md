@@ -206,19 +206,13 @@ Historycznym przykładem sieci z dwoma pierścieniami jest **FDDI** (*Fiber Dist
 
 ## Koncentrator a przełącznik
 
-<div class="columns"><div>
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/hub-switch.jpg"><source src="media/local-replacements/hub-switch.mp4" type="video/mp4"></video>
 
-**Koncentrator (hub)**
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=1z0ULvg_pW8&amp;t=19s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
 
-Powiela sygnał do wszystkich portów; medium pozostaje współdzielone.
+<p class="credits">PowerCert Animated Videos · Hub, Switch, &amp; Router Explained · fragment 00:19.560–03:16.000</p>
 
-</div><div>
-
-**Przełącznik (switch)**
-
-Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
-
-</div></div>
+<p class="small">Przełącznik umożliwia równoległe transmisje. Rozgłoszenia i ramki do nieznanych adresów MAC rozsyła do pozostałych portów danej VLAN (wirtualnej sieci lokalnej).</p>
 
 ---
 
@@ -227,18 +221,6 @@ Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
 Oddzielne łącza ułatwiają rozbudowę, konserwację i wskazanie uszkodzonego kabla. Awaria jednego komputera zwykle nie zatrzymuje pozostałych.
 
 Potrzeba więcej kabli i portów niż w magistrali. Awaria centralnego koncentratora lub przełącznika odcina podłączone do niego stacje.
-
----
-
-## Materiał: gwiazda z koncentratorem
-
-<video controls preload="metadata" poster="media/image12.png"><source src="media/slide-030-media3.mp4" type="video/mp4"></video>
-
----
-
-## Materiał: gwiazda z przełącznikiem
-
-<video controls preload="metadata" poster="media/image12.png"><source src="media/slide-031-media4.mp4" type="video/mp4"></video>
 
 ---
 
@@ -319,22 +301,6 @@ Pełna siatka wymaga jednak wielu portów i połączeń, a jej budowa i utrzyman
 
 ---
 
-## Ile łączy ma pełna siatka?
-
-<div class="mesh-formula">
-  <div class="formula">c = <span class="mesh-fraction"><i>n² − n</i><small>2</small></span></div>
-  <div class="formula-legend"><strong>n</strong> liczba węzłów <strong>c</strong> liczba łączy</div>
-</div>
-
-Każde łącze łączy parę różnych węzłów, a tę samą parę liczymy tylko raz.
-
-<div class="code-lab mesh-lab">
-  <label>Liczba węzłów <i>n</i><input class="mesh-nodes" type="number" min="2" max="1000" step="1" value="5" inputmode="numeric"></label>
-  <div class="lab-result mesh-result"></div>
-</div>
-
----
-
 ## Wybór topologii
 
 Zależy od:
@@ -352,3 +318,29 @@ Zależy od:
 - Topologia opisuje organizację połączeń w sieci.
 - Gwiazda ze switchem dominuje we współczesnych LAN.
 - Hierarchie i siatki zapewniają skalowalność lub redundancję, zależnie od potrzeb.
+
+<!-- study-only:start -->
+
+---
+
+# Materiały do samodzielnej nauki
+
+Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
+
+---
+
+## Ile łączy ma pełna siatka?
+
+<div class="mesh-formula">
+  <div class="formula">c = <span class="mesh-fraction"><i>n² − n</i><small>2</small></span></div>
+  <div class="formula-legend"><strong>n</strong> liczba węzłów <strong>c</strong> liczba łączy</div>
+</div>
+
+Każde łącze łączy parę różnych węzłów, a tę samą parę liczymy tylko raz.
+
+<div class="code-lab mesh-lab">
+  <label>Liczba węzłów <i>n</i><input class="mesh-nodes" type="number" min="2" max="1000" step="1" value="5" inputmode="numeric"></label>
+  <div class="lab-result mesh-result"></div>
+</div>
+
+<!-- study-only:end -->

@@ -20,6 +20,11 @@
       .reveal strong { color: var(--pt-blue); }
       .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
       .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal video:has(source[src*="local-replacements/"]) { width: 100%; height: 360px; max-height: 360px; object-fit: contain; margin: 0.25em auto; background: #111; }
+      .reveal video[hidden] { display: none; }
+      .reveal .video-original.video-unavailable { font-size: 0.8em; margin: 1em 0; }
+      .reveal section:has(source[src*="local-replacements/"]) > p { font-size: 0.65em; margin: 0.3em 0; line-height: 1.2; }
+      .reveal section:has(source[src*="local-replacements/"]) > p.credits { font-size: 0.42em; }
       .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
       .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
       .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }
@@ -416,17 +421,13 @@ Na zdjęciach: u góry **wtyk**, u dołu **gniazdo**.
 
 ## Dlaczego przewody są skręcone?
 
-<div class="columns"><div>
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/twisted-pair.jpg"><source src="media/local-replacements/twisted-pair.mp4" type="video/mp4"></video>
 
-- Każda para jest **linią symetryczną**: odbiornik porównuje napięcia dwóch przewodów.
-- Skręt pomaga ograniczać zakłócenia z otoczenia i przesłuch, czyli przenikanie sygnału między parami.
-- Różny skok skrętu par ogranicza ich wzajemne oddziaływanie.
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=P7WfY9P2uNY&amp;t=25s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
 
-</div><div>
+<p class="credits">Audio University / Kyle Mathias · Why Are Wires Twisted? · fragment 00:25.920–04:15.360</p>
 
-<img src="media/image13.png" alt="Cztery skręcone pary wewnątrz kabla" height="340">
-
-</div></div>
+<p class="small">Różny skok skrętu poszczególnych par dodatkowo ogranicza przesłuch między nimi. Film pokazuje model idealnej linii symetrycznej; w praktyce tłumienie zakłóceń nie jest całkowite.</p>
 
 ---
 
@@ -749,7 +750,6 @@ To historyczny standard: [IEEE oznacza go dziś jako wycofany](https://standards
 - Koncentryk jest odpornym, ale historycznym medium sieciowym.
 - Skrętka dominuje w sieciach LAN dzięki cenie, łatwości instalacji i różnym wariantom ekranowania.
 - RJ-45 pozostaje podstawowym złączem Ethernetu w okablowaniu miedzianym.
-
       </textarea></section>
     </div></div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
@@ -964,6 +964,18 @@ To historyczny standard: [IEEE oznacza go dziś jako wycofany](https://standards
       };
 
       const initializeLabs = () => {
+        document.querySelectorAll('video[data-youtube-fallback]').forEach((video) => {
+          const link = (video.closest('p') || video).nextElementSibling;
+          if (!link?.classList.contains('video-original')) return;
+          const showOriginal = () => {
+            video.pause();
+            video.hidden = true;
+            link.classList.add('video-unavailable');
+          };
+          video.addEventListener('error', showOriginal);
+          video.querySelectorAll('source').forEach((source) => source.addEventListener('error', showOriginal));
+          if (video.error || video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) showOriginal();
+        });
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
         document.querySelector('.two-of-five-word')?.addEventListener('input', setTwoOfFiveCheckResult);

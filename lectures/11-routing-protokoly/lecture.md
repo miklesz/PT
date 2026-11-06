@@ -323,27 +323,19 @@ Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. 
 
 ## DNS
 
-DNS (*Domain Name System*) tłumaczy nazwy, np. `example.org`, na adresy IP i przechowuje inne rekordy związane z domeną.
+DNS: <em>Domain Name System</em> — system nazw domenowych.
 
-Warto rozdzielić **rejestrację domeny i publikację jej rekordów** od **bieżącego odpytywania DNS** przez urządzenia szukające adresu. To powiązane, ale różne czynności.
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/dns.jpg"><source src="media/local-replacements/dns.mp4" type="video/mp4"></video>
 
-<div class="columns"><div>
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=mpQZVYPuDGU&amp;t=150s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
 
-**Resolver**
-
-Przyjmuje zapytanie od hosta i szuka odpowiedzi.
-
-</div><div>
-
-**Serwery autorytatywne**
-
-Utrzymują rekordy dla konkretnych stref DNS.
-
-</div></div>
+<p class="credits">PowerCert Animated Videos · How a DNS Server Works · fragment 02:30.400–05:42.000</p>
 
 ---
 
 ## Rekordy DNS
+
+Rejestracja domeny i publikacja rekordów to inne czynności niż bieżące odpytywanie DNS.
 
 <div class="comparison-grid">
   <div><strong>A / AAAA</strong>adres IPv4 / IPv6 hosta</div>
@@ -407,3 +399,35 @@ Routing wewnątrz jednej organizacji może optymalizować metrykę techniczną. 
 - Prawidłowa konfiguracja hosta obejmuje adres, prefiks, bramę i DNS.
 - DNS mapuje nazwy na dane potrzebne aplikacjom.
 - BGP kieruje ruchem między systemami autonomicznymi Internetu.
+
+<!-- study-only:start -->
+
+---
+
+# Materiały do samodzielnej nauki
+
+Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
+
+---
+
+## DNS: role serwerów
+
+Warto rozdzielić **rejestrację domeny i publikację jej rekordów** od **bieżącego odpytywania DNS** przez urządzenia szukające adresu. To powiązane, ale różne czynności.
+
+<div class="columns"><div>
+
+**Resolver**
+
+Przyjmuje zapytanie od hosta i szuka odpowiedzi.
+
+Nie musi należeć do dostawcy Internetu; może być firmowy lub publiczny.
+
+</div><div>
+
+**Serwery autorytatywne**
+
+Utrzymują rekordy dla konkretnych stref DNS.
+
+</div></div>
+
+<!-- study-only:end -->

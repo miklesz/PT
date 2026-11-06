@@ -25,9 +25,6 @@ Cele kodowania obejmują między innymi reprezentację informacji, synchronizacj
 
 Odległość Hamminga to liczba pozycji, na których dwa ciągi o tej samej długości się różnią.
 
-`d(10001, 10000) = 1`
-`d(00010, 10100) = 3`
-
 Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji błędów.
 
 ---
@@ -41,16 +38,6 @@ Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji b�
 ## Materiał: odległość Hamminga
 
 <video controls preload="metadata"><source src="media/videos/P02mJhS9qQ4.mp4" type="video/mp4"></video>
-
----
-
-## Sprawdź: odległość Hamminga
-
-<div class="code-lab hamming-lab">
-  <label>Pierwszy ciąg<input class="hamming-x" value="10001" inputmode="numeric" maxlength="16"></label>
-  <label>Drugi ciąg<input class="hamming-y" value="10000" inputmode="numeric" maxlength="16"></label>
-  <div class="lab-result hamming-result" aria-live="polite"></div>
-</div>
 
 ---
 
@@ -184,15 +171,6 @@ AMI (*Alternate Mark Inversion*): kolejne `1` to naprzemienne impulsy `+` i `−
 
 ---
 
-## HDB3: spróbuj sam
-
-<div class="code-lab hdb3-lab">
-  <label>Ciąg binarny<input class="hdb3-input" value="100000001" inputmode="numeric" maxlength="20"></label>
-  <div class="lab-result hdb3-result" aria-live="polite"></div>
-</div>
-
----
-
 ## Korzyści i ograniczenia HDB
 
 - Zastępowanie długich serii zer ułatwia synchronizację bez narzucania struktury danych.
@@ -279,24 +257,6 @@ Sprawdza wagę słowa, rozpoznaje kod i sygnalizuje nieprawidłową kombinację.
 Historyczne zastosowania obejmują centrale telefoniczne (przesyłanie cyfr wybieranego numeru), dawne systemy komputerowe oraz kody kreskowe *Interleaved 2 of 5*, używane między innymi do oznaczania przesyłek i produktów.
 
 ![Przykład kodu kreskowego Interleaved 2 of 5](media/image9.png)
-
----
-
-## Generator kodu „2 z 5”
-
-<div class="code-lab two-of-five-lab">
-  <label>Cyfra wejściowa<input class="two-of-five-digit" type="number" value="6" min="0" max="9" step="1" inputmode="numeric"></label>
-  <div class="lab-result two-of-five-result" aria-live="polite"></div>
-</div>
-
----
-
-## Sprawdź słowo „2 z 5”
-
-<div class="code-lab two-of-five-checker">
-  <label>Słowo pięciobitowe<input class="two-of-five-word" value="01100" inputmode="numeric" maxlength="5"></label>
-  <div class="lab-result two-of-five-check-result" aria-live="polite"></div>
-</div>
 
 ---
 
@@ -462,15 +422,6 @@ Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwię
 
 ---
 
-## Koder splotowy: spróbuj sam
-
-<div class="code-lab convolutional-lab">
-  <label>Ciąg wejściowy<input class="convolutional-input" value="10110" inputmode="numeric" maxlength="12"></label>
-  <div class="lab-result convolutional-result" aria-live="polite"></div>
-</div>
-
----
-
 ## Systematyczne a niesystematyczne kodowanie splotowe
 
 - W wersji systematycznej jeden z bitów wyjściowych jest kopią bitu wejściowego.
@@ -484,3 +435,61 @@ Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwię
 - Odległość Hamminga i waga pomagają opisać właściwości kodu.
 - Kody transmisyjne mogą wspierać synchronizację i odporność na błędy.
 - HDB, „2 z 5”, kody ilorazowe i splotowe rozwiązują różne problemy transmisyjne.
+
+<!-- study-only:start -->
+
+---
+
+# Materiały do samodzielnej nauki
+
+Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
+
+---
+
+## Sprawdź: odległość Hamminga
+
+Przykłady: `d(10001, 10000) = 1`, `d(00010, 10100) = 3`.
+
+<div class="code-lab hamming-lab">
+  <label>Pierwszy ciąg<input class="hamming-x" value="10001" inputmode="numeric" maxlength="16"></label>
+  <label>Drugi ciąg<input class="hamming-y" value="10000" inputmode="numeric" maxlength="16"></label>
+  <div class="lab-result hamming-result" aria-live="polite"></div>
+</div>
+
+---
+
+## HDB3: spróbuj sam
+
+<div class="code-lab hdb3-lab">
+  <label>Ciąg binarny<input class="hdb3-input" value="100000001" inputmode="numeric" maxlength="20"></label>
+  <div class="lab-result hdb3-result" aria-live="polite"></div>
+</div>
+
+---
+
+## Generator kodu „2 z 5”
+
+<div class="code-lab two-of-five-lab">
+  <label>Cyfra wejściowa<input class="two-of-five-digit" type="number" value="6" min="0" max="9" step="1" inputmode="numeric"></label>
+  <div class="lab-result two-of-five-result" aria-live="polite"></div>
+</div>
+
+---
+
+## Sprawdź słowo „2 z 5”
+
+<div class="code-lab two-of-five-checker">
+  <label>Słowo pięciobitowe<input class="two-of-five-word" value="01100" inputmode="numeric" maxlength="5"></label>
+  <div class="lab-result two-of-five-check-result" aria-live="polite"></div>
+</div>
+
+---
+
+## Koder splotowy: spróbuj sam
+
+<div class="code-lab convolutional-lab">
+  <label>Ciąg wejściowy<input class="convolutional-input" value="10110" inputmode="numeric" maxlength="12"></label>
+  <div class="lab-result convolutional-result" aria-live="polite"></div>
+</div>
+
+<!-- study-only:end -->

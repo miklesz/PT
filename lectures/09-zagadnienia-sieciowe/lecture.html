@@ -20,6 +20,11 @@
       .reveal strong { color: var(--pt-blue); }
       .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
       .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal video:has(source[src*="local-replacements/"]) { width: 100%; height: 360px; max-height: 360px; object-fit: contain; margin: 0.25em auto; background: #111; }
+      .reveal video[hidden] { display: none; }
+      .reveal .video-original.video-unavailable { font-size: 0.8em; margin: 1em 0; }
+      .reveal section:has(source[src*="local-replacements/"]) > p { font-size: 0.65em; margin: 0.3em 0; line-height: 1.2; }
+      .reveal section:has(source[src*="local-replacements/"]) > p.credits { font-size: 0.42em; }
       .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
       .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
       .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }
@@ -524,19 +529,13 @@ Historycznym przykładem sieci z dwoma pierścieniami jest **FDDI** (*Fiber Dist
 
 ## Koncentrator a przełącznik
 
-<div class="columns"><div>
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/hub-switch.jpg"><source src="media/local-replacements/hub-switch.mp4" type="video/mp4"></video>
 
-**Koncentrator (hub)**
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=1z0ULvg_pW8&amp;t=19s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
 
-Powiela sygnał do wszystkich portów; medium pozostaje współdzielone.
+<p class="credits">PowerCert Animated Videos · Hub, Switch, &amp; Router Explained · fragment 00:19.560–03:16.000</p>
 
-</div><div>
-
-**Przełącznik (switch)**
-
-Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
-
-</div></div>
+<p class="small">Przełącznik umożliwia równoległe transmisje. Rozgłoszenia i ramki do nieznanych adresów MAC rozsyła do pozostałych portów danej VLAN (wirtualnej sieci lokalnej).</p>
 
 ---
 
@@ -545,18 +544,6 @@ Kieruje ramkę do właściwego portu; umożliwia równoległą komunikację.
 Oddzielne łącza ułatwiają rozbudowę, konserwację i wskazanie uszkodzonego kabla. Awaria jednego komputera zwykle nie zatrzymuje pozostałych.
 
 Potrzeba więcej kabli i portów niż w magistrali. Awaria centralnego koncentratora lub przełącznika odcina podłączone do niego stacje.
-
----
-
-## Materiał: gwiazda z koncentratorem
-
-<video controls preload="metadata" poster="media/image12.png"><source src="media/slide-030-media3.mp4" type="video/mp4"></video>
-
----
-
-## Materiał: gwiazda z przełącznikiem
-
-<video controls preload="metadata" poster="media/image12.png"><source src="media/slide-031-media4.mp4" type="video/mp4"></video>
 
 ---
 
@@ -637,22 +624,6 @@ Pełna siatka wymaga jednak wielu portów i połączeń, a jej budowa i utrzyman
 
 ---
 
-## Ile łączy ma pełna siatka?
-
-<div class="mesh-formula">
-  <div class="formula">c = <span class="mesh-fraction"><i>n² − n</i><small>2</small></span></div>
-  <div class="formula-legend"><strong>n</strong> liczba węzłów <strong>c</strong> liczba łączy</div>
-</div>
-
-Każde łącze łączy parę różnych węzłów, a tę samą parę liczymy tylko raz.
-
-<div class="code-lab mesh-lab">
-  <label>Liczba węzłów <i>n</i><input class="mesh-nodes" type="number" min="2" max="1000" step="1" value="5" inputmode="numeric"></label>
-  <div class="lab-result mesh-result"></div>
-</div>
-
----
-
 ## Wybór topologii
 
 Zależy od:
@@ -670,7 +641,6 @@ Zależy od:
 - Topologia opisuje organizację połączeń w sieci.
 - Gwiazda ze switchem dominuje we współczesnych LAN.
 - Hierarchie i siatki zapewniają skalowalność lub redundancję, zależnie od potrzeb.
-
       </textarea></section>
     </div></div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
@@ -885,6 +855,18 @@ Zależy od:
       };
 
       const initializeLabs = () => {
+        document.querySelectorAll('video[data-youtube-fallback]').forEach((video) => {
+          const link = (video.closest('p') || video).nextElementSibling;
+          if (!link?.classList.contains('video-original')) return;
+          const showOriginal = () => {
+            video.pause();
+            video.hidden = true;
+            link.classList.add('video-unavailable');
+          };
+          video.addEventListener('error', showOriginal);
+          video.querySelectorAll('source').forEach((source) => source.addEventListener('error', showOriginal));
+          if (video.error || video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) showOriginal();
+        });
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
         document.querySelector('.two-of-five-word')?.addEventListener('input', setTwoOfFiveCheckResult);

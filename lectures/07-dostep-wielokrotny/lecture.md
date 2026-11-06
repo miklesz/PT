@@ -177,10 +177,13 @@ Wybór jest kompromisem między opóźnieniem a ryzykiem kolizji.
 
 CSMA/CA (*Carrier Sense Multiple Access with Collision Avoidance*, wielodostęp z nasłuchem nośnej i unikaniem kolizji) stosuje się w szczególności w Wi-Fi, gdzie wykrywanie kolizji podczas własnego nadawania jest trudne.
 
-- nasłuchiwanie kanału,
-- losowy czas oczekiwania (*backoff*),
-- opcjonalnie RTS/CTS (*Request to Send / Clear to Send*), czyli krótka wymiana rezerwująca medium,
-- potwierdzenia odbioru.
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/csma-ca.jpg"><source src="media/local-replacements/csma-ca.mp4" type="video/mp4"></video>
+
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=iKn0GzF5-IU&amp;t=252s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
+
+<p class="credits">PowerCert Animated Videos · CSMA/CD and CSMA/CA Explained · fragment 04:12.830–05:03.300</p>
+
+<p class="small">Opcjonalne RTS/CTS (<em>Request to Send / Clear to Send</em>) rezerwuje medium. Losowy czas oczekiwania to <em>backoff</em>; ACK to potwierdzenie odbioru.</p>
 
 ---
 
@@ -214,21 +217,15 @@ Węzeł radiowy może nie słyszeć innego węzła, choć oba zakłócają odbio
 
 ## Wykrywanie kolizji
 
-CSMA/CD (*Carrier Sense Multiple Access with Collision Detection*, wielodostęp z nasłuchem nośnej i wykrywaniem kolizji) było stosowane w klasycznym, współdzielonym Ethernecie:
+CSMA/CD: <em>Carrier Sense Multiple Access with Collision Detection</em> — wielodostęp z nasłuchem nośnej i wykrywaniem kolizji.
 
-1. nasłuchaj medium,
-2. rozpocznij transmisję,
-3. monitoruj medium podczas nadawania,
-4. po wykryciu kolizji przerwij transmisję, wyślij sekwencję zagłuszającą i wykonaj losowy backoff.
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/csma-cd.jpg"><source src="media/local-replacements/csma-cd.mp4" type="video/mp4"></video>
 
----
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=iKn0GzF5-IU&amp;t=38s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
 
-## CSMA/CD: decyzja po kolizji
+<p class="credits">PowerCert Animated Videos · CSMA/CD and CSMA/CA Explained · fragment 00:38.260–03:40.700</p>
 
-<div class="media-gallery">
-  <img src="media/image12.png" alt="Uproszczony algorytm CSMA/CD">
-  <img src="media/image13.png" alt="Przepływ decyzji CSMA/CD">
-</div>
+<p class="small">Brak wykrytej kolizji nie gwarantuje dostarczenia ramki. Mechanizm dotyczy medium współdzielonego i pracy półdupleksowej.</p>
 
 ---
 
@@ -291,3 +288,22 @@ W klasycznym Ethernecie ramka ma co najmniej **64 bajty** od adresu docelowego d
 - ALOHA jest proste, ale mało wydajne przy obciążeniu.
 - CSMA zmniejsza liczbę kolizji przez nasłuchiwanie.
 - Wi-Fi używa CSMA/CA, a klasyczny Ethernet używał CSMA/CD.
+
+<!-- study-only:start -->
+
+---
+
+# Materiały do samodzielnej nauki
+
+Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
+
+---
+
+## CSMA/CD: decyzja po kolizji
+
+<div class="media-gallery">
+  <img src="media/image12.png" alt="Uproszczony algorytm CSMA/CD">
+  <img src="media/image13.png" alt="Przepływ decyzji CSMA/CD">
+</div>
+
+<!-- study-only:end -->

@@ -98,17 +98,13 @@ Na zdjęciach: u góry **wtyk**, u dołu **gniazdo**.
 
 ## Dlaczego przewody są skręcone?
 
-<div class="columns"><div>
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/twisted-pair.jpg"><source src="media/local-replacements/twisted-pair.mp4" type="video/mp4"></video>
 
-- Każda para jest **linią symetryczną**: odbiornik porównuje napięcia dwóch przewodów.
-- Skręt pomaga ograniczać zakłócenia z otoczenia i przesłuch, czyli przenikanie sygnału między parami.
-- Różny skok skrętu par ogranicza ich wzajemne oddziaływanie.
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=P7WfY9P2uNY&amp;t=25s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
 
-</div><div>
+<p class="credits">Audio University / Kyle Mathias · Why Are Wires Twisted? · fragment 00:25.920–04:15.360</p>
 
-<img src="media/image13.png" alt="Cztery skręcone pary wewnątrz kabla" height="340">
-
-</div></div>
+<p class="small">Różny skok skrętu poszczególnych par dodatkowo ogranicza przesłuch między nimi. Film pokazuje model idealnej linii symetrycznej; w praktyce tłumienie zakłóceń nie jest całkowite.</p>
 
 ---
 

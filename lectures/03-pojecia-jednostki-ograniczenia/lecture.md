@@ -181,6 +181,39 @@ Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzen
 
 ---
 
+## Prawo Sarnoffa: film
+
+<video controls preload="metadata" poster="media/sarnoff-film-poster.jpg"><source src="media/vY939jNAM14.mp4" type="video/mp4"></video>
+
+<p class="small">Każdy kolejny odbiorca zwiększa wartość sieci nadawczej w modelu liniowym.</p>
+
+---
+
+## Prawo Metcalfe'a: film
+
+<video controls preload="metadata" poster="media/metcalfe-film-poster.jpg"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
+
+<p class="small">Uwaga do grafiki w filmie: <strong>4, 9 i 16</strong> ilustrują model wartości sieci proporcjonalnej do <code>n²</code>, nie liczbę połączeń. Dla 2, 3 i 4 węzłów liczba możliwych połączeń między parami wynosi <strong>1, 3 i 6</strong>: <code>n(n−1)/2</code>.</p>
+
+---
+
+## Podsumowanie
+
+- Sygnał jest modelem wielkości niosącej informację.
+- Decybel wygodnie opisuje szerokie zakresy i zmiany względne.
+- Przepustowość jest właściwością kanału, przepływność opisuje faktyczny strumień danych.
+- Próbkowanie, rozwój układów oraz wartość sieci mają swoje rozpoznawalne prawa i ograniczenia.
+
+<!-- study-only:start -->
+
+---
+
+# Materiały do samodzielnej nauki
+
+Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
+
+---
+
 ## Prawo Sarnoffa
 
 <div class="columns"><div class="small">
@@ -196,14 +229,6 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 <img src="media/image6.jpg" alt="David Sarnoff" height="220">
 
 </div></div>
-
----
-
-## Prawo Sarnoffa: film
-
-<video controls preload="metadata" poster="media/sarnoff-film-poster.jpg"><source src="media/vY939jNAM14.mp4" type="video/mp4"></video>
-
-<p class="small">Każdy kolejny odbiorca zwiększa wartość sieci nadawczej w modelu liniowym.</p>
 
 ---
 
@@ -237,17 +262,4 @@ Każdy nowy użytkownik może połączyć się ze wszystkimi wcześniejszymi.
 
 <p class="small" style="text-align:center">Dla <strong>n</strong> użytkowników: <strong>n(n−1)/2</strong> możliwych połączeń.</p>
 
----
-
-## Prawo Metcalfe'a: film
-
-<video controls preload="metadata" poster="media/metcalfe-film-poster.jpg"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
-
----
-
-## Podsumowanie
-
-- Sygnał jest modelem wielkości niosącej informację.
-- Decybel wygodnie opisuje szerokie zakresy i zmiany względne.
-- Przepustowość jest właściwością kanału, przepływność opisuje faktyczny strumień danych.
-- Próbkowanie, rozwój układów oraz wartość sieci mają swoje rozpoznawalne prawa i ograniczenia.
+<!-- study-only:end -->

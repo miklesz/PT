@@ -20,6 +20,11 @@
       .reveal strong { color: var(--pt-blue); }
       .reveal img { display: block; max-height: 48vh; max-width: 78%; margin: 0.6em auto 0; object-fit: contain; border: 0; box-shadow: none; }
       .reveal video { display: block; width: min(76vw, 980px); max-height: 58vh; margin: 0.55em auto 0; }
+      .reveal video:has(source[src*="local-replacements/"]) { width: 100%; height: 360px; max-height: 360px; object-fit: contain; margin: 0.25em auto; background: #111; }
+      .reveal video[hidden] { display: none; }
+      .reveal .video-original.video-unavailable { font-size: 0.8em; margin: 1em 0; }
+      .reveal section:has(source[src*="local-replacements/"]) > p { font-size: 0.65em; margin: 0.3em 0; line-height: 1.2; }
+      .reveal section:has(source[src*="local-replacements/"]) > p.credits { font-size: 0.42em; }
       .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
       .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
       .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }
@@ -499,24 +504,6 @@ Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzen
 
 ---
 
-## Prawo Sarnoffa
-
-<div class="columns"><div class="small">
-
-**Wartość sieci telekomunikacyjnej jest proporcjonalna do liczby jej odbiorców.**
-
-Dotyczy przede wszystkim sieci nadawczych: radia, telewizji i portali, w których każdy nowy odbiorca zwiększa wartość sieci liniowo.
-
-David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
-
-</div><div>
-
-<img src="media/image6.jpg" alt="David Sarnoff" height="220">
-
-</div></div>
-
----
-
 ## Prawo Sarnoffa: film
 
 <video controls preload="metadata" poster="media/sarnoff-film-poster.jpg"><source src="media/vY939jNAM14.mp4" type="video/mp4"></video>
@@ -525,41 +512,11 @@ David Sarnoff (1891–1971) był amerykańskim menedżerem radia i telewizji.
 
 ---
 
-## Prawo Metcalfe'a
-
-> Użyteczność sieci telekomunikacyjnej rośnie proporcjonalnie do kwadratu liczby podłączonych urządzeń lub użytkowników.
-
----
-
-## Skąd bierze się wzrost kwadratowy?
-
-Każdy nowy użytkownik może połączyć się ze wszystkimi wcześniejszymi.
-
-<svg viewBox="0 0 1050 390" role="img" aria-label="Dwie osoby: jedno połączenie; trzy osoby: trzy połączenia; cztery osoby: sześć połączeń" style="width:100%;max-height:390px;font-family:Arial,sans-serif">
-  <g fill="none" stroke="#29829a" stroke-width="6" stroke-linecap="round">
-    <path d="M105 170H245"/>
-    <path d="M425 195L525 80 625 195Z"/>
-    <path d="M790 80H950V230H790Z M790 80L950 230 M950 80L790 230"/>
-  </g>
-  <g fill="#fff" stroke="#075478" stroke-width="6">
-    <circle cx="105" cy="170" r="20"/><circle cx="245" cy="170" r="20"/>
-    <circle cx="425" cy="195" r="20"/><circle cx="525" cy="80" r="20"/><circle cx="625" cy="195" r="20"/>
-    <circle cx="790" cy="80" r="20"/><circle cx="950" cy="80" r="20"/><circle cx="950" cy="230" r="20"/><circle cx="790" cy="230" r="20"/>
-  </g>
-  <g text-anchor="middle" fill="#123c57">
-    <text x="175" y="315" font-size="31" font-weight="700">2 użytkowników</text><text x="175" y="358" font-size="27">1 połączenie</text>
-    <text x="525" y="315" font-size="31" font-weight="700">3 użytkowników</text><text x="525" y="358" font-size="27">3 połączenia</text>
-    <text x="870" y="315" font-size="31" font-weight="700">4 użytkowników</text><text x="870" y="358" font-size="27">6 połączeń</text>
-  </g>
-</svg>
-
-<p class="small" style="text-align:center">Dla <strong>n</strong> użytkowników: <strong>n(n−1)/2</strong> możliwych połączeń.</p>
-
----
-
 ## Prawo Metcalfe'a: film
 
 <video controls preload="metadata" poster="media/metcalfe-film-poster.jpg"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
+
+<p class="small">Uwaga do grafiki w filmie: <strong>4, 9 i 16</strong> ilustrują model wartości sieci proporcjonalnej do <code>n²</code>, nie liczbę połączeń. Dla 2, 3 i 4 węzłów liczba możliwych połączeń między parami wynosi <strong>1, 3 i 6</strong>: <code>n(n−1)/2</code>.</p>
 
 ---
 
@@ -569,7 +526,6 @@ Każdy nowy użytkownik może połączyć się ze wszystkimi wcześniejszymi.
 - Decybel wygodnie opisuje szerokie zakresy i zmiany względne.
 - Przepustowość jest właściwością kanału, przepływność opisuje faktyczny strumień danych.
 - Próbkowanie, rozwój układów oraz wartość sieci mają swoje rozpoznawalne prawa i ograniczenia.
-
       </textarea></section>
     </div></div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
@@ -784,6 +740,18 @@ Każdy nowy użytkownik może połączyć się ze wszystkimi wcześniejszymi.
       };
 
       const initializeLabs = () => {
+        document.querySelectorAll('video[data-youtube-fallback]').forEach((video) => {
+          const link = (video.closest('p') || video).nextElementSibling;
+          if (!link?.classList.contains('video-original')) return;
+          const showOriginal = () => {
+            video.pause();
+            video.hidden = true;
+            link.classList.add('video-unavailable');
+          };
+          video.addEventListener('error', showOriginal);
+          video.querySelectorAll('source').forEach((source) => source.addEventListener('error', showOriginal));
+          if (video.error || video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) showOriginal();
+        });
         document.querySelectorAll('.hamming-x, .hamming-y').forEach((input) => input.addEventListener('input', setHammingResult));
         document.querySelector('.two-of-five-digit')?.addEventListener('input', setTwoOfFiveResult);
         document.querySelector('.two-of-five-word')?.addEventListener('input', setTwoOfFiveCheckResult);
