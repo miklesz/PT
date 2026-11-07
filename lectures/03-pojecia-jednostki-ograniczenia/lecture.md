@@ -163,6 +163,8 @@ Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzen
 
 ![Wykres liczby tranzystorów](media/image3.png)
 
+<p class="credits">Wykres: Wgsimon, Wikimedia Commons, CC BY-SA 3.0.</p>
+
 </div></div>
 
 ---

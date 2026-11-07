@@ -232,6 +232,11 @@ Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
 
 ## Dijkstra: kolejne iteracje
 
+1. Z `s` wyznaczamy koszty `d = 9` i `a = 15`.
+2. Przez `d` poprawiamy koszt do `a` na 13 i wyznaczamy `c = 11`.
+3. Przez `c` wyznaczamy `t = 18`. Koszt `a = 13` się nie zmienia.
+4. Z `a` wyznaczamy `b = 48`, więc następny jest `t = 18`. Najkrótsza ścieżka to `s → d → c → t`.
+
 <div class="algorithm-demo dijkstra-demo">
   <svg viewBox="0 0 760 320" role="img" aria-label="Skierowany graf z oryginalnego wykładu: najkrótsza droga s, d, c, t ma wagę 18.">
     <defs><marker id="dijkstra-arrow" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L6,3.5 L0,7 Z" fill="#9aa9b5"/></marker></defs>
@@ -271,15 +276,17 @@ Jeśli bieżący koszt do `A` wynosi `4`, a krawędź `A → B` ma wagę `3`, ka
 
 ---
 
-## Szukanie ścieżki w przykładzie
+## Ford-Fulkerson: wybór ścieżki
 
-W oryginalnym przykładzie zaczynamy w `s` i idziemy do `a`. Jeśli wybierzemy następnie `b`, trafimy w ślepy zaułek: z `b` nie ma drogi do ujścia `t`. Cofamy się więc do `a` i próbujemy przez `d`.
+W grafie przepływu na następnym diagramie z `s` przechodzimy do `a`. Wybór `b` prowadzi do ślepego zaułka, więc wracamy do `a` i próbujemy przez `d`.
 
 Pierwsza znaleziona ścieżka to `s → a → d → t`. Podczas jednego poszukiwania nie odwiedzamy ponownie węzła, który już leży na tej ścieżce.
 
 ---
 
 ## Ford-Fulkerson: ścieżka powiększająca
+
+Kolejne ścieżki zwiększają przepływ o 3 (`s → a → d → t`), 1 (`s → c → d → t`) i 2 (`s → c → a → t`). Suma to 6. Oba łuki do ujścia są wtedy nasycone, więc więcej przepływu nie da się przesłać.
 
 <div class="algorithm-demo flow-demo">
   <div class="flow-lab">
@@ -321,11 +328,15 @@ Pierwsza znaleziona ścieżka to `s → a → d → t`. Podczas jednego poszukiw
 
 ## Dinic: graf poziomów
 
+W pierwszym grafie poziomów można przejść z `y` do `u`, ale nie z `y` do `x` (ten sam poziom). Przykładowy przepływ blokujący to po 5 jednostek ścieżkami `s → x → u → t` i `s → y → w → t`. Łączny przepływ 10 wyczerpuje pojemność łuków wychodzących ze źródła.
+
+Gdy zaczniemy od 5 jednostek przez `s → y → u → t`, przeszukanie tylko łuków w przód nie wystarczy. W sieci resztowej ścieżka `s → x → u → y → w → t` wykorzystuje łuk wsteczny `u → y`, żeby wycofać przepływ z `y → u`. Po przekierowaniu łączny przepływ również wynosi 10.
+
 <div class="algorithm-demo dinic-demo">
   <svg viewBox="0 0 760 250" role="img" aria-label="Graf poziomów algorytmu Dinica: źródło, dwa poziomy pośrednie i ujście.">
     <defs><marker id="dinic-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z"/></marker></defs>
     <g class="level-band"><rect x="15" y="25" width="105" height="190"/><text x="67" y="48">poziom 0</text></g><g class="level-band"><rect x="175" y="25" width="145" height="190"/><text x="247" y="48">poziom 1</text></g><g class="level-band"><rect x="390" y="25" width="145" height="190"/><text x="462" y="48">poziom 2</text></g><g class="level-band"><rect x="635" y="25" width="105" height="190"/><text x="687" y="48">poziom 3</text></g>
-    <g class="dinic-edge" data-edge="sx"><line x1="102" y1="125" x2="210" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="sx" x="151" y="91">5</text></g><g class="dinic-edge" data-edge="sy"><line x1="102" y1="125" x2="210" y2="167" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="sy" x="151" y="180">5</text></g><g class="dinic-edge" data-edge="yx"><line x1="250" y1="148" x2="250" y2="103" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yx" x="270" y="133">5</text></g><g class="dinic-edge" data-edge="xu"><line x1="280" y1="83" x2="425" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="xu" x="350" y="70">5</text></g><g class="dinic-edge" data-edge="uy"><line x1="435" y1="94" x2="279" y2="158" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="uy" x="365" y="116">5</text></g><g class="dinic-edge" data-edge="yw"><line x1="280" y1="167" x2="425" y2="167" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yw" x="350" y="155">5</text></g><g class="dinic-edge" data-edge="ut"><line x1="495" y1="83" x2="652" y2="125" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="ut" x="572" y="91">5</text></g><g class="dinic-edge" data-edge="wt"><line x1="495" y1="167" x2="652" y2="125" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="wt" x="572" y="180">5</text></g>
+    <g class="dinic-edge" data-edge="sx"><line x1="102" y1="125" x2="210" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="sx" x="151" y="91">5</text></g><g class="dinic-edge" data-edge="sy"><line x1="102" y1="125" x2="210" y2="167" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="sy" x="151" y="180">5</text></g><g class="dinic-edge" data-edge="yx"><line x1="250" y1="148" x2="250" y2="103" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yx" x="270" y="133">5</text></g><g class="dinic-edge" data-edge="xu"><line x1="280" y1="83" x2="425" y2="83" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="xu" x="350" y="70">5</text></g><g class="dinic-edge" data-edge="yu"><line x1="279" y1="158" x2="435" y2="94" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yu" x="365" y="116">5</text></g><g class="dinic-edge" data-edge="yw"><line x1="280" y1="167" x2="425" y2="167" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="yw" x="350" y="155">5</text></g><g class="dinic-edge" data-edge="ut"><line x1="495" y1="83" x2="652" y2="125" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="ut" x="572" y="91">5</text></g><g class="dinic-edge" data-edge="wt"><line x1="495" y1="167" x2="652" y2="125" marker-end="url(#dinic-arrow)"/><text class="dinic-capacity" data-edge="wt" x="572" y="180">5</text></g>
     <g class="dinic-node"><circle cx="80" cy="125" r="22"/><text x="80" y="132">s</text></g><g class="dinic-node"><circle cx="250" cy="80" r="22"/><text x="250" y="87">x</text></g><g class="dinic-node"><circle cx="250" cy="170" r="22"/><text x="250" y="177">y</text></g><g class="dinic-node"><circle cx="465" cy="80" r="22"/><text x="465" y="87">u</text></g><g class="dinic-node"><circle cx="465" cy="170" r="22"/><text x="465" y="177">w</text></g><g class="dinic-node"><circle cx="680" cy="125" r="22"/><text x="680" y="132">t</text></g>
   </svg>
   <div class="algorithm-controls"><button class="dinic-prev" type="button" title="Poprzedni krok" aria-label="Poprzedni krok">←</button><strong class="dinic-caption"></strong><button class="dinic-next" type="button" title="Następny krok" aria-label="Następny krok">→</button></div>

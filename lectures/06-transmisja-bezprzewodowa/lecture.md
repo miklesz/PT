@@ -351,6 +351,18 @@ To przykład różnicy między standardem 802.11 a funkcją konkretnego produktu
 
 ---
 
+## WiGig i pasmo 60 GHz
+
+![Logo Wireless Gigabit Alliance](media/image25.png)
+
+---
+
+## Materiał wideo: Wi-Fi przy 60 GHz
+
+<video controls preload="metadata"><source src="media/videos/zcfuTD3z7aA.mp4" type="video/mp4"></video>
+
+---
+
 ## 802.11ah: Wi-Fi HaLow
 
 IEEE 802.11ah przenosi Wi-Fi do pasm **poniżej 1 GHz** (dostępne częstotliwości zależą od kraju). Niższa częstotliwość sprzyja większemu zasięgowi niż typowe pasma 2,4 i 5 GHz, kosztem mniejszej przepływności.
@@ -380,18 +392,6 @@ Są to rozszerzenia rodziny 802.11, a nie kolejne generacje oznaczane nazwami Wi
 - **802.22:** regionalne sieci bezprzewodowe.
 
 To historyczny przegląd rodzin standardów, nie lista technologii równie popularnych dziś.
-
----
-
-## WiGig i pasmo 60 GHz
-
-![Logo Wireless Gigabit Alliance](media/image25.png)
-
----
-
-## Materiał wideo: Wi-Fi przy 60 GHz
-
-<video controls preload="metadata"><source src="media/videos/zcfuTD3z7aA.mp4" type="video/mp4"></video>
 
 ---
 

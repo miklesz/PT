@@ -100,14 +100,6 @@ To prosty protokół, ale przy większym obciążeniu często dochodzi do kolizj
 
 ---
 
-## Szczelinowy ALOHA
-
-- Czas dzieli się na szczeliny.
-- Stacja może rozpocząć nadawanie tylko na początku szczeliny.
-- Zmniejsza to obszar, w którym transmisje mogą się nakładać, i poprawia wykorzystanie kanału.
-
----
-
 ## ALOHA: potwierdzenie odbioru
 
 <div class="media-gallery single-visual">
@@ -134,6 +126,14 @@ Kolizja występuje, gdy ramka innej stacji rozpocznie się w takim momencie, że
 
 ## Szczelinowy ALOHA
 
+- Czas dzieli się na szczeliny.
+- Stacja może rozpocząć nadawanie tylko na początku szczeliny.
+- Zmniejsza to obszar, w którym transmisje mogą się nakładać, i poprawia wykorzystanie kanału.
+
+---
+
+## Szczelinowy ALOHA: przebieg transmisji
+
 <div class="media-gallery single-visual">
   <img src="media/image9.png" alt="Szczelinowy ALOHA">
 </div>
@@ -156,6 +156,14 @@ Kolizja występuje, gdy ramka innej stacji rozpocznie się w takim momencie, że
 
 Kolizja pozostaje możliwa z powodu opóźnienia propagacji.
 Sygnał potrzebuje czasu na dotarcie do drugiego końca sieci i z powrotem; ten czas obiegu to **RTT** (*round-trip time*).
+
+---
+
+## Jednoczesna chęć nadawania
+
+<img src="media/image10.png" alt="Dwie stacje podejmują próbę nadawania w tym samym czasie" height="430">
+
+Samo nasłuchiwanie nie wyklucza kolizji: sygnał drugiej stacji potrzebuje czasu, by dotrzeć do nadajnika.
 
 ---
 
@@ -186,14 +194,6 @@ CSMA/CA (*Carrier Sense Multiple Access with Collision Avoidance*, wielodostęp 
 <p class="credits">PowerCert Animated Videos · CSMA/CD and CSMA/CA Explained · fragment 04:12.830–05:03.300</p>
 
 <p class="small">Opcjonalne RTS/CTS (<em>Request to Send / Clear to Send</em>) rezerwuje medium. Losowy czas oczekiwania to <em>backoff</em>; ACK to potwierdzenie odbioru.</p>
-
----
-
-## Jednoczesna chęć nadawania
-
-<img src="media/image10.png" alt="Dwie stacje podejmują próbę nadawania w tym samym czasie" height="430">
-
-Samo nasłuchiwanie nie wyklucza kolizji: sygnał drugiej stacji potrzebuje czasu, by dotrzeć do nadajnika.
 
 ---
 

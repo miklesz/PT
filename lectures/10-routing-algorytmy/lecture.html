@@ -729,14 +729,14 @@ Podobnie jak IP, sam IPX nie gwarantował dostarczenia każdego pakietu. W rodzi
         demo.querySelector('.flow-explanation').innerHTML = step.explanation;
       };
 
-      const dinicCapacities = { sx: 5, sy: 5, yx: 5, xu: 5, uy: 5, yw: 5, ut: 5, wt: 5 };
+      const dinicCapacities = { sx: 5, sy: 5, yx: 5, xu: 5, yu: 5, yw: 5, ut: 5, wt: 5 };
       const dinicSteps = [
-        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje poziomy 0–3. Łuki y → x i u → y są w sieci wejściowej, lecz nie prowadzą do następnego poziomu, więc nie należą do tego grafu poziomów.' },
+        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje poziomy 0–3. Łuk y → x pozostaje na tym samym poziomie, więc odpada. Łuk y → u prowadzi do następnego poziomu i pozostaje w grafie.' },
         { caption: 'Ścieżka 1: s → x → u → t', active: ['sx', 'xu', 'ut'], total: '', capacities: dinicCapacities, explanation: 'Pierwsza ścieżka w grafie poziomów ma przepustowość 5, więc można nią przesłać 5 jednostek.' },
-        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, uy: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
-        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, uy: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
-        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, uy: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
-        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, uy: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
+        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
+        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
+        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
+        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
       ];
       let dinicStep = 0;
       const setDinicStep = (index) => {

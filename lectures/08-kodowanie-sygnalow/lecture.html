@@ -464,7 +464,7 @@ Pozwala to utrzymać synchronizację, nawet gdy źródło generuje długi ciąg 
 
 Sygnał danych ma dwa stany (`0`, `1`), ale sygnał liniowy używa trzech poziomów napięcia: `−V`, `0`, `+V`. Kolejne jedynki są reprezentowane naprzemiennie przez impuls dodatni i ujemny; zwykłe zero oznacza brak impulsu.
 
-W HDB-2 długa seria zer nie pozostaje ciszą: pojawia się impuls **V**, który celowo narusza tę przemienność. Odbiornik rozpoznaje w nim znacznik zastąpionych zer, nie nową jedynkę danych.
+W HDB-2 zastępuje się ciąg trzech zer. Impuls **V** celowo narusza przemienność polaryzacji. Odbiornik rozpoznaje w nim znacznik zastąpionych zer, nie nową jedynkę danych.
 
 ---
 
@@ -480,9 +480,9 @@ Kosztem jest większa wrażliwość na zakłócenia między poziomami i konieczn
 
 ## Synchronizacja w HDB3
 
-HDB3 (*High Density Bipolar of order 3*) zastępuje ciąg czterech zer wzorcem:
-
 AMI (*Alternate Mark Inversion*): kolejne `1` to naprzemienne impulsy `+` i `−`, a `0` to brak impulsu.
+
+HDB3 (*High Density Bipolar of order 3*) zastępuje cztery zera: **000V** po nieparzystej liczbie zwykłych impulsów od ostatniego V, **B00V** po parzystej. Poniżej przykład B00V.
 
 <svg class="hdb3-wave-svg" viewBox="0 0 920 260" role="img" aria-label="Przebieg B00V: dwa dodatnie impulsy oddzielone dwoma zerami">
   <line x1="105" y1="165" x2="835" y2="165" class="axis" />
@@ -947,14 +947,14 @@ Liczba generatorów dobierana jest jako kompromis: większa nadmiarowość zwię
         demo.querySelector('.flow-explanation').innerHTML = step.explanation;
       };
 
-      const dinicCapacities = { sx: 5, sy: 5, yx: 5, xu: 5, uy: 5, yw: 5, ut: 5, wt: 5 };
+      const dinicCapacities = { sx: 5, sy: 5, yx: 5, xu: 5, yu: 5, yw: 5, ut: 5, wt: 5 };
       const dinicSteps = [
-        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje poziomy 0–3. Łuki y → x i u → y są w sieci wejściowej, lecz nie prowadzą do następnego poziomu, więc nie należą do tego grafu poziomów.' },
+        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje poziomy 0–3. Łuk y → x pozostaje na tym samym poziomie, więc odpada. Łuk y → u prowadzi do następnego poziomu i pozostaje w grafie.' },
         { caption: 'Ścieżka 1: s → x → u → t', active: ['sx', 'xu', 'ut'], total: '', capacities: dinicCapacities, explanation: 'Pierwsza ścieżka w grafie poziomów ma przepustowość 5, więc można nią przesłać 5 jednostek.' },
-        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, uy: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
-        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, uy: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
-        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, uy: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
-        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, uy: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
+        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
+        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
+        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
+        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
       ];
       let dinicStep = 0;
       const setDinicStep = (index) => {

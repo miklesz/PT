@@ -88,22 +88,6 @@ Odpowiednie sekwencje reprezentują litery i cyfry.
 
 ---
 
-## Guglielmo Marconi: radio
-
-<div class="columns"><div>
-
-- Pionier radia i przemysłu elektronicznego.
-- W grudniu 1901 r. nawiązał łączność bezprzewodową między St. John's (Nowa Fundlandia) a Poldhu (Kornwalia).
-- Laureat Nagrody Nobla z fizyki w 1909 r. za wkład w rozwój telegrafii bezprzewodowej.
-
-</div><div>
-
-![Guglielmo Marconi](media/image3.jpeg)
-
-</div></div>
-
----
-
 ## Nikola Tesla: radio i sterowanie zdalne
 
 <div class="columns"><div>
@@ -120,6 +104,22 @@ Odpowiednie sekwencje reprezentują litery i cyfry.
 </div><div>
 
 ![Nikola Tesla](media/image4.jpeg)
+
+</div></div>
+
+---
+
+## Guglielmo Marconi: radio
+
+<div class="columns"><div>
+
+- Pionier radia i przemysłu elektronicznego.
+- W grudniu 1901 r. nawiązał łączność bezprzewodową między St. John's (Nowa Fundlandia) a Poldhu (Kornwalia).
+- Laureat Nagrody Nobla z fizyki w 1909 r. za wkład w rozwój telegrafii bezprzewodowej.
+
+</div><div>
+
+![Guglielmo Marconi](media/image3.jpeg)
 
 </div></div>
 
@@ -323,7 +323,7 @@ Komunikacja między odpowiadającymi sobie warstwami jest logiczna; faktyczna tr
 
 ## Warstwa 4: transportowa
 
-- usługi połączeniowe „od końca do końca”,
+- usługi „od końca do końca”, połączeniowe (TCP) lub bezpołączeniowe (UDP),
 - przezroczysty transfer danych między stacjami,
 - opcjonalny podział danych na mniejsze jednostki,
 - przykłady: TCP (*Transmission Control Protocol*) i UDP (*User Datagram Protocol*).

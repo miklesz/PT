@@ -178,7 +178,7 @@ Współczynnik zmienia się skokowo na granicy rdzenia i płaszcza; różne drog
 
 W rdzeniu skokowym promienie wprowadzone pod różnymi kątami odbijają się na granicy rdzenia i płaszcza. W tym samym materiale poruszają się z podobną prędkością, lecz pokonują różne długości drogi.
 
-Docierają więc do końca włókna w różnym czasie. Poszerzenie impulsu ogranicza odstęp między kolejnymi impulsami, a przez to przepływność i zasięg łącza.
+Docierają więc do końca włókna w różnym czasie. Szerszy impuls wymaga większego odstępu od następnego, co ogranicza przepływność i zasięg łącza.
 
 ---
 
@@ -348,9 +348,9 @@ Różne długości fali poruszają się z różną prędkością; obejmuje dyspe
 
 ## Dyspersja międzymodowa
 
-W rdzeniu wielomodowym impuls jest sumą modów biegnących różnymi drogami. Włókno skokowe daje im szczególnie różne czasy przejścia, więc impuls na wyjściu staje się szerszy i zwykle słabszy.
+Różne czasy przejścia modów poszerzają impuls. Zniekształcenie rośnie z długością włókna, więc użyteczne pasmo maleje. Profil gradientowy ogranicza ten efekt w porównaniu z profilem skokowym.
 
-Włókno gradientowe ogranicza tę różnicę czasów, a dzięki temu pozwala zwiększyć użyteczne pasmo transmisji. Zniekształcenie rośnie z długością włókna.
+Rozmyty impuls może mieć niższą amplitudę szczytową nawet bez dodatkowej utraty mocy wskutek tłumienia.
 
 ---
 

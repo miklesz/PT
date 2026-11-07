@@ -160,7 +160,7 @@ Przykład z oryginalnego wykładu: `1 bajt` danych daje **21 bajtów** długośc
 
 Przykład obliczeniowy: nagłówek `20 B` i dane `2000 B` dają datagram o długości **2020 B**. Łącze ma `MTU = 1500 B`.
 
-Każdy fragment potrzebuje własnego nagłówka. W pierwszym zmieści się najwyżej `1480 B` danych; wielkość fragmentów oprócz ostatniego musi być wielokrotnością `8 B`.
+Każdy fragment potrzebuje własnego nagłówka. W pierwszym zmieści się najwyżej `1480 B` danych. W każdym fragmencie oprócz ostatniego długość samych danych, bez nagłówka, musi być wielokrotnością `8 B`.
 
 ---
 
@@ -241,42 +241,6 @@ Ruter rozróżnia połączenia także po numerach portów. Ten wariant bywa nazy
 
 ---
 
-## Ćwiczenia: konfiguracja hosta (1/3)
-
-Dla każdego przypadku sprawdź, czy adres sieci i brama pasują do adresu IP oraz maski hosta.
-
-1. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `172.16.0.1`.
-2. IP `192.168.0.2`, maska `255.255.255.0`, sieć `172.16.0.0`, brama `192.168.0.1`.
-
----
-
-## Ćwiczenia: konfiguracja hosta (2/3)
-
-3. IP `192.168.0.2`, maska `255.255.255.128`, sieć `192.168.0.0`, brama `192.168.0.129`.
-
-4. IP `192.168.0.2`, maska `255.0.0.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
-
----
-
-## Ćwiczenia: konfiguracja hosta (3/3)
-
-5. IP `127.0.0.1`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
-
-6. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
-
----
-
-## Ćwiczenia: odpowiedzi
-
-- **1:** brama jest poza siecią hosta.
-- **2:** podany adres sieci jest błędny.
-- **3:** brama `192.168.0.129` jest w drugiej podsieci `/25`.
-- **4:** przy masce `/8` adres sieci powinien być `192.0.0.0`.
-- **5:** `127.0.0.1` jest adresem pętli zwrotnej.
-- **6:** konfiguracja jest spójna.
-
----
-
 ## Konfiguracja hosta
 
 Host potrzebuje zwykle:
@@ -314,6 +278,42 @@ Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. 
 </svg>
 
 <p class="credits">Brama domyślna to pierwszy ruter używany wtedy, gdy adres docelowy nie należy do lokalnej sieci hosta.</p>
+
+---
+
+## Ćwiczenia: konfiguracja hosta (1/3)
+
+Dla każdego przypadku sprawdź, czy adres sieci i brama pasują do adresu IP oraz maski hosta.
+
+1. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `172.16.0.1`.
+2. IP `192.168.0.2`, maska `255.255.255.0`, sieć `172.16.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: konfiguracja hosta (2/3)
+
+3. IP `192.168.0.2`, maska `255.255.255.128`, sieć `192.168.0.0`, brama `192.168.0.129`.
+
+4. IP `192.168.0.2`, maska `255.0.0.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: konfiguracja hosta (3/3)
+
+5. IP `127.0.0.1`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+6. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: odpowiedzi
+
+- **1:** brama jest poza siecią hosta.
+- **2:** podany adres sieci jest błędny.
+- **3:** brama `192.168.0.129` jest w drugiej podsieci `/25`.
+- **4:** przy masce `/8` adres sieci powinien być `192.0.0.0`.
+- **5:** `127.0.0.1` jest adresem pętli zwrotnej.
+- **6:** konfiguracja jest spójna.
 
 ---
 

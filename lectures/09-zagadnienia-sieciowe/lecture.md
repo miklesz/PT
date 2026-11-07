@@ -19,15 +19,13 @@ Mikołaj Leszczuk
 
 Sieć komputerowa to zbiór połączonych urządzeń, które wymieniają dane i współdzielą zasoby według ustalonych protokołów.
 
-Możliwa jest między innymi komunikacja użytkowników, dostęp do usług, współdzielenie plików, urządzeń i połączenia z Internetem.
-
-Wspólnym zasobem może być także oprogramowanie lub centralna baza danych; użytkownicy wymieniają komunikaty, pocztę i pliki.
+Użytkownicy mogą wymieniać wiadomości i pliki oraz współdzielić urządzenia, oprogramowanie, bazy danych i dostęp do Internetu.
 
 ---
 
 ## Mapa połączeń Internetu z 2015 roku
 
-<div class="media-gallery single-visual"><img src="media/image2.png" alt="Wizualizacja części połączeń Internetu według danych z 11 lipca 2015 roku"></div>
+<div class="media-gallery single-visual"><img src="media/image2.png" alt="Wizualizacja części połączeń Internetu według danych z 11 lipca 2015 roku" style="max-height:48vh"></div>
 
 <p class="credits">Historyczna wizualizacja projektu Opte. Linie łączą węzły sieci; nie jest to aktualna mapa ani mapa geograficzna.</p>
 
@@ -64,7 +62,7 @@ W sieci **peer-to-peer** komputery mogą bezpośrednio udostępniać zasoby sobi
 
 ## Jak czytać topologie?
 
-Topologia opisuje układ połączeń między urządzeniami, a nie tylko ich położenie na rysunku.
+Topologia **fizyczna** opisuje połączenia urządzeń. Topologia **logiczna** opisuje drogę danych. Na przykład urządzenia połączone fizycznie w gwiazdę przez MSAU mogą logicznie tworzyć pierścień.
 
 ![Przykładowe topologie sieci](media/image3.png)
 
@@ -339,6 +337,8 @@ Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
 </div>
 
 Każde łącze łączy parę różnych węzłów, a tę samą parę liczymy tylko raz.
+
+Przykład: 5 węzłów daje 5 · 4 / 2 = 10 łączy.
 
 <div class="code-lab mesh-lab">
   <label>Liczba węzłów <i>n</i><input class="mesh-nodes" type="number" min="2" max="1000" step="1" value="5" inputmode="numeric"></label>

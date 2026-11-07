@@ -141,7 +141,7 @@ Pozwala to utrzymać synchronizację, nawet gdy źródło generuje długi ciąg 
 
 Sygnał danych ma dwa stany (`0`, `1`), ale sygnał liniowy używa trzech poziomów napięcia: `−V`, `0`, `+V`. Kolejne jedynki są reprezentowane naprzemiennie przez impuls dodatni i ujemny; zwykłe zero oznacza brak impulsu.
 
-W HDB-2 długa seria zer nie pozostaje ciszą: pojawia się impuls **V**, który celowo narusza tę przemienność. Odbiornik rozpoznaje w nim znacznik zastąpionych zer, nie nową jedynkę danych.
+W HDB-2 zastępuje się ciąg trzech zer. Impuls **V** celowo narusza przemienność polaryzacji. Odbiornik rozpoznaje w nim znacznik zastąpionych zer, nie nową jedynkę danych.
 
 ---
 
@@ -157,9 +157,9 @@ Kosztem jest większa wrażliwość na zakłócenia między poziomami i konieczn
 
 ## Synchronizacja w HDB3
 
-HDB3 (*High Density Bipolar of order 3*) zastępuje ciąg czterech zer wzorcem:
-
 AMI (*Alternate Mark Inversion*): kolejne `1` to naprzemienne impulsy `+` i `−`, a `0` to brak impulsu.
+
+HDB3 (*High Density Bipolar of order 3*) zastępuje cztery zera: **000V** po nieparzystej liczbie zwykłych impulsów od ostatniego V, **B00V** po parzystej. Poniżej przykład B00V.
 
 <svg class="hdb3-wave-svg" viewBox="0 0 920 260" role="img" aria-label="Przebieg B00V: dwa dodatnie impulsy oddzielone dwoma zerami">
   <line x1="105" y1="165" x2="835" y2="165" class="axis" />

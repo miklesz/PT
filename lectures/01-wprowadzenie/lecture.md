@@ -36,6 +36,8 @@ Mikołaj Leszczuk
 - Instytut Telekomunikacji
 - Kraków
 
+Podstawy telekomunikacji prowadzę na WSTKT.
+
 </div><div>
 
 ![Mikołaj Leszczuk przed budynkiem Instytutu Telekomunikacji](media/image1.jpg)
@@ -181,7 +183,7 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 
 - Udział biorą wszyscy studenci: pojedynczo albo w zespołach dwuosobowych.
 - Każdy student potrzebuje **własnego konta Wikipedii**.
-- Student lub zespół otrzymuje zalążek albo propozycję tematu.
+- Student lub zespół wybiera temat i zgłasza go prowadzącemu do akceptacji.
 - Celem jest rozwinięcie hasła możliwie blisko standardu „artykułu na medal”.
 
 ---
@@ -306,7 +308,7 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 - Wikipedia nie jest projektem ograniczonym do uczelni.
 - Jesteśmy gośćmi i powinniśmy zachować właściwe standardy.
 - Przeczytaj [Wiki-etykietę](https://pl.wikipedia.org/wiki/Wikipedia:Wikietykieta).
-- Pomyśl, jakie wrażenie ma po pracy pozostać o Tobie i AGH.
+- Pamiętaj, że Twoje edycje są publiczne. Dbaj o rzetelność i kulturę współpracy.
 
 ---
 
@@ -423,6 +425,7 @@ Na stronie użytkownika warto umieścić:
 **Praca jednoosobowa**
 
 - rozwinięcie istniejącego hasła,
+- albo opracowanie nowego hasła,
 - inspiracje: [strony wymagające dopracowania](https://pl.wikipedia.org/wiki/Wikipedia:Strony_wymagaj%C4%85ce_dopracowania) i [zalążki](https://pl.wikipedia.org/wiki/Kategoria:Zal%C4%85%C5%BCki_artyku%C5%82%C3%B3w).
 
 </div></div>

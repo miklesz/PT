@@ -483,7 +483,7 @@ Przykład z oryginalnego wykładu: `1 bajt` danych daje **21 bajtów** długośc
 
 Przykład obliczeniowy: nagłówek `20 B` i dane `2000 B` dają datagram o długości **2020 B**. Łącze ma `MTU = 1500 B`.
 
-Każdy fragment potrzebuje własnego nagłówka. W pierwszym zmieści się najwyżej `1480 B` danych; wielkość fragmentów oprócz ostatniego musi być wielokrotnością `8 B`.
+Każdy fragment potrzebuje własnego nagłówka. W pierwszym zmieści się najwyżej `1480 B` danych. W każdym fragmencie oprócz ostatniego długość samych danych, bez nagłówka, musi być wielokrotnością `8 B`.
 
 ---
 
@@ -564,42 +564,6 @@ Ruter rozróżnia połączenia także po numerach portów. Ten wariant bywa nazy
 
 ---
 
-## Ćwiczenia: konfiguracja hosta (1/3)
-
-Dla każdego przypadku sprawdź, czy adres sieci i brama pasują do adresu IP oraz maski hosta.
-
-1. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `172.16.0.1`.
-2. IP `192.168.0.2`, maska `255.255.255.0`, sieć `172.16.0.0`, brama `192.168.0.1`.
-
----
-
-## Ćwiczenia: konfiguracja hosta (2/3)
-
-3. IP `192.168.0.2`, maska `255.255.255.128`, sieć `192.168.0.0`, brama `192.168.0.129`.
-
-4. IP `192.168.0.2`, maska `255.0.0.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
-
----
-
-## Ćwiczenia: konfiguracja hosta (3/3)
-
-5. IP `127.0.0.1`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
-
-6. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
-
----
-
-## Ćwiczenia: odpowiedzi
-
-- **1:** brama jest poza siecią hosta.
-- **2:** podany adres sieci jest błędny.
-- **3:** brama `192.168.0.129` jest w drugiej podsieci `/25`.
-- **4:** przy masce `/8` adres sieci powinien być `192.0.0.0`.
-- **5:** `127.0.0.1` jest adresem pętli zwrotnej.
-- **6:** konfiguracja jest spójna.
-
----
-
 ## Konfiguracja hosta
 
 Host potrzebuje zwykle:
@@ -637,6 +601,42 @@ Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. 
 </svg>
 
 <p class="credits">Brama domyślna to pierwszy ruter używany wtedy, gdy adres docelowy nie należy do lokalnej sieci hosta.</p>
+
+---
+
+## Ćwiczenia: konfiguracja hosta (1/3)
+
+Dla każdego przypadku sprawdź, czy adres sieci i brama pasują do adresu IP oraz maski hosta.
+
+1. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `172.16.0.1`.
+2. IP `192.168.0.2`, maska `255.255.255.0`, sieć `172.16.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: konfiguracja hosta (2/3)
+
+3. IP `192.168.0.2`, maska `255.255.255.128`, sieć `192.168.0.0`, brama `192.168.0.129`.
+
+4. IP `192.168.0.2`, maska `255.0.0.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: konfiguracja hosta (3/3)
+
+5. IP `127.0.0.1`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+6. IP `192.168.0.2`, maska `255.255.255.0`, sieć `192.168.0.0`, brama `192.168.0.1`.
+
+---
+
+## Ćwiczenia: odpowiedzi
+
+- **1:** brama jest poza siecią hosta.
+- **2:** podany adres sieci jest błędny.
+- **3:** brama `192.168.0.129` jest w drugiej podsieci `/25`.
+- **4:** przy masce `/8` adres sieci powinien być `192.0.0.0`.
+- **5:** `127.0.0.1` jest adresem pętli zwrotnej.
+- **6:** konfiguracja jest spójna.
 
 ---
 
@@ -911,14 +911,14 @@ Routing wewnątrz jednej organizacji może optymalizować metrykę techniczną. 
         demo.querySelector('.flow-explanation').innerHTML = step.explanation;
       };
 
-      const dinicCapacities = { sx: 5, sy: 5, yx: 5, xu: 5, uy: 5, yw: 5, ut: 5, wt: 5 };
+      const dinicCapacities = { sx: 5, sy: 5, yx: 5, xu: 5, yu: 5, yw: 5, ut: 5, wt: 5 };
       const dinicSteps = [
-        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje poziomy 0–3. Łuki y → x i u → y są w sieci wejściowej, lecz nie prowadzą do następnego poziomu, więc nie należą do tego grafu poziomów.' },
+        { caption: 'BFS: graf poziomów', active: ['sx', 'sy', 'xu', 'yu', 'yw', 'ut', 'wt'], total: '', capacities: dinicCapacities, explanation: '<strong>BFS</strong> przypisuje poziomy 0–3. Łuk y → x pozostaje na tym samym poziomie, więc odpada. Łuk y → u prowadzi do następnego poziomu i pozostaje w grafie.' },
         { caption: 'Ścieżka 1: s → x → u → t', active: ['sx', 'xu', 'ut'], total: '', capacities: dinicCapacities, explanation: 'Pierwsza ścieżka w grafie poziomów ma przepustowość 5, więc można nią przesłać 5 jednostek.' },
-        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, uy: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
-        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, uy: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
-        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, uy: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
-        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, uy: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
+        { caption: 'Po wysłaniu 5 jednostek', active: ['sx', 'xu', 'ut'], total: '<code>Przepływ: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Łuki s → x, x → u i u → t są nasycone. Graf poziomów nadal ma drugą niezależną ścieżkę.' },
+        { caption: 'Ścieżka 2: s → y → w → t', active: ['sy', 'yw', 'wt'], total: '<code>Dotychczas: 5</code>', capacities: { sx: 0, sy: 5, yx: 5, xu: 0, yu: 5, yw: 5, ut: 0, wt: 5 }, explanation: 'Dinic wyszukuje kolejną ścieżkę w tych samych poziomach: <code>s → y → w → t</code>.' },
+        { caption: 'Przepływ blokujący', active: ['sy', 'yw', 'wt'], total: '<code>5 + 5 = 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Druga ścieżka przesyła kolejne 5 jednostek. Razem tworzą <strong>przepływ blokujący 10</strong>.' },
+        { caption: 'Brak dalszej ścieżki', active: [], total: '<code>Maksymalny przepływ: 10</code>', capacities: { sx: 0, sy: 0, yx: 5, xu: 0, yu: 5, yw: 0, ut: 0, wt: 0 }, explanation: 'Ze źródła s nie pozostał żaden łuk o dodatniej pojemności. Nie ma kolejnej ścieżki powiększającej.' }
       ];
       let dinicStep = 0;
       const setDinicStep = (index) => {

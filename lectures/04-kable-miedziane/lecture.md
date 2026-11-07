@@ -28,7 +28,7 @@ Mikołaj Leszczuk
 <div class="coax-layout"><div>
 
 <div class="coax-cross-section">
-  <div class="coax-insulation"><div class="coax-shield"><div class="coax-core"></div></div></div>
+  <div class="coax-shield"><div class="coax-insulation"><div class="coax-core"></div></div></div>
 </div>
 <div class="coax-legend">
   <span class="outer">Powłoka zewnętrzna</span><span class="shield">Oplot / ekran</span>
@@ -219,13 +219,11 @@ Ekran z oplotu wokół kabla oraz folia wokół każdej pary. Stosowany w środo
 
 ---
 
-## STP i S/FTP
+## Ekranowanie w praktyce
 
 <div class="columns"><div>
 
-- **STP:** ekran w postaci oplotu oraz powłoki; możliwe indywidualne ekranowanie par.
-- **S/FTP:** dodatkowy ekran z siatki miedzianej lub folii aluminiowej.
-- Stosowane, gdy ważna jest zgodność EMC oraz ograniczenie emisji EMI (*electromagnetic interference*, zakłócenia elektromagnetyczne).
+Ekranowanie pomaga ograniczyć zakłócenia elektromagnetyczne (EMI, *electromagnetic interference*). Sama nazwa handlowa STP nie określa, czy ekran otacza każdą parę, czy cały kabel.
 
 </div><div>
 
@@ -345,6 +343,8 @@ Kolejność żył jest taka sama na obu końcach kabla. To standardowy kabel ł�
 <div class="columns"><div>
 
 Pary transmisyjne są zamienione między końcami kabla. Historycznie umożliwiało to bezpośrednie połączenie dwóch podobnych urządzeń bez przełącznika.
+
+W pokazanym wariancie T568A/T568B zamieniają się piny 1 i 3 oraz 2 i 6.
 
 </div><div>
 
