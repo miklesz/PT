@@ -19,8 +19,6 @@ Mikołaj Leszczuk
 
 ## Warstwa sieciowa
 
-Warstwa trzecia odpowiada za dostarczanie pakietów między sieciami. Jej podstawowe zadania to adresowanie logiczne, wybór trasy i przekazywanie pakietów.
-
 ![Budowa pakietu warstwy sieciowej](media/image1.png)
 
 ---
@@ -31,7 +29,7 @@ Warstwa trzecia odpowiada za dostarczanie pakietów między sieciami. Jej podsta
 
 **IPX — Internetwork Packet Exchange**
 
-Historyczny, bezpołączeniowy protokół sieciowy środowiska Novell NetWare. Obsługiwał adresowanie i routing pakietów w sieciach LAN i WAN, lecz sam nie gwarantował dostarczenia. Współpracował z transportowym SPX.
+Historyczny, bezpołączeniowy protokół sieciowy środowiska Novell NetWare, omówiony w wykładzie o algorytmach routingu.
 
 </div><div>
 
@@ -46,8 +44,7 @@ Podstawowy protokół warstwy sieciowej Internetu. Współdziała z TCP (*Transm
 ## Zadania IP
 
 - adresowanie źródła i celu,
-- przesyłanie datagramów między sieciami,
-- przekazywanie pakietów przez rutery,
+- przekazywanie datagramów przez rutery między sieciami,
 - fragmentacja w IPv4, gdy jest konieczna.
 
 IP jest protokołem bezpołączeniowym i nie gwarantuje dostarczenia, kolejności ani braku duplikatów.
@@ -56,8 +53,8 @@ IP jest protokołem bezpołączeniowym i nie gwarantuje dostarczenia, kolejnośc
 
 ## Czego sam IP nie zapewnia?
 
-- Nie gwarantuje integralności danych użytkownika ani niezawodnego dostarczenia.
-- Nie steruje przepływem między aplikacjami i nie ustawia datagramów w kolejności.
+- Nie gwarantuje integralności danych użytkownika.
+- Nie steruje przepływem między aplikacjami.
 - Pola DSCP i ECN pomagają obsługiwać priorytet i przeciążenie, ale nie są gwarancją jakości usługi.
 
 Te zadania realizują w razie potrzeby inne warstwy i protokoły, np. TCP.
@@ -140,19 +137,19 @@ Pozwala sygnalizować przeciążenie bez odrzucenia pakietu.
 
 ---
 
+## Najprostszy datagram IPv4
+
+Nagłówek bez opcji ma **5 słów po 32 bity**, czyli `20 bajtów` (`IHL = 5`).
+
+Przy nagłówku bez opcji `1 bajt` danych daje **21 bajtów** długości całkowitej. Flaga `MF = 0` i przesunięcie `0` oznaczają, że nie jest to fragment większego datagramu.
+
+---
+
 ## Fragmentacja
 
 Jeżeli pakiet IPv4 jest większy niż MTU (*Maximum Transmission Unit*, największa jednostka danych przenoszona przez łącze) i nie ma ustawionej flagi *Don't Fragment*, może zostać podzielony na fragmenty. Fragmenty są składane przez host docelowy.
 
 W praktyce preferuje się unikanie fragmentacji przez odpowiedni dobór MTU i mechanizmy *Path MTU Discovery*.
-
----
-
-## Najprostszy datagram IPv4
-
-Nagłówek bez opcji ma **5 słów po 32 bity**, czyli `20 bajtów` (`IHL = 5`).
-
-Przykład z oryginalnego wykładu: `1 bajt` danych daje **21 bajtów** długości całkowitej. Flaga `MF = 0` i przesunięcie `0` oznaczają, że nie jest to fragment większego datagramu.
 
 ---
 
@@ -277,8 +274,6 @@ Gdy cel nie należy do lokalnej sieci, host wysyła pakiet do bramy domyślnej. 
   <line x1="935" y1="186" x2="964" y2="186" class="gateway-link" marker-end="url(#gateway-arrow)"/>
 </svg>
 
-<p class="credits">Brama domyślna to pierwszy ruter używany wtedy, gdy adres docelowy nie należy do lokalnej sieci hosta.</p>
-
 ---
 
 ## Ćwiczenia: konfiguracja hosta (1/3)
@@ -325,13 +320,15 @@ Dla każdego przypadku sprawdź, czy adres sieci i brama pasują do adresu IP or
 
 ## DNS
 
-DNS: <em>Domain Name System</em> — system nazw domenowych.
+<p class="video-intro">DNS (<em>Domain Name System</em>) tłumaczy nazwę na adres IP. Animacja pokazuje, jak serwer rozwiązujący nazwę odpytuje kolejne serwery, gdy nie zna odpowiedzi.</p>
 
 <video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/dns.jpg"><source src="media/local-replacements/dns.mp4" type="video/mp4"></video>
 
 <p class="credits video-original"><a href="https://www.youtube.com/watch?v=mpQZVYPuDGU&amp;t=150s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
 
 <p class="credits">PowerCert Animated Videos · How a DNS Server Works · fragment 02:30.400–05:42.000</p>
+
+<p class="small">Resolver DNS nie musi należeć do dostawcy Internetu: może być firmowy lub publiczny.</p>
 
 ---
 
@@ -365,7 +362,7 @@ Każdy AS ma numer ASN (*Autonomous System Number*).
 
 ## BGP-4
 
-*Border Gateway Protocol* (BGP) jest protokołem routingu między systemami autonomicznymi. Działa nad TCP, ale steruje wyborem tras między AS-ami.
+*Border Gateway Protocol* (BGP) jest protokołem routingu między systemami autonomicznymi.
 
 - wymienia osiągalne prefiksy,
 - korzysta z polityki, nie tylko najkrótszego kosztu,
@@ -377,7 +374,7 @@ Każdy AS ma numer ASN (*Autonomous System Number*).
 
 Sąsiednie rutery BGP utrzymują sesję **TCP na porcie 179**. Dzięki TCP protokół nie musi sam realizować retransmisji, potwierdzeń i porządkowania komunikatów.
 
-Ogłoszenie trasy zawiera prefiks oraz atrybuty. `AS_PATH` pokazuje listę przebytych systemów autonomicznych; ruter odrzuca trasę zawierającą jego własny AS, co pomaga zapobiegać pętlom między AS-ami.
+Ruter odrzuca trasę, jeśli `AS_PATH` zawiera jego własny AS. To pomaga zapobiegać pętlom między AS-ami.
 
 ---
 

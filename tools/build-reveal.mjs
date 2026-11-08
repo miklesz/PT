@@ -43,6 +43,12 @@ const html = `<!doctype html>
       .reveal .video-original.video-unavailable { font-size: 0.8em; margin: 1em 0; }
       .reveal section:has(source[src*="local-replacements/"]) > p { font-size: 0.65em; margin: 0.3em 0; line-height: 1.2; }
       .reveal section:has(source[src*="local-replacements/"]) > p.credits { font-size: 0.42em; }
+      .reveal .slides section:has(.video-intro) h2 { margin-bottom: 0.25em; }
+      .reveal .slides section p.video-intro { font-size: 0.72em; line-height: 1.25; margin: 0.25em 0 0.45em; }
+      .reveal .slides section:has(.video-intro) video:not([hidden]) { width: auto; height: 465px; max-width: 100%; max-height: none; object-fit: contain; margin: 0 auto; }
+      .reveal .slides section:has(.video-intro):has(p.small) video:not([hidden]) { height: 420px; }
+      .reveal .slides section:has(.video-intro) p.credits { font-size: 0.46em; margin: 0.3em 0; line-height: 1.2; }
+      .reveal .slides section:has(.video-intro) p.video-unavailable { font-size: 0.8em; margin: 1em 0; }
       .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
       .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
       .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }

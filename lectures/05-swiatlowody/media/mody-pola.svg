@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 870 242">
+  <title>Schematyczne przekroje pola trzech modów światłowodu</title>
+  <desc>LP01 ma maksimum w środku. LP11 ma dwa obszary o przeciwnej fazie, a LP21 cztery obszary o naprzemiennej fazie.</desc>
+  <defs>
+    <radialGradient id="positive">
+      <stop stop-color="#8df5f0"/>
+      <stop offset=".5" stop-color="#29bdbd" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#29bdbd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="negative">
+      <stop stop-color="#ffcf8b"/>
+      <stop offset=".5" stop-color="#f29a48" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#f29a48" stop-opacity="0"/>
+    </radialGradient>
+    <circle id="section" cy="96" r="89" fill="#12222c" stroke="#466375" stroke-width="2"/>
+    <circle id="core" cy="96" r="62" fill="none" stroke="#c5d7e1" stroke-opacity=".75" stroke-dasharray="4 4"/>
+  </defs>
+  <g transform="translate(145)">
+    <use href="#section"/>
+    <circle cy="96" r="74" fill="url(#positive)"/>
+    <use href="#core"/>
+  </g>
+  <g transform="translate(435)">
+    <use href="#section"/>
+    <ellipse cx="-34" cy="96" rx="34" ry="58" fill="url(#positive)"/>
+    <ellipse cx="34" cy="96" rx="34" ry="58" fill="url(#negative)"/>
+    <use href="#core"/>
+  </g>
+  <g transform="translate(725)">
+    <use href="#section"/>
+    <ellipse cx="-32" cy="64" rx="32" ry="32" fill="url(#positive)"/>
+    <ellipse cx="32" cy="64" rx="32" ry="32" fill="url(#negative)"/>
+    <ellipse cx="-32" cy="128" rx="32" ry="32" fill="url(#negative)"/>
+    <ellipse cx="32" cy="128" rx="32" ry="32" fill="url(#positive)"/>
+    <use href="#core"/>
+  </g>
+  <g text-anchor="middle" font-family="Arial, sans-serif" fill="#13212e">
+    <g font-size="22" font-weight="700">
+      <text x="145" y="211">LP₀₁ · podstawowy</text>
+      <text x="435" y="211">LP₁₁ · wyższy</text>
+      <text x="725" y="211">LP₂₁ · wyższy</text>
+    </g>
+    <g font-size="17">
+      <text x="145" y="234">maksimum w środku</text>
+      <text x="435" y="234">dwa obszary</text>
+      <text x="725" y="234">cztery obszary</text>
+    </g>
+  </g>
+</svg>

@@ -183,7 +183,6 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 
 - Udział biorą wszyscy studenci: pojedynczo albo w zespołach dwuosobowych.
 - Każdy student potrzebuje **własnego konta Wikipedii**.
-- Student lub zespół wybiera temat i zgłasza go prowadzącemu do akceptacji.
 - Celem jest rozwinięcie hasła możliwie blisko standardu „artykułu na medal”.
 
 ---
@@ -238,31 +237,12 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 
 ---
 
-## Dlaczego Wikipedia? (1/2)
+## Edytuj po zalogowaniu
 
 <div class="columns"><div>
 
-**Wartościowy ślad po Waszej pracy**
-
-- nowe hasła,
-- rozwinięte hasła,
-- bez naruszania praw autorskich.
-
-</div><div>
-
-![Logo Wikipedii](media/image7.png)
-
-</div></div>
-
----
-
-## Dlaczego Wikipedia? (2/2)
-
-<div class="columns"><div>
-
-- Twórzcie podpisane konta: przynajmniej imię i nazwisko.
-- Edytujcie wyłącznie po zalogowaniu.
-- Konto pozwala rozpoznać Wasz wkład w projekt.
+- [Załóż konto przed pierwszą edycją](https://pl.wikipedia.org/wiki/Pomoc:Logowanie).
+- Edytuj wyłącznie po zalogowaniu, żeby można było zweryfikować i ocenić Twój wkład.
 
 </div><div>
 
@@ -290,16 +270,8 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 
 ## Start (3/3)
 
-- Wszystkie tematy pomocy: [spis treści](https://pl.wikipedia.org/wiki/Pomoc:Spis_tre%C5%9Bci)
 - Podczas edycji korzystaj ze [ściągi formatowania](https://pl.wikipedia.org/wiki/Pomoc:Formatowanie_tekstu).
 - Najpierw można poćwiczyć w [brudnopisie](https://pl.wikipedia.org/wiki/Wikipedia:Brudnopis).
-
----
-
-## Edycja
-
-- Załóż konto przed pierwszą edycją: [Pomoc: logowanie](https://pl.wikipedia.org/wiki/Pomoc:Logowanie).
-- Własne konto jest konieczne, aby można było zweryfikować i ocenić Twoją pracę.
 
 ---
 
@@ -355,11 +327,9 @@ W razie potrzeby uzupełnij nazwę użytkownika i stronę użytkownika o dane id
 
 <div class="columns"><div>
 
-Na stronie użytkownika warto umieścić:
+Na stronie użytkownika podaj co najmniej **imię i nazwisko**.
 
-- imię i nazwisko,
-- informację, że konto jest używane w projekcie akademickim,
-- ewentualnie kontakt w Wikipedii.
+Możesz też dopisać, że konto służy do projektu akademickiego, i podać kontakt w Wikipedii.
 
 </div><div>
 
@@ -375,7 +345,7 @@ Na stronie użytkownika warto umieścić:
 
 - Wikipedia jest dostępna bez opłat.
 - Treści są objęte wolną licencją.
-- Nie wolno włączać materiałów naruszających prawa autorskie.
+- Korzystaj ze źródeł, także z książek, ale nie kopiuj treści z naruszeniem praw autorskich i nie plagiatuj.
 
 </div><div>
 
@@ -387,7 +357,6 @@ Na stronie użytkownika warto umieścić:
 
 ## Prawa autorskie (2/2)
 
-- Tworząc i rozbudowując hasła, **nie plagiatuj**.
 - Treści naruszające prawa autorskie są usuwane.
 - Skutkiem może być wykluczenie z projektu studenckiego.
 
@@ -434,7 +403,6 @@ Na stronie użytkownika warto umieścić:
 
 ## Inne sposoby szukania tematu (1/3)
 
-- [Propozycje tematów](https://pl.wikipedia.org/wiki/Wikipedia:Propozycje_temat%C3%B3w)
 - [Strony do przetłumaczenia](https://pl.wikipedia.org/wiki/Wikipedia:Strony_do_przet%C5%82umaczenia)
 - [Tłumaczenie miesiąca](https://pl.wikipedia.org/wiki/Wikipedia:T%C5%82umaczenie_miesi%C4%85ca)
 
@@ -456,23 +424,16 @@ Na stronie użytkownika warto umieścić:
 
 ---
 
-## Rozpoczęcie pracy (1/2)
+## Zgłoszenie tematu
 
-1. Wybierz pracę samodzielną albo zespół dwuosobowy.
-2. Przy pracy w zespole dobierz drugą osobę.
-3. Załóż konto, jeśli jeszcze go nie masz.
-4. Wybierz hasło do edycji.
-
----
-
-## Rozpoczęcie pracy (2/2)
+Jeśli pracujesz w parze, dobierz drugą osobę przed zgłoszeniem hasła.
 
 Wyślij do prowadzącego:
 
 - wybrane hasło,
 - imię i nazwisko,
 - numer grupy i indeksu,
-- nazwę użytkownika Wikipedii,
+- swoją nazwę użytkownika Wikipedii (każdy student zgłasza konto, z którego edytuje),
 - analogiczne dane drugiej osoby, gdy pracujecie w parze.
 
 **Pracę zacznij dopiero po potwierdzeniu tematu.**
@@ -502,16 +463,9 @@ Wyślij do prowadzącego:
 
 ---
 
-## Co robić, a czego unikać (1/2)
+## Co robić, a czego unikać
 
 - Przy wątpliwościach zajrzyj do [zasad edycji](https://pl.wikipedia.org/wiki/Wikipedia:Zasady).
-- Szukaj inspiracji na [liście brakujących haseł](https://pl.wikipedia.org/wiki/Wikipedia:Brakuj%C4%85ce_artyku%C5%82y).
-- Korzystaj z książek, ale nie kopiuj treści z naruszeniem praw autorskich.
-
----
-
-## Co robić, a czego unikać (2/2)
-
 - Wykorzystuj materiały, które już opracowałeś na zajęciach.
 - Hasło encyklopedyczne nie jest esejem ani felietonem.
 - Opinie przypisuj autorom, np. „A powiedział B o C”.
@@ -522,7 +476,7 @@ Wyślij do prowadzącego:
 
 ## Kilka przydatnych rad (1/2)
 
-1. Przy każdej edycji wypełnij [opis zmian](https://pl.wikipedia.org/wiki/Wikipedia:Opis_zmian).
+1. Przy każdej edycji napisz w [opisie zmian](https://pl.wikipedia.org/wiki/Wikipedia:Opis_zmian), co zostało zrobione.
 2. Obejrzyj podgląd.
 3. Zapisz dopiero wtedy, gdy strona wygląda tak, jak powinna.
 
@@ -531,15 +485,12 @@ Wyślij do prowadzącego:
 ## Kilka przydatnych rad (2/2)
 
 - Zakładka [„historia i autorzy”](https://pl.wikipedia.org/wiki/Pomoc:Historia_strony) pokazuje historię strony.
-- W opisie zmian zaznacz, co zostało zrobione.
 - Używaj listy obserwowanych stron.
 
 ---
 
 ## Wikipedia: jak nie stracić zaliczenia
 
-- **Nie kopiuj** z nieautoryzowanych źródeł.
-- **Opisuj konto**, aby dało się przypisać wkład.
 - **Integruj wkład** z istniejącym artykułem.
 - **Formatuj tekst**: Wikipedia to więcej niż „goły” tekst.
 
@@ -566,16 +517,7 @@ Wyślij do prowadzącego:
 - Podczas delegacji możesz dostać automatyczną odpowiedź; oznacza ona, że e-mail doszedł.
 - Czytaj auto-odpowiedź i nie wysyłaj wiadomości ponownie.
 - E-maile podpisuj.
-- Rozpoczęcie pracy przed potwierdzeniem tematu jest ryzykowne.
 - Projekt jest zaliczony dopiero po otrzymaniu e-maila z oceną.
-
----
-
-## Ważna informacja
-
-- Przed edycją zawsze się zaloguj.
-- Bez logowania nie da się zweryfikować Twojego wkładu, a więc także go ocenić.
-- Każdy student przekazuje prowadzącemu login, pod którym edytuje.
 
 ---
 
@@ -609,7 +551,6 @@ Wyślij do prowadzącego:
 
 - [Wikipedia: strona główna](https://pl.wikipedia.org/)
 - [GNU Free Documentation License](https://pl.wikipedia.org/wiki/GNU_Free_Documentation_License)
-- [Projekty akademickie: zalecenia](https://pl.wikipedia.org/wiki/Wikipedia:Projekty_szkolne_i_akademickie/zalecenia_dla_uczni%C3%B3w_i_student%C3%B3w)
 - [Creative Commons](https://pl.wikipedia.org/wiki/Licencja_Creative_Commons)
 
 </div><div>

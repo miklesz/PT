@@ -11,7 +11,7 @@ Mikołaj Leszczuk
 ## Plan wykładu
 
 - kabel koncentryczny i jego złącza,
-- para skręcona: budowa, rodzaje i zastosowania,
+- para skręcona: budowa, rodzaje i zastosowania (w tym 100VG-AnyLAN),
 - kable specjalne,
 - RJ-45 oraz Token Ring.
 
@@ -100,6 +100,8 @@ Na zdjęciach: u góry **wtyk**, u dołu **gniazdo**.
 
 ## Dlaczego przewody są skręcone?
 
+<p class="video-intro">Skręcanie żył pomaga ograniczyć zarówno zakłócenia odbierane przez parę, jak i zakłócenia, które para emituje.</p>
+
 <video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/twisted-pair.jpg"><source src="media/local-replacements/twisted-pair.mp4" type="video/mp4"></video>
 
 <p class="credits video-original"><a href="https://www.youtube.com/watch?v=P7WfY9P2uNY&amp;t=25s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
@@ -128,12 +130,44 @@ Jej popularność wynika z dobrego stosunku możliwości do ceny oraz łatwości
 
 ---
 
+## Historyczne zastosowania kategorii skrętki
+
+<p class="video-intro">Film zestawia kategorie skrętki z historycznymi zastosowaniami: od telefonii i LocalTalk po Fast Ethernet. To przykłady, nie dzisiejsza tabela doboru kabli.</p>
+
+<video controls preload="metadata" poster="media/image31.png"><source src="media/slide-037-media5.mp4" type="video/mp4"></video>
+
+---
+
 ## Skrętka zakończona złączem
 
 <div class="media-gallery">
   <img src="media/image10.png" alt="Kabel połączeniowy z wtykiem modularnym">
   <img src="media/image12.png" alt="Zbliżenie wtyków na końcach skrętki">
 </div>
+
+---
+
+## Skrętka w 100VG-AnyLAN (IEEE 802.12)
+
+- Wariant na nieekranowanej skrętce 100 Ω wykorzystywał cztery pary kategorii 3, 4 lub 5 i wtyk 8P8C (potocznie RJ-45), taki jak w okablowaniu Ethernetu.
+- Sieć pracowała z szybkością 100 Mb/s i używała metody *Demand Priority*: koncentrator przydzielał stacjom dostęp do medium z uwzględnieniem priorytetu.
+- Taki sam wtyk nie zapewniał zgodności portów z Ethernetem IEEE 802.3.
+
+<p class="small">Standard jest <a href="https://standards.ieee.org/ieee/802.12/1172/">wycofany</a>. Przewidywał również warianty na ekranowanym kablu 150 Ω i na światłowodzie.</p>
+
+---
+
+## Ekranowanie skrętki: U/UTP, F/UTP i S/FTP
+
+<p class="video-intro">Oznaczenie przed ukośnikiem opisuje ekran całego kabla, a oznaczenie po nim dotyczy par. Film porównuje kable bez ekranu, z folią i z oplotem.</p>
+
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/cable-shielding.jpg"><source src="media/local-replacements/cable-shielding.mp4" type="video/mp4"></video>
+
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=Gf2shRh-5GU&amp;t=95s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
+
+<p class="credits">Professor Messer · Cable Connectivity · 01:35-03:22 · po angielsku</p>
+
+<!-- study-only:start -->
 
 ---
 
@@ -169,6 +203,8 @@ Ekran z oplotu wokół kabla oraz folia wokół każdej pary. Stosowany w środo
 
 </div></div>
 
+<!-- study-only:end -->
+
 ---
 
 ## Przykłady skrętek
@@ -178,6 +214,8 @@ Ekran z oplotu wokół kabla oraz folia wokół każdej pary. Stosowany w środo
   <img src="media/image13.png" alt="Skrętka ekranowana">
   <img src="media/image16.png" alt="Kabel ekranowany">
 </div>
+
+<!-- study-only:start -->
 
 ---
 
@@ -195,11 +233,17 @@ Ekran z oplotu wokół kabla oraz folia wokół każdej pary. Stosowany w środo
 
 </div></div>
 
+<!-- study-only:end -->
+
 ---
 
 ## Materiał: skrętka UTP
 
+<p class="video-intro">Na przekroju widać cztery pary, kolorową izolację żył i wspólną powłokę. Podane w filmie szybkości ilustrują starsze zastosowania.</p>
+
 <video controls preload="metadata" poster="media/image15.png"><source src="media/slide-017-media1.mp4" type="video/mp4"></video>
+
+<!-- study-only:start -->
 
 ---
 
@@ -217,19 +261,30 @@ Ekran z oplotu wokół kabla oraz folia wokół każdej pary. Stosowany w środo
 
 </div></div>
 
+<!-- study-only:end -->
+
 ---
 
 ## Ekranowanie w praktyce
 
 <div class="columns"><div>
 
-Ekranowanie pomaga ograniczyć zakłócenia elektromagnetyczne (EMI, *electromagnetic interference*). Sama nazwa handlowa STP nie określa, czy ekran otacza każdą parę, czy cały kabel.
+Oznaczenie STP (*Shielded Twisted Pair*) nie mówi, gdzie znajduje się ekran. O sposobie połączenia ekranu decyduje projekt instalacji, a nie samo oznaczenie kabla.
 
 </div><div>
 
 ![Przykład ekranowanego okablowania](media/image18.png)
 
 </div></div>
+
+---
+
+## Skrętka bez ekranu i z folią
+
+<div class="media-gallery four">
+  <figure><img src="media/image14.png" alt="Kabel UTP"><figcaption>Bez ekranu</figcaption></figure>
+  <figure><img src="media/image17.png" alt="Skrętka z ekranem z folii"><figcaption>Z ekranem z folii</figcaption></figure>
+</div>
 
 ---
 
@@ -300,7 +355,9 @@ Kable z linką nośną prowadzi się między budynkami; dostępne są warianty U
 
 ---
 
-## Materiał: podłączanie RJ-45
+## Jak wtyk RJ-45 łączy się z gniazdem
+
+<p class="video-intro">Film zestawia wtyk z gniazdem i pokazuje, jak styki obu elementów trafiają na siebie po włożeniu wtyku.</p>
 
 <video controls preload="metadata" poster="media/image23.png"><source src="media/slide-029-media2.mp4" type="video/mp4"></video>
 
@@ -321,6 +378,14 @@ Numerację ogląda się od strony styków wtyku, przy zatrzasku skierowanym w d�
 <img src="media/image26.png" alt="Kolory żył we wtyku RJ-45" height="360">
 
 </div></div>
+
+---
+
+## Rozkład żył: T568A i T568B
+
+<p class="video-intro">Na dwóch schematach T568A i T568B porównaj położenie par zielonej i pomarańczowej. Niebieska i brązowa pozostają na swoich miejscach.</p>
+
+<video controls preload="metadata"><source src="media/slide-032-media3.mp4" type="video/mp4"></video>
 
 ---
 
@@ -372,21 +437,37 @@ W pokazanym wariancie T568A/T568B zamieniają się piny 1 i 3 oraz 2 i 6.
 
 ---
 
-## Okablowanie Ethernet UTP
-
-<video controls preload="metadata"><source src="media/slide-032-media3.mp4" type="video/mp4"></video>
-
----
-
 ## Materiał: zaciskanie RJ-45
+
+<p class="video-intro">Animacja pokazuje kolejność pracy: zdjęcie powłoki, wyrównanie żył, wsunięcie ich do wtyku i zaciśnięcie styków.</p>
 
 <video controls preload="metadata" poster="media/image30.png"><source src="media/slide-036-media4.mp4" type="video/mp4"></video>
 
 ---
 
-## Materiał: okablowanie Ethernet
+## Jak sprawdzić skrętkę po zaciśnięciu?
 
-<video controls preload="metadata" poster="media/image31.png"><source src="media/slide-037-media5.mp4" type="video/mp4"></video>
+<p class="video-intro">Dla kabla prostego tester powinien pokazać tę samą kolejność 1-8 na obu końcach. Film pokazuje też wynik dla źle połączonych żył.</p>
+
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/rj45-tester.jpg"><source src="media/local-replacements/rj45-tester.mp4" type="video/mp4"></video>
+
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=QMpWkkqX1eM&amp;t=264s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
+
+<p class="credits">Switched On Network · How to Crimp Cat5 / Cat6 Network Patch Cables · 04:24-05:00 · po angielsku</p>
+
+<p class="small">Prosty tester sprawdza ciągłość i kolejność połączeń pinów. Nie potwierdza kategorii ani przepustowości kabla.</p>
+
+---
+
+## Tester skrętki: trzy rodzaje usterek
+
+<p class="video-intro">Tester sygnalizuje usterkę osobną kontrolką: <strong>Miswire</strong> to żyła na niewłaściwym pinie, <strong>Open</strong> to przerwa, a <strong>Short</strong> to zwarcie.</p>
+
+<video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/rj45-faults.jpg"><source src="media/local-replacements/rj45-faults.mp4" type="video/mp4"></video>
+
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=blj04uc38nI&amp;t=24s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
+
+<p class="credits">Klein Tools · LAN Explorer · 00:24-01:25 · po angielsku</p>
 
 ---
 
@@ -395,8 +476,8 @@ W pokazanym wariancie T568A/T568B zamieniają się piny 1 i 3 oraz 2 i 6.
 <div class="columns"><div>
 
 - IEEE 802.5, *Token Ring Access Method*.
-- Historyczne rozwiązanie ze złączem hermafrodytycznym.
-- Złącza były duże, złożone i mniej wygodne niż współczesne rozwiązania Ethernet.
+- Złącze IBM było hermafrodytyczne: dwa jednakowe końce można było połączyć i zablokować klipsem.
+- Większe gabaryty niż w przypadku RJ-45 ograniczały liczbę portów w panelu krosowym, a złożona konstrukcja podnosiła koszt złącza.
 
 </div><div>
 
@@ -405,22 +486,6 @@ W pokazanym wariancie T568A/T568B zamieniają się piny 1 i 3 oraz 2 i 6.
 <img src="media/image35.png" alt="Urządzenie Token Ring" height="150">
 
 </div></div>
-
----
-
-## Złącze Token Ring: cechy
-
-Historyczne złącze IBM Token Ring było **hermafrodytyczne**: dwa jednakowe końce mogły się ze sobą łączyć. Wykorzystywało klips blokujący.
-
-Jego rozmiar, liczba elementów i koszt utrudniały gęsty montaż w panelach krosowych. Oryginalny wykład zestawia je ze znacznie mniejszym złączem używanym w okablowaniu Ethernetu.
-
----
-
-## Dawny standard IEEE 802.12
-
-IEEE 802.12 opisywał metodę dostępu **Demand Priority** dla sieci 100 Mb/s. Dopuszczał skrętkę symetryczną **100 Ω** kategorii 3–5, kabel ekranowany **150 Ω** oraz światłowód.
-
-To historyczny standard: [IEEE oznacza go dziś jako wycofany](https://standards.ieee.org/ieee/802.12/1172/). Nie należy go mylić ze współczesnym Ethernetem IEEE 802.3.
 
 ---
 

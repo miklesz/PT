@@ -25,6 +25,12 @@
       .reveal .video-original.video-unavailable { font-size: 0.8em; margin: 1em 0; }
       .reveal section:has(source[src*="local-replacements/"]) > p { font-size: 0.65em; margin: 0.3em 0; line-height: 1.2; }
       .reveal section:has(source[src*="local-replacements/"]) > p.credits { font-size: 0.42em; }
+      .reveal .slides section:has(.video-intro) h2 { margin-bottom: 0.25em; }
+      .reveal .slides section p.video-intro { font-size: 0.72em; line-height: 1.25; margin: 0.25em 0 0.45em; }
+      .reveal .slides section:has(.video-intro) video:not([hidden]) { width: auto; height: 465px; max-width: 100%; max-height: none; object-fit: contain; margin: 0 auto; }
+      .reveal .slides section:has(.video-intro):has(p.small) video:not([hidden]) { height: 420px; }
+      .reveal .slides section:has(.video-intro) p.credits { font-size: 0.46em; margin: 0.3em 0; line-height: 1.2; }
+      .reveal .slides section:has(.video-intro) p.video-unavailable { font-size: 0.8em; margin: 1em 0; }
       .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
       .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
       .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }
@@ -341,7 +347,7 @@ Mikołaj Leszczuk
 
 ## Routing
 
-Routing to wybór drogi, którą pakiet ma dotrzeć do sieci lub hosta docelowego. Ruter przekazuje pakiety między różnymi sieciami na podstawie tablicy routingu.
+Routing to wybór drogi, którą pakiet ma dotrzeć do sieci lub hosta docelowego.
 
 ---
 
@@ -374,9 +380,18 @@ W Internecie kluczowym protokołem tej warstwy jest IP (*Internet Protocol*).
 
 ---
 
+## Historyczny protokół IPX
+
+**IPX** (*Internetwork Packet Exchange*) był protokołem warstwy sieciowej w sieciach Novell NetWare. Zapewniał adresowanie i przekazywanie pakietów między sieciami lokalnymi oraz rozległymi.
+
+Podobnie jak IP, sam IPX nie gwarantował dostarczenia każdego pakietu. W rodzinie protokołów współpracował z **SPX** (*Sequenced Packet Exchange*), który realizował usługi transportowe.
+
+
+---
+
 ## Ruter: połączenia i realizacja
 
-Ruter przekazuje pakiety pomiędzy odrębnymi sieciami. Zwykle ma co najmniej dwa interfejsy fizyczne, lecz może też obsługiwać kilka sieci logicznych przez jeden interfejs, np. za pomocą VLAN-ów (*Virtual Local Area Network*).
+Ruter zwykle ma co najmniej dwa interfejsy fizyczne, lecz może też obsługiwać kilka sieci logicznych przez jeden interfejs, np. za pomocą VLAN-ów (*Virtual Local Area Network*).
 
 Historyczne sieci ATM (*Asynchronous Transfer Mode*) i Frame Relay rozdzielały taki ruch przez kanały wirtualne: stałe **PVC** (*Permanent Virtual Circuit*) lub zestawiane na żądanie **SVC** (*Switched Virtual Circuit*).
 
@@ -396,17 +411,15 @@ Dzięki temu pakiet nie krąży bez końca, gdy tablice routingu zawierają pęt
 
 - **Statyczna:** administrator wpisuje trasę ręcznie.
 - **Dynamiczna:** rutery wymieniają informacje i aktualizują trasy protokołem, np. RIP, OSPF lub IS-IS.
-- **Między systemami autonomicznymi:** BGP uwzględnia politykę operatorów i umowy o wymianie ruchu.
+- **Między systemami autonomicznymi:** BGP uwzględnia politykę operatorów i umowy o wymianie ruchu, więc preferowana trasa nie musi być najkrótsza.
 
-IGRP i EIGRP również pojawiały się w oryginalnym wykładzie; są rozwiązaniami związanymi z ekosystemem Cisco.
+IGRP i EIGRP to protokoły opracowane przez Cisco.
 
 ---
 
 ## Wybór trasy i polityka
 
 Metryka trasy może opisywać koszt, opóźnienie lub inne właściwości łącza. Ruter najpierw dopasowuje adres celu do prefiksów w tablicy, a następnie wybiera trasę według reguł protokołu i konfiguracji.
-
-W BGP trasa preferowana przez operatora nie musi być najkrótsza geometrycznie. Znaczenie mają także umowy tranzytowe i peeringowe.
 
 Oprócz adresu celu polityka sieci może uwzględniać obciążenie, jakość usługi lub oznaczenia pakietów, np. DSCP (*Differentiated Services Code Point*). Nie oznacza to, że każdy protokół rutingu analizuje te pola przy każdym pakiecie.
 
@@ -456,6 +469,8 @@ Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
 
 ## Dijkstra: przykład krok po kroku
 
+<p class="video-intro">Na ważonym grafie Mike Pound wybiera wierzchołek o najmniejszej znanej odległości i sprawdza, czy można przez niego poprawić drogę do sąsiadów.</p>
+
 <video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/dijkstra.jpg"><source src="media/local-replacements/dijkstra.mp4" type="video/mp4"></video>
 
 <p class="credits video-original"><a href="https://www.youtube.com/watch?v=GazC3A4OQTE&amp;t=178s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
@@ -463,14 +478,6 @@ Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
 <p class="credits">Computerphile / Mike Pound · Dijkstra's Algorithm · fragment 02:58.000–08:48.000</p>
 
 <p class="small">Kolejka priorytetowa (<em>priority queue</em>) pozwala wybrać węzeł o najmniejszym koszcie. Koszt celu jest ostateczny dopiero przy takim wyborze, nie przy pierwszym znalezieniu drogi do celu.</p>
-
----
-
-## Właściwości Dijkstry
-
-- Działa dla wag nieujemnych.
-- Po wyborze węzła o najmniejszym koszcie jego wynik jest ostateczny.
-- Stanowi podstawę algorytmów stanu łącza, takich jak SPF w OSPF.
 
 ---
 
@@ -525,23 +532,6 @@ Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
 ## Od algorytmów do protokołów
 
 Algorytmy są modelem decyzji trasowania. Protokoły routingu określają, jak rutery wymieniają informacje, budują widok sieci i aktualizują tablice.
-
----
-
-## Historyczny protokół IPX
-
-**IPX** (*Internetwork Packet Exchange*) był protokołem warstwy sieciowej w sieciach Novell NetWare. Zapewniał adresowanie i przekazywanie pakietów między sieciami lokalnymi oraz rozległymi.
-
-Podobnie jak IP, sam IPX nie gwarantował dostarczenia każdego pakietu. W rodzinie protokołów współpracował z **SPX** (*Sequenced Packet Exchange*), który realizował usługi transportowe.
-
----
-
-## Podsumowanie
-
-- Ruter kieruje pakiety według tablicy routingu.
-- Dijkstra znajduje najkrótsze ścieżki przy nieujemnych wagach.
-- Ford-Fulkerson i Dinic dotyczą maksymalnego przepływu.
-- Następny krok to protokoły routingu używane w rzeczywistych sieciach.
       </textarea></section>
     </div></div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>

@@ -27,8 +27,7 @@ Mikołaj Leszczuk
 Sygnał to abstrakcyjny model mierzalnej wielkości zmieniającej się w czasie, generowanej przez zjawisko fizyczne albo system.
 
 - opisujemy go matematycznie, na przykład funkcją czasu,
-- może nieść informację,
-- umożliwia przepływ strumienia informacji.
+- może nieść informację.
 
 ---
 
@@ -185,23 +184,23 @@ Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzen
 
 ## Prawo Sarnoffa: film
 
-<video controls preload="metadata" poster="media/sarnoff-film-poster.jpg"><source src="media/vY939jNAM14.mp4" type="video/mp4"></video>
+<p class="video-intro">Na przykładzie radia i telewizji film pokazuje, dlaczego w modelu Sarnoffa wartość sieci nadawczej rośnie liniowo z liczbą odbiorców.</p>
 
-<p class="small">Każdy kolejny odbiorca zwiększa wartość sieci nadawczej w modelu liniowym.</p>
+<video controls preload="metadata" poster="media/sarnoff-film-poster.jpg"><source src="media/vY939jNAM14.mp4" type="video/mp4"></video>
 
 ---
 
 ## Prawo Metcalfe'a: film
 
-<video controls preload="metadata" poster="media/metcalfe-film-poster.jpg"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
+<p class="video-intro">W filmie 4, 9 i 16 to wartości modelu <code>n²</code>, nie liczby połączeń. Tych jest <code>n(n−1)/2</code>: dla 2, 3 i 4 węzłów odpowiednio 1, 3 i 6.</p>
 
-<p class="small">Uwaga do grafiki w filmie: <strong>4, 9 i 16</strong> ilustrują model wartości sieci proporcjonalnej do <code>n²</code>, nie liczbę połączeń. Dla 2, 3 i 4 węzłów liczba możliwych połączeń między parami wynosi <strong>1, 3 i 6</strong>: <code>n(n−1)/2</code>.</p>
+<video controls preload="metadata" poster="media/metcalfe-film-poster.jpg"><source src="media/GVkDdx_NIRM.mp4" type="video/mp4"></video>
 
 ---
 
 ## Podsumowanie
 
-- Sygnał jest modelem wielkości niosącej informację.
+- Sygnał modeluje zmienną w czasie wielkość, która może nieść informację.
 - Decybel wygodnie opisuje szerokie zakresy i zmiany względne.
 - Przepustowość jest właściwością kanału, przepływność opisuje faktyczny strumień danych.
 - Próbkowanie, rozwój układów oraz wartość sieci mają swoje rozpoznawalne prawa i ograniczenia.

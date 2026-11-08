@@ -25,6 +25,12 @@
       .reveal .video-original.video-unavailable { font-size: 0.8em; margin: 1em 0; }
       .reveal section:has(source[src*="local-replacements/"]) > p { font-size: 0.65em; margin: 0.3em 0; line-height: 1.2; }
       .reveal section:has(source[src*="local-replacements/"]) > p.credits { font-size: 0.42em; }
+      .reveal .slides section:has(.video-intro) h2 { margin-bottom: 0.25em; }
+      .reveal .slides section p.video-intro { font-size: 0.72em; line-height: 1.25; margin: 0.25em 0 0.45em; }
+      .reveal .slides section:has(.video-intro) video:not([hidden]) { width: auto; height: 465px; max-width: 100%; max-height: none; object-fit: contain; margin: 0 auto; }
+      .reveal .slides section:has(.video-intro):has(p.small) video:not([hidden]) { height: 420px; }
+      .reveal .slides section:has(.video-intro) p.credits { font-size: 0.46em; margin: 0.3em 0; line-height: 1.2; }
+      .reveal .slides section:has(.video-intro) p.video-unavailable { font-size: 0.8em; margin: 1em 0; }
       .reveal .video-embed { display: block; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; border: 0; }
       .reveal .video-link { display: grid; place-items: center; width: min(76vw, 980px); aspect-ratio: 16 / 9; margin: 0.55em auto 0; overflow: hidden; position: relative; background: #111; text-decoration: none; }
       .reveal .video-link img { width: 100%; max-width: none; max-height: none; height: 100%; margin: 0; object-fit: cover; }
@@ -355,12 +361,19 @@ Mikołaj Leszczuk
 
 </div><div>
 
-Światłowód prowadzi światło wewnątrz włókna o odpowiednio dobranych właściwościach optycznych.
-Jest **falowodem optycznym**: prowadzi promieniowanie świetlne wzdłuż rdzenia.
+Światłowód jest **falowodem optycznym**: prowadzi światło wzdłuż rdzenia włókna.
 
 Informacja jest kodowana jako modulowana wiązka światła, zwykle pochodząca z lasera albo diody LED (*light-emitting diode*, dioda elektroluminescencyjna).
 
 </div></div>
+
+---
+
+## Od włókna do kabla światłowodowego
+
+<p class="video-intro">Przekrój pokazuje, jak włókna są pogrupowane w tubach i chronione przez pancerz oraz zewnętrzną powłokę kabla.</p>
+
+<video controls preload="metadata"><source src="media/slide-052-media11.mp4" type="video/mp4"></video>
 
 ---
 
@@ -370,7 +383,7 @@ Informacja jest kodowana jako modulowana wiązka światła, zwykle pochodząca z
 
 - bardzo duża przepustowość,
 - małe tłumienie na dużych odległościach,
-- odporność na zakłócenia elektromagnetyczne,
+- odporność na zakłócenia elektromagnetyczne: sygnał przenosi światło, a nie prąd w przewodzie,
 - brak emisji elektromagnetycznej,
 - małe rozmiary i masa kabla.
 
@@ -390,12 +403,6 @@ Włókno prowadzi światło dlatego, że współczynnik załamania płaszcza jes
 
 ---
 
-## Materiał: ewolucja światłowodów
-
-<video controls preload="metadata"><source src="media/slide-007-media1.mp4" type="video/mp4"></video>
-
----
-
 ## Laser jako źródło światła
 
 <div class="columns"><div>
@@ -411,21 +418,24 @@ Laser może dostarczyć intensywną, łatwą do modulowania wiązkę światła. 
 
 ---
 
-## Materiał: laser jako źródło światła
+## Wewnątrz nadajnika laserowego
+
+<p class="video-intro">Soczewka skupia wiązkę kierowaną do włókna, a fotodioda wewnątrz obudowy monitoruje moc lasera.</p>
 
 <video controls preload="metadata"><source src="media/slide-009-media2.mp4" type="video/mp4"></video>
 
 ---
 
-## Odporność na błędy
+## Długości fal w nadajnikach optycznych
 
-<video controls preload="metadata"><source src="media/slide-012-media3.mp4" type="video/mp4"></video>
+<p class="video-intro">Animacja pokazuje, jak odczytać długość fali z rysunku, i porównuje przykładowe długości fal emitowanych przez diody LED i diody laserowe.</p>
+
+<video controls preload="metadata"><source src="media/slide-007-media1.mp4" type="video/mp4"></video>
 
 ---
 
-## Odporność i tłumienie światłowodu
+## Tłumienie i stopa błędów
 
-- Światłowód jest odporny na zewnętrzne zakłócenia elektromagnetyczne, bo sygnał przenosi światło, a nie prąd w przewodzie.
 - Dla typowego włókna jednomodowego przy długości fali około 1550 nm tłumienie może wynosić około **0,2 dB/km**. Nie jest to wartość stała dla każdego włókna i każdej długości fali.
 - Niska stopa błędów zależy także od nadajnika, odbiornika, połączeń i zapasu mocy całego toru.
 
@@ -434,8 +444,19 @@ Laser może dostarczyć intensywną, łatwą do modulowania wiązkę światła. 
 ## Zasięg i trwałość łącza optycznego
 
 - Małe tłumienie pozwala budować odcinki bez wzmacniacza liczące dziesiątki kilometrów; w starszych przykładach podawano **80–100 km**. Rzeczywisty zasięg zależy od włókna, długości fali, nadajnika i budżetu mocy.
-- Projektowa trwałość kabla bywa liczona w dekadach; oryginalny wykład podawał **25 lat**, lecz nie jest to gwarancja dla każdego kabla i sposobu instalacji.
-- Jedno włókno może przenosić wiele kanałów i usług, a sygnał optyczny można wzmacniać.
+- Przykładowa zakładana trwałość kabla to **25 lat**. Rzeczywista trwałość zależy od konstrukcji, środowiska i sposobu instalacji.
+
+---
+
+## Wzmacniacze w łączu światłowodowym
+
+<p class="video-intro">Na schemacie kilka kanałów biegnie jednym włóknem. Wzmacniacze po drodze kompensują spadek mocy sygnału.</p>
+
+<video controls preload="metadata"><source src="media/slide-012-media3.mp4" type="video/mp4"></video>
+
+<p class="small">Wzmacniacz półprzewodnikowy (SOA) wzmacnia sygnał bez zamiany na elektryczny, wbrew opisowi w filmie.</p>
+
+
 
 ---
 
@@ -445,23 +466,51 @@ Laser może dostarczyć intensywną, łatwą do modulowania wiązkę światła. 
 
 ---
 
+## Co to jest mod światłowodu?
+
+**Mod** to sposób rozchodzenia się fali wzdłuż włókna, z charakterystycznym rozkładem pola w jego przekroju.
+
+<img src="media/mody-pola.svg" alt="Trzy schematyczne przekroje pola: mod podstawowy z maksimum w środku, LP11 z dwoma obszarami i LP21 z czterema" width="870" style="max-width: 98%; margin-top: 0.2em">
+
+<p class="small">Jaśniejszy kolor oznacza większą amplitudę pola. Turkusowy i pomarańczowy oznaczają przeciwne fazy; kreskowany okrąg wyznacza rdzeń. To schemat pola, nie tory promieni.</p>
+
+<p class="small">Przy danej długości fali włókno jednomodowe prowadzi tylko mod podstawowy. We włóknie wielomodowym różne mody mogą docierać do końca w różnym czasie.</p>
+
+---
+
 ## Podział światłowodów
 
 <div class="columns"><div>
 
 **Wielomodowe (MMF, *multimode fiber*)**
 
-Wiele dróg propagacji światła w rdzeniu. Typowe dla krótszych odcinków i sieci lokalnych.
+Prowadzi wiele modów przestrzennych. Typowe dla krótszych odcinków i sieci lokalnych.
 W omawianych przykładach średnica rdzenia wynosi **50 lub 62,5 µm**.
 
 </div><div>
 
 **Jednomodowe (SMF, *single-mode fiber*)**
 
-Jedna dominująca droga propagacji. Mała dyspersja i zastosowanie w długich łączach.
+Brak dyspersji międzymodowej sprzyja zastosowaniu w łączach dalekiego zasięgu i sieciach szkieletowych. Typowym źródłem światła jest laser.
 Średnica rdzenia jest znacznie mniejsza, w przybliżeniu **5–10 µm**.
 
 </div></div>
+
+---
+
+## Przekrój włókna wielomodowego
+
+<p class="video-intro">Animacja pokazuje włókno z boku i od czoła. Rozróżnia szklany rdzeń i płaszcz od polimerowych warstw ochronnych.</p>
+
+<video controls preload="metadata"><source src="media/slide-021-media4.mp4" type="video/mp4"></video>
+
+---
+
+## Przekrój włókna jednomodowego
+
+<p class="video-intro">W pokazanych włóknach jedno- i wielomodowym płaszcz ma tę samą średnicę, ale włókno jednomodowe ma znacznie cieńszy rdzeń.</p>
+
+<video controls preload="metadata"><source src="media/slide-025-media5.mp4" type="video/mp4"></video>
 
 ---
 
@@ -511,27 +560,6 @@ Docierają więc do końca włókna w różnym czasie. Szerszy impuls wymaga wi�
 
 ---
 
-## Materiał: wielomodowość
-
-<video controls preload="metadata"><source src="media/slide-021-media4.mp4" type="video/mp4"></video>
-
----
-
-## Światłowód jednomodowy
-
-- Ma mały rdzeń i prowadzi zasadniczo jeden mod.
-- Ogranicza dyspersję międzymodową.
-- W typowych łączach wykorzystuje źródło laserowe; odbiornik rejestruje mod podstawowy.
-- Jest podstawą łączy dalekiego zasięgu i sieci szkieletowych.
-
----
-
-## Materiał: światłowód jednomodowy
-
-<video controls preload="metadata"><source src="media/slide-025-media5.mp4" type="video/mp4"></video>
-
----
-
 <!-- .slide: class="section-slide" -->
 
 # Straty i tłumienie
@@ -553,7 +581,7 @@ Tłumienie określa, o ile maleje moc optyczna sygnału podczas propagacji. W pr
 
 Szkło kwarcowe (`SiO₂`) nie jest idealnie jednorodne. Fluktuacje gęstości i współczynnika załamania rozpraszają światło, a domieszki mogą je pochłaniać.
 
-W oryginalnym wykładzie rozróżniono **rozpraszanie Rayleigha** oraz **absorpcję**. Ich wpływ zależy od długości fali, dlatego dobiera się odpowiednie okna transmisyjne.
+Są to **rozpraszanie Rayleigha** i **absorpcja**. Oba mechanizmy zależą od długości fali.
 
 ---
 
@@ -565,9 +593,17 @@ Typowe okna transmisyjne leżą w pobliżu **850 nm**, **1310 nm** i **1550 nm**
 
 ---
 
+## Absorpcja światła w szkle
+
+<p class="video-intro">Film pokazuje jeden z mechanizmów tłumienia: domieszki w szkle pochłaniają część energii światła, która zamienia się w ciepło.</p>
+
+<video controls preload="metadata"><source src="media/slide-039-media9.mp4" type="video/mp4"></video>
+
+---
+
 ## Rozpraszanie Rayleigha: przykład
 
-Oryginalny wykład podaje dla czystego szkła kwarcowego orientacyjne składowe tłumienia od rozpraszania:
+Przykładowe wartości tłumienia wskutek rozpraszania w czystym szkle kwarcowym:
 
 | Długość fali | 850 nm | 1300 nm | 1550 nm |
 | --- | ---: | ---: | ---: |
@@ -589,36 +625,36 @@ Szczególnie ważne są mikro- i makro-zgięcia.
 
 ---
 
-## Materiał: straty falowodowe
-
-<video controls preload="metadata"><source src="media/slide-031-media6.mp4" type="video/mp4"></video>
-
----
-
 ## Mikro-zgięcia
 
 - Niewielkie, miejscowe odkształcenia włókna.
 - Mogą wynikać z nacisku, naprężeń i niedoskonałości konstrukcji kabla.
-- Mogą powstawać podczas produkcji włókna lub późniejszego montażu.
 - Powodują mieszanie modów i ucieczkę części światła do płaszcza, czyli dodatkową utratę mocy.
 - We włóknie jednomodowym zaburzają rozkład pola modu podstawowego i również mogą zwiększać tłumienie.
 
 ---
 
-## Materiał: mikro-zgięcia
+## Mikrozgięcia: straty pod naciskiem
+
+<p class="video-intro">W powiększeniu widać odkształcenia, które mogą powstać podczas produkcji włókna lub montażu. Wykres pokazuje ich wpływ na moc sygnału.</p>
 
 <video controls preload="metadata"><source src="media/slide-033-media7.mp4" type="video/mp4"></video>
 
----
 
-## Makro-zgięcia
-
-- Widoczne zgięcia kabla o zbyt małym promieniu.
-- Część światła przestaje spełniać warunek całkowitego wewnętrznego odbicia i ucieka z rdzenia.
 
 ---
 
-## Materiał: makro-zgięcia
+## Jak ciasno można zgiąć kabel?
+
+<p class="video-intro">Film pokazuje, gdzie mierzy się promień zgięcia. Dopuszczalne minimum dla konkretnego kabla podaje jego producent.</p>
+
+<video controls preload="metadata"><source src="media/slide-031-media6.mp4" type="video/mp4"></video>
+
+---
+
+## Makrozgięcia: straty na ciasnych łukach
+
+<p class="video-intro">Animacja pokazuje, gdzie światło ucieka z ciasno zgiętego włókna. Na wykresie odpowiadają temu miejscowe spadki mocy.</p>
 
 <video controls preload="metadata"><source src="media/slide-035-media8.mp4" type="video/mp4"></video>
 
@@ -626,16 +662,9 @@ Szczególnie ważne są mikro- i makro-zgięcia.
 
 ## Inne przyczyny strat
 
-- koncentracja zanieczyszczeń w szkle,
 - straty na złączach i spawach, zwłaszcza przy przesunięciu osi, rozsunięciu lub kątowym niedopasowaniu czół włókien,
 - niewłaściwy montaż,
 - starzenie materiału i wpływ środowiska.
-
----
-
-## Materiał: tłumienie
-
-<video controls preload="metadata"><source src="media/slide-039-media9.mp4" type="video/mp4"></video>
 
 ---
 
@@ -671,7 +700,7 @@ Różne długości fali poruszają się z różną prędkością; obejmuje dyspe
 
 ## Dyspersja międzymodowa
 
-Różne czasy przejścia modów poszerzają impuls. Zniekształcenie rośnie z długością włókna, więc użyteczne pasmo maleje. Profil gradientowy ogranicza ten efekt w porównaniu z profilem skokowym.
+Poszerzenie impulsu rośnie z długością włókna, więc użyteczne pasmo maleje.
 
 Rozmyty impuls może mieć niższą amplitudę szczytową nawet bez dodatkowej utraty mocy wskutek tłumienia.
 
@@ -686,11 +715,17 @@ Rozmyty impuls może mieć niższą amplitudę szczytową nawet bez dodatkowej u
 
 ---
 
+## Dyspersja chromatyczna a błędy transmisji
+
+<p class="video-intro">Składowe impulsu o różnych długościach fal docierają w różnym czasie. Film pokazuje, jak poszerzone impulsy mogą zacząć na siebie nachodzić.</p>
+
+<video controls preload="metadata"><source src="media/slide-051-media10.mp4" type="video/mp4"></video>
+
+---
+
 ## Dyspersja materiałowa
 
-Współczynnik załamania szkła zależy od długości fali. Źródło emituje pewien zakres długości fal, więc składowe impulsu docierają do odbiornika w różnym czasie.
-
-W typowym włóknie krzemionkowym dyspersja materiałowa jest niewielka w okolicy **1300 nm**. Nie oznacza to, że cała dyspersja chromatyczna włókna wynosi tam zero.
+W typowym włóknie krzemionkowym dyspersja materiałowa jest niewielka w okolicy **1300 nm**. Przy ocenie całkowitej dyspersji chromatycznej trzeba uwzględnić także wkład falowodowy.
 
 ---
 
@@ -698,7 +733,7 @@ W typowym włóknie krzemionkowym dyspersja materiałowa jest niewielka w okolic
 
 Pierwsze systemy pracowały w okolicy **830–900 nm**. Przejście w okolice **1300 nm** ograniczało dyspersję materiałową, a rozwój produkcji włókien zmniejszał tam tłumienie. Później zaczęto szeroko wykorzystywać okolice **1550 nm**, gdzie tłumienie szkła kwarcowego jest bardzo małe.
 
-Oryginalny wykład ilustrował tę historię wartościami około **3–5 dB/km** przy 850 nm, **0,5–1 dB/km** przy 1300 nm i **0,2 dB/km** przy 1550 nm. To przykłady historycznych włókien, a nie parametry gwarantowane dla każdego współczesnego łącza.
+Przykładowe tłumienie dawnych włókien wynosiło około **3–5 dB/km** przy 850 nm, **0,5–1 dB/km** przy 1300 nm i **0,2 dB/km** przy 1550 nm. To przykłady historycznych włókien, a nie parametry gwarantowane dla każdego współczesnego łącza.
 
 ---
 
@@ -707,18 +742,6 @@ Oryginalny wykład ilustrował tę historię wartościami około **3–5 dB/km**
 Część pola optycznego propaguje także w płaszczu. Udział tej części zmienia się z długością fali, dlatego geometria rdzenia i płaszcza wpływa na opóźnienie składowych impulsu.
 
 Dyspersję chromatyczną można modyfikować przez konstrukcję włókna; w praktyce rozpatruje się sumę wkładów materiałowego i falowodowego.
-
----
-
-## Materiały: dyspersja
-
-<video controls preload="metadata"><source src="media/slide-051-media10.mp4" type="video/mp4"></video>
-
----
-
-## Materiał: dyspersja chromatyczna
-
-<video controls preload="metadata"><source src="media/slide-052-media11.mp4" type="video/mp4"></video>
 
 ---
 

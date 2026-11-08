@@ -41,10 +41,9 @@ W medium dzielonym wiele stacji korzysta z jednego kanału transmisyjnego. Gdy d
 
 ## Kto odbiera ramkę w medium dzielonym?
 
-W klasycznym Ethernecie na wspólnym kablu sygnał dociera do wszystkich stacji. Zbiór stacji, których transmisje mogą się wzajemnie zderzyć, tworzy **domenę kolizyjną**.
+W klasycznym Ethernecie na wspólnym kablu zbiór stacji, których transmisje mogą się wzajemnie zderzyć, tworzy **domenę kolizyjną**.
 
 - Nagłówek ramki zawiera docelowy adres **MAC** (*Media Access Control*).
-- Każda stacja może odebrać sygnał, ale zwykle tylko adresat przyjmuje ramkę do dalszego przetwarzania.
 - Terminatory na końcach dawnej magistrali pochłaniały energię sygnału, ograniczając odbicia.
 
 ---
@@ -163,8 +162,6 @@ Sygnał potrzebuje czasu na dotarcie do drugiego końca sieci i z powrotem; ten 
 
 <img src="media/image10.png" alt="Dwie stacje podejmują próbę nadawania w tym samym czasie" height="430">
 
-Samo nasłuchiwanie nie wyklucza kolizji: sygnał drugiej stacji potrzebuje czasu, by dotrzeć do nadajnika.
-
 ---
 
 ## Warianty CSMA
@@ -185,7 +182,7 @@ Wybór jest kompromisem między opóźnieniem a ryzykiem kolizji.
 
 ## Unikanie kolizji
 
-CSMA/CA (*Carrier Sense Multiple Access with Collision Avoidance*, wielodostęp z nasłuchem nośnej i unikaniem kolizji) stosuje się w szczególności w Wi-Fi, gdzie wykrywanie kolizji podczas własnego nadawania jest trudne.
+<p class="video-intro">W Wi-Fi trudno wykryć kolizję podczas nadawania. Film pokazuje, jak CSMA/CA (<em>Carrier Sense Multiple Access with Collision Avoidance</em>) ogranicza to ryzyko przez nasłuch i odczekanie.</p>
 
 <video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/csma-ca.jpg"><source src="media/local-replacements/csma-ca.mp4" type="video/mp4"></video>
 
@@ -219,7 +216,7 @@ Węzeł radiowy może nie słyszeć innego węzła, choć oba zakłócają odbio
 
 ## Wykrywanie kolizji
 
-CSMA/CD: <em>Carrier Sense Multiple Access with Collision Detection</em> — wielodostęp z nasłuchem nośnej i wykrywaniem kolizji.
+<p class="video-intro">Film pokazuje, jak CSMA/CD (<em>Carrier Sense Multiple Access with Collision Detection</em>) wykrywa kolizję na wspólnym łączu Ethernet i ponawia transmisję po odczekaniu.</p>
 
 <video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/csma-cd.jpg"><source src="media/local-replacements/csma-cd.mp4" type="video/mp4"></video>
 
@@ -227,15 +224,25 @@ CSMA/CD: <em>Carrier Sense Multiple Access with Collision Detection</em> — wie
 
 <p class="credits">PowerCert Animated Videos · CSMA/CD and CSMA/CA Explained · fragment 00:38.260–03:40.700</p>
 
-<p class="small">Brak wykrytej kolizji nie gwarantuje dostarczenia ramki. Mechanizm dotyczy medium współdzielonego i pracy półdupleksowej.</p>
+<p class="small">Brak wykrytej kolizji nie gwarantuje dostarczenia ramki. CSMA/CD dotyczy medium współdzielonego i pracy półdupleksowej. Dzisiejszy Ethernet przełączany zwykle pracuje w pełnym dupleksie.</p>
+
+<!-- study-only:start -->
 
 ---
 
-## Sekwencja zagłuszająca
+## Przebieg kolizji w CSMA/CD
 
 W klasycznym Ethernecie współdzielonym stacja monitoruje medium również podczas własnego nadawania. Po wykryciu kolizji przerywa ramkę i wysyła **jam sequence**, aby inne stacje także rozpoznały kolizję.
 
-W oryginalnym wykładzie pokazano 32-bitową sekwencję zagłuszającą. Uszkodzona ramka zostaje odrzucona, bo nie przechodzi kontroli FCS/CRC; nadawcy ponawiają próbę po losowym czasie.
+Nadawcy ponawiają próbę po losowym czasie.
+
+<!-- study-only:end -->
+
+---
+
+## Sekwencja zagłuszająca i kontrola ramki
+
+W przykładzie sekwencja zagłuszająca ma **32 bity**. Uszkodzona ramka zostaje odrzucona, bo nie przechodzi kontroli FCS/CRC.
 
 ---
 
@@ -263,41 +270,13 @@ Nadawca musi jeszcze transmitować, kiedy ewentualny sygnał kolizji zdąży do 
 
 W klasycznym Ethernecie ramka ma co najmniej **64 bajty** od adresu docelowego do FCS, a pole danych co najmniej **46 bajtów**. Limit zasięgu segmentu i liczba wzmacniaczy wynikają z czasu propagacji w obie strony.
 
----
-
-## CSMA/CD a współczesny Ethernet
-
-- CSMA/CD było potrzebne przy współdzielonym, półdupleksowym medium.
-- Dzisiejszy Ethernet przełączany jest zwykle pełnodupleksowy.
-- W takim połączeniu nie ma współdzielonego kanału między dwoma końcami, więc kolizje nie występują.
-
----
-
-## Porównanie
-
-<div class="comparison-grid">
-  <div><strong>ALOHA</strong>nadaj, potem reaguj<br>proste systemy radiowe</div>
-  <div><strong>CSMA</strong>nasłuchaj przed nadaniem<br>współdzielone LAN</div>
-  <div><strong>CSMA/CA</strong>staraj się uniknąć kolizji<br>Wi-Fi</div>
-  <div><strong>CSMA/CD</strong>wykryj kolizję podczas nadawania<br>historyczny Ethernet współdzielony</div>
-</div>
-
----
-
-## Podsumowanie
-
-- Wspólne medium wymaga zasad dostępu.
-- ALOHA jest proste, ale mało wydajne przy obciążeniu.
-- CSMA zmniejsza liczbę kolizji przez nasłuchiwanie.
-- Wi-Fi używa CSMA/CA, a klasyczny Ethernet używał CSMA/CD.
-
 <!-- study-only:start -->
 
 ---
 
-# Materiały do samodzielnej nauki
+## CSMA/CD a pełny dupleks
 
-Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
+W pełnym dupleksie oba końce mogą nadawać równocześnie bez kolizji, więc CSMA/CD nie jest potrzebne.
 
 ---
 
@@ -309,3 +288,14 @@ Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
 </div>
 
 <!-- study-only:end -->
+
+---
+
+## Porównanie
+
+<div class="comparison-grid">
+  <div><strong>ALOHA</strong>nadaj, potem reaguj<br>proste systemy radiowe</div>
+  <div><strong>CSMA</strong>nasłuchaj przed nadaniem<br>współdzielone LAN</div>
+  <div><strong>CSMA/CA</strong>staraj się uniknąć kolizji<br>Wi-Fi</div>
+  <div><strong>CSMA/CD</strong>wykryj kolizję podczas nadawania<br>historyczny Ethernet współdzielony</div>
+</div>

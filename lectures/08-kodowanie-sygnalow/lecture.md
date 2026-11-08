@@ -23,11 +23,11 @@ Cele kodowania obejmują między innymi reprezentację informacji, synchronizacj
 
 ---
 
-## Odległość Hamminga
+## Materiał: odległość Hamminga
 
-Odległość Hamminga to liczba pozycji, na których dwa ciągi o tej samej długości się różnią.
+<p class="video-intro">Prowadzący porównuje dwa ciągi tej samej długości bit po bicie.</p>
 
-Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji błędów.
+<video controls preload="metadata"><source src="media/videos/P02mJhS9qQ4.mp4" type="video/mp4"></video>
 
 ---
 
@@ -35,11 +35,7 @@ Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji b�
 
 ![Wzór na odległość Hamminga](media/image1.png)
 
----
-
-## Materiał: odległość Hamminga
-
-<video controls preload="metadata"><source src="media/videos/P02mJhS9qQ4.mp4" type="video/mp4"></video>
+Minimalna odległość kodu określa jego zdolność do wykrywania i korekcji błędów.
 
 ---
 
@@ -123,15 +119,13 @@ Tu oryginalny pomiar dotyczy nie-ramkowanego sygnału **2 Mb/s** z symetrycznego
 
 Na odbiorniku sygnał może różnić się od sygnału na wyjściu nadajnika. Przyczynami są m.in. odbicia, spadek napięcia lub mocy, nieliniowość nadajnika i odbiornika oraz wahania fazy.
 
-Maska telekomunikacyjna określa dopuszczalny kształt przebiegu mimo tych zmian.
-
 ---
 
 ## HDB
 
 Kody HDB (*High Density Bipolar*) zastępują długie serie zer wzorcami zawierającymi impulsy naruszające regułę bipolarności.
 
-Pozwala to utrzymać synchronizację, nawet gdy źródło generuje długi ciąg zer.
+Pozwala to utrzymać synchronizację bez ograniczania długości serii zer w danych.
 
 ![Przykładowy przebieg kodu HDB](media/image5.png)
 
@@ -147,11 +141,10 @@ W HDB-2 zastępuje się ciąg trzech zer. Impuls **V** celowo narusza przemienno
 
 ## Po co HDB-2 w torze transmisyjnym?
 
-- Zmiany sygnału podczas długiej serii zer pomagają odbiornikowi odzyskać taktowanie.
 - Dobór polaryzacji ogranicza składową stałą i energię widma blisko częstotliwości zerowej.
 - Nadmiar wynikający z trzech poziomów pozwala wykryć część naruszeń oczekiwanej kolejności impulsów.
 
-Kosztem jest większa wrażliwość na zakłócenia między poziomami i konieczność uwzględnienia wcześniejszych impulsów przy kodowaniu oraz dekodowaniu.
+Trzy poziomy zwiększają wrażliwość na zakłócenia. Kodowanie i dekodowanie zależą od wcześniejszych impulsów, a analiza trzech kolejnych pozycji wprowadza opóźnienie. Błędna decyzja dekodera może wpłynąć na interpretację następnych symboli.
 
 ---
 
@@ -173,21 +166,11 @@ HDB3 (*High Density Bipolar of order 3*) zastępuje cztery zera: **000V** po nie
 
 ---
 
-## Korzyści i ograniczenia HDB
-
-- Zastępowanie długich serii zer ułatwia synchronizację bez narzucania struktury danych.
-- Przemienność biegunowości i celowe naruszenia reguły pomagają wykryć część błędów.
-- Trzy poziomy sygnału oraz zależność od wcześniejszych impulsów komplikują odbiór; błędna interpretacja może wpływać na kolejne symbole.
-
-W HDB-2 analiza trzech kolejnych pozycji wprowadza opóźnienie kodowania i dekodowania. Błędna decyzja dekodera może też wpłynąć na interpretację następnych symboli.
-
----
-
 ## Koder HDB-2: realizacja logiczna
 
-Oryginalny schemat pokazuje rejestry i bramki logiczne, które śledzą wcześniejsze impulsy, wybierają polaryzację oraz wprowadzają impuls naruszający regułę przemienności po długiej serii zer.
+Rejestry i bramki logiczne śledzą wcześniejsze impulsy, wybierają polaryzację i wprowadzają impuls naruszający regułę przemienności po długiej serii zer.
 
-<img src="media/image8.png" alt="Oryginalny schemat montażowy kodera HDB-2 z rejestrami i bramkami logicznymi" height="400">
+<img src="media/image8.png" alt="Schemat montażowy kodera HDB-2 z rejestrami i bramkami logicznymi" height="400">
 
 ---
 
@@ -294,8 +277,6 @@ Koder mnoży wielomian informacji przez wielomian generujący:
 
 Wynik jest podzielny przez `g(x)`, ale bity informacji nie muszą zajmować osobnego, niezmienionego fragmentu słowa kodowego.
 
-**Droga sygnału:** `h(x)` → mnożenie przez `g(x)` → `s(x)`.
-
 ---
 
 ## Dekodowanie niesystematyczne
@@ -307,19 +288,11 @@ Dekoder dzieli odebrane `y(x)` przez `g(x)`:
 - `r(x) = 0`: słowo spełnia regułę kodu, a iloraz `q(x)` odtwarza informację.
 - `r(x) ≠ 0`: wykryto błąd zgodnie z możliwościami tego kodu.
 
-**Droga sygnału:** `y(x)` → dzielenie przez `g(x)` → iloraz i reszta.
-
----
-
-## Wariant systematyczny
-
-W kodzie systematycznym bity informacji pozostają na początku słowa kodowego, a `p` bitów kontrolnych trafia na koniec.
-
-Najpierw przesuwamy informację o `p` pozycji: `xᵖ · h(x)`. Potem obliczamy resztę `R(x)` z dzielenia tej wartości przez `g(x)`.
-
 ---
 
 ## Kodowanie systematyczne
+
+Bity informacji zostają na początku słowa. Przesuwamy je o `p` pozycji i wyznaczamy `p` bitów kontrolnych:
 
 `R(x) = reszta z [xᵖ · h(x)] / g(x)`
 
@@ -361,8 +334,6 @@ Stan kodera jest pamięcią wcześniejszych symboli, a dekodowanie wybiera najba
   <div class="flow-step"><strong>Wyjście</strong><code>c₁(k), c₂(k)</code><small>bity kodowe</small></div>
 </div>
 
-Rejestr pamięta wcześniejsze bity, dlatego wynik zależy od bieżącego bitu i historii wejścia. Nadmiarowe bity zwiększają szansę poprawnego odtworzenia informacji po błędach transmisji.
-
 ---
 
 ## Przykład kodera splotowego `1/2`
@@ -380,31 +351,7 @@ Rejestr pamięta wcześniejsze bity, dlatego wynik zależy od bieżącego bitu i
   </div>
 </div>
 
-Każdy generator wybiera inne odczepy rejestru. Jeden bit wejściowy tworzy więc dwa bity wyjściowe; stosunek szybkości kodu wynosi `1/2`.
-
-Na następnym slajdzie: dlaczego właśnie dwa różne generatory są użyteczne?
-
----
-
-## Po co dwa generatory?
-
-Oba generatory obserwują ten sam bieżący bit, ale korzystają z innych odczepów rejestru:
-
-<div class="columns"><div>
-
-**Generator 1**
-
-Łączy `u(k)`, `u(k−1)` oraz `u(k−2)`.
-
-</div><div>
-
-**Generator 2**
-
-Łączy tylko `u(k)` oraz `u(k−2)`.
-
-</div></div>
-
-Powstają więc dwa różne sprawdzenia tej samej historii wejścia, a nie dwie kopie tego samego bitu.
+Generatory korzystają z różnych odczepów rejestru, więc dają dwa różne sprawdzenia tej samej historii wejścia. Na jeden bit wejściowy przypadają dwa bity wyjściowe, stąd szybkość kodu `1/2`.
 
 ---
 
@@ -449,6 +396,8 @@ Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
 ---
 
 ## Sprawdź: odległość Hamminga
+
+Odległość Hamminga to liczba pozycji, na których dwa ciągi o tej samej długości się różnią.
 
 Przykłady: `d(10001, 10000) = 1`, `d(00010, 10100) = 3`.
 

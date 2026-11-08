@@ -62,7 +62,7 @@ W sieci **peer-to-peer** komputery mogą bezpośrednio udostępniać zasoby sobi
 
 ## Jak czytać topologie?
 
-Topologia **fizyczna** opisuje połączenia urządzeń. Topologia **logiczna** opisuje drogę danych. Na przykład urządzenia połączone fizycznie w gwiazdę przez MSAU mogą logicznie tworzyć pierścień.
+Topologia **fizyczna** opisuje połączenia urządzeń. Topologia **logiczna** opisuje drogę danych.
 
 ![Przykładowe topologie sieci](media/image3.png)
 
@@ -108,7 +108,7 @@ Poza końcami łańcucha każdy węzeł łączy się z dwoma sąsiadami. Taka bu
 
 ![Topologia liniowa](media/image5.png)
 
-Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część łańcucha.
+Przerwanie przewodu może podzielić łańcuch na odłączone części.
 
 ---
 
@@ -120,14 +120,14 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
   <div class="bus-station station-one">A</div><div class="bus-station station-two">B</div><div class="bus-station station-three">C</div>
 </div>
 
-- Wszystkie stacje współdzielą medium.
-- Prosta i historycznie tania, ale podatna na kolizje oraz awarię wspólnego segmentu.
 - Klasyczny Ethernet koncentryczny był przykładem takiej topologii.
 - Stacje łączono z koncentrycznym segmentem przez trójniki i złącza BNC; czas propagacji zależał od długości kabla.
 
 ---
 
 ## Materiał: magistrala
+
+<p class="video-intro">Animacja pokazuje, jak sygnał rozchodzi się po wspólnym kablu i dociera do pozostałych stacji.</p>
 
 <video controls preload="metadata" poster="media/image7.png"><source src="media/slide-021-media1.mp4" type="video/mp4"></video>
 
@@ -148,13 +148,13 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
   <div class="ring-node node-a">A</div><div class="ring-node node-b">B</div><div class="ring-node node-c">C</div><div class="ring-node node-d">D</div>
 </div>
 
-- Dane przechodzą kolejno przez węzły.
-- W pierścieniu podwójnym drugi kierunek może zapewniać redundancję.
 - Przykładem historycznym był Token Ring, w którym prawo nadawania przekazuje się jako znacznik (*token*).
 
 ---
 
 ## Materiał: pierścień
+
+<p class="video-intro">Śledź sygnał przekazywany od stacji do stacji wzdłuż zamkniętej pętli.</p>
 
 <video controls preload="metadata" poster="media/image9.png"><source src="media/slide-024-media2.mp4" type="video/mp4"></video>
 
@@ -164,13 +164,11 @@ Awaria przewodu albo urządzenia pośredniego może odłączyć dalszą część
 
 Pierścień może korzystać ze stosunkowo krótkiego okablowania. W prostym wariancie awaria stacji lub odcinka może jednak zatrzymać transmisję, a diagnostyka, dołączanie stacji i rekonfiguracja bywają pracochłonne.
 
-Warianty z mechanizmami obejścia awarii lub drugim pierścieniem ograniczają te problemy; zależy to od konkretnej technologii.
+Niektóre technologie pozwalają ominąć uszkodzoną stację.
 
 ---
 
 ## Pierścień podwójny
-
-Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu jednego z odcinków.
 
 <div class="double-ring-diagram" role="img" aria-label="Podwójna topologia pierścienia z węzłami A, B, C i D oraz dwoma przeciwnymi kierunkami obiegu danych.">
   <div class="double-ring-track outer"></div><div class="double-ring-track inner"></div>
@@ -178,13 +176,7 @@ Dwa niezależne kierunki transmisji mogą utrzymać łączność po przerwaniu j
   <div class="double-ring-node node-a">A</div><div class="double-ring-node node-b">B</div><div class="double-ring-node node-c">C</div><div class="double-ring-node node-d">D</div>
 </div>
 
-<p class="double-ring-note">Drugi pierścień zapewnia alternatywną drogę transmisji.</p>
-
----
-
-## Pierścień podwójny: kompromis
-
-Druga droga może utrzymać działanie po przerwaniu pojedynczego odcinka i pozwala na wysoką przepustowość. Ceną są bardziej złożone urządzenia, diagnostyka i procedury rekonfiguracji.
+Drugi pierścień może utrzymać łączność po przerwaniu pojedynczego odcinka. Taki układ pozwala uzyskać wysoką przepustowość, ale komplikuje urządzenia, diagnostykę i rekonfigurację.
 
 Historycznym przykładem sieci z dwoma pierścieniami jest **FDDI** (*Fiber Distributed Data Interface*).
 
@@ -206,6 +198,8 @@ Historycznym przykładem sieci z dwoma pierścieniami jest **FDDI** (*Fiber Dist
 
 ## Koncentrator a przełącznik
 
+<p class="video-intro">Koncentrator powiela sygnał na pozostałe porty. Przełącznik uczy się adresów MAC i dla znanego celu wybiera konkretny port.</p>
+
 <video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/hub-switch.jpg"><source src="media/local-replacements/hub-switch.mp4" type="video/mp4"></video>
 
 <p class="credits video-original"><a href="https://www.youtube.com/watch?v=1z0ULvg_pW8&amp;t=19s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
@@ -218,24 +212,23 @@ Historycznym przykładem sieci z dwoma pierścieniami jest **FDDI** (*Fiber Dist
 
 ## Gwiazda: zalety i ograniczenia
 
-Oddzielne łącza ułatwiają rozbudowę, konserwację i wskazanie uszkodzonego kabla. Awaria jednego komputera zwykle nie zatrzymuje pozostałych.
+Oddzielne łącza ułatwiają rozbudowę, konserwację i wskazanie uszkodzonego kabla.
 
-Potrzeba więcej kabli i portów niż w magistrali. Awaria centralnego koncentratora lub przełącznika odcina podłączone do niego stacje.
+Potrzeba więcej kabli i portów niż w magistrali.
 
 ---
 
 ## Materiał: gwiazda z MSAU
 
-MSAU (*Multistation Access Unit*) to koncentrator używany historycznie w sieciach Token Ring.
+<p class="video-intro">Kable tworzą fizyczną gwiazdę, ale koncentrator MSAU (<em>Multistation Access Unit</em>) łączy stacje w logiczny pierścień.</p>
 
-<video controls preload="metadata" poster="media/image13.png" height="430"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image13.png"><source src="media/slide-032-media5.mp4" type="video/mp4"></video>
 
 ---
 
 ## Topologie hierarchiczne
 
 - Łączą mniejsze topologie w większą strukturę.
-- Przykłady: pierścień-gwiazda, gwiazda-magistrala, magistrala-drzewo.
 - Ułatwiają skalowanie, segmentację i zarządzanie dużą siecią.
 - Liczba poziomów nie jest z góry określona; rozbudowa polega na dodawaniu kolejnych rozgałęzień.
 
@@ -264,7 +257,7 @@ Te nazwy opisują fizyczny układ połączeń; odporność na awarie zależy jes
 
 ## Topologia hierarchiczna: kompromis
 
-Rozgałęzienia pozwalają rozbudowywać sieć i porządkować jej segmenty. Awaria pojedynczej stacji lub lokalnego kabla nie musi wpływać na całość.
+Awaria pojedynczej stacji lub lokalnego kabla nie musi wpływać na całość.
 
 Sieć wymaga wielu połączeń, a elementy wyższego poziomu stają się punktami krytycznymi. Znalezienie usterki w dużej strukturze może być trudne bez dokumentacji i monitoringu.
 
@@ -297,7 +290,7 @@ Każdy węzeł łączy się z każdym. Zapewnia wysoką odporność, ale liczba 
 
 Połączenia nadmiarowe dają alternatywną drogę po awarii węzła albo łącza. Jest to przydatne również w niektórych sieciach bezprzewodowych.
 
-Pełna siatka wymaga jednak wielu portów i połączeń, a jej budowa i utrzymanie są kosztowne. Dlatego często stosuje się siatkę częściową.
+W pełnej siatce duża liczba portów podnosi koszty utrzymania.
 
 ---
 
@@ -326,6 +319,12 @@ Zależy od:
 # Materiały do samodzielnej nauki
 
 Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
+
+---
+
+## Przebieg transmisji w magistrali i pierścieniu
+
+W magistrali wszystkie stacje współdzielą medium. W pierścieniu dane przechodzą kolejno przez węzły.
 
 ---
 

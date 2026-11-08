@@ -18,7 +18,7 @@ Mikołaj Leszczuk
 
 ## Routing
 
-Routing to wybór drogi, którą pakiet ma dotrzeć do sieci lub hosta docelowego. Ruter przekazuje pakiety między różnymi sieciami na podstawie tablicy routingu.
+Routing to wybór drogi, którą pakiet ma dotrzeć do sieci lub hosta docelowego.
 
 ---
 
@@ -51,9 +51,18 @@ W Internecie kluczowym protokołem tej warstwy jest IP (*Internet Protocol*).
 
 ---
 
+## Historyczny protokół IPX
+
+**IPX** (*Internetwork Packet Exchange*) był protokołem warstwy sieciowej w sieciach Novell NetWare. Zapewniał adresowanie i przekazywanie pakietów między sieciami lokalnymi oraz rozległymi.
+
+Podobnie jak IP, sam IPX nie gwarantował dostarczenia każdego pakietu. W rodzinie protokołów współpracował z **SPX** (*Sequenced Packet Exchange*), który realizował usługi transportowe.
+
+
+---
+
 ## Ruter: połączenia i realizacja
 
-Ruter przekazuje pakiety pomiędzy odrębnymi sieciami. Zwykle ma co najmniej dwa interfejsy fizyczne, lecz może też obsługiwać kilka sieci logicznych przez jeden interfejs, np. za pomocą VLAN-ów (*Virtual Local Area Network*).
+Ruter zwykle ma co najmniej dwa interfejsy fizyczne, lecz może też obsługiwać kilka sieci logicznych przez jeden interfejs, np. za pomocą VLAN-ów (*Virtual Local Area Network*).
 
 Historyczne sieci ATM (*Asynchronous Transfer Mode*) i Frame Relay rozdzielały taki ruch przez kanały wirtualne: stałe **PVC** (*Permanent Virtual Circuit*) lub zestawiane na żądanie **SVC** (*Switched Virtual Circuit*).
 
@@ -73,17 +82,15 @@ Dzięki temu pakiet nie krąży bez końca, gdy tablice routingu zawierają pęt
 
 - **Statyczna:** administrator wpisuje trasę ręcznie.
 - **Dynamiczna:** rutery wymieniają informacje i aktualizują trasy protokołem, np. RIP, OSPF lub IS-IS.
-- **Między systemami autonomicznymi:** BGP uwzględnia politykę operatorów i umowy o wymianie ruchu.
+- **Między systemami autonomicznymi:** BGP uwzględnia politykę operatorów i umowy o wymianie ruchu, więc preferowana trasa nie musi być najkrótsza.
 
-IGRP i EIGRP również pojawiały się w oryginalnym wykładzie; są rozwiązaniami związanymi z ekosystemem Cisco.
+IGRP i EIGRP to protokoły opracowane przez Cisco.
 
 ---
 
 ## Wybór trasy i polityka
 
 Metryka trasy może opisywać koszt, opóźnienie lub inne właściwości łącza. Ruter najpierw dopasowuje adres celu do prefiksów w tablicy, a następnie wybiera trasę według reguł protokołu i konfiguracji.
-
-W BGP trasa preferowana przez operatora nie musi być najkrótsza geometrycznie. Znaczenie mają także umowy tranzytowe i peeringowe.
 
 Oprócz adresu celu polityka sieci może uwzględniać obciążenie, jakość usługi lub oznaczenia pakietów, np. DSCP (*Differentiated Services Code Point*). Nie oznacza to, że każdy protokół rutingu analizuje te pola przy każdym pakiecie.
 
@@ -133,6 +140,8 @@ Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
 
 ## Dijkstra: przykład krok po kroku
 
+<p class="video-intro">Na ważonym grafie Mike Pound wybiera wierzchołek o najmniejszej znanej odległości i sprawdza, czy można przez niego poprawić drogę do sąsiadów.</p>
+
 <video data-youtube-fallback controls playsinline preload="metadata" poster="media/local-replacements/dijkstra.jpg"><source src="media/local-replacements/dijkstra.mp4" type="video/mp4"></video>
 
 <p class="credits video-original"><a href="https://www.youtube.com/watch?v=GazC3A4OQTE&amp;t=178s" target="_blank" rel="noopener noreferrer">Obejrzyj oryginał na YouTube</a></p>
@@ -140,14 +149,6 @@ Wagi mogą oznaczać koszt, opóźnienie, liczbę skoków lub inną metrykę.
 <p class="credits">Computerphile / Mike Pound · Dijkstra's Algorithm · fragment 02:58.000–08:48.000</p>
 
 <p class="small">Kolejka priorytetowa (<em>priority queue</em>) pozwala wybrać węzeł o najmniejszym koszcie. Koszt celu jest ostateczny dopiero przy takim wyborze, nie przy pierwszym znalezieniu drogi do celu.</p>
-
----
-
-## Właściwości Dijkstry
-
-- Działa dla wag nieujemnych.
-- Po wyborze węzła o najmniejszym koszcie jego wynik jest ostateczny.
-- Stanowi podstawę algorytmów stanu łącza, takich jak SPF w OSPF.
 
 ---
 
@@ -203,23 +204,6 @@ Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
 
 Algorytmy są modelem decyzji trasowania. Protokoły routingu określają, jak rutery wymieniają informacje, budują widok sieci i aktualizują tablice.
 
----
-
-## Historyczny protokół IPX
-
-**IPX** (*Internetwork Packet Exchange*) był protokołem warstwy sieciowej w sieciach Novell NetWare. Zapewniał adresowanie i przekazywanie pakietów między sieciami lokalnymi oraz rozległymi.
-
-Podobnie jak IP, sam IPX nie gwarantował dostarczenia każdego pakietu. W rodzinie protokołów współpracował z **SPX** (*Sequenced Packet Exchange*), który realizował usługi transportowe.
-
----
-
-## Podsumowanie
-
-- Ruter kieruje pakiety według tablicy routingu.
-- Dijkstra znajduje najkrótsze ścieżki przy nieujemnych wagach.
-- Ford-Fulkerson i Dinic dotyczą maksymalnego przepływu.
-- Następny krok to protokoły routingu używane w rzeczywistych sieciach.
-
 <!-- study-only:start -->
 
 ---
@@ -232,13 +216,15 @@ Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
 
 ## Dijkstra: kolejne iteracje
 
+Gdy algorytm wybiera nieprzetworzony węzeł o najmniejszym koszcie, jego koszt jest już ostateczny.
+
 1. Z `s` wyznaczamy koszty `d = 9` i `a = 15`.
 2. Przez `d` poprawiamy koszt do `a` na 13 i wyznaczamy `c = 11`.
 3. Przez `c` wyznaczamy `t = 18`. Koszt `a = 13` się nie zmienia.
 4. Z `a` wyznaczamy `b = 48`, więc następny jest `t = 18`. Najkrótsza ścieżka to `s → d → c → t`.
 
 <div class="algorithm-demo dijkstra-demo">
-  <svg viewBox="0 0 760 320" role="img" aria-label="Skierowany graf z oryginalnego wykładu: najkrótsza droga s, d, c, t ma wagę 18.">
+  <svg viewBox="0 0 760 320" role="img" aria-label="Skierowany graf: najkrótsza droga s, d, c, t ma wagę 18.">
     <defs><marker id="dijkstra-arrow" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L6,3.5 L0,7 Z" fill="#9aa9b5"/></marker></defs>
     <g class="algo-edge" data-edge="sd"><line x1="94" y1="148" x2="224" y2="91" marker-end="url(#dijkstra-arrow)"/><text x="150" y="104">9</text></g>
     <g class="algo-edge" data-edge="sa"><line x1="94" y1="172" x2="224" y2="229" marker-end="url(#dijkstra-arrow)"/><text x="150" y="224">15</text></g>

@@ -57,7 +57,7 @@ Od znaków elektrycznych do globalnej sieci komputerowej.
 
 Morse opracowywał kod telegraficzny wraz z **Alfredem Vailem**.
 
-W pierwotnym opisie transmisja rozróżnia trzy stany:
+W tym przykładzie transmisja rozróżnia trzy stany:
 
 - brak sygnału,
 - krótki sygnał,
@@ -273,16 +273,23 @@ Komunikacja między odpowiadającymi sobie warstwami jest logiczna; faktyczna tr
 
 ---
 
-## Dlaczego model jest użyteczny?
+## Materiał: jak zapamiętać warstwy
 
-- Nie narzuca fizycznej implementacji warstw.
-- Pozwala producentom realizować warstwy niezależnie.
-- Ułatwia współpracę urządzeń różnych dostawców.
-- Daje programistyczną separację odpowiedzialności.
+<p class="video-intro">Dwa angielskie zdania pomagają zapamiętać inicjały warstw OSI: jedno od aplikacji w dół, drugie od warstwy fizycznej w górę.</p>
+
+<video controls preload="metadata" poster="media/image14.png"><source src="media/slide-046-media4.mp4" type="video/mp4"></video>
+
+---
+
+## Dlaczego model OSI jest użyteczny?
+
+Model nie narzuca implementacji. Producenci mogą projektować warstwy niezależnie, a wspólne reguły ułatwiają współpracę urządzeń różnych dostawców.
 
 ---
 
 ## Materiał: model ISO/OSI
+
+<p class="video-intro">Animacja przedstawia siedem warstw OSI, ich role i sposób, w jaki warstwy współpracują przy przesyłaniu danych.</p>
 
 <video controls preload="metadata" poster="media/image8.png"><source src="media/slide-021-media1.mp4" type="video/mp4"></video>
 
@@ -351,6 +358,14 @@ Przykład: nadawca zapisuje tekst w określonym kodowaniu, a odbiorca interpretu
 Udostępnia programom usługi komunikacyjne i określa zachowanie protokołów widocznych dla aplikacji, np. HTTP, SMTP i FTP.
 
 Przeglądarka oraz klient pocztowy są programami korzystającymi z usług tej warstwy; same nie są warstwą modelu OSI.
+
+---
+
+## Materiał: przepływ danych przez ISO/OSI
+
+<p class="video-intro">Animacja prowadzi dane od aplikacji nadawcy przez urządzenia pośrednie do aplikacji odbiorcy. Nie każde urządzenie korzysta ze wszystkich siedmiu warstw.</p>
+
+<video controls preload="metadata" poster="media/image13.png"><source src="media/slide-044-media3.mp4" type="video/mp4"></video>
 
 ---
 
@@ -433,19 +448,15 @@ Przykładowe zadania protokołów:
 
 **Kapsułkowanie** to przesyłanie pakietu jednego protokołu wewnątrz pakietu innego protokołu.
 
-W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują nową formę i własny nagłówek. Tunelowanie jest praktycznym zastosowaniem kapsułkowania: pozwala połączyć dwie sieci używające tego samego protokołu przez sieć pośrednią używającą innego.
+Tunelowanie jest praktycznym zastosowaniem kapsułkowania: pozwala połączyć dwie sieci używające tego samego protokołu przez sieć pośrednią używającą innego.
 
 ---
 
 ## Materiał: pakiety w stosie protokołów
 
+<p class="video-intro">Śledź jedną wiadomość: nadawca dodaje informacje kontrolne, a odbiorca zdejmuje je w odwrotnej kolejności.</p>
+
 <video controls preload="metadata" poster="media/image12.png"><source src="media/slide-043-media2.mp4" type="video/mp4"></video>
-
----
-
-## Materiał: przepływ danych przez ISO/OSI
-
-<video controls preload="metadata" poster="media/image13.png"><source src="media/slide-044-media3.mp4" type="video/mp4"></video>
 
 ---
 
@@ -454,12 +465,6 @@ W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują now
 - Tłumaczenie sygnałów elektrycznych albo formatów danych.
 - Umożliwia transmisję między różnymi systemami komunikacyjnymi.
 - Może obejmować np. zmianę kodu znaków (historycznie ASCII na inny kod) lub transmisji asynchronicznej na synchroniczną.
-
----
-
-## Materiał: jak zapamiętać warstwy
-
-<video controls preload="metadata" poster="media/image14.png"><source src="media/slide-046-media4.mp4" type="video/mp4"></video>
 
 ---
 
@@ -532,14 +537,6 @@ W drodze od aplikacji do medium dane przy każdej niższej warstwie zyskują now
 
 ---
 
-## Dwa hosty, dwa rutery
-
-Przykładowa droga pakietu: **Host A → R1 → R2 → Host B**. Każdy odcinek może używać innej technologii łącza danych.
-
-Host A tworzy dane aplikacji, segment transportowy i pakiet IP. Na każdym odcinku pakiet IP otrzymuje ramkę właściwą dla lokalnego łącza; ruter zdejmuje tę ramkę, wybiera następny skok i tworzy nową ramkę. Host B rozpakowuje dane w odwrotnej kolejności.
-
----
-
 ## Podsumowanie
 
 - Telekomunikacja to transmisja informacji na odległość.
@@ -555,3 +552,19 @@ Host A tworzy dane aplikacji, segment transportowy i pakiet IP. Na każdym odcin
 - [Wikipedia](https://pl.wikipedia.org/)
 - W. R. Stevens, *TCP/IP Illustrated*
 - D. Comer, *Internetworking with TCP/IP*
+
+<!-- study-only:start -->
+
+---
+
+# Materiały do samodzielnej nauki
+
+---
+
+## Dwa hosty, dwa rutery
+
+Przykładowa droga pakietu: **Host A → R1 → R2 → Host B**. Każdy odcinek może używać innej technologii łącza danych.
+
+Host A tworzy dane aplikacji, segment transportowy i pakiet IP. Na każdym odcinku pakiet IP otrzymuje ramkę właściwą dla lokalnego łącza; ruter zdejmuje tę ramkę, wybiera następny skok i tworzy nową ramkę. Host B rozpakowuje dane w odwrotnej kolejności.
+
+<!-- study-only:end -->
