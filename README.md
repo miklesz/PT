@@ -8,6 +8,11 @@ Właściwe, edytowalne prezentacje są tworzone wykład po wykładzie w katalogu
 
 Katalog [`web/`](web/) zawiera wcześniejsze renderowane podglądy slajdów i lokalne media jako archiwum wizualne. Nie jest źródłem nowych prezentacji.
 
+Po wykładach o strumieniowaniu:
+
+- [Człowiek, ósma warstwa modelu ISO-OSI, jako element ekosystemu teleinformatycznego](lectures/12-czlowiek-i-qoe/lecture.html)
+- [Quality of Experience](lectures/13-quality-of-experience/lecture.html)
+
 ## Materiały dla studentów
 
 GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
@@ -23,6 +28,8 @@ GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
 - [09. Podstawowe zagadnienia sieciowe — źródło prezentacji](lectures/09-zagadnienia-sieciowe/lecture.md)
 - [10. Routing: algorytmy — źródło prezentacji](lectures/10-routing-algorytmy/lecture.md)
 - [11. Routing: protokoły — źródło prezentacji](lectures/11-routing-protokoly/lecture.md)
+- [Człowiek, ósma warstwa modelu ISO-OSI, jako element ekosystemu teleinformatycznego](lectures/12-czlowiek-i-qoe/lecture.md)
+- [Quality of Experience](lectures/13-quality-of-experience/lecture.md)
 - [01. Wprowadzenie do przedmiotu](notes/01-wprowadzenie-do-przedmiotu.md)
 - [02. Co to jest telekomunikacja](notes/02-co-to-jest-telekomunikacja.md)
 - [03. Podstawowe pojęcia, jednostki, ograniczenia](notes/03-podstawowe-pojecia-jednostki-ograniczenia.md)

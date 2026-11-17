@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="214" viewBox="0 0 960 214" role="img" aria-labelledby="title">
+  <title id="title">Korzystanie z internetu na świecie w 2025 r.: miasta 85%, obszary wiejskie 58%</title>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#13212e">
+    <g stroke="#b5c9cf" stroke-width="1">
+      <path d="M245 18v140m140-140v140m140-140v140m140-140v140m140-140v140"/>
+    </g>
+    <text x="226" y="56" text-anchor="end">Miasta</text>
+    <text x="226" y="120" text-anchor="end">Obszary wiejskie</text>
+    <path d="M245 25h476v44H245z" fill="#005b6b"/>
+    <path d="M245 89h324.8v44H245z" fill="#337248"/>
+    <g font-weight="700" fill="#fff" text-anchor="end">
+      <text x="707" y="55">85%</text>
+      <text x="556" y="119">58%</text>
+    </g>
+    <g text-anchor="middle" font-size="20">
+      <text x="245" y="183">0%</text><text x="385" y="183">25%</text><text x="525" y="183">50%</text><text x="665" y="183">75%</text><text x="805" y="183">100%</text>
+    </g>
+  </g>
+</svg>
