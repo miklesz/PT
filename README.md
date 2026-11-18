@@ -30,7 +30,8 @@ Materiały w kolejności prowadzenia zajęć. Prezentacje PT są dostępne jako 
 
 - [Człowiek, ósma warstwa modelu ISO-OSI, jako element ekosystemu teleinformatycznego](https://miklesz.github.io/EET/lecture.html) (EET)
 - [Quality of Experience](https://miklesz.github.io/QoE/lecture/lecture.html) (QoE)
-- Na końcu: egzamin w terminie zerowym.
+
+**Na końcu bloku: zerówka (egzamin w terminie zerowym).**
 
 ## Archiwum źródłowe
 
