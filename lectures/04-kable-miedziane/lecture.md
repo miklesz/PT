@@ -63,7 +63,7 @@ Mikołaj Leszczuk
 
 <div class="columns"><div>
 
-Złącze stosowane dla sygnałów wysokiej częstotliwości, typowo do około 18 GHz. Jest większe i mechanicznie solidniejsze od BNC.
+Złącze wysokiej częstotliwości, zwykle do 11 GHz, a w wykonaniach o rozszerzonym paśmie do 18 GHz. Jest większe i mechanicznie solidniejsze od BNC.
 
 Na zdjęciach: u góry **wtyk**, u dołu **gniazdo**.
 
@@ -134,7 +134,7 @@ Jej popularność wynika z dobrego stosunku możliwości do ceny oraz łatwości
 
 <p class="video-intro">Film zestawia kategorie skrętki z historycznymi zastosowaniami: od telefonii i LocalTalk po Fast Ethernet. To przykłady, nie dzisiejsza tabela doboru kabli.</p>
 
-<video controls preload="metadata" poster="media/image31.png"><source src="media/slide-037-media5.mp4" type="video/mp4"></video>
+<video controls preload="metadata"><source src="media/slide-037-media5.mp4" type="video/mp4"></video>
 
 ---
 
@@ -327,8 +327,8 @@ Kable z linką nośną prowadzi się między budynkami; dostępne są warianty U
 <div class="columns"><div>
 
 - Ośmioprzewodowe złącze systemów okablowania strukturalnego.
-- Normy międzynarodowe: ISO 8877, ISO/IEC 11801 i EN 50173.
-- Dostępne są wersje ekranowane i nieekranowane.
+- Złącza ekranowane i nieekranowane: seria IEC 60603-7.
+- Okablowanie strukturalne: ISO/IEC 11801 i EN 50173.
 
 </div><div>
 
@@ -441,7 +441,7 @@ W pokazanym wariancie T568A/T568B zamieniają się piny 1 i 3 oraz 2 i 6.
 
 <p class="video-intro">Animacja pokazuje kolejność pracy: zdjęcie powłoki, wyrównanie żył, wsunięcie ich do wtyku i zaciśnięcie styków.</p>
 
-<video controls preload="metadata" poster="media/image30.png"><source src="media/slide-036-media4.mp4" type="video/mp4"></video>
+<video controls preload="metadata" poster="media/image32.png"><source src="media/slide-036-media4.mp4" type="video/mp4"></video>
 
 ---
 

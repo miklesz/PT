@@ -1,5 +1,7 @@
 # Wprowadzenie do przedmiotu
 
+Archiwalna transkrypcja. [Aktualne zasady zaliczenia i projektu](../lectures/01-wprowadzenie/lecture.md).
+
 Oryginał: [01 Wprowadzenie do przedmiotu.pptx](../archive/original-pptx/01%20Wprowadzenie%20do%20przedmiotu.pptx)
 
 ## Slajdy

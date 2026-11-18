@@ -77,7 +77,7 @@ Pomiar jest poprawny, gdy rzeczywisty przebieg pozostaje w granicach wyznaczonyc
 
 PDH (*Plesiochronous Digital Hierarchy*) to starsza hierarchia cyfrowa stosowana w sieciach telekomunikacyjnych.
 
-Oryginalny przykład przedstawia nie-ramkowany sygnał **140 Mb/s** z niesymetrycznego wyjścia **75 Ω**, kodowany liniowo jako **CMI** (*Coded Mark Inversion*). Maska jest porównywana z nałożonymi przebiegami wielu impulsów.
+Przykład: sygnał bez ramkowania **140 Mb/s** z niesymetrycznego wyjścia **75 Ω**, kodowany liniowo jako **CMI** (*Coded Mark Inversion*). Maskę porównujemy z nałożonymi przebiegami wielu impulsów.
 
 ---
 
@@ -285,7 +285,7 @@ Dekoder dzieli odebrane `y(x)` przez `g(x)`:
 
 `y(x) = q(x) · g(x) + r(x)`
 
-- `r(x) = 0`: słowo spełnia regułę kodu, a iloraz `q(x)` odtwarza informację.
+- `r(x) = 0`: nie wykryto błędu. Iloraz `q(x)` daje informację zapisaną w odebranym słowie, która może różnić się od nadanej.
 - `r(x) ≠ 0`: wykryto błąd zgodnie z możliwościami tego kodu.
 
 ---
@@ -396,6 +396,8 @@ Ta część jest dostępna w dokumencie Markdown, poza pokazem slajdów.
 ---
 
 ## Sprawdź: odległość Hamminga
+
+[Kalkulator z własnymi danymi](../pt-07-09-pokaz.html?try) lub [pokaz z rozwiązaniami (17 min)](../pt-07-09-pokaz.html). Po pobraniu repozytorium otwórz plik `lectures/pt-07-09-pokaz.html` w Chrome.
 
 Odległość Hamminga to liczba pozycji, na których dwa ciągi o tej samej długości się różnią.
 

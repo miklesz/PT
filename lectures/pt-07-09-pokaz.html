@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hamming i pełna siatka | Pokaz</title>
+<style>
+  * { box-sizing: border-box }
+  body { margin: 0; color: #13212e; background: #fff; font: 22px/1.45 system-ui, sans-serif }
+  main { width: min(100% - 2rem, 960px); margin: 1.25rem auto }
+  h1 { color: #003b70; font-size: 2rem; line-height: 1.15; margin: .3em 0 }
+  p { margin: .65em 0 }
+  button, input, select { font: inherit; color: inherit }
+  button, select, input { border: 1px solid #536b7e; background: white; border-radius: 5px; padding: .35em .6em }
+  button { cursor: pointer }
+  button:disabled { opacity: .45; cursor: default }
+  button.primary { background: #005b6b; color: white; border-color: #005b6b }
+  a { color: #005b6b }
+  footer { display: flex; align-items: center; gap: .55em; flex-wrap: wrap; padding-top: .65em; border-top: 1px solid #bac8d2 }
+  .meta { font-size: .75em; color: #435b6c }
+  #time { margin-left: auto; min-width: 5ch; font-variant-numeric: tabular-nums; text-align: right }
+  #stage { min-height: 415px }
+  #visual { margin-block: .6em }
+  .bits { display: flex; flex-wrap: wrap; gap: .28em }
+  .bits + .bits { margin-top: .28em }
+  .bit { display: grid; place-items: center; width: 1.45em; height: 1.45em; border: 1px solid #b6c7d1; font: 1em monospace }
+  .different { color: #5b2e00; background: #ffe6b8; border-color: #995526; font-weight: bold }
+  svg { display: block; width: min(100%, 370px); height: 190px }
+  form { display: flex; flex-wrap: wrap; gap: .8em }
+  label { display: grid; gap: .25em }
+  input { max-width: 100% }
+  [hidden] { display: none !important }
+  @media (max-width: 600px) { body { font-size: 17px } h1 { font-size: 1.55rem } #stage { min-height: 0 } }
+</style>
+<main>
+  <div id="show">
+    <div class="meta" id="step"></div>
+    <section id="stage">
+      <h1 id="title"></h1>
+      <p id="prompt"></p>
+      <div id="visual"></div>
+      <p id="explanation" role="status"></p>
+    </section>
+    <footer>
+      <button id="play" class="primary">Odtwórz</button>
+      <button id="back" aria-label="Poprzedni krok" title="Poprzedni krok">←</button>
+      <button id="next" aria-label="Następny krok" title="Następny krok">→</button>
+      <button id="reset">Od początku</button>
+      <span id="time" aria-label="Czas pozostały w kroku"></span>
+    </footer>
+    <p class="meta"><a id="home-link" href="?try">Samodzielna praca w domu</a></p>
+  </div>
+  <section id="home" hidden>
+    <h1>Hamming i pełna siatka: spróbuj samodzielnie</h1>
+    <label>Ćwiczenie
+      <select id="choice"><option value="bits">Odległość Hamminga</option><option value="mesh">Pełna siatka</option></select>
+    </label>
+    <form id="practice">
+      <label>Pierwszy ciąg <input id="x" value="10001" inputmode="numeric" maxlength="16"></label>
+      <label>Drugi ciąg <input id="y" value="10000" inputmode="numeric" maxlength="16"></label>
+      <label hidden>Liczba węzłów <input id="nodes" type="number" min="2" max="1000" value="5"></label>
+    </form>
+    <p id="answer" role="status"></p>
+    <div id="practice-visual"></div>
+    <p><a id="show-link" href="?">Powrót do pokazu</a></p>
+  </section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const countLinks = n => n * (n - 1) / 2;
+const different = (x, y) => [...x].flatMap((bit, i) => bit === y[i] ? [] : [i + 1]);
+const rows = (target, x, y, reveal) => {
+  const differences = new Set(reveal ? different(x, y) : []);
+  for (const [index, value] of [x, y].entries()) {
+    const row = document.createElement('div');
+    row.className = 'bits';
+    row.setAttribute('aria-label', (index ? 'Drugi' : 'Pierwszy') + ' ciąg: ' + value);
+    [...value].forEach((bit, i) => {
+      const cell = document.createElement('span');
+      cell.className = differences.has(i + 1) ? 'bit different' : 'bit';
+      cell.textContent = bit;
+      row.append(cell);
+    });
+    target.append(row);
+  }
+};
+const mesh = (target, n, reveal) => {
+  if (n > 12) return;
+  const ns = 'http://www.w3.org/2000/svg';
+  const add = (parent, tag, attrs) => {
+    const e = document.createElementNS(ns, tag);
+    for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+    parent.append(e);
+    return e;
+  };
+  const svg = add(target, 'svg', {viewBox:'0 0 370 190', role:'img', 'aria-label': reveal ? n + ' węzłów pełnej siatki' : n + ' węzłów bez narysowanych łączy'});
+  const points = Array.from({length:n}, (_, i) => {
+    const a = i * 2 * Math.PI / n - Math.PI / 2;
+    return [185 + 76 * Math.cos(a), 95 + 76 * Math.sin(a)];
+  });
+  if (reveal) points.forEach(([x1,y1], i) => points.slice(i+1).forEach(([x2,y2]) =>
+    add(svg, 'line', {x1,y1,x2,y2,stroke:'#7595a6','stroke-width':2})));
+  points.forEach(([cx,cy], i) => {
+    add(svg, 'circle', {cx,cy,r:13,fill:'#005b6b'});
+    add(svg, 'text', {x:cx,y:cy+4,fill:'white','text-anchor':'middle','font-size':12}).textContent = String.fromCharCode(65+i);
+  });
+};
+const examples = [
+  {title:'Odległość Hamminga', text:'Porównujemy dwa ciągi bitów tej samej długości, pozycja po pozycji. Liczymy miejsca, w których wartości są różne.'},
+  {title:'1. Ile bitów się różni?', text:'Zapisz pozycje różniących się bitów i podaj odległość. Pozycje licz od lewej, od 1.', bits:['10001','10000'], question:true},
+  {title:'1. Rozwiązanie', bits:['10001','10000'], result:true},
+  {title:'2. Porównaj kolejną parę', text:'Ile jest różnic? Czy zamiana kolejności tych dwóch ciągów zmieni wynik? Uzasadnij.', bits:['00010','10100'], question:true},
+  {title:'2. Rozwiązanie', bits:['00010','10100'], result:true, note:'Kolejność ciągów nie ma znaczenia: na tych samych pozycjach wartości nadal są różne.'},
+  {title:'Łącza w pełnej siatce', text:'W pełnej siatce każda para różnych węzłów ma jedno bezpośrednie łącze. Łącza A–B i B–A nie liczymy osobno.'},
+  {title:'3. Pełna siatka pięciu węzłów', text:'Ile łączy trzeba narysować? Wypisz pary lub narysuj je, a potem porównaj oba sposoby liczenia.', n:5, question:true},
+  {title:'3. Rozwiązanie', n:5, result:true, note:'Od A zaczynają się cztery pary, od B trzy nowe, od C dwie, a od D jedna. Razem: 4 + 3 + 2 + 1 = 10.'},
+  {title:'4. Dodaj szósty węzeł', text:'Zachowaj dotychczasowe łącza. Z iloma węzłami trzeba połączyć nowy węzeł? Ile łączy jest teraz łącznie?', n:6, question:true},
+  {title:'4. Rozwiązanie', n:6, result:true, note:'Nowy węzeł potrzebuje pięciu nowych łączy. Sprawdzenie: 10 + 5 = 15. We wzorze dzielimy przez 2, bo każdą parę można policzyć od obu końców.'}
+];
+const params = new URLSearchParams(location.search);
+const isMesh = params.get('exercise') === 'mesh';
+const frames = isMesh ? examples.slice(5) : examples.slice(0, 5);
+$('home-link').href = isMesh ? '?exercise=mesh&try' : '?try';
+$('show-link').href = isMesh ? '?exercise=mesh' : '?';
+$('choice').value = isMesh ? 'mesh' : 'bits';
+document.title = (isMesh ? 'Łącza w pełnej siatce' : 'Odległość Hamminga') + ' | Pokaz';
+const duration = frame => (frame.question ? 7 : 1) * 60_000;
+let index = 0, remaining = duration(frames[0]), started = null;
+const currentTime = () => started === null ? remaining : Math.max(0, remaining - (performance.now() - started));
+function timer() {
+  const left = Math.ceil(currentTime() / 1000);
+  $('time').textContent = Math.floor(left / 60) + ':' + String(left % 60).padStart(2,'0');
+}
+function show() {
+  const f = frames[index], visual = $('visual');
+  $('step').textContent = (isMesh ? '09 • Topologie sieci' : '08 • Odległość Hamminga') + ' | ' + (index + 1) + ' / ' + frames.length;
+  $('title').textContent = isMesh ? f.title.replace(/^[34]\./, n => (Number(n[0]) - 2) + '.') : f.title;
+  $('prompt').textContent = f.text || '';
+  visual.replaceChildren();
+  let explanation = '';
+  if (f.bits) {
+    rows(visual, ...f.bits, f.result);
+    if (f.result) {
+      const d = different(...f.bits);
+      explanation = 'Różnice: pozycje ' + d.join(', ') + '. Odległość Hamminga: ' + d.length + '.';
+    }
+  }
+  if (f.n) {
+    mesh(visual, f.n, f.result);
+    if (f.result) explanation = f.n + ' × ' + (f.n-1) + ' / 2 = ' + countLinks(f.n) + ' łączy.';
+  }
+  $('explanation').textContent = [explanation, f.note].filter(Boolean).join(' ');
+  $('play').textContent = started !== null ? 'Pauza' : remaining === 0 ? 'Odtwórz od nowa' : 'Odtwórz';
+  $('back').disabled = index === 0;
+  $('next').disabled = index === frames.length - 1;
+  timer();
+}
+function go(to) {
+  if (to < 0 || to >= frames.length) return;
+  index = to;
+  remaining = duration(frames[index]);
+  if (started !== null) started = performance.now();
+  show();
+}
+$('play').onclick = () => {
+  if (started !== null) { remaining = currentTime(); started = null; }
+  else { if (!remaining) go(0); started = performance.now(); }
+  show();
+};
+$('back').onclick = () => go(index - 1);
+$('next').onclick = () => go(index + 1);
+$('reset').onclick = () => { started = null; go(0); };
+setInterval(() => {
+  if (started === null) return;
+  if (!currentTime()) {
+    if (index < frames.length - 1) go(index + 1);
+    else { remaining = 0; started = null; show(); }
+  } else timer();
+}, 150);
+function practice() {
+  const bits = $('choice').value === 'bits', visual = $('practice-visual');
+  for (const key of ['x','y','nodes']) $(key).parentElement.hidden = bits === (key === 'nodes');
+  visual.replaceChildren();
+  if (bits) {
+    const x = $('x').value.trim(), y = $('y').value.trim();
+    if (!/^[01]{1,16}$/.test(x) || !/^[01]{1,16}$/.test(y) || x.length !== y.length) {
+      $('answer').textContent = 'Wpisz dwa ciągi bitów tej samej długości (od 1 do 16 bitów).';
+      return;
+    }
+    const d = different(x,y);
+    $('answer').textContent = 'Odległość Hamminga: ' + d.length + (d.length ? '. Różne pozycje: ' + d.join(', ') + '.' : '. Ciągi są identyczne.');
+    rows(visual,x,y,true);
+  } else {
+    const n = $('nodes').valueAsNumber;
+    if (!Number.isInteger(n) || n < 2 || n > 1000) {
+      $('answer').textContent = 'Wpisz liczbę całkowitą od 2 do 1000.';
+      return;
+    }
+    $('answer').textContent = n + ' × ' + (n-1) + ' / 2 = ' + countLinks(n) + '.';
+    mesh(visual,n,true);
+  }
+}
+$('choice').onchange = practice;
+$('practice').oninput = practice;
+$('practice').onsubmit = event => event.preventDefault();
+if (params.has('try')) {
+  $('show').hidden = true;
+  $('home').hidden = false;
+  practice();
+} else show();
+</script>
+</html>

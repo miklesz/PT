@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" font-family="Arial, sans-serif">
+  <path d="M240 62v170M425 62v170M610 62v170" stroke="#62798c" stroke-width="2" stroke-dasharray="5 5"/>
+  <rect x="240" y="21" width="370" height="32" rx="5" fill="#e4edf8"/>
+  <text x="425" y="43" text-anchor="middle" fill="#153854" font-size="19">Okno kolizji: 2T</text>
+  <g font-size="19" text-anchor="middle" fill="#142739">
+    <rect x="275" y="70" width="185" height="32" rx="4" fill="#bedce3"/>
+    <text x="367.5" y="92">Start wcześniejszy</text>
+    <rect x="425" y="115" width="185" height="32" rx="4" fill="#f7da99"/>
+    <text x="517.5" y="137">Ramka odniesienia</text>
+    <rect x="573" y="160" width="185" height="32" rx="4" fill="#cfd8ef"/>
+    <text x="665.5" y="182">Start późniejszy</text>
+    <path d="M40 215h728l-10-6m10 6-10 6" fill="none" stroke="#142739" stroke-width="2"/>
+    <text x="240" y="250">t₀ − T</text><text x="425" y="250">t₀</text>
+    <text x="610" y="250">t₀ + T</text><text x="744" y="250">czas</text>
+  </g>
+</svg>

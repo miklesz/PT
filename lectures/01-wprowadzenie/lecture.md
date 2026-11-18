@@ -68,8 +68,6 @@ Podstawy telekomunikacji prowadzę na WSTKT.
 
 # Wykład
 
-Zapamiętaj, zanim zapytasz po raz setny, czy będzie egzamin.
-
 ---
 
 ## Jak zorganizowany jest wykład?
@@ -128,7 +126,7 @@ Zapamiętaj, zanim zapytasz po raz setny, czy będzie egzamin.
 
 ## Terminy egzaminu
 
-- Termin zerowy: na ostatnim wykładzie.
+- Termin zerowy: na końcu ostatniego bloku zajęć, po wykładach.
 - Termin pierwszy i drugi: w sesji.
 - Ewentualny termin dodatkowy: zgodnie z decyzją uczelni.
 
@@ -241,7 +239,7 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 
 <div class="columns"><div>
 
-- [Załóż konto przed pierwszą edycją](https://pl.wikipedia.org/wiki/Pomoc:Logowanie).
+- [Załóż konto przed pierwszą edycją](https://pl.wikipedia.org/wiki/Pomoc:Zaloguj_si%C4%99).
 - Edytuj wyłącznie po zalogowaniu, żeby można było zweryfikować i ocenić Twój wkład.
 
 </div><div>
@@ -254,7 +252,7 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 
 ## Start (1/3)
 
-- [Pomoc: Wstęp](https://pl.wikipedia.org/wiki/Pomoc:Wst%C4%99p)
+- [Pomoc: Pierwsze kroki](https://pl.wikipedia.org/wiki/Pomoc:Pierwsze_kroki)
 - [Zalecenia dla uczniów i studentów](https://pl.wikipedia.org/wiki/Wikipedia:Projekty_szkolne_i_akademickie/zalecenia_dla_uczni%C3%B3w_i_student%C3%B3w)
 - [Spis treści pomocy](https://pl.wikipedia.org/wiki/Pomoc:Spis_tre%C5%9Bci)
 
@@ -262,7 +260,7 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 
 ## Start (2/3)
 
-- [Pytania nowicjuszy](https://pl.wikipedia.org/wiki/Pomoc:Pytania_nowicjuszy)
+- [Pytania nowicjuszy](https://pl.wikipedia.org/wiki/Wikipedia:Pytania_nowicjuszy)
 - [FAQ](https://pl.wikipedia.org/wiki/Pomoc:FAQ)
 - Gdy nadal nie ma odpowiedzi: skontaktuj się z prowadzącym.
 
@@ -307,13 +305,14 @@ Studenci opracowują **hasła encyklopedyczne w Wikipedii**:
 
 ---
 
-## Podpisywanie kont (1/2)
+## Własne konto i podpis
 
 <div class="columns"><div>
 
-**Konto powinno pozwalać jednoznacznie rozpoznać autora.**
+- Edytuj po zalogowaniu, zawsze z własnego konta.
+- W dyskusji podpisuj swoje wypowiedzi: `~~~~`.
+- W haśle nie dodawaj podpisu. Twoje edycje są zapisane w historii strony.
 
-W razie potrzeby uzupełnij nazwę użytkownika i stronę użytkownika o dane identyfikujące autora pracy.
 
 </div><div>
 
@@ -323,17 +322,19 @@ W razie potrzeby uzupełnij nazwę użytkownika i stronę użytkownika o dane id
 
 ---
 
-## Podpisywanie kont (2/2)
+## Odpowiedzialność za opublikowany wkład
 
 <div class="columns"><div>
 
-Na stronie użytkownika podaj co najmniej **imię i nazwisko**.
-
-Możesz też dopisać, że konto służy do projektu akademickiego, i podać kontakt w Wikipedii.
+- Odpowiadasz za treść swoich edycji, źródła i prawa autorskie.
+- Reaguj na uwagi i poprawiaj błędy w opublikowanej treści.
+- W parze każda osoba edytuje z własnego konta i odpowiada za swój wkład.
 
 </div><div>
 
 ![Przykładowy profil Wikipedysty](media/image10.png)
+
+Login powiąż z imieniem i nazwiskiem w zgłoszeniu do prowadzącego.
 
 </div></div>
 
@@ -395,7 +396,7 @@ Możesz też dopisać, że konto służy do projektu akademickiego, i podać kon
 
 - rozwinięcie istniejącego hasła,
 - albo opracowanie nowego hasła,
-- inspiracje: [strony wymagające dopracowania](https://pl.wikipedia.org/wiki/Wikipedia:Strony_wymagaj%C4%85ce_dopracowania) i [zalążki](https://pl.wikipedia.org/wiki/Kategoria:Zal%C4%85%C5%BCki_artyku%C5%82%C3%B3w).
+- inspiracje: [strony wymagające dopracowania](https://pl.wikipedia.org/wiki/Wikipedia:Sprz%C4%85tanie_Wikipedii) i [zalążki](https://pl.wikipedia.org/wiki/Kategoria:Zal%C4%85%C5%BCki_artyku%C5%82%C3%B3w).
 
 </div></div>
 
@@ -404,14 +405,14 @@ Możesz też dopisać, że konto służy do projektu akademickiego, i podać kon
 ## Inne sposoby szukania tematu (1/3)
 
 - [Strony do przetłumaczenia](https://pl.wikipedia.org/wiki/Wikipedia:Strony_do_przet%C5%82umaczenia)
-- [Tłumaczenie miesiąca](https://pl.wikipedia.org/wiki/Wikipedia:T%C5%82umaczenie_miesi%C4%85ca)
+- [Wikiprojekt: tłumaczenie artykułów](https://pl.wikipedia.org/wiki/Wikiprojekt:T%C5%82umaczenie_artyku%C5%82%C3%B3w)
 
 ---
 
 ## Inne sposoby szukania tematu (2/3)
 
-- [Zalążki](https://pl.wikipedia.org/wiki/Wikipedia:Zal%C4%85%C5%BCki)
-- [Brakujące artykuły](https://pl.wikipedia.org/wiki/Wikipedia:Brakuj%C4%85ce_artyku%C5%82y)
+- [Jak rozpoznać zalążek artykułu](https://pl.wikipedia.org/wiki/Wikipedia:Zal%C4%85%C5%BCek_artyku%C5%82u)
+- [Brakujące artykuły obecne w innych wersjach językowych](https://pl.wikipedia.org/wiki/Wikipedia:Propozycje_temat%C3%B3w/Najwi%C4%99cej_interwiki)
 - [Artykuły wymagające uzupełnienia](https://pl.wikipedia.org/wiki/Kategoria:Artyku%C5%82y_wymagaj%C4%85ce_uzupe%C5%82nienia_informacji)
 
 ---
@@ -442,7 +443,8 @@ Wyślij do prowadzącego:
 
 ## Zakończenie pracy
 
-- Prześlij informację, że hasło jest gotowe albo rozwinięte.
+- Opublikuj nowe hasło lub zmiany w istniejącym haśle w Wikipedii.
+- Gdy praca będzie gotowa do oceny, daj znać prowadzącemu i prześlij link do opublikowanego hasła.
 - Jeżeli pojawią się uwagi i do końca semestru pozostał czas, popraw hasło.
 
 ---
@@ -541,7 +543,7 @@ Wyślij do prowadzącego:
 
 - Gdy chcesz zrobić więcej, nie musisz prosić o zgodę.
 - Znacząca rozbudowa oznacza, że artykuł przestaje być zalążkiem.
-- Na karcie „historia i autorzy” sprawdź, czy hasło ma więcej niż 5000 znaków (bajtów).
+- W historii edycji sprawdź, czy rozmiar hasła przekracza 5000 bajtów. To wskazówka do ćwiczenia, nie kryterium oceny.
 
 ---
 
@@ -551,7 +553,7 @@ Wyślij do prowadzącego:
 
 - [Wikipedia: strona główna](https://pl.wikipedia.org/)
 - [GNU Free Documentation License](https://pl.wikipedia.org/wiki/GNU_Free_Documentation_License)
-- [Creative Commons](https://pl.wikipedia.org/wiki/Licencja_Creative_Commons)
+- [Creative Commons](https://pl.wikipedia.org/wiki/Licencje_Creative_Commons)
 
 </div><div>
 

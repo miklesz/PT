@@ -358,7 +358,7 @@ Użytkownicy mogą wymieniać wiadomości i pliki oraz współdzielić urządzen
 
 <p class="credits">Historyczna wizualizacja projektu Opte. Linie łączą węzły sieci; nie jest to aktualna mapa ani mapa geograficzna.</p>
 
-<p class="credits">W oryginalnej mapie długość linii odpowiada opóźnieniu między węzłami, a kolory grupują regiony świata oraz połączenia szkieletowe.</p>
+<p class="credits">Położenie węzłów i długości linii wynikają z układu grafu. Nie należy ich odczytywać jako odległości ani opóźnień.</p>
 
 ---
 
@@ -576,11 +576,11 @@ Potrzeba więcej kabli i portów niż w magistrali.
 
 ## Topologie mieszane: jak są połączone?
 
-- **Pierścień-gwiazda:** stacje dołączają do punktów centralnych, a te tworzą pierścień. Odłączenie pojedynczej stacji nie musi przerwać obiegu danych.
+- **Pierścień-gwiazda:** kable tworzą gwiazdę, a centrum okablowania zamyka logiczny pierścień. Odłączenie jednej stacji nie musi przerwać obiegu danych.
 - **Gwiazda-magistrala:** grupy stacji tworzą gwiazdy, których punkty centralne łączy wspólny odcinek magistrali.
 - **Magistrala-drzewo:** połączenia rozgałęziają się hierarchicznie; uszkodzenie odcinka wyższego poziomu może odciąć całe poddrzewo.
 
-Te nazwy opisują fizyczny układ połączeń; odporność na awarie zależy jeszcze od urządzeń i sposobu przekazywania ruchu.
+Odporność na awarie zależy także od urządzeń i sposobu przekazywania ruchu.
 
 ---
 

@@ -314,7 +314,7 @@ Dla każdego przypadku sprawdź, czy adres sieci i brama pasują do adresu IP or
 
 ## Przykład: sieć lokalna, ruter i Internet
 
-![Sieć lokalna, ruter i Internet](media/image11.png)
+![Prywatna sieć 192.168.0.0/24. Ruter ma adres 192.168.0.1 w sieci lokalnej i osobny interfejs do Internetu.](media/siec-lokalna-i-internet.svg)
 
 ---
 

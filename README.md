@@ -1,6 +1,8 @@
 # Podstawy Telekomunikacji
 
-Materiały w kolejności prowadzenia zajęć. Prezentacje PT są dostępne jako dokumenty do czytania na GitHubie i jako pliki `lecture.html` do otwarcia w przeglądarce po pobraniu repozytorium. Wykłady wspólne prowadzą bezpośrednio do prezentacji online.
+Materiały w kolejności prowadzenia zajęć. Aktualny tekst wykładów PT znajduje się w plikach `lecture.md`, a prezentacje do otwarcia w Chrome w plikach `lecture.html`. Do uruchomienia slajdów potrzebne jest połączenie z internetem, także przy otwieraniu plików z dysku. Wykłady wspólne prowadzą bezpośrednio do prezentacji online w repozytoriach źródłowych.
+
+Odsyłacze „notatki” prowadzą do archiwalnej transkrypcji PowerPointów. Aktualne zasady zaliczenia i projektu są w wykładzie 01.
 
 ## Blok 1: Wprowadzenie do telekomunikacji (01-03)
 

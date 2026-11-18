@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 310" font-family="Arial, sans-serif">
+  <path d="M254 152h98m236 0h98" stroke="#27667d" stroke-width="4"/>
+  <rect x="14" y="91" width="240" height="122" rx="7" fill="#e7f1f8" stroke="#27667d" stroke-width="2"/>
+  <rect x="352" y="91" width="236" height="122" rx="7" fill="#e9f0e2" stroke="#4b6f3d" stroke-width="2"/>
+  <rect x="686" y="91" width="240" height="122" rx="7" fill="#faf0db" stroke="#8a6930" stroke-width="2"/>
+  <g text-anchor="middle" fill="#142739">
+    <g font-size="26" font-weight="bold">
+      <text x="134" y="139">Prywatna sieć LAN</text>
+      <text x="470" y="139">Ruter brzegowy</text>
+      <text x="806" y="139">Internet</text>
+    </g>
+    <g font-size="21">
+      <text x="134" y="174">192.168.0.0/24</text>
+      <text x="806" y="174">sieci publiczne</text>
+      <text x="303" y="52">interfejs LAN</text>
+      <text x="303" y="77">192.168.0.1</text>
+      <text x="637" y="52">interfejs WAN</text>
+      <text x="134" y="260">Host: 192.168.0.2</text>
+    </g>
+  </g>
+</svg>

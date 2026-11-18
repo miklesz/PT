@@ -429,11 +429,14 @@ Oprócz adresu celu polityka sieci może uwzględniać obciążenie, jakość us
 
 | Prefiks docelowy | Następny skok | Interfejs | Metryka |
 | --- | --- | --- | --- |
-| `10.0.0.0/24` | bezpośrednio | LAN (*Local Area Network*) 1 | 0 |
+| `10.0.0.0/24` | bezpośrednio | LAN 1 | 0 |
 | `192.0.2.0/24` | `10.0.0.2` | LAN 1 | 10 |
-| domyślna | `10.0.0.1` | WAN (*Wide Area Network*) | 100 |
+| `198.51.100.0/30` | bezpośrednio | WAN | 0 |
+| domyślna | `198.51.100.1` | WAN | 100 |
 
-Prefiks określa część adresu należącą do sieci; najbardziej szczegółowy pasujący prefiks ma pierwszeństwo.
+Ruter wybiera najdłuższy pasujący prefiks sieci.
+
+<p class="credits">LAN: <em>Local Area Network</em> (sieć lokalna); WAN: <em>Wide Area Network</em> (sieć rozległa).</p>
 
 ---
 
@@ -493,29 +496,39 @@ Ford-Fulkerson rozwiązuje problem **maksymalnego przepływu**, a nie najkrótsz
 
 - Każda krawędź ma pojemność.
 - Szukamy ścieżek powiększających od źródła do ujścia.
-- Zwiększamy przepływ o minimalną wolną pojemność na znalezionej ścieżce.
-- Wartość całkowita jest sumą przepływów przesłanych kolejnymi ścieżkami.
+- Zwiększamy przepływ o najmniejszą pojemność resztową na ścieżce (jej wąskie gardło).
+- Wartość przepływu rośnie o każde kolejne powiększenie, także wtedy, gdy ścieżka używa łuku wstecznego.
 
 ---
 
 ## Sieć rezydualna
 
-Po przesłaniu części przepływu pozostaje sieć rezydualna:
+Sieć rezydualna pokazuje, jak można zmienić obecny przepływ:
 
 - pokazuje, ile przepływu można jeszcze wysłać,
 - zawiera też krawędzie wsteczne, pozwalające skorygować wcześniejszą decyzję.
 
 ---
 
+## Ford-Fulkerson: przykład na grafie
+
+<p class="video-intro">Michael Sambol pokazuje na jednym grafie, jak wybierać kolejne ścieżki, znaleźć ich wąskie gardła i zwiększać przepływ.</p>
+
+<video data-youtube-fallback controls playsinline preload="metadata"><source src="media/local-replacements/ford-fulkerson.mp4" type="video/mp4"></video>
+
+<p class="credits video-original"><a href="https://www.youtube.com/watch?v=Tl90tNtKvxs" target="_blank" rel="noopener noreferrer">Michael Sambol: Ford-Fulkerson in 5 minutes (YouTube)</a></p>
+
+---
+
 ## Dinic
 
-Algorytm Dinica usprawnia znajdowanie maksymalnego przepływu:
+Dinic też szuka maksymalnego przepływu:
 
-1. buduje graf poziomów algorytmem BFS,
-2. wyszukuje przepływ blokujący w tym grafie,
-3. powtarza do braku ścieżki z źródła do ujścia.
+1. Buduje **graf poziomów** w sieci rezydualnej, stosując przeszukiwanie wszerz (BFS, *Breadth-First Search*).
+2. Wyznacza **przepływ blokujący**, po którym w bieżącym grafie poziomów nie ma już drogi od źródła do ujścia.
+3. Buduje nowy graf poziomów. Kończy, gdy w sieci rezydualnej nie ma drogi do ujścia.
 
-**BFS** (*Breadth-First Search*, przeszukiwanie wszerz) odwiedza najpierw wszystkich sąsiadów źródła, potem ich sąsiadów. Dzięki temu przypisuje węzłom kolejne poziomy odległości od źródła.
+Pełny przykład jest w materiałach do samodzielnej nauki.
 
 ---
 

@@ -41,7 +41,7 @@ Sygnał to abstrakcyjny model mierzalnej wielkości zmieniającej się w czasie,
 
 **dB** to logarytmiczna jednostka miary. Używamy jej, gdy:
 
-- wielkości zmieniają się liniowo w bardzo szerokim zakresie,
+- porównywane wartości obejmują szeroki zakres,
 - interesują nas zmiany względne,
 - porównujemy poziomy rejestrowane przez ludzkie zmysły, np. dźwięk.
 
@@ -136,7 +136,7 @@ Jeżeli sygnał ciągły nie ma składowych o częstotliwości równej lub więk
 
 `1 / (2B)`
 
-`B` oznacza najwyższą częstotliwość obecnego w sygnale pasma.
+`B` to górna granica pasma. Równoważnie: częstotliwość próbkowania `fₛ ≥ 2B`.
 
 Inne nazwy: twierdzenie Whittakera-Nyquista-Kotielnikowa-Shannona albo twierdzenie o próbkowaniu.
 

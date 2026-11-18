@@ -446,9 +446,9 @@ To prosty protokół, ale przy większym obciążeniu często dochodzi do kolizj
 
 ## ALOHA: kiedy ramki się nakładają?
 
-Kolizja występuje, gdy ramka innej stacji rozpocznie się w takim momencie, że jej sygnał nakłada się na choćby część rozpatrywanej ramki. W zwykłym ALOHA możliwy okres kolizji jest dłuższy niż w wariancie szczelinowym.
+Jeśli ramka trwa `T`, w zwykłym ALOHA inna ramka może z nią kolidować, zaczynając do `T` wcześniej lub później. Szczeliny skracają to okno.
 
-<img src="media/image8.png" alt="Okno czasowe, w którym druga ramka może kolidować z pierwszą w ALOHA" height="280">
+<img src="media/aloha-okno-kolizji.svg" alt="Ramka zaczęta przed t₀ nakłada się na początek ramki odniesienia; ramka zaczęta po t₀ nakłada się na jej końcową część." height="280">
 
 ---
 
