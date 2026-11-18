@@ -1,6 +1,6 @@
 # Podstawy Telekomunikacji
 
-Ten katalog zawiera oryginalne prezentacje PowerPoint oraz wersje do użycia w przeglądarce i do samodzielnej nauki.
+Materiały do wykładu: prezentacje, notatki i odsyłacze do wykładów wspólnych z innymi przedmiotami.
 
 ## Prowadzenie zajęć
 
@@ -8,10 +8,17 @@ Właściwe, edytowalne prezentacje są tworzone wykład po wykładzie w katalogu
 
 Katalog [`web/`](web/) zawiera wcześniejsze renderowane podglądy slajdów i lokalne media jako archiwum wizualne. Nie jest źródłem nowych prezentacji.
 
-Po wykładach o strumieniowaniu:
+## Wykłady wspólne z innymi przedmiotami
 
-- [Człowiek, ósma warstwa modelu ISO-OSI, jako element ekosystemu teleinformatycznego](lectures/12-czlowiek-i-qoe/lecture.html)
-- [Quality of Experience](lectures/13-quality-of-experience/lecture.html)
+**AMIPaC: strumieniowanie multimediów**
+
+1. [Strumieniowanie bezpołączeniowe](https://miklesz.github.io/AMIPaC/06%20Connectionless%20Streaming%20of%20Multimedia%20Content/lecture/lecture.html)
+2. [Strumieniowanie połączeniowe](https://miklesz.github.io/AMIPaC/07%20Connection-Oriented%20Streaming%20of%20Multimedia%20Content/lecture/lecture.html)
+
+**EET i QoE**
+
+- [Człowiek, ósma warstwa modelu ISO-OSI, jako element ekosystemu teleinformatycznego](https://miklesz.github.io/EET/lecture.html) (EET)
+- [Quality of Experience](https://miklesz.github.io/QoE/lecture/lecture.html) (QoE)
 
 ## Materiały dla studentów
 
@@ -28,8 +35,9 @@ GitHub renderuje poniższe dokumenty Markdown wraz z podglądami slajdów:
 - [09. Podstawowe zagadnienia sieciowe — źródło prezentacji](lectures/09-zagadnienia-sieciowe/lecture.md)
 - [10. Routing: algorytmy — źródło prezentacji](lectures/10-routing-algorytmy/lecture.md)
 - [11. Routing: protokoły — źródło prezentacji](lectures/11-routing-protokoly/lecture.md)
-- [Człowiek, ósma warstwa modelu ISO-OSI, jako element ekosystemu teleinformatycznego](lectures/12-czlowiek-i-qoe/lecture.md)
-- [Quality of Experience](lectures/13-quality-of-experience/lecture.md)
+
+## Notatki
+
 - [01. Wprowadzenie do przedmiotu](notes/01-wprowadzenie-do-przedmiotu.md)
 - [02. Co to jest telekomunikacja](notes/02-co-to-jest-telekomunikacja.md)
 - [03. Podstawowe pojęcia, jednostki, ograniczenia](notes/03-podstawowe-pojecia-jednostki-ograniczenia.md)
